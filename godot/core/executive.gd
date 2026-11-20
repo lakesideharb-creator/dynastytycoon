@@ -11,6 +11,7 @@ var salary: float            ## 月薪
 var loyalty: int = 80        ## 忠诚度 0–100
 var stress: int = 20         ## 压力值 0–100
 var special_trait: String = ""
+var portrait: String = ""    ## 立绘 id，如 su_qingmo
 
 
 static func from_dict(d: Dictionary) -> Executive:
@@ -24,9 +25,10 @@ static func from_dict(d: Dictionary) -> Executive:
 	e.loyalty = int(d.get("loyalty", 80))
 	e.stress = int(d.get("stress", 20))
 	e.special_trait = str(d.get("special_trait", ""))
+	e.portrait = str(d.get("portrait", ""))
 	return e
 
 
 func to_dict() -> Dictionary:
 	return {"id": id, "name": name, "gate_id": gate_id, "gate_name": gate_name, "role": role,
-			"salary": salary, "loyalty": loyalty, "stress": stress, "special_trait": special_trait}
+			"salary": salary, "loyalty": loyalty, "stress": stress, "special_trait": special_trait, "portrait": portrait}

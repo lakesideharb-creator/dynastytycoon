@@ -21,6 +21,7 @@ class Executive:
     loyalty: int = 80        # 忠诚度 0-100
     stress: int = 20         # 压力值 0-100
     special_trait: str = ""
+    portrait: str = ""       # 立绘 id，如 su_qingmo（对应 assets/portraits/{id}_{表情}.png）
 
 # 门店老化后营收最低保留比例
 STORE_DECAY_FLOOR = 0.65

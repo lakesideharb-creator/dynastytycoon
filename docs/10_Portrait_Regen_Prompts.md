@@ -10,7 +10,7 @@
 4. 文件名用 `{角色id}_{表情}.png`，生成完一起抠图：
 
 ```bash
-python3 tools/remove_background.py --mode chroma 生成图/*.png --out assets/portraits
+python3 tools/remove_background.py --mode chroma 生成图/*.png --out godot/assets/portraits
 ```
 
 ### 负面提示词（12 张通用）

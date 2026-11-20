@@ -20,11 +20,46 @@ godot/
 │   ├── campaign_runner.gd    # 战役状态机
 │   ├── insight.gd            # 月度盈亏解读与下月预告
 │   └── event_system.gd       # 随机事件
+├── ui/            # 界面（全部用代码搭建，入口场景 scenes/main.tscn）
+│   ├── main.gd               # 标题 ↔ 战役画面切换
+│   ├── title_screen.gd       # 标题画面
+│   ├── campaign_screen.gd    # 战役主界面：终端（结账单/现金走势/盈亏解读）+ 罗盘（三才因子/下月预告/操作）+ 高管卡
+│   ├── dialogs/              # 开局决断、董事会议题、终局复盘（宣纸卡片风格）
+│   ├── widgets/              # 高管卡（按状态切换表情）、现金走势图、三才因子条
+│   ├── audio.gd              # 自动加载 Audio：四季音乐交叉淡入淡出、音效
+│   ├── compass_3d.gd         # 3D 罗盘（移植自 Ninefold Gate，贴图在 assets/textures/）
+│   └── theme_builder.gd · palette.gd · money.gd · role_names.gd
+├── assets/          # 美术与音频（规格见 docs/09_Art_Audio_Prompts.md）
 ├── data/            # 由 tools/sync_godot_data.py 从仓库根目录 data/ 同步，不要直接改
 └── tests/
     ├── run_tests.gd          # 对照测试入口
+    ├── ui_shots.gd           # 界面自动截图（自动玩一局）
     └── golden/               # Python 引擎的标准答案（tools/export_golden.py 生成）
 ```
+
+## 运行游戏
+
+```bash
+godot --path godot
+```
+
+或在 Godot 编辑器中打开 `godot/project.godot` 后按 F5。基准分辨率 1920×1080，窗口默认 1600×900，可自由缩放（canvas_items + expand）。
+
+## 界面自动截图
+
+自动玩完一局并在标题、开局决断、主界面、董事会议题、终局等画面截图（会打开一个窗口，结束后自动关闭）：
+
+```bash
+godot --path godot -s res://tests/ui_shots.gd -- <输出目录> [关卡编号] [开局选项]
+```
+
+## 字体（网页导出前必须处理）
+
+目前用系统字体（`SystemFont`）：正文黑体 Hiragino Sans GB / STHeiti，标题与宣纸卡片宋体 Songti SC，数字 Menlo。只适用于 macOS 本机运行：
+
+- macOS 上 "PingFang SC" 会解析成 PingFang HK，缺少部分简体字（如"杂"），因此没有用苹方。
+- Songti SC 的 ¥ 字形为空白，含金额的文字一律用黑体。
+- 网页版和其他平台没有这些系统字体，M5 导出前需要打包开源的 Noto Serif SC / Noto Sans SC（OFL 授权），可参考 Ninefold Gate 的 `tools/subset_font.py` 做子集化减小体积。
 
 ## 数据与一致性
 

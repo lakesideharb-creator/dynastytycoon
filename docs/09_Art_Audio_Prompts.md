@@ -83,7 +83,7 @@ half-body character portrait of a Chinese business executive, facing three-quart
 **透明底流程**：大多数生成器输不出真正的透明通道，所以统一在**品红平涂底**上生成，再用工具抠掉：
 
 ```bash
-python3 tools/remove_background.py --mode chroma 生成图/*.png --out assets/portraits
+python3 tools/remove_background.py --mode chroma 生成图/*.png --out godot/assets/portraits
 ```
 
 - 用品红而不用绿幕：伤门、杜门角色穿绿色（赵勇、张博、陈默），绿幕会把衣服一起抠掉。
@@ -375,7 +375,7 @@ isometric 2.5D modern Chinese minimalist office floor, 9x9 tile grid, main entra
 - `shen_wuben_stressed`：构图更近、脸型和其他三张不一致，且缺少账本，需要用 neutral 作角色参考重做。
 - `zhao_yong_stressed`：读起来像"愤怒/较劲"而不是"疲惫"，需要重做（`exhausted, dark circles under eyes, slumped shoulders, loosened collar`）。
 - 同一角色不同表情的背景墨点不一致（有的有泼墨、有的没有），游戏内切换表情时背景会跳变。→ 已决定改透明底。
-- 已用 `tools/remove_background.py --mode paper` 把 12 张抠成透明底作为过渡版本放入 `assets/portraits/`；原宣纸底版本保存在 `assets_src/paper-portraits/`。沈务本 neutral/pleased、赵勇 neutral/angry 边缘还残留少量墨点。
+- 已用 `tools/remove_background.py --mode paper` 把 12 张抠成透明底作为过渡版本放入 `godot/assets/portraits/`；原宣纸底版本保存在 `assets_src/paper-portraits/`。沈务本 neutral/pleased、赵勇 neutral/angry 边缘还残留少量墨点。
 - 返修时按新规范在品红底上**重新生成全部 12 张**，保证背景和边缘一致，再用 `--mode chroma` 抠图。
 
 **第二批（第三步做 Godot 样章时用）**
@@ -384,7 +384,7 @@ isometric 2.5D modern Chinese minimalist office floor, 9x9 tile grid, main entra
 - [x] 其余角色立绘与人才市场通用头像（batch2）
 - [x] 其余决策卡、场景背景、图标（batch2）
 
-**batch2 审核（2026-11-19）**：117 张图，已处理后放入 `assets/`，原图保存在 `assets_src/batch2-original/`。
+**batch2 审核（2026-11-19）**：117 张图，已处理后放入 `godot/assets/`，原图保存在 `assets_src/batch2-original/`。
 - 通过：主角团 12 张重绘（表情差异明显、形象统一）、决策卡 7 张、场景 11 张、办公室道具 9 张、八门/八神/五行/季节图标。
 - 已处理：
   - 主角团 12 张边缘有品红色晕（苏清墨发际线最明显），已用 `--mode despill` 去除。
@@ -408,15 +408,15 @@ isometric 2.5D modern Chinese minimalist office floor, 9x9 tile grid, main entra
 **地砖处理流程**
 
 ```bash
-python3 tools/remove_background.py --mode tile 新地砖/tile_*.png --out assets/office
+python3 tools/remove_background.py --mode tile 新地砖/tile_*.png --out godot/assets/office
 # 横梁砖由处理后的地板砖生成（先复制一份命名为 tile_beam.png）
-python3 tools/remove_background.py --mode beam 临时目录/tile_beam.png --out assets/office
+python3 tools/remove_background.py --mode beam 临时目录/tile_beam.png --out godot/assets/office
 ```
 - [x] 其余音乐与音效（audio-batch2 已交付：7 首音乐 + 20 个音效，见下方"audio-batch2 审核"）
 
 **audio-batch2 审核（2026-11-19）**
 - 交付：`decision_tension`、`crisis_war_room`、`fengshui_studio`、`sandbox_era`、三个结局短曲，以及 4.2–4.5 节的 20 个音效。命名、时长与规格一致，音效开头无延迟（≤13ms）。
-- 已用 `tools/audio_master.py` 统一处理后放入 `assets/music/`、`assets/sfx/`，原始文件保存在 `assets_src/audio-original/`：
+- 已用 `tools/audio_master.py` 统一处理后放入 `godot/assets/music/`、`godot/assets/sfx/`，原始文件保存在 `assets_src/audio-original/`：
   - 音乐原为 192 kHz，统一转为 48 kHz；响度归一到 -14 LUFS，真峰值 ≤ -1.2 dBTP。
   - 音效响度原本相差 23 dB（`victory` 极响、`exec_leave` 极轻），已按"最响 200ms 窗口"对齐并限幅到 -2 dBFS。
   - 循环点：`crisis_war_room` 原本就能无缝循环；`decision_tension` 开头有 0.7 秒静音、`fengshui_studio` 首尾有淡入淡出、`sandbox_era` 有约 20 秒的渐弱尾声，循环时都会断一下或掉音量，已切掉静音/淡入淡出并做首尾交叉淡化。
@@ -433,13 +433,13 @@ python3 tools/remove_background.py --mode beam 临时目录/tile_beam.png --out 
 
 ```bash
 # 能直接循环的曲子 / 短曲
-python3 tools/audio_master.py music 新曲/*.ogg --out assets/music
+python3 tools/audio_master.py music 新曲/*.ogg --out godot/assets/music
 # 首尾有淡入淡出、需要做循环点的曲子
-python3 tools/audio_master.py music 新曲/xxx.ogg --trim-fades --loop-xfade 3 --out assets/music
+python3 tools/audio_master.py music 新曲/xxx.ogg --trim-fades --loop-xfade 3 --out godot/assets/music
 # 音效
-python3 tools/audio_master.py sfx 新音效/*.ogg --out assets/sfx
+python3 tools/audio_master.py sfx 新音效/*.ogg --out godot/assets/sfx
 # 只测量不修改
-python3 tools/audio_master.py check assets/music assets/sfx
+python3 tools/audio_master.py check godot/assets/music godot/assets/sfx
 ```
 
 **一致性检查**

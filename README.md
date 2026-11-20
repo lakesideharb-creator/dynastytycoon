@@ -36,13 +36,9 @@ dynasty_tycoon/
 │   ├── 07_Campaign_Ten_Scenarios.md    # 【战役】十大传奇商战案例关卡脚本
 │   ├── 08_Playtest_Guide.md            # 终端版试玩指南与访谈问卷
 │   └── 09_Art_Audio_Prompts.md         # 人物/场景/音乐/音效生成提示词
-├── assets/                             # 游戏美术资源（路径与 Godot res://assets/ 一致）
-│   ├── portraits/                      # 人物立绘（透明底 RGBA）
-│   ├── events/                         # 月度决策卡插画
-│   ├── music/                          # 背景音乐与结局短曲（48kHz OGG，-14 LUFS）
-│   └── sfx/                            # 音效（48kHz OGG，响度对齐）
-├── assets_src/                         # 美术/音频源文件（原始生成文件、宣纸底版本）
+├── assets_src/                         # 美术/音频源文件（不入库，原件在交付的 zip 中）
 ├── godot/                              # Godot 4.7 工程（引擎移植与正式客户端），见 godot/README.md
+│   └── assets/                         # 美术与音频资源（res://assets/：portraits、events、scenes、office、icons、music、sfx）
 ├── data/                               # 核心数据配置文件 (JSON)，Python 与 Godot 共用的唯一数据源
 │   ├── nine_palaces.json               # 九宫特区属性与五行生克配置表
 │   ├── eight_gates.json                # 八门高管属性与适岗匹配表

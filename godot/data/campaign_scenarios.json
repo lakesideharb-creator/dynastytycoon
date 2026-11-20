@@ -284,7 +284,8 @@
             "role": "CEO",
             "salary": 60000,
             "loyalty": 90,
-            "stress": 30
+            "stress": 30,
+            "portrait": "lin_fan"
           },
           {
             "id": "e2",
@@ -294,7 +295,8 @@
             "role": "CFO",
             "salary": 50000,
             "loyalty": 85,
-            "stress": 25
+            "stress": 25,
+            "portrait": "shen_wuben"
           },
           {
             "id": "e3",
@@ -304,7 +306,8 @@
             "role": "CMO",
             "salary": 45000,
             "loyalty": 88,
-            "stress": 35
+            "stress": 35,
+            "portrait": "su_qingmo"
           },
           {
             "id": "e4",
@@ -314,7 +317,8 @@
             "role": "VP_Expansion",
             "salary": 45000,
             "loyalty": 80,
-            "stress": 40
+            "stress": 40,
+            "portrait": "zhao_yong"
           }
         ],
         "stores": [
@@ -690,7 +694,8 @@
             "role": "CEO",
             "salary": 50000,
             "loyalty": 85,
-            "stress": 50
+            "stress": 50,
+            "portrait": "li_dao"
           },
           {
             "id": "e2",
@@ -700,7 +705,8 @@
             "role": "CTO",
             "salary": 60000,
             "loyalty": 90,
-            "stress": 45
+            "stress": 45,
+            "portrait": "zhang_bo"
           },
           {
             "id": "e3",
@@ -710,7 +716,8 @@
             "role": "CFO",
             "salary": 45000,
             "loyalty": 80,
-            "stress": 60
+            "stress": 60,
+            "portrait": "shen_wuben"
           }
         ],
         "stores": [
@@ -1050,7 +1057,8 @@
             "role": "CEO",
             "salary": 70000,
             "loyalty": 75,
-            "stress": 65
+            "stress": 65,
+            "portrait": "zhao_yong"
           },
           {
             "id": "e2",
@@ -1060,7 +1068,8 @@
             "role": "CTO",
             "salary": 70000,
             "loyalty": 60,
-            "stress": 70
+            "stress": 70,
+            "portrait": "chen_mo"
           },
           {
             "id": "e3",
@@ -1070,7 +1079,8 @@
             "role": "CMO",
             "salary": 50000,
             "loyalty": 65,
-            "stress": 55
+            "stress": 55,
+            "portrait": "su_qingmo"
           },
           {
             "id": "e4",
@@ -1080,7 +1090,8 @@
             "role": "CFO",
             "salary": 50000,
             "loyalty": 70,
-            "stress": 60
+            "stress": 60,
+            "portrait": "shen_wuben"
           }
         ],
         "stores": [
@@ -1150,7 +1161,8 @@
               "role": "COO",
               "salary": 55000,
               "loyalty": 90,
-              "stress": 15
+              "stress": 15,
+              "portrait": "wen_runsheng"
             },
             {
               "type": "store_field",

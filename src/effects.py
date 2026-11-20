@@ -27,7 +27,7 @@ EFFECT_TYPES = ("cash", "reputation", "fengshui", "fengshui_set", "revenue_mod",
 
 FENGSHUI_MIN, FENGSHUI_MAX = -0.25, 0.35
 STORE_NUMERIC_FIELDS = ("base_revenue", "rent", "staff_cost", "maintenance_cost")
-EXEC_SETTABLE = ("role", "salary", "loyalty", "stress", "special_trait")
+EXEC_SETTABLE = ("role", "salary", "loyalty", "stress", "special_trait", "portrait")
 
 
 def _clamp(v, lo, hi):

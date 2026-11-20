@@ -6,7 +6,7 @@ const TYPES := ["cash", "reputation", "fengshui", "fengshui_set", "revenue_mod",
 const FENGSHUI_MIN := -0.25
 const FENGSHUI_MAX := 0.35
 const STORE_NUMERIC_FIELDS := ["base_revenue", "rent", "staff_cost", "maintenance_cost"]
-const EXEC_SETTABLE := ["role", "salary", "loyalty", "stress", "special_trait"]
+const EXEC_SETTABLE := ["role", "salary", "loyalty", "stress", "special_trait", "portrait"]
 const FIELD_LABELS := {"staff_cost": "人工成本", "rent": "租金", "base_revenue": "基础营收", "maintenance_cost": "维护成本"}
 
 

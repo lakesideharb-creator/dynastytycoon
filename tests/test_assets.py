@@ -13,7 +13,7 @@ import unittest
 
 from src import CampaignManager
 
-ASSETS = os.path.join(ROOT, "assets")
+ASSETS = os.path.join(ROOT, "godot", "assets")
 EXPRESSIONS = ("neutral", "pleased", "stressed", "angry")
 MAIN_CAST = ("su_qingmo", "shen_wuben", "zhao_yong", "lin_fan", "li_dao", "zhang_bo",
              "chen_mo", "wen_runsheng", "gu_jingran", "qian_shouxin", "wen_he")
@@ -42,8 +42,11 @@ def data_ids(name, key):
 
 
 def present(sub):
+    """目录下的资源文件（忽略 Godot 生成的 .import 元数据）"""
     d = os.path.join(ASSETS, sub)
-    return set(os.listdir(d)) if os.path.isdir(d) else None
+    if not os.path.isdir(d):
+        return None
+    return {f for f in os.listdir(d) if not f.endswith(".import") and not f.startswith(".")}
 
 
 class TestAssetNaming(unittest.TestCase):
