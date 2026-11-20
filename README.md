@@ -54,7 +54,9 @@ dynasty_tycoon/
 │   ├── remove_background.py            # 立绘去背景（品红底抠像 / 宣纸底应急抠图）
 │   ├── audio_master.py                 # 音频母带：采样率/响度/峰值统一，循环点制作
 │   ├── export_golden.py                # 导出 Python 引擎标准答案，供 Godot 对照
-│   └── sync_godot_data.py              # 把 data/ 同步到 godot/data/
+│   ├── sync_godot_data.py              # 把 data/ 同步到 godot/data/
+│   ├── subset_fonts.py                 # 裁剪打包用的中文字体（Noto Serif/Sans SC）
+│   └── publish_web.sh                  # 导出网页版并推送到 itch.io
 └── project_management/                 # 生产节奏与项目管理
     └── WBS_Workload_And_Schedule.md    # WBS工作量拆解、团队人月与排期甘特图
 ```

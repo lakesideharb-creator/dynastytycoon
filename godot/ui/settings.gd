@@ -9,6 +9,7 @@ var music := 0.8          ## 0–1
 var sfx := 0.9            ## 0–1
 var fullscreen := false
 var autosave := true
+var playtest_log := true  ## 记录每局决策与结果，仅保存在本机
 
 
 func _ready() -> void:
@@ -18,10 +19,12 @@ func _ready() -> void:
 		sfx = clampf(float(cfg.get_value("audio", "sfx", sfx)), 0.0, 1.0)
 		fullscreen = bool(cfg.get_value("display", "fullscreen", fullscreen))
 		autosave = bool(cfg.get_value("game", "autosave", autosave))
+		playtest_log = bool(cfg.get_value("game", "playtest_log", playtest_log))
 	apply()
 
 
 func apply() -> void:
+	PlaytestLog.enabled = playtest_log
 	_bus("Music", music)
 	_bus("SFX", sfx)
 	if DisplayServer.get_name() != "headless":
@@ -45,6 +48,7 @@ func save() -> void:
 	cfg.set_value("audio", "sfx", sfx)
 	cfg.set_value("display", "fullscreen", fullscreen)
 	cfg.set_value("game", "autosave", autosave)
+	cfg.set_value("game", "playtest_log", playtest_log)
 	cfg.save(PATH)
 
 

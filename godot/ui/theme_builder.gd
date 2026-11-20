@@ -1,35 +1,52 @@
 class_name ThemeBuilder
 ## 全局主题：终端深色底 + 宣纸/鎏金点缀。
-## 字体暂用系统宋体/苹方（SystemFont），网页导出前需改为打包的 Noto Serif SC（见 godot/README.md）。
+## 字体：打包的 Noto Serif SC / Noto Sans SC 子集（OFL 授权，见 assets/fonts/），保留字重轴，
+## 所有平台（含网页版）显示一致。由 tools/subset_fonts.py 生成，新增大量文案后需重新裁剪。
 
-## 注意：macOS 上 "PingFang SC" 会解析成 PingFang HK（缺简体字，如"杂"），因此不用苹方
-const SERIF := ["Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", "SimSun"]
-const SANS := ["Hiragino Sans GB", "STHeiti", "Heiti SC", "Noto Sans SC", "Microsoft YaHei"]
-const MONO := ["Menlo", "Monaco", "Consolas", "DejaVu Sans Mono"]
+const SERIF_FILE := "res://assets/fonts/NotoSerifSC-subset.ttf"
+const SANS_FILE := "res://assets/fonts/NotoSansSC-subset.ttf"
+## 字体族标识（保持旧接口：font(ThemeBuilder.SANS, 700) 等写法不变）
+const SERIF := ["serif"]
+const SANS := ["sans"]
+const MONO := ["mono"]
 
-static var _sans_fallback: SystemFont
-
-
-## 主字体 + 显式回落到简体中文黑体（避免系统自动回落到繁体字体）
-static func font(names: Array, weight := 400) -> SystemFont:
-	var f := SystemFont.new()
-	f.font_names = PackedStringArray(names)
-	f.font_weight = weight
-	if names != SANS:
-		if _sans_fallback == null:
-			_sans_fallback = SystemFont.new()
-			_sans_fallback.font_names = PackedStringArray(SANS)
-		f.fallbacks = [_sans_fallback]
-	return f
+static var _files := {}
+static var _cache := {}
 
 
-static func serif(weight := 400) -> SystemFont:
+static func _file(path: String) -> FontFile:
+	if not _files.has(path):
+		_files[path] = load(path)
+	return _files[path]
+
+
+static func _tag(name: String) -> int:
+	return TextServerManager.get_primary_interface().name_to_tag(name)
+
+
+## 指定字体族与字重；宋体缺字时回落到黑体；mono 为黑体 + 等宽数字（tnum）
+static func font(family: Array, weight := 400) -> Font:
+	var key := "%s/%d" % [family[0], weight]
+	if _cache.has(key):
+		return _cache[key]
+	var fv := FontVariation.new()
+	fv.base_font = _file(SERIF_FILE if family == SERIF else SANS_FILE)
+	fv.variation_opentype = {_tag("wght"): weight}
+	if family == MONO:
+		fv.opentype_features = {_tag("tnum"): 1}
+	if family == SERIF:
+		fv.fallbacks = [font(SANS, weight)]
+	_cache[key] = fv
+	return fv
+
+
+static func serif(weight := 400) -> Font:
 	return font(SERIF, weight)
 
 
-## 等宽数字，中文回落到黑体
-static func mono() -> SystemFont:
-	return font(MONO, 400)
+## 等宽数字
+static func mono() -> Font:
+	return font(MONO, 500)
 
 
 static func box(bg: Color, border := Color.TRANSPARENT, border_w := 0, radius := 6, pad := 12) -> StyleBoxFlat:

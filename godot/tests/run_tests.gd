@@ -18,6 +18,7 @@ func _initialize() -> void:
 		test_campaign(sid)
 	test_office()
 	test_saves()
+	test_playtest_log()
 	test_event_system()
 	test_effects_edge_cases()
 	test_runner_rules()
@@ -232,6 +233,25 @@ func test_saves() -> void:
 	_close(b.company.cash, a.company.cash, "往返后续玩期末现金")
 	_ok(b.company.financial_history.size() == a.company.financial_history.size(), "往返后历史月数")
 	_ok(b.check_win() == a.check_win(), "往返后胜负")
+
+
+func test_playtest_log() -> void:
+	PlaytestLog.path = "user://test_playtest_log.jsonl"
+	PlaytestLog.clear()
+	var r := CampaignRunner.new(1)
+	PlaytestLog.record(r, null, "quit")
+	_ok(PlaytestLog.count() == 0, "未做开局决断时不记录")
+	r.apply_main_choice("B")
+	r.simulate_month(0.0, false)
+	PlaytestLog.record(r, OfficeLayout.from_preset("chaotic"), "quit")
+	PlaytestLog.record(r, null, "lose")
+	_ok(PlaytestLog.count() == 2, "每局一行")
+	var row: Dictionary = JSON.parse_string(PlaytestLog.read_all().split("\n")[0])
+	for k in ["time", "scenario", "outcome", "months_played", "main_choice", "decisions", "cash", "friction", "fengshui", "office_score"]:
+		_ok(row.has(k), "试玩记录包含字段 " + k)
+	_ok(row["outcome"] == "quit" and int(row["office_score"]) == 5 and row["main_choice"] == "B", "试玩记录内容")
+	PlaytestLog.clear()
+	PlaytestLog.path = "user://playtest_log.jsonl"
 
 
 # ─── Godot 端独有逻辑 ────────────────────────────────────────────────────────

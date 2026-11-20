@@ -3,6 +3,9 @@ extends Node
 ## 音乐：两个播放器交替、换曲时交叉淡入淡出（思路沿用 Ninefold Gate 的 MusicPlayer）
 ## 音效：小型播放器池，同一音效可叠放
 ## 资源：res://assets/music/{id}.ogg、res://assets/sfx/{id}.ogg（已统一到 -14 LUFS，见 tools/audio_master.py）
+## 总线 Music / SFX 定义在 default_bus_layout.tres。
+## 网页版：Godot 的网页"采样"播放会把 Music/SFX 总线连成回路，Chrome 会把整个音频图静音，
+## 因此网页版所有播放器改用引擎内混音（Stream）。做法沿用 Ninefold Gate（提交 03b1a13）。
 
 const MUSIC_DIR := "res://assets/music/%s.ogg"
 const SFX_DIR := "res://assets/sfx/%s.ogg"
@@ -25,17 +28,22 @@ func _ready() -> void:
 	_ensure_bus("Music")
 	_ensure_bus("SFX")
 	for i in 2:
-		var p := AudioStreamPlayer.new()
-		p.bus = "Music"
+		var p := _player("Music")
 		p.volume_db = -80.0
-		add_child(p)
 		_music.append(p)
 	for i in 8:
-		var s := AudioStreamPlayer.new()
-		s.bus = "SFX"
+		var s := _player("SFX")
 		s.volume_db = SFX_DB
-		add_child(s)
 		_sfx.append(s)
+
+
+func _player(bus: String) -> AudioStreamPlayer:
+	var p := AudioStreamPlayer.new()
+	p.bus = bus
+	if OS.has_feature("web"):
+		p.playback_type = AudioServer.PLAYBACK_TYPE_STREAM
+	add_child(p)
+	return p
 
 
 func _ensure_bus(bus_name: String) -> void:

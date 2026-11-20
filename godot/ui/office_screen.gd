@@ -178,11 +178,11 @@ func _refresh() -> void:
 
 	var lines := PackedStringArray()
 	for p in a1["perks"]:
-		lines.append("[color=%s]✓ %s[/color]" % [Palette.hex(Palette.JADE), p])
+		lines.append("[color=%s]✓\u00a0%s[/color]" % [Palette.hex(Palette.JADE), p])     # 不换行空格：符号不单独占一行
 	for s in a1["shas"]:
-		lines.append("[color=%s]✗ %s[/color]" % [Palette.hex(Palette.CINNABAR), s])
+		lines.append("[color=%s]×\u00a0%s[/color]" % [Palette.hex(Palette.CINNABAR), s])
 	for r in a1["recs"]:
-		lines.append("[color=%s]» %s[/color]" % [Palette.hex(Palette.GOLD), r])
+		lines.append("[color=%s]»\u00a0%s[/color]" % [Palette.hex(Palette.GOLD), r])
 	_audit.text = "\n".join(lines)
 
 	var changed := has_changes()

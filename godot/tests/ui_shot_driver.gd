@@ -11,6 +11,7 @@ var _n := 0
 
 func _ready() -> void:
 	SaveGame.dir = "user://shot_saves/"          # 不碰玩家真实存档
+	PlaytestLog.enabled = false                   # 不写玩家的试玩记录（只改内存，不保存设置）
 	for slot in SaveGame.SLOTS:
 		SaveGame.delete(slot)
 	DirAccess.make_dir_recursive_absolute(out_dir)

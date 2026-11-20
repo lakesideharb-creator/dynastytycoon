@@ -51,7 +51,7 @@ godot --path godot
 
 ## 存档、设置与快捷键
 
-- 存档在 `user://saves/`（macOS：`~/Library/Application Support/Godot/app_userdata/大亨罗盘 Dynasty Tycoon/saves/`）：自动存档 + 三个手动槽位。每月议题处理完、等待操作时自动存档；战役结束后自动存档会被删除。
+- 存档在 `user://saves/`（macOS：`~/Library/Application Support/DynastyTycoon/saves/`；网页版存在浏览器本地存储）：自动存档 + 三个手动槽位。每月议题处理完、等待操作时自动存档；战役结束后自动存档会被删除。
 - **存档格式与 Python 版 `src/save_manager.py` 完全相同**：Godot 能读 Python 存档继续玩（`tests/golden/saves.json`），Python 也能读 Godot 存档（`tests/test_godot_parity.py`），两边续玩结果一致。
 - 快捷键：空格/回车 推进本月，F 风水工位，Esc 系统菜单；对话框里按选项字母（A/B/C）或数字直接选择。
 
@@ -65,13 +65,32 @@ godot --path godot -s res://tests/ui_shots.gd -- <输出目录> [关卡编号] [
 
 `systems` 模式截取系统菜单、存档列表、设置、标题「继续游戏」与读档后的画面。截图脚本使用独立的 `user://shot_saves/`，不会覆盖玩家存档。
 
-## 字体（网页导出前必须处理）
+## 字体
 
-目前用系统字体（`SystemFont`）：正文黑体 Hiragino Sans GB / STHeiti，标题与宣纸卡片宋体 Songti SC，数字 Menlo。只适用于 macOS 本机运行：
+所有平台（含网页版）都使用打包的开源字体，保证显示一致：
 
-- macOS 上 "PingFang SC" 会解析成 PingFang HK，缺少部分简体字（如"杂"），因此没有用苹方。
-- Songti SC 的 ¥ 字形为空白，含金额的文字一律用黑体。
-- 网页版和其他平台没有这些系统字体，M5 导出前需要打包开源的 Noto Serif SC / Noto Sans SC（OFL 授权），可参考 Ninefold Gate 的 `tools/subset_font.py` 做子集化减小体积。
+- `assets/fonts/NotoSerifSC-subset.ttf`（宋体，2.8 MB）、`NotoSansSC-subset.ttf`（黑体，2.0 MB），均为 SIL OFL 1.1 授权，授权文本在同目录。
+- 由 `tools/subset_fonts.py` 从 Noto Serif SC / Noto Sans SC 可变字体裁剪：收入游戏数据与脚本中出现的全部字符 + GB2312 一级汉字 + 常用符号，保留字重轴（一个文件覆盖所有字重，界面用 `FontVariation` 选字重）。
+- **新增文案出现生僻字时需要重新裁剪**：`python3 tools/subset_fonts.py <NotoSerifSC[wght].ttf> <NotoSansSC[wght].ttf>`（需要 `pip install fonttools`）。字体缺字时宋体会回落到黑体。
+- 数字用黑体的等宽数字特性（tnum），不依赖系统等宽字体。
+
+## 网页版与试玩发布
+
+```bash
+tools/publish_web.sh                                   # 只导出到 godot/export/web/
+ITCH_GAME=用户名/游戏网址名 tools/publish_web.sh --push   # 导出并用 butler 推送到 itch.io（html5 频道）
+```
+
+- 导出预设 `export_presets.cfg` 的「Web」：单线程（无需特殊响应头，itch.io 可直接运行），网页版自动使用 Compatibility 渲染器。
+- 包体约 40 MB（gzip 后）：引擎 wasm 约 10 MB，数据包约 30 MB（其中音乐约 20 MB）。大图（立绘、决策卡、场景、图标）导入为有损 WebP（质量 0.85），办公室地砖与道具保持无损。
+- 尚未移植的模式（沙盒、危机公关指挥室、人才市场）用到的音乐、立绘和场景图在导出时排除，移植后从 `exclude_filter` 中删掉对应条目。
+- 网页音频：所有播放器在网页上改用 Stream 播放，避免 Chrome 因总线回路把声音静音（沿用 Ninefold Gate 的修复）。
+- 存档与试玩记录在网页版保存在浏览器本地存储（同一浏览器、同一网址下刷新后仍在）。
+
+## 试玩记录
+
+- 每局战役结束（通关/失败/破产）或中途离开时，在本机追加一行记录（`user://playtest_log.jsonl`）：开局决断、各议题选择、期末现金、末月利润、内耗、风水修正与办公室评分。字段与终端版 `play.py --playtest` 一致。
+- 设置里可以关闭；「导出试玩记录」在设置和结局复盘界面：网页版直接下载文件，桌面版保存到用户目录并复制到剪贴板。
 
 ## 数据与一致性
 

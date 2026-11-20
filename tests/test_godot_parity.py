@@ -61,6 +61,8 @@ class TestGodotParity(unittest.TestCase):
         tail = "\n".join(res.stdout.strip().splitlines()[-15:])
         self.assertEqual(res.returncode, 0, f"Godot 对照测试失败：\n{tail}\n{res.stderr[-1500:]}")
         self.assertIn("失败 0 项", res.stdout)
+        errors = [l for l in (res.stdout + res.stderr).splitlines() if "SCRIPT ERROR" in l or "Compile Error" in l]
+        self.assertEqual(errors, [], "Godot 脚本有编译/运行错误（可能导致部分测试没有执行）")
         self._python_reads_godot_save()
 
     def _python_reads_godot_save(self):

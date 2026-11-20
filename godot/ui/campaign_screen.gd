@@ -51,8 +51,15 @@ var _exec_row: HBoxContainer
 var _exec_cards := {}
 var _toast_box: VBoxContainer
 var _busy := false
+var _logged := false               ## 本局是否已写入试玩记录（中途离开时补记 quit）
 var office: OfficeLayout             ## 已生效的办公室布局（开局为恶煞布局，与终端版一致）
 var _fs_btn: Button
+
+
+## 中途离开（返回标题 / 读别的档 / 关闭窗口）时把本局记为 quit
+func _exit_tree() -> void:
+	if not _logged and runner and not runner.is_finished():
+		PlaytestLog.record(runner, office, "quit")
 
 
 func _ready() -> void:
@@ -589,6 +596,8 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 func _finish() -> void:
 	_advance_btn.disabled = true
+	_logged = true
+	PlaytestLog.record(runner, office, "bankrupt" if runner.bankrupt else ("win" if runner.check_win() else "lose"))
 	var auto := SaveGame.read("autosave")
 	if not auto.is_empty() and int(auto.get("scenario_id", 0)) == scenario_id:
 		SaveGame.delete("autosave")          # 已结束的战役不再从自动存档"继续"

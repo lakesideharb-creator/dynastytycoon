@@ -54,4 +54,11 @@ func _ready() -> void:
 	back.custom_minimum_size = Vector2(300, 56)
 	back.pressed.connect(func(): back_to_title.emit())
 	row.add_child(back)
+	if Settings.playtest_log:
+		var note := sans_label("", 17, Color(INK_TEXT, 0.7))
+		var exp := option_button("", "导出试玩记录")
+		exp.custom_minimum_size = Vector2(300, 56)
+		exp.pressed.connect(func(): note.text = PlaytestLog.export())
+		row.add_child(exp)
+		body.add_child(note)
 	super._ready()
