@@ -16,7 +16,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "data")
 DST = os.path.join(ROOT, "godot", "data")
 FILES = ["engine_tables.json", "campaign_scenarios.json", "random_events.json",
-         "nine_palaces.json", "eight_gates.json", "eight_gods.json"]
+         "nine_palaces.json", "eight_gates.json", "eight_gods.json", "office_items.json"]
 
 
 def out_of_sync():

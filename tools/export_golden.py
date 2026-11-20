@@ -21,6 +21,7 @@ from src.insight import explain_month, forecast_next_month
 from src.models import Executive
 from src.nine_palaces import NinePalacesSystem
 from src.personnel import PersonnelSystem
+from src.office_fengshui import GridItem, OfficeLayoutManager
 
 INDUSTRIES = ["Cultural_Food", "AI_Tech", "Health_Care", "New_Energy", "Social_Commerce",
               "Traditional_Manufacturing", "Traditional_RealEstate", "Unknown_Industry"]
@@ -103,6 +104,50 @@ def factor_tables() -> dict:
     return {"time": time_rows, "space": space_rows, "personnel": personnel_rows}
 
 
+def office_layouts(n=300, seed=20261120) -> dict:
+    """风水审计：两个预设 + n 个随机布局（覆盖各岗位、朝向、遮挡物与法器）"""
+    import random
+    rng = random.Random(seed)
+
+    def audit(items):
+        mgr = OfficeLayoutManager()
+        for it in items:
+            mgr.add_item(GridItem(**it))
+        a = mgr.audit_layout()
+        return {"items": items, "score": a.score, "modifier": a.fengshui_modifier,
+                "perks": a.auspicious_perks, "shas": a.sha_penalties, "recs": a.recommendations}
+
+    rows = [audit([asdict_item(i) for i in OfficeLayoutManager.from_preset(name).items.values()])
+            for name in ("chaotic", "harmonious")]
+    for _ in range(n):
+        items, used = [], set()
+
+        def spot():
+            while True:
+                xy = (rng.randrange(9), rng.randrange(9))
+                if xy not in used:
+                    used.add(xy)
+                    return xy
+        for role in rng.sample(["President", "Finance", "CTO", "Sales"], rng.randint(1, 4)):
+            x, y = spot()
+            items.append({"id": f"desk_{role}", "name": f"{role}桌", "category": "desk", "x": x, "y": y,
+                          "facing": rng.choice("NSEW"), "role": role})
+        for k in range(rng.randint(0, 3)):
+            x, y = (4, rng.randint(1, 7)) if rng.random() < 0.5 else spot()
+            used.add((x, y))
+            items.append({"id": f"block_{k}", "name": "屏风", "category": rng.choice(["screen", "plant"]),
+                          "x": x, "y": y, "facing": "N", "role": ""})
+        for art in rng.sample(["pixiu", "wenchang", "fishtank"], rng.randint(0, 3)):
+            x, y = spot()
+            items.append({"id": art, "name": art, "category": "artifact", "x": x, "y": y, "facing": "S", "role": ""})
+        rows.append(audit(items))
+    return {"layouts": rows}
+
+
+def asdict_item(it) -> dict:
+    return {"id": it.id, "name": it.name, "category": it.category, "x": it.x, "y": it.y, "facing": it.facing, "role": it.role}
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", default=os.path.join(ROOT, "godot", "tests", "golden"))
@@ -114,6 +159,7 @@ def main(argv=None):
             json.dump(obj, f, ensure_ascii=False, indent=1, sort_keys=True)
 
     dump("factors.json", factor_tables())
+    dump("office.json", office_layouts())
     total = 0
     for sid in (1, 2, 3):
         paths = [p for p, _ in enumerate_paths(sid)]

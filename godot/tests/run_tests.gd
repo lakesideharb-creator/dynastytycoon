@@ -16,6 +16,7 @@ func _initialize() -> void:
 	test_factors()
 	for sid in [1, 2, 3]:
 		test_campaign(sid)
+	test_office()
 	test_event_system()
 	test_effects_edge_cases()
 	test_runner_rules()
@@ -133,6 +134,35 @@ func test_campaign(sid: int) -> void:
 			_ok(e.name == ge["name"] and e.role == ge["role"] and e.stress == int(ge["stress"])
 					and e.loyalty == int(ge["loyalty"]) and is_equal_approx(e.salary, float(ge["salary"])),
 					"%s 高管 %s 状态不一致" % [tag_base, ge["name"]])
+
+
+# ─── 风水审计对照 ────────────────────────────────────────────────────────────
+func test_office() -> void:
+	var g := _load_golden("office.json")
+	for i in g["layouts"].size():
+		var row: Dictionary = g["layouts"][i]
+		var o := OfficeLayout.new()
+		for spec in row["items"]:
+			o.add_item(OfficeItem.from_dict(spec))
+		var a := o.audit()
+		var tag := "风水布局 #%d" % i
+		_ok(a["score"] == int(row["score"]), "%s 评分 Godot %d ≠ Python %d" % [tag, a["score"], row["score"]])
+		_close(a["modifier"], row["modifier"], tag + " 修正值")
+		for k in ["perks", "shas", "recs"]:
+			_ok(Array(a[k]) == Array(row[k]), "%s %s 文字不一致\n  Godot：%s\n  Python：%s" % [tag, k, "｜".join(a[k]), "｜".join(PackedStringArray(row[k]))])
+	# 预设与布局编辑辅助
+	var chaotic := OfficeLayout.from_preset("chaotic")
+	_ok(chaotic.audit()["score"] == 5 and OfficeLayout.from_preset("harmonious").audit()["score"] == 100, "两个预设的评分")
+	_ok(not chaotic.can_place(chaotic.door) and not chaotic.can_place(chaotic.window), "门窗格不能放物件")
+	_ok(not chaotic.can_place(Vector2i(4, 3)) and chaotic.can_place(Vector2i(4, 3), "p_desk"), "被占格只允许原物件自身")
+	var draft := chaotic.copy()
+	draft.add_item(OfficeItem.from_dict({"id": "screen_1", "name": "屏风", "category": "screen", "x": 4, "y": 5}))
+	_ok(chaotic.items.size() == 3 and draft.items.size() == 4, "copy() 得到独立副本")
+	_ok(draft.check_through_draft()["block_y"] == 5 and not draft.check_through_draft()["draft"], "屏风挡住穿堂煞")
+	# 改造对公司修正：审计变化 × 0.3（-0.18 → +0.20，变化 0.38 → +0.114），并夹在上限内
+	var full := OfficeLayout.from_preset("harmonious")
+	_close(OfficeLayout.apply_to_company(0.08, chaotic, full), 0.194, "满配改造后公司修正")
+	_close(OfficeLayout.apply_to_company(0.30, chaotic, full), 0.35, "公司修正封顶 +35%")
 
 
 # ─── Godot 端独有逻辑 ────────────────────────────────────────────────────────

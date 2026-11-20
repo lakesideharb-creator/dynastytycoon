@@ -8,6 +8,7 @@ signal restart_requested
 const DecisionDialog := preload("res://ui/dialogs/decision_dialog.gd")
 const MainChoiceDialog := preload("res://ui/dialogs/main_choice_dialog.gd")
 const EndingDialog := preload("res://ui/dialogs/ending_dialog.gd")
+const OfficeScreen := preload("res://ui/office_screen.gd")
 const ExecCard := preload("res://ui/widgets/exec_card.gd")
 const CashChart := preload("res://ui/widgets/cash_chart.gd")
 const FactorGauge := preload("res://ui/widgets/factor_gauge.gd")
@@ -45,12 +46,15 @@ var _exec_row: HBoxContainer
 var _exec_cards := {}
 var _toast_box: VBoxContainer
 var _busy := false
+var office: OfficeLayout             ## 已生效的办公室布局（开局为恶煞布局，与终端版一致）
+var _fs_btn: Button
 
 
 func _ready() -> void:
 	rng.randomize()
 	runner = CampaignRunner.new(scenario_id)
 	start_cash = runner.company.cash
+	office = OfficeLayout.from_preset("chaotic")
 	_build()
 	_refresh()
 	_show_turn_preview()
@@ -237,8 +241,10 @@ func _build_compass_side() -> Control:
 	mkt.add_child(_mkt_lbl)
 
 	var fs := Button.new()
-	fs.text = "企业总部风水工位（M3 开放）"
-	fs.disabled = true
+	fs.text = "企业总部风水工位"
+	fs.pressed.connect(_open_office)
+	Audio.wire_button(fs)
+	_fs_btn = fs
 	v.add_child(fs)
 
 	_advance_btn = Button.new()
@@ -392,6 +398,9 @@ func _on_main_chosen(key: String) -> void:
 	var msg := runner.apply_main_choice(key)
 	_compass.spin(200.0, 1.0)
 	_toast(msg, Palette.GOLD)
+	var a := office.audit()
+	if a["score"] < 50:
+		_toast("总部风水评分仅 %d/100，有 %d 处恶煞（如穿堂煞）拖累全部门店营收。可点「企业总部风水工位」调理。" % [a["score"], a["shas"].size()], Palette.CINNABAR, 7.0)
 	_refresh()
 	_check_decisions()
 
@@ -469,6 +478,30 @@ func _on_advance() -> void:
 		Audio.sfx("season_change")
 		_toast("节气更替：入%s，%s" % [Insight.SEASON_CN[season_now] + "季", DataTables.engine()["season_names"][str(runner.clock.month)]], Palette.GOLD)
 	_check_decisions()
+
+
+func _open_office() -> void:
+	if _busy or runner.is_finished():
+		return
+	var o := OfficeScreen.new()
+	o.base = office
+	o.cash = runner.company.cash
+	o.company_modifier = runner.company.fengshui_modifier
+	o.set_anchors_preset(Control.PRESET_FULL_RECT)
+	o.confirmed.connect(_on_office_confirmed)
+	o.closed.connect(func(): Audio.play_season(runner.clock.get_season_key(runner.clock.month)))
+	add_child(o)
+
+
+## 改造生效：扣款，风水修正按布局评分的变化量叠加（保留关卡初始值与随机事件的影响），夹在 -25%～+35%
+func _on_office_confirmed(new_layout: OfficeLayout, cost: float) -> void:
+	var c := runner.company
+	var old_mod := c.fengshui_modifier
+	c.cash -= cost
+	c.fengshui_modifier = OfficeLayout.apply_to_company(c.fengshui_modifier, office, new_layout)
+	office = new_layout
+	_toast("风水改造完成：花费 %s，公司风水修正 %+.1f%% → %+.1f%%" % [Money.short(cost), old_mod * 100, c.fengshui_modifier * 100], Palette.GOLD)
+	_refresh()
 
 
 func _show_event(evt: Dictionary) -> void:

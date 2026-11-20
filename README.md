@@ -45,7 +45,8 @@ dynasty_tycoon/
 │   ├── eight_gods.json                 # 八神隐性力量 Buff/Debuff 表
 │   ├── engine_tables.json              # 引擎数值表：大运、月令、神煞、九宫亲和、八门适岗
 │   ├── campaign_scenarios.json         # 十大战役：开局配置、主决策、月度决策点、通关条件
-│   └── random_events.json              # 随机突发事件池
+│   ├── random_events.json              # 随机突发事件池
+│   └── office_items.json               # 风水工位：网格、宫位、开局布局、物件目录与价格
 ├── tools/                              # 数值原型与模拟脚本 (Python)
 │   ├── simulation_engine.py            # f(T,S,P) 早期概念沙盘验证脚本
 │   ├── campaign_paths.py               # 战役决策路径穷举（平衡性检查）

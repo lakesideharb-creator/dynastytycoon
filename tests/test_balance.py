@@ -15,18 +15,31 @@ import unittest
 from src import CampaignManager
 from src.campaign_runner import CampaignRunner, enumerate_paths, EFFECT_TYPES
 from src.personnel import PersonnelSystem
+from src.office_fengshui import OfficeLayoutManager
+from src import tables
 
 SCENARIOS = (1, 2, 3)
 EVENT_SEEDS = range(30)
 
 
-def replay(scenario_id: int, path: str, seed=None) -> CampaignRunner:
+def full_renovation(runner: CampaignRunner):
+    """第1个月就把总部从恶煞布局改到满分布局（与 Godot/终端版的改造规则一致）"""
+    weight = tables.load("office_items.json")["modifier_weight"]
+    delta = (OfficeLayoutManager.create_harmonious_preset().audit_layout().fengshui_modifier
+             - OfficeLayoutManager.create_chaotic_preset().audit_layout().fengshui_modifier)
+    runner.company.cash -= 190000
+    runner.company.fengshui_modifier = round(min(0.35, max(-0.25, runner.company.fengshui_modifier + delta * weight)), 3)
+
+
+def replay(scenario_id: int, path: str, seed=None, renovate=False) -> CampaignRunner:
     if seed is not None:
         random.seed(seed)
     main, *picks = path.split("|")
     picks = dict(p.split("=") for p in picks)
     r = CampaignRunner(scenario_id)
     r.apply_main_choice(main)
+    if renovate:
+        full_renovation(r)
     while not r.is_finished:
         for ev in r.pending_decisions():
             r.apply_decision(ev["id"], picks[ev["id"]])
@@ -64,6 +77,16 @@ class TestCampaignBalance(unittest.TestCase):
             for seed in EVENT_SEEDS:
                 with self.subTest(scenario=sid, seed=seed, path=best):
                     self.assertTrue(replay(sid, best, seed).check_win())
+
+
+    def test_renovation_cannot_rescue_wrong_main_choice(self):
+        """风水满配改造 + 随机事件，错误主决策的最优路径依然不能通关"""
+        for sid in SCENARIOS:
+            wrong = [p for p, _ in self.paths[sid] if not p.startswith(self.intended[sid])]
+            best = max(wrong, key=lambda p: replay(sid, p, renovate=True).company.cash)
+            for seed in EVENT_SEEDS:
+                with self.subTest(scenario=sid, seed=seed, path=best):
+                    self.assertFalse(replay(sid, best, seed, renovate=True).check_win())
 
 
 class TestDecisionData(unittest.TestCase):

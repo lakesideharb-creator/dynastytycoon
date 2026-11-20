@@ -73,6 +73,9 @@ def print_hud(company: Company, clock: CosmicClock, engine: CosmicSimulationEngi
 
 # 风水修正值上下限（与随机事件系统保持一致）
 FENGSHUI_MOD_MIN, FENGSHUI_MOD_MAX = -0.25, 0.35
+# 办公室改造的审计变化只按此比例计入公司修正（data/office_items.json）
+from src import tables as _tables
+OFFICE_WEIGHT = _tables.load("office_items.json")["modifier_weight"]
 
 # 风水工位改造项目：编号 -> (费用, 新增物件工厂, 成功提示)
 FENGSHUI_UPGRADES = {
@@ -140,7 +143,7 @@ def manage_fengshui_studio(company: Company, office_mgr: OfficeLayoutManager):
         after = office_mgr.audit_layout().fengshui_modifier
         # 按布局评分的变化量调整修正值，保留关卡初始值与随机事件带来的影响
         company.fengshui_modifier = round(
-            max(FENGSHUI_MOD_MIN, min(FENGSHUI_MOD_MAX, company.fengshui_modifier + (after - before))), 3
+            max(FENGSHUI_MOD_MIN, min(FENGSHUI_MOD_MAX, company.fengshui_modifier + (after - before) * OFFICE_WEIGHT)), 3
         )
         print(f"{GREEN}{success_msg}{RESET}")
 

@@ -76,7 +76,7 @@ class TestFengShuiStudio(unittest.TestCase):
         delta = probe.audit_layout().fengshui_modifier - before
 
         run_studio(company, mgr, ["1"])
-        self.assertAlmostEqual(company.fengshui_modifier, round(base + delta, 3))
+        self.assertAlmostEqual(company.fengshui_modifier, round(base + delta * play.OFFICE_WEIGHT, 3))
         self.assertGreater(company.fengshui_modifier, base)
 
     def test_insufficient_cash_changes_nothing(self):

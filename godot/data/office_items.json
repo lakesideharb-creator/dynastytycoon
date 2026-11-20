@@ -1,0 +1,216 @@
+{
+  "version": "1.0.0",
+  "_comment": "企业总部风水工位：网格、宫位、开局布局与可购置物件（Python 与 Godot 共用）",
+  "grid": {
+    "width": 9,
+    "height": 9,
+    "door": [
+      4,
+      8
+    ],
+    "window": [
+      4,
+      0
+    ],
+    "beam_rows": [
+      3
+    ],
+    "palace_blocks": [
+      [
+        "qian_6",
+        "kan_1",
+        "gen_8"
+      ],
+      [
+        "dui_7",
+        "zhong_5",
+        "zhen_3"
+      ],
+      [
+        "kun_2",
+        "li_9",
+        "xun_4"
+      ]
+    ]
+  },
+  "palace_names": {
+    "qian_6": "乾位 (西北·尊贵权柄)",
+    "kan_1": "坎位 (正北·深水藏财)",
+    "gen_8": "艮位 (东北·稳健基石)",
+    "dui_7": "兑位 (正西·口碑声量)",
+    "zhong_5": "中宫 (太极·中央调度)",
+    "zhen_3": "震位 (正东·雷鸣开拓)",
+    "kun_2": "坤位 (西南·承载滋养)",
+    "li_9": "离位 (正南·光明审美)",
+    "xun_4": "巽位 (东南·风行流通)"
+  },
+  "blocking_categories": [
+    "screen",
+    "plant",
+    "wall"
+  ],
+  "presets": {
+    "chaotic": [
+      {
+        "id": "p_desk",
+        "name": "总裁办公桌",
+        "category": "desk",
+        "x": 4,
+        "y": 3,
+        "facing": "S",
+        "role": "President"
+      },
+      {
+        "id": "f_desk",
+        "name": "财务总监桌",
+        "category": "desk",
+        "x": 4,
+        "y": 7,
+        "facing": "N",
+        "role": "Finance"
+      },
+      {
+        "id": "cto_desk",
+        "name": "CTO研发桌",
+        "category": "desk",
+        "x": 1,
+        "y": 4,
+        "facing": "E",
+        "role": "CTO"
+      }
+    ],
+    "harmonious": [
+      {
+        "id": "screen_1",
+        "name": "紫檀木玄关屏风",
+        "category": "screen",
+        "x": 4,
+        "y": 5,
+        "facing": "N"
+      },
+      {
+        "id": "plant_1",
+        "name": "高叶招财树",
+        "category": "plant",
+        "x": 4,
+        "y": 4,
+        "facing": "N"
+      },
+      {
+        "id": "p_desk",
+        "name": "总裁乾位实木案",
+        "category": "desk",
+        "x": 1,
+        "y": 0,
+        "facing": "S",
+        "role": "President"
+      },
+      {
+        "id": "pixiu",
+        "name": "汉白玉招财貔貅",
+        "category": "artifact",
+        "x": 2,
+        "y": 0,
+        "facing": "S"
+      },
+      {
+        "id": "f_desk",
+        "name": "财务保密专案桌",
+        "category": "desk",
+        "x": 4,
+        "y": 1,
+        "facing": "S",
+        "role": "Finance"
+      },
+      {
+        "id": "cto_desk",
+        "name": "CTO极客研发台",
+        "category": "desk",
+        "x": 7,
+        "y": 4,
+        "facing": "W",
+        "role": "CTO"
+      },
+      {
+        "id": "wenchang",
+        "name": "九层紫铜文昌塔",
+        "category": "artifact",
+        "x": 8,
+        "y": 4,
+        "facing": "W"
+      },
+      {
+        "id": "fishtank",
+        "name": "流动生态鱼缸",
+        "category": "artifact",
+        "x": 7,
+        "y": 7,
+        "facing": "N"
+      }
+    ]
+  },
+  "desk_move_cost": {
+    "President": 80000,
+    "Finance": 50000,
+    "CTO": 40000,
+    "Sales": 30000
+  },
+  "catalog": [
+    {
+      "id": "screen",
+      "name": "紫檀木玄关屏风",
+      "category": "screen",
+      "cost": 30000,
+      "sprite": "screen",
+      "sfx": "place_furniture",
+      "desc": "阻断直冲气流。放在大门与落地窗之间的中轴线上，可化解穿堂煞。"
+    },
+    {
+      "id": "plant",
+      "name": "高叶招财树",
+      "category": "plant",
+      "cost": 20000,
+      "sprite": "plant",
+      "sfx": "place_furniture",
+      "desc": "与屏风一样能挡住穿堂气流，价格更低。"
+    },
+    {
+      "id": "pixiu",
+      "name": "汉白玉招财貔貅",
+      "category": "artifact",
+      "cost": 30000,
+      "sprite": "pixiu",
+      "unique": true,
+      "sfx": "place_artifact",
+      "desc": "镇于西北乾位或中宫，吸引顶级资方。"
+    },
+    {
+      "id": "wenchang",
+      "name": "九层紫铜文昌塔",
+      "category": "artifact",
+      "cost": 30000,
+      "sprite": "wenchang",
+      "unique": true,
+      "sfx": "place_artifact",
+      "desc": "镇于正东震位或正北坎位，护佑研发。"
+    },
+    {
+      "id": "fishtank",
+      "name": "流动生态鱼缸",
+      "category": "artifact",
+      "cost": 30000,
+      "sprite": "fishtank",
+      "unique": true,
+      "sfx": "place_artifact",
+      "desc": "置于东南巽位或正北坎位，活水聚财。"
+    }
+  ],
+  "desk_sprites": {
+    "President": "desk_president",
+    "Finance": "desk_finance",
+    "CTO": "desk_cto",
+    "Sales": "desk_sales"
+  },
+  "modifier_weight": 0.3,
+  "_modifier_weight_comment": "改造带来的审计修正值变化只有这一比例计入公司营收修正（总部改造影响全部门店，按全额会让关卡一失衡，见 tests/test_balance.py）"
+}

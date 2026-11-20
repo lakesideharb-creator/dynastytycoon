@@ -36,6 +36,39 @@ func _dialog(cls_path: String) -> Node:
 	return null
 
 
+func _office_tour() -> void:
+	var screen = _main._screen
+	screen._open_office()
+	await _wait(1.0)
+	var o: Control = null
+	for c in screen.get_children():
+		if c.get_script() and c.get_script().resource_path == "res://ui/office_screen.gd":
+			o = c
+	await _shot("office_initial")
+	var cat := {}
+	for c in OfficeLayout.data()["catalog"]:
+		cat[c["id"]] = c
+	o._start_place(cat["screen"])
+	o._view.hover = Vector2i(4, 5)
+	await _wait(0.4)
+	await _shot("office_placing")
+	o._on_cell(Vector2i(4, 5))                       # 屏风挡住中轴
+	o._on_cell(Vector2i(4, 3))                       # 选中总裁桌 → 移到西北乾位、背靠北墙
+	o._start_move(o.draft.items["p_desk"])
+	o._on_cell(Vector2i(1, 0))
+	o._on_cell(Vector2i(4, 7))                       # 财务桌 → 正北坎位
+	o._start_move(o.draft.items["f_desk"])
+	o._on_cell(Vector2i(4, 1))
+	o._start_place(cat["pixiu"])
+	o._on_cell(Vector2i(2, 0))
+	o._on_cell(Vector2i(1, 0))                       # 选中总裁桌，展示选中态
+	await _wait(0.8)
+	await _shot("office_renovated")
+	o._on_confirm()
+	await _wait(0.8)
+	await _shot("after_renovation")
+
+
 func _run() -> void:
 	_main = load("res://scenes/main.tscn").instantiate()
 	get_tree().root.add_child(_main)
@@ -50,6 +83,7 @@ func _run() -> void:
 	mc.close()
 	await _wait(1.0)
 	await _shot("campaign_start")
+	await _office_tour()
 
 	var screen = _main._screen
 	var decision_shots := 0

@@ -8,56 +8,16 @@
 from dataclasses import dataclass, field
 from typing import Dict, List, Tuple, Optional
 
-# 九宫区域划分 (9x9 网格，每宫 3x3)
-PALACE_GRID_MAP = {
-    (0, 0): "qian_6", (0, 1): "qian_6", (0, 2): "qian_6",
-    (1, 0): "qian_6", (1, 1): "qian_6", (1, 2): "qian_6",
-    (2, 0): "qian_6", (2, 1): "qian_6", (2, 2): "qian_6",  # 乾六 (西北 0-2, 0-2)
+from . import tables
 
-    (3, 0): "kan_1", (3, 1): "kan_1", (3, 2): "kan_1",
-    (4, 0): "kan_1", (4, 1): "kan_1", (4, 2): "kan_1",
-    (5, 0): "kan_1", (5, 1): "kan_1", (5, 2): "kan_1",    # 坎一 (正北 3-5, 0-2)
+# 网格、宫位与预设布局见 data/office_items.json（与 Godot 共用）
+_OFFICE = tables.load("office_items.json")
+_GRID = _OFFICE["grid"]
+PALACE_NAMES = _OFFICE["palace_names"]
+# 9×9 网格，每宫 3×3：(x, y) → 宫位 id，北在上（y=0）
+PALACE_GRID_MAP = {(x, y): _GRID["palace_blocks"][y // 3][x // 3]
+                   for x in range(_GRID["width"]) for y in range(_GRID["height"])}
 
-    (6, 0): "gen_8", (6, 1): "gen_8", (6, 2): "gen_8",
-    (7, 0): "gen_8", (7, 1): "gen_8", (7, 2): "gen_8",
-    (8, 0): "gen_8", (8, 1): "gen_8", (8, 2): "gen_8",    # 艮八 (东北 6-8, 0-2)
-
-    (0, 3): "dui_7", (0, 4): "dui_7", (0, 5): "dui_7",
-    (1, 3): "dui_7", (1, 4): "dui_7", (1, 5): "dui_7",
-    (2, 3): "dui_7", (2, 4): "dui_7", (2, 5): "dui_7",    # 兑七 (正西 0-2, 3-5)
-
-    (3, 3): "zhong_5", (3, 4): "zhong_5", (3, 5): "zhong_5",
-    (4, 3): "zhong_5", (4, 4): "zhong_5", (4, 5): "zhong_5",
-    (5, 3): "zhong_5", (5, 4): "zhong_5", (5, 5): "zhong_5", # 中五 (中宫 3-5, 3-5)
-
-    (6, 3): "zhen_3", (6, 4): "zhen_3", (6, 5): "zhen_3",
-    (7, 3): "zhen_3", (7, 4): "zhen_3", (7, 5): "zhen_3",
-    (8, 3): "zhen_3", (8, 4): "zhen_3", (8, 5): "zhen_3",    # 震三 (正东 6-8, 3-5)
-
-    (0, 6): "kun_2", (0, 7): "kun_2", (0, 8): "kun_2",
-    (1, 6): "kun_2", (1, 7): "kun_2", (1, 8): "kun_2",
-    (2, 6): "kun_2", (2, 7): "kun_2", (2, 8): "kun_2",    # 坤二 (西南 0-2, 6-8)
-
-    (3, 6): "li_9", (3, 7): "li_9", (3, 8): "li_9",
-    (4, 6): "li_9", (4, 7): "li_9", (4, 8): "li_9",
-    (5, 6): "li_9", (5, 7): "li_9", (5, 8): "li_9",        # 离九 (正南 3-5, 6-8)
-
-    (6, 6): "xun_4", (6, 7): "xun_4", (6, 8): "xun_4",
-    (7, 6): "xun_4", (7, 7): "xun_4", (7, 8): "xun_4",
-    (8, 6): "xun_4", (8, 7): "xun_4", (8, 8): "xun_4"     # 巽四 (东南 6-8, 6-8)
-}
-
-PALACE_NAMES = {
-    "qian_6": "乾位 (西北·尊贵权柄)",
-    "kan_1": "坎位 (正北·深水藏财)",
-    "gen_8": "艮位 (东北·稳健基石)",
-    "dui_7": "兑位 (正西·口碑声量)",
-    "zhong_5": "中宫 (太极·中央调度)",
-    "zhen_3": "震位 (正东·雷鸣开拓)",
-    "kun_2": "坤位 (西南·承载滋养)",
-    "li_9": "离位 (正南·光明审美)",
-    "xun_4": "巽位 (东南·风行流通)"
-}
 
 @dataclass
 class GridItem:
@@ -82,10 +42,10 @@ class OfficeLayoutManager:
         self.width = width
         self.height = height
         self.items: Dict[str, GridItem] = {}
-        # 固定结构设施
-        self.door_pos = (4, 8)       # 正南主大门
-        self.window_pos = (4, 0)     # 正北落地大窗
-        self.beam_rows = [3]         # y=3 为建筑承重横梁
+        # 固定结构设施（data/office_items.json）
+        self.door_pos = tuple(_GRID["door"])        # 正南主大门
+        self.window_pos = tuple(_GRID["window"])    # 正北落地大窗
+        self.beam_rows = list(_GRID["beam_rows"])   # 建筑承重横梁所在行
 
     def get_palace_at(self, x: int, y: int) -> str:
         return PALACE_GRID_MAP.get((x, y), "zhong_5")
@@ -98,7 +58,7 @@ class OfficeLayoutManager:
 
     def is_blocked(self, x: int, y: int) -> bool:
         for it in self.items.values():
-            if it.x == x and it.y == y and it.category in ["screen", "plant", "wall"]:
+            if it.x == x and it.y == y and it.category in _OFFICE["blocking_categories"]:
                 return True
         return False
 
@@ -248,36 +208,18 @@ class OfficeLayoutManager:
         return "\n".join(lines)
 
     @staticmethod
-    def create_chaotic_preset() -> "OfficeLayoutManager":
-        """生成恶煞缠身的初始糟糕布局 (穿堂煞 + 横梁压顶 + 财务在离火)"""
+    def from_preset(name: str) -> "OfficeLayoutManager":
         mgr = OfficeLayoutManager()
-        # 总裁桌坐在正中穿堂线上且背后无靠
-        mgr.add_item(GridItem("p_desk", "总裁办公桌", "desk", 4, 3, facing="S", role="President")) # 正好在横梁上且无屏风
-        # 财务在正南离火位
-        mgr.add_item(GridItem("f_desk", "财务总监桌", "desk", 4, 7, facing="N", role="Finance"))
-        # 研发桌在正西兑位
-        mgr.add_item(GridItem("cto_desk", "CTO研发桌", "desk", 1, 4, facing="E", role="CTO"))
+        for spec in _OFFICE["presets"][name]:
+            mgr.add_item(GridItem(**spec))
         return mgr
 
     @staticmethod
+    def create_chaotic_preset() -> "OfficeLayoutManager":
+        """恶煞缠身的初始布局（穿堂煞 + 横梁压顶 + 财务在离火）"""
+        return OfficeLayoutManager.from_preset("chaotic")
+
+    @staticmethod
     def create_harmonious_preset() -> "OfficeLayoutManager":
-        """生成八卦归位、化煞聚财的卓越风水布局"""
-        mgr = OfficeLayoutManager()
-        # 1. 屏风阻断穿堂煞
-        mgr.add_item(GridItem("screen_1", "紫檀木玄关屏风", "screen", 4, 5, facing="N"))
-        mgr.add_item(GridItem("plant_1", "高叶招财树", "plant", 4, 4, facing="N"))
-
-        # 2. 总裁办调入西北乾位，紧依实墙，前方无梁
-        mgr.add_item(GridItem("p_desk", "总裁乾位实木案", "desk", 1, 0, facing="S", role="President"))
-        mgr.add_item(GridItem("pixiu", "汉白玉招财貔貅", "artifact", 2, 0, facing="S"))
-
-        # 3. 财务室迁入正北坎一深水藏金位
-        mgr.add_item(GridItem("f_desk", "财务保密专案桌", "desk", 4, 1, facing="S", role="Finance"))
-
-        # 4. CTO研发迁入正东震三雷鸣位，配置文昌塔
-        mgr.add_item(GridItem("cto_desk", "CTO极客研发台", "desk", 7, 4, facing="W", role="CTO"))
-        mgr.add_item(GridItem("wenchang", "九层紫铜文昌塔", "artifact", 8, 4, facing="W"))
-
-        # 5. 东南巽位摆放鱼缸
-        mgr.add_item(GridItem("fishtank", "流动生态鱼缸", "artifact", 7, 7, facing="N"))
-        return mgr
+        """八卦归位、化煞聚财的卓越风水布局"""
+        return OfficeLayoutManager.from_preset("harmonious")

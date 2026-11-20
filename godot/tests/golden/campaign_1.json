@@ -11195,7 +11195,7 @@
    ],
    "path": "B|s1_summer=A|s1_rival=A|s1_winter=A",
    "reputation": 83,
-   "win": true
+   "win": false
   },
   {
    "active_stores": 60,
@@ -11991,7 +11991,7 @@
    ],
    "path": "B|s1_summer=A|s1_rival=A|s1_winter=C",
    "reputation": 78,
-   "win": true
+   "win": false
   },
   {
    "active_stores": 60,
@@ -13581,7 +13581,7 @@
    ],
    "path": "B|s1_summer=A|s1_rival=C|s1_winter=A",
    "reputation": 86,
-   "win": true
+   "win": false
   },
   {
    "active_stores": 60,
@@ -14377,7 +14377,7 @@
    ],
    "path": "B|s1_summer=A|s1_rival=C|s1_winter=C",
    "reputation": 81,
-   "win": true
+   "win": false
   },
   {
    "active_stores": 60,
@@ -15194,7 +15194,7 @@
    ],
    "path": "B|s1_summer=B|s1_rival=A|s1_winter=B",
    "reputation": 75,
-   "win": true
+   "win": false
   },
   {
    "active_stores": 60,
@@ -16003,7 +16003,7 @@
    ],
    "path": "B|s1_summer=B|s1_rival=B|s1_winter=A",
    "reputation": 83,
-   "win": true
+   "win": false
   },
   {
    "active_stores": 60,
@@ -16817,7 +16817,7 @@
    ],
    "path": "B|s1_summer=B|s1_rival=B|s1_winter=C",
    "reputation": 78,
-   "win": true
+   "win": false
   },
   {
    "active_stores": 60,
@@ -17634,7 +17634,7 @@
    ],
    "path": "B|s1_summer=B|s1_rival=C|s1_winter=B",
    "reputation": 78,
-   "win": true
+   "win": false
   },
   {
    "active_stores": 60,
@@ -18832,7 +18832,7 @@
    ],
    "path": "B|s1_summer=C|s1_rival=A|s1_winter=B",
    "reputation": 79,
-   "win": true
+   "win": false
   },
   {
    "active_stores": 60,
@@ -19619,7 +19619,7 @@
    ],
    "path": "B|s1_summer=C|s1_rival=B|s1_winter=A",
    "reputation": 87,
-   "win": true
+   "win": false
   },
   {
    "active_stores": 60,
@@ -20411,7 +20411,7 @@
    ],
    "path": "B|s1_summer=C|s1_rival=B|s1_winter=C",
    "reputation": 82,
-   "win": true
+   "win": false
   },
   {
    "active_stores": 60,

@@ -46,7 +46,7 @@
         }
       },
       "win_condition": {
-        "min_cash": 128000000.0
+        "min_cash": 135000000.0
       },
       "decision_points": [
         {
@@ -261,7 +261,7 @@
           ]
         }
       ],
-      "win_condition_text": "年末账面现金 ≥ 1.28亿（扩张投入与经营决策的综合回报）",
+      "win_condition_text": "年末账面现金 ≥ 1.35亿（扩张投入、经营决策与总部风水的综合回报）",
       "intended_main_choice": "B",
       "setup": {
         "clock": {

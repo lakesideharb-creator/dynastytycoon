@@ -19,15 +19,17 @@ godot/
 │   ├── campaign_manager.gd   # 按数据搭建关卡
 │   ├── campaign_runner.gd    # 战役状态机
 │   ├── insight.gd            # 月度盈亏解读与下月预告
-│   └── event_system.gd       # 随机事件
+│   ├── event_system.gd       # 随机事件
+│   └── office_item.gd · office_layout.gd   # 风水工位网格与审计（与 src/office_fengshui.py 对照）
 ├── ui/            # 界面（全部用代码搭建，入口场景 scenes/main.tscn）
 │   ├── main.gd               # 标题 ↔ 战役画面切换
 │   ├── title_screen.gd       # 标题画面
 │   ├── campaign_screen.gd    # 战役主界面：终端（结账单/现金走势/盈亏解读）+ 罗盘（三才因子/下月预告/操作）+ 高管卡
 │   ├── dialogs/              # 开局决断、董事会议题、终局复盘（宣纸卡片风格）
-│   ├── widgets/              # 高管卡（按状态切换表情）、现金走势图、三才因子条
+│   ├── widgets/              # 高管卡（按状态切换表情）、现金走势图、三才因子条、等轴测办公室视图（含穿堂气流特效）
 │   ├── audio.gd              # 自动加载 Audio：四季音乐交叉淡入淡出、音效
 │   ├── compass_3d.gd         # 3D 罗盘（移植自 Ninefold Gate，贴图在 assets/textures/）
+│   ├── office_screen.gd      # 企业总部风水工位：草稿布局上购置/移动/移除，确认后扣款生效
 │   └── theme_builder.gd · palette.gd · money.gd · role_names.gd
 ├── assets/          # 美术与音频（规格见 docs/09_Art_Audio_Prompts.md）
 ├── data/            # 由 tools/sync_godot_data.py 从仓库根目录 data/ 同步，不要直接改
@@ -75,4 +77,10 @@ godot --headless --path godot --import
 godot --headless --path godot -s res://tests/run_tests.gd
 ```
 
-对照内容：天时/地利/人和因子表、三个战役全部 165 条决策路径的逐月结账单、现金、月度解读文字与下月预告（逐字一致）、终局胜负与高管状态。
+对照内容：天时/地利/人和因子表、风水审计（两个预设 + 300 个随机布局的评分与全部文字）、三个战役全部 165 条决策路径的逐月结账单、现金、月度解读文字与下月预告（逐字一致）、终局胜负与高管状态。
+
+## 风水工位与平衡
+
+- 网格、宫位、开局布局、物件目录与价格在 `data/office_items.json`。
+- 改造只把**审计修正值变化的 30%**（`modifier_weight`）计入公司风水修正：总部改造影响全部门店营收，按全额计入时关卡一里错误的开局主决策也能靠一次改造通关，月度决策也失去意义。
+- 关卡一（空间算法）的目标相应提高到年末现金 1.35 亿：不改造时约四分之一的正确路径能通关，完成改造后正确主决策都能通关，错误主决策即使满配改造加随机事件好运也不能通关（`tests/test_balance.py` 锁定）。
