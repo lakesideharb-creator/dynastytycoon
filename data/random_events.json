@@ -1,0 +1,84 @@
+{
+  "version": "1.0.0",
+  "trigger_chance": 0.4,
+  "events": [
+    {
+      "id": "viral_marketing",
+      "industries": [
+        "Cultural_Food"
+      ],
+      "name": "【景门得使】小红书国风穿搭打卡大爆",
+      "type": "opportunity",
+      "desc": "头部国风博主主动打卡门店，新品墨酥礼盒引爆社交网络！",
+      "effect_cash": 150000.0,
+      "effect_reputation": 8,
+      "effect_fengshui": 0.02
+    },
+    {
+      "id": "price_war",
+      "name": "【白虎猖狂】外资巨头连锁发起5折价格绞杀",
+      "type": "crisis",
+      "desc": "竞争对手在对角街区开启'买一送一'大促销，客流量受到冲击！",
+      "effect_cash": -100000.0,
+      "effect_reputation": -5,
+      "effect_fengshui": -0.03
+    },
+    {
+      "id": "tengshe_audit",
+      "industries": [
+        "Cultural_Food",
+        "Health_Care"
+      ],
+      "name": "【螣蛇暗流】供应链面粉供应商被曝隐瞒质检漏洞",
+      "type": "crisis",
+      "desc": "上游包装材料供应商违约拖延，公司不得不启动紧急备用渠道。",
+      "effect_cash": -80000.0,
+      "effect_reputation": -3,
+      "effect_fengshui": 0.0
+    },
+    {
+      "id": "angel_investor",
+      "name": "【值符照命】知名消费产业基金参访总部",
+      "type": "opportunity",
+      "desc": "顶级产业基金合伙人到访总部，对公司的商业模型高度赞赏，商誉大幅提升！",
+      "effect_cash": 300000.0,
+      "effect_reputation": 10,
+      "effect_fengshui": 0.04
+    },
+    {
+      "id": "tea_break_harmony",
+      "industries": null,
+      "name": "【休门润泽】全员组织静心茶歇与传统文化工坊",
+      "type": "peace",
+      "desc": "休门HR组织团队开展茶道修养，高管内耗与员工疲劳显著缓解。",
+      "effect_cash": -30000.0,
+      "effect_reputation": 5,
+      "effect_fengshui": 0.03
+    },
+    {
+      "id": "tech_viral_demo",
+      "industries": [
+        "AI_Tech"
+      ],
+      "name": "【景门得使】产品演示视频在技术社区刷屏",
+      "type": "opportunity",
+      "desc": "一段产品实机演示在开发者社区登上热榜，试用申请与渠道询价激增！",
+      "effect_cash": 150000.0,
+      "effect_reputation": 8,
+      "effect_fengshui": 0.02
+    },
+    {
+      "id": "tech_supply_risk",
+      "industries": [
+        "AI_Tech",
+        "New_Energy"
+      ],
+      "name": "【螣蛇暗流】核心算力/元器件供应商临时涨价断供",
+      "type": "crisis",
+      "desc": "上游供应商以产能紧张为由单方面涨价，公司不得不高价紧急采购备用资源。",
+      "effect_cash": -80000.0,
+      "effect_reputation": -3,
+      "effect_fengshui": 0.0
+    }
+  ]
+}

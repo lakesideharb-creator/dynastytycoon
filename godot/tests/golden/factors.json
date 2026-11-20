@@ -1,0 +1,8669 @@
+{
+ "personnel": [
+  {
+   "avg": 1.39,
+   "clash_log": [],
+   "f_person": 1.39,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "kai_men",
+     "gate_name": "kai_men",
+     "id": "x0",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CEO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "kai_men",
+     "gate_name": "kai_men",
+     "id": "x0",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CFO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 0.94,
+   "clash_log": [],
+   "f_person": 0.94,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "kai_men",
+     "gate_name": "kai_men",
+     "id": "x0",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CTO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "kai_men",
+     "gate_name": "kai_men",
+     "id": "x0",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CMO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "kai_men",
+     "gate_name": "kai_men",
+     "id": "x0",
+     "loyalty": 70,
+     "name": "x",
+     "role": "COO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.34,
+   "clash_log": [],
+   "f_person": 1.34,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "kai_men",
+     "gate_name": "kai_men",
+     "id": "x0",
+     "loyalty": 70,
+     "name": "x",
+     "role": "VP_Expansion",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "kai_men",
+     "gate_name": "kai_men",
+     "id": "x0",
+     "loyalty": 70,
+     "name": "x",
+     "role": "法务总监",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [
+    "【休门润木】：休门HR/COO调和人际矛盾，内耗降低 15%"
+   ],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "xiu_men",
+     "gate_name": "xiu_men",
+     "id": "x1",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CEO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.19,
+   "clash_log": [
+    "【休门润木】：休门HR/COO调和人际矛盾，内耗降低 15%"
+   ],
+   "f_person": 1.19,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "xiu_men",
+     "gate_name": "xiu_men",
+     "id": "x1",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CFO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [
+    "【休门润木】：休门HR/COO调和人际矛盾，内耗降低 15%"
+   ],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "xiu_men",
+     "gate_name": "xiu_men",
+     "id": "x1",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CTO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [
+    "【休门润木】：休门HR/COO调和人际矛盾，内耗降低 15%"
+   ],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "xiu_men",
+     "gate_name": "xiu_men",
+     "id": "x1",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CMO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [
+    "【休门润木】：休门HR/COO调和人际矛盾，内耗降低 15%"
+   ],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "xiu_men",
+     "gate_name": "xiu_men",
+     "id": "x1",
+     "loyalty": 70,
+     "name": "x",
+     "role": "COO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 0.79,
+   "clash_log": [
+    "【休门润木】：休门HR/COO调和人际矛盾，内耗降低 15%"
+   ],
+   "f_person": 0.79,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "xiu_men",
+     "gate_name": "xiu_men",
+     "id": "x1",
+     "loyalty": 70,
+     "name": "x",
+     "role": "VP_Expansion",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [
+    "【休门润木】：休门HR/COO调和人际矛盾，内耗降低 15%"
+   ],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "xiu_men",
+     "gate_name": "xiu_men",
+     "id": "x1",
+     "loyalty": 70,
+     "name": "x",
+     "role": "法务总监",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "sheng_men",
+     "gate_name": "sheng_men",
+     "id": "x2",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CEO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.44,
+   "clash_log": [],
+   "f_person": 1.44,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "sheng_men",
+     "gate_name": "sheng_men",
+     "id": "x2",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CFO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "sheng_men",
+     "gate_name": "sheng_men",
+     "id": "x2",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CTO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "sheng_men",
+     "gate_name": "sheng_men",
+     "id": "x2",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CMO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "sheng_men",
+     "gate_name": "sheng_men",
+     "id": "x2",
+     "loyalty": 70,
+     "name": "x",
+     "role": "COO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "sheng_men",
+     "gate_name": "sheng_men",
+     "id": "x2",
+     "loyalty": 70,
+     "name": "x",
+     "role": "VP_Expansion",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "sheng_men",
+     "gate_name": "sheng_men",
+     "id": "x2",
+     "loyalty": 70,
+     "name": "x",
+     "role": "法务总监",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 0.99,
+   "clash_log": [
+    "【伤门司帅】：伤门暴烈，适合为先锋而非帅印，担任CEO致使团队压力剧增，内耗+10%"
+   ],
+   "f_person": 0.891,
+   "friction": 0.1,
+   "team": [
+    {
+     "gate_id": "shang_men",
+     "gate_name": "shang_men",
+     "id": "x3",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CEO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 0.74,
+   "clash_log": [],
+   "f_person": 0.74,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "shang_men",
+     "gate_name": "shang_men",
+     "id": "x3",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CFO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "shang_men",
+     "gate_name": "shang_men",
+     "id": "x3",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CTO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "shang_men",
+     "gate_name": "shang_men",
+     "id": "x3",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CMO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "shang_men",
+     "gate_name": "shang_men",
+     "id": "x3",
+     "loyalty": 70,
+     "name": "x",
+     "role": "COO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.39,
+   "clash_log": [],
+   "f_person": 1.39,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "shang_men",
+     "gate_name": "shang_men",
+     "id": "x3",
+     "loyalty": 70,
+     "name": "x",
+     "role": "VP_Expansion",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "shang_men",
+     "gate_name": "shang_men",
+     "id": "x3",
+     "loyalty": 70,
+     "name": "x",
+     "role": "法务总监",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 0.89,
+   "clash_log": [],
+   "f_person": 0.89,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "du_men",
+     "gate_name": "du_men",
+     "id": "x4",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CEO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.09,
+   "clash_log": [],
+   "f_person": 1.09,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "du_men",
+     "gate_name": "du_men",
+     "id": "x4",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CFO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.49,
+   "clash_log": [],
+   "f_person": 1.49,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "du_men",
+     "gate_name": "du_men",
+     "id": "x4",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CTO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 0.69,
+   "clash_log": [],
+   "f_person": 0.69,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "du_men",
+     "gate_name": "du_men",
+     "id": "x4",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CMO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "du_men",
+     "gate_name": "du_men",
+     "id": "x4",
+     "loyalty": 70,
+     "name": "x",
+     "role": "COO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "du_men",
+     "gate_name": "du_men",
+     "id": "x4",
+     "loyalty": 70,
+     "name": "x",
+     "role": "VP_Expansion",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "du_men",
+     "gate_name": "du_men",
+     "id": "x4",
+     "loyalty": 70,
+     "name": "x",
+     "role": "法务总监",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.29,
+   "clash_log": [],
+   "f_person": 1.29,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "jing_men",
+     "gate_name": "jing_men",
+     "id": "x5",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CEO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "jing_men",
+     "gate_name": "jing_men",
+     "id": "x5",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CFO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 0.84,
+   "clash_log": [],
+   "f_person": 0.84,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "jing_men",
+     "gate_name": "jing_men",
+     "id": "x5",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CTO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.44,
+   "clash_log": [],
+   "f_person": 1.44,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "jing_men",
+     "gate_name": "jing_men",
+     "id": "x5",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CMO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "jing_men",
+     "gate_name": "jing_men",
+     "id": "x5",
+     "loyalty": 70,
+     "name": "x",
+     "role": "COO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "jing_men",
+     "gate_name": "jing_men",
+     "id": "x5",
+     "loyalty": 70,
+     "name": "x",
+     "role": "VP_Expansion",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "jing_men",
+     "gate_name": "jing_men",
+     "id": "x5",
+     "loyalty": 70,
+     "name": "x",
+     "role": "法务总监",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "si_men",
+     "gate_name": "si_men",
+     "id": "x6",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CEO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "si_men",
+     "gate_name": "si_men",
+     "id": "x6",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CFO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "si_men",
+     "gate_name": "si_men",
+     "id": "x6",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CTO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "si_men",
+     "gate_name": "si_men",
+     "id": "x6",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CMO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "si_men",
+     "gate_name": "si_men",
+     "id": "x6",
+     "loyalty": 70,
+     "name": "x",
+     "role": "COO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "si_men",
+     "gate_name": "si_men",
+     "id": "x6",
+     "loyalty": 70,
+     "name": "x",
+     "role": "VP_Expansion",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "si_men",
+     "gate_name": "si_men",
+     "id": "x6",
+     "loyalty": 70,
+     "name": "x",
+     "role": "法务总监",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "jing_alarm_men",
+     "gate_name": "jing_alarm_men",
+     "id": "x7",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CEO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "jing_alarm_men",
+     "gate_name": "jing_alarm_men",
+     "id": "x7",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CFO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "jing_alarm_men",
+     "gate_name": "jing_alarm_men",
+     "id": "x7",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CTO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.29,
+   "clash_log": [],
+   "f_person": 1.29,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "jing_alarm_men",
+     "gate_name": "jing_alarm_men",
+     "id": "x7",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CMO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "jing_alarm_men",
+     "gate_name": "jing_alarm_men",
+     "id": "x7",
+     "loyalty": 70,
+     "name": "x",
+     "role": "COO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.04,
+   "clash_log": [],
+   "f_person": 1.04,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "jing_alarm_men",
+     "gate_name": "jing_alarm_men",
+     "id": "x7",
+     "loyalty": 70,
+     "name": "x",
+     "role": "VP_Expansion",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.44,
+   "clash_log": [],
+   "f_person": 1.44,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "jing_alarm_men",
+     "gate_name": "jing_alarm_men",
+     "id": "x7",
+     "loyalty": 70,
+     "name": "x",
+     "role": "法务总监",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 40
+    }
+   ]
+  },
+  {
+   "avg": 1.316,
+   "clash_log": [
+    "【伤杜相争】：前线销售频繁催促功能上线，技术研发坚守质量拒绝配合，内耗+15%",
+    "【生伤相争】：前线要求大量垫资放账，财务死守风控拒绝审批，内耗+15%",
+    "【伤门司帅】：伤门暴烈，适合为先锋而非帅印，担任CEO致使团队压力剧增，内耗+10%"
+   ],
+   "f_person": 0.79,
+   "friction": 0.4,
+   "team": [
+    {
+     "gate_id": "shang_men",
+     "gate_name": "shang_men",
+     "id": "c0",
+     "loyalty": 75,
+     "name": "x",
+     "role": "CEO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 65
+    },
+    {
+     "gate_id": "du_men",
+     "gate_name": "du_men",
+     "id": "c1",
+     "loyalty": 60,
+     "name": "x",
+     "role": "CTO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 70
+    },
+    {
+     "gate_id": "jing_men",
+     "gate_name": "jing_men",
+     "id": "c2",
+     "loyalty": 65,
+     "name": "x",
+     "role": "CMO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 55
+    },
+    {
+     "gate_id": "sheng_men",
+     "gate_name": "sheng_men",
+     "id": "c3",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CFO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 60
+    }
+   ]
+  },
+  {
+   "avg": 1.358,
+   "clash_log": [
+    "【伤杜相争】：前线销售频繁催促功能上线，技术研发坚守质量拒绝配合，内耗+15%",
+    "【生伤相争】：前线要求大量垫资放账，财务死守风控拒绝审批，内耗+15%",
+    "【景生相融】：品牌愿景(景门)与务实算账(生门)形成互补合力，内耗降低10%",
+    "【休门润木】：休门HR/COO调和人际矛盾，内耗降低 15%"
+   ],
+   "f_person": 1.29,
+   "friction": 0.05,
+   "team": [
+    {
+     "gate_id": "jing_men",
+     "gate_name": "jing_men",
+     "id": "c0",
+     "loyalty": 95,
+     "name": "x",
+     "role": "CEO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 20
+    },
+    {
+     "gate_id": "du_men",
+     "gate_name": "du_men",
+     "id": "c1",
+     "loyalty": 90,
+     "name": "x",
+     "role": "CTO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 25
+    },
+    {
+     "gate_id": "sheng_men",
+     "gate_name": "sheng_men",
+     "id": "c2",
+     "loyalty": 70,
+     "name": "x",
+     "role": "CFO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 60
+    },
+    {
+     "gate_id": "shang_men",
+     "gate_name": "shang_men",
+     "id": "c3",
+     "loyalty": 75,
+     "name": "x",
+     "role": "VP_Expansion",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 30
+    },
+    {
+     "gate_id": "xiu_men",
+     "gate_name": "xiu_men",
+     "id": "c4",
+     "loyalty": 90,
+     "name": "x",
+     "role": "COO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 15
+    }
+   ]
+  },
+  {
+   "avg": 0.978,
+   "clash_log": [
+    "【两伤相克】：团队内存在多名狼性伤门高管，各自为战争抢资源，内耗+25%",
+    "【伤门司帅】：伤门暴烈，适合为先锋而非帅印，担任CEO致使团队压力剧增，内耗+10%"
+   ],
+   "f_person": 0.635,
+   "friction": 0.35,
+   "team": [
+    {
+     "gate_id": "shang_men",
+     "gate_name": "shang_men",
+     "id": "c0",
+     "loyalty": 50,
+     "name": "x",
+     "role": "CEO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 95
+    },
+    {
+     "gate_id": "shang_men",
+     "gate_name": "shang_men",
+     "id": "c1",
+     "loyalty": 40,
+     "name": "x",
+     "role": "VP_Expansion",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 90
+    }
+   ]
+  },
+  {
+   "avg": 1.06,
+   "clash_log": [
+    "【休门润木】：休门HR/COO调和人际矛盾，内耗降低 25%"
+   ],
+   "f_person": 1.06,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "xiu_men",
+     "gate_name": "xiu_men",
+     "id": "c0",
+     "loyalty": 80,
+     "name": "x",
+     "role": "COO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 20
+    },
+    {
+     "gate_id": "xiu_men",
+     "gate_name": "xiu_men",
+     "id": "c1",
+     "loyalty": 80,
+     "name": "x",
+     "role": "HR",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 20
+    }
+   ]
+  },
+  {
+   "avg": 1.47,
+   "clash_log": [],
+   "f_person": 1.47,
+   "friction": 0.0,
+   "team": [
+    {
+     "gate_id": "kai_men",
+     "gate_name": "kai_men",
+     "id": "c0",
+     "loyalty": 85,
+     "name": "x",
+     "role": "CEO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 50
+    },
+    {
+     "gate_id": "du_men",
+     "gate_name": "du_men",
+     "id": "c1",
+     "loyalty": 90,
+     "name": "x",
+     "role": "CTO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 45
+    },
+    {
+     "gate_id": "sheng_men",
+     "gate_name": "sheng_men",
+     "id": "c2",
+     "loyalty": 80,
+     "name": "x",
+     "role": "CFO",
+     "salary": 1,
+     "special_trait": "",
+     "stress": 60
+    }
+   ]
+  },
+  {
+   "avg": 0.0,
+   "clash_log": [],
+   "f_person": 0.7,
+   "friction": 0.0,
+   "team": []
+  }
+ ],
+ "space": [
+  {
+   "f_space": 0.533,
+   "fengshui": -0.18,
+   "industry": "Cultural_Food",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 0.65,
+   "fengshui": 0.0,
+   "industry": "Cultural_Food",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 0.683,
+   "fengshui": 0.05,
+   "industry": "Cultural_Food",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 0.878,
+   "fengshui": 0.35,
+   "industry": "Cultural_Food",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 0.861,
+   "fengshui": -0.18,
+   "industry": "Cultural_Food",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.0,
+   "industry": "Cultural_Food",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.103,
+   "fengshui": 0.05,
+   "industry": "Cultural_Food",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.418,
+   "fengshui": 0.35,
+   "industry": "Cultural_Food",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.025,
+   "fengshui": -0.18,
+   "industry": "Cultural_Food",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.25,
+   "fengshui": 0.0,
+   "industry": "Cultural_Food",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.312,
+   "fengshui": 0.05,
+   "industry": "Cultural_Food",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.688,
+   "fengshui": 0.35,
+   "industry": "Cultural_Food",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Cultural_Food",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Cultural_Food",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Cultural_Food",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Cultural_Food",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 0.902,
+   "fengshui": -0.18,
+   "industry": "Cultural_Food",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.1,
+   "fengshui": 0.0,
+   "industry": "Cultural_Food",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.155,
+   "fengshui": 0.05,
+   "industry": "Cultural_Food",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.485,
+   "fengshui": 0.35,
+   "industry": "Cultural_Food",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 0.943,
+   "fengshui": -0.18,
+   "industry": "Cultural_Food",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.15,
+   "fengshui": 0.0,
+   "industry": "Cultural_Food",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.208,
+   "fengshui": 0.05,
+   "industry": "Cultural_Food",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.552,
+   "fengshui": 0.35,
+   "industry": "Cultural_Food",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 0.984,
+   "fengshui": -0.18,
+   "industry": "Cultural_Food",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.2,
+   "fengshui": 0.0,
+   "industry": "Cultural_Food",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.26,
+   "fengshui": 0.05,
+   "industry": "Cultural_Food",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.62,
+   "fengshui": 0.35,
+   "industry": "Cultural_Food",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 0.738,
+   "fengshui": -0.18,
+   "industry": "Cultural_Food",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 0.9,
+   "fengshui": 0.0,
+   "industry": "Cultural_Food",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 0.945,
+   "fengshui": 0.05,
+   "industry": "Cultural_Food",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.215,
+   "fengshui": 0.35,
+   "industry": "Cultural_Food",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.189,
+   "fengshui": -0.18,
+   "industry": "Cultural_Food",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.45,
+   "fengshui": 0.0,
+   "industry": "Cultural_Food",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.522,
+   "fengshui": 0.05,
+   "industry": "Cultural_Food",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.958,
+   "fengshui": 0.35,
+   "industry": "Cultural_Food",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.025,
+   "fengshui": -0.18,
+   "industry": "AI_Tech",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.25,
+   "fengshui": 0.0,
+   "industry": "AI_Tech",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.312,
+   "fengshui": 0.05,
+   "industry": "AI_Tech",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.688,
+   "fengshui": 0.35,
+   "industry": "AI_Tech",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "AI_Tech",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "AI_Tech",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "AI_Tech",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "AI_Tech",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.23,
+   "fengshui": -0.18,
+   "industry": "AI_Tech",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.5,
+   "fengshui": 0.0,
+   "industry": "AI_Tech",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.575,
+   "fengshui": 0.05,
+   "industry": "AI_Tech",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 2.025,
+   "fengshui": 0.35,
+   "industry": "AI_Tech",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 0.861,
+   "fengshui": -0.18,
+   "industry": "AI_Tech",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.0,
+   "industry": "AI_Tech",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.103,
+   "fengshui": 0.05,
+   "industry": "AI_Tech",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.418,
+   "fengshui": 0.35,
+   "industry": "AI_Tech",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 0.943,
+   "fengshui": -0.18,
+   "industry": "AI_Tech",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.15,
+   "fengshui": 0.0,
+   "industry": "AI_Tech",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.208,
+   "fengshui": 0.05,
+   "industry": "AI_Tech",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.552,
+   "fengshui": 0.35,
+   "industry": "AI_Tech",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.107,
+   "fengshui": -0.18,
+   "industry": "AI_Tech",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.0,
+   "industry": "AI_Tech",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.418,
+   "fengshui": 0.05,
+   "industry": "AI_Tech",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.823,
+   "fengshui": 0.35,
+   "industry": "AI_Tech",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 0.902,
+   "fengshui": -0.18,
+   "industry": "AI_Tech",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.1,
+   "fengshui": 0.0,
+   "industry": "AI_Tech",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.155,
+   "fengshui": 0.05,
+   "industry": "AI_Tech",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.485,
+   "fengshui": 0.35,
+   "industry": "AI_Tech",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 0.574,
+   "fengshui": -0.18,
+   "industry": "AI_Tech",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 0.7,
+   "fengshui": 0.0,
+   "industry": "AI_Tech",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 0.735,
+   "fengshui": 0.05,
+   "industry": "AI_Tech",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 0.945,
+   "fengshui": 0.35,
+   "industry": "AI_Tech",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.148,
+   "fengshui": -0.18,
+   "industry": "AI_Tech",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.4,
+   "fengshui": 0.0,
+   "industry": "AI_Tech",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.47,
+   "fengshui": 0.05,
+   "industry": "AI_Tech",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.89,
+   "fengshui": 0.35,
+   "industry": "AI_Tech",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Health_Care",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Health_Care",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Health_Care",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Health_Care",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.107,
+   "fengshui": -0.18,
+   "industry": "Health_Care",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.0,
+   "industry": "Health_Care",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.418,
+   "fengshui": 0.05,
+   "industry": "Health_Care",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.823,
+   "fengshui": 0.35,
+   "industry": "Health_Care",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 0.943,
+   "fengshui": -0.18,
+   "industry": "Health_Care",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.15,
+   "fengshui": 0.0,
+   "industry": "Health_Care",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.208,
+   "fengshui": 0.05,
+   "industry": "Health_Care",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.552,
+   "fengshui": 0.35,
+   "industry": "Health_Care",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 0.902,
+   "fengshui": -0.18,
+   "industry": "Health_Care",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.1,
+   "fengshui": 0.0,
+   "industry": "Health_Care",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.155,
+   "fengshui": 0.05,
+   "industry": "Health_Care",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.485,
+   "fengshui": 0.35,
+   "industry": "Health_Care",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 0.861,
+   "fengshui": -0.18,
+   "industry": "Health_Care",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.0,
+   "industry": "Health_Care",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.103,
+   "fengshui": 0.05,
+   "industry": "Health_Care",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.418,
+   "fengshui": 0.35,
+   "industry": "Health_Care",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 0.902,
+   "fengshui": -0.18,
+   "industry": "Health_Care",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.1,
+   "fengshui": 0.0,
+   "industry": "Health_Care",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.155,
+   "fengshui": 0.05,
+   "industry": "Health_Care",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.485,
+   "fengshui": 0.35,
+   "industry": "Health_Care",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 0.656,
+   "fengshui": -0.18,
+   "industry": "Health_Care",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 0.8,
+   "fengshui": 0.0,
+   "industry": "Health_Care",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 0.84,
+   "fengshui": 0.05,
+   "industry": "Health_Care",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.08,
+   "fengshui": 0.35,
+   "industry": "Health_Care",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.025,
+   "fengshui": -0.18,
+   "industry": "Health_Care",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.25,
+   "fengshui": 0.0,
+   "industry": "Health_Care",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.312,
+   "fengshui": 0.05,
+   "industry": "Health_Care",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.688,
+   "fengshui": 0.35,
+   "industry": "Health_Care",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 0.861,
+   "fengshui": -0.18,
+   "industry": "Health_Care",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.0,
+   "industry": "Health_Care",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.103,
+   "fengshui": 0.05,
+   "industry": "Health_Care",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.418,
+   "fengshui": 0.35,
+   "industry": "Health_Care",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 0.574,
+   "fengshui": -0.18,
+   "industry": "New_Energy",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 0.7,
+   "fengshui": 0.0,
+   "industry": "New_Energy",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 0.735,
+   "fengshui": 0.05,
+   "industry": "New_Energy",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 0.945,
+   "fengshui": 0.35,
+   "industry": "New_Energy",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "New_Energy",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "New_Energy",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "New_Energy",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "New_Energy",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.066,
+   "fengshui": -0.18,
+   "industry": "New_Energy",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.3,
+   "fengshui": 0.0,
+   "industry": "New_Energy",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.365,
+   "fengshui": 0.05,
+   "industry": "New_Energy",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.755,
+   "fengshui": 0.35,
+   "industry": "New_Energy",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 0.943,
+   "fengshui": -0.18,
+   "industry": "New_Energy",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.15,
+   "fengshui": 0.0,
+   "industry": "New_Energy",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.208,
+   "fengshui": 0.05,
+   "industry": "New_Energy",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.552,
+   "fengshui": 0.35,
+   "industry": "New_Energy",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 0.902,
+   "fengshui": -0.18,
+   "industry": "New_Energy",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.1,
+   "fengshui": 0.0,
+   "industry": "New_Energy",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.155,
+   "fengshui": 0.05,
+   "industry": "New_Energy",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.485,
+   "fengshui": 0.35,
+   "industry": "New_Energy",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 0.861,
+   "fengshui": -0.18,
+   "industry": "New_Energy",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.0,
+   "industry": "New_Energy",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.103,
+   "fengshui": 0.05,
+   "industry": "New_Energy",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.418,
+   "fengshui": 0.35,
+   "industry": "New_Energy",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 0.697,
+   "fengshui": -0.18,
+   "industry": "New_Energy",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 0.85,
+   "fengshui": 0.0,
+   "industry": "New_Energy",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 0.892,
+   "fengshui": 0.05,
+   "industry": "New_Energy",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.147,
+   "fengshui": 0.35,
+   "industry": "New_Energy",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 0.902,
+   "fengshui": -0.18,
+   "industry": "New_Energy",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.1,
+   "fengshui": 0.0,
+   "industry": "New_Energy",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.155,
+   "fengshui": 0.05,
+   "industry": "New_Energy",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.485,
+   "fengshui": 0.35,
+   "industry": "New_Energy",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.189,
+   "fengshui": -0.18,
+   "industry": "New_Energy",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.45,
+   "fengshui": 0.0,
+   "industry": "New_Energy",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.522,
+   "fengshui": 0.05,
+   "industry": "New_Energy",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.958,
+   "fengshui": 0.35,
+   "industry": "New_Energy",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 0.902,
+   "fengshui": -0.18,
+   "industry": "Social_Commerce",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.1,
+   "fengshui": 0.0,
+   "industry": "Social_Commerce",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.155,
+   "fengshui": 0.05,
+   "industry": "Social_Commerce",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.485,
+   "fengshui": 0.35,
+   "industry": "Social_Commerce",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 0.779,
+   "fengshui": -0.18,
+   "industry": "Social_Commerce",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 0.95,
+   "fengshui": 0.0,
+   "industry": "Social_Commerce",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 0.997,
+   "fengshui": 0.05,
+   "industry": "Social_Commerce",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.282,
+   "fengshui": 0.35,
+   "industry": "Social_Commerce",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 0.902,
+   "fengshui": -0.18,
+   "industry": "Social_Commerce",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.1,
+   "fengshui": 0.0,
+   "industry": "Social_Commerce",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.155,
+   "fengshui": 0.05,
+   "industry": "Social_Commerce",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.485,
+   "fengshui": 0.35,
+   "industry": "Social_Commerce",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.189,
+   "fengshui": -0.18,
+   "industry": "Social_Commerce",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.45,
+   "fengshui": 0.0,
+   "industry": "Social_Commerce",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.522,
+   "fengshui": 0.05,
+   "industry": "Social_Commerce",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.958,
+   "fengshui": 0.35,
+   "industry": "Social_Commerce",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 0.861,
+   "fengshui": -0.18,
+   "industry": "Social_Commerce",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.0,
+   "industry": "Social_Commerce",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.103,
+   "fengshui": 0.05,
+   "industry": "Social_Commerce",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.418,
+   "fengshui": 0.35,
+   "industry": "Social_Commerce",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Social_Commerce",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Social_Commerce",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Social_Commerce",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Social_Commerce",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.025,
+   "fengshui": -0.18,
+   "industry": "Social_Commerce",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.25,
+   "fengshui": 0.0,
+   "industry": "Social_Commerce",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.312,
+   "fengshui": 0.05,
+   "industry": "Social_Commerce",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.688,
+   "fengshui": 0.35,
+   "industry": "Social_Commerce",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 0.574,
+   "fengshui": -0.18,
+   "industry": "Social_Commerce",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 0.7,
+   "fengshui": 0.0,
+   "industry": "Social_Commerce",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 0.735,
+   "fengshui": 0.05,
+   "industry": "Social_Commerce",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 0.945,
+   "fengshui": 0.35,
+   "industry": "Social_Commerce",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.066,
+   "fengshui": -0.18,
+   "industry": "Social_Commerce",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.3,
+   "fengshui": 0.0,
+   "industry": "Social_Commerce",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.365,
+   "fengshui": 0.05,
+   "industry": "Social_Commerce",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.755,
+   "fengshui": 0.35,
+   "industry": "Social_Commerce",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_Manufacturing",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_Manufacturing",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_Manufacturing",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_Manufacturing",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_Manufacturing",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_Manufacturing",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_Manufacturing",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_Manufacturing",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_Manufacturing",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_Manufacturing",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_Manufacturing",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_Manufacturing",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_Manufacturing",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_Manufacturing",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_Manufacturing",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_Manufacturing",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_Manufacturing",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_Manufacturing",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_Manufacturing",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_Manufacturing",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_Manufacturing",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_Manufacturing",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_Manufacturing",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_Manufacturing",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_Manufacturing",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_Manufacturing",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_Manufacturing",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_Manufacturing",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_Manufacturing",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_Manufacturing",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_Manufacturing",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_Manufacturing",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_Manufacturing",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_Manufacturing",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_Manufacturing",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_Manufacturing",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_RealEstate",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_RealEstate",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_RealEstate",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_RealEstate",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_RealEstate",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_RealEstate",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_RealEstate",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_RealEstate",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_RealEstate",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_RealEstate",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_RealEstate",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_RealEstate",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_RealEstate",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_RealEstate",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_RealEstate",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_RealEstate",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_RealEstate",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_RealEstate",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_RealEstate",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_RealEstate",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_RealEstate",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_RealEstate",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_RealEstate",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_RealEstate",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_RealEstate",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_RealEstate",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_RealEstate",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_RealEstate",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_RealEstate",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_RealEstate",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_RealEstate",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_RealEstate",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Traditional_RealEstate",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Traditional_RealEstate",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Traditional_RealEstate",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Traditional_RealEstate",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Unknown_Industry",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Unknown_Industry",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Unknown_Industry",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Unknown_Industry",
+   "palace": "kan_1"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Unknown_Industry",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Unknown_Industry",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Unknown_Industry",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Unknown_Industry",
+   "palace": "kun_2"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Unknown_Industry",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Unknown_Industry",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Unknown_Industry",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Unknown_Industry",
+   "palace": "zhen_3"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Unknown_Industry",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Unknown_Industry",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Unknown_Industry",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Unknown_Industry",
+   "palace": "xun_4"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Unknown_Industry",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Unknown_Industry",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Unknown_Industry",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Unknown_Industry",
+   "palace": "zhong_5"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Unknown_Industry",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Unknown_Industry",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Unknown_Industry",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Unknown_Industry",
+   "palace": "qian_6"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Unknown_Industry",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Unknown_Industry",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Unknown_Industry",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Unknown_Industry",
+   "palace": "dui_7"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Unknown_Industry",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Unknown_Industry",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Unknown_Industry",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Unknown_Industry",
+   "palace": "gen_8"
+  },
+  {
+   "f_space": 0.82,
+   "fengshui": -0.18,
+   "industry": "Unknown_Industry",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.0,
+   "fengshui": 0.0,
+   "industry": "Unknown_Industry",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.05,
+   "fengshui": 0.05,
+   "industry": "Unknown_Industry",
+   "palace": "li_9"
+  },
+  {
+   "f_space": 1.35,
+   "fengshui": 0.35,
+   "industry": "Unknown_Industry",
+   "palace": "li_9"
+  }
+ ],
+ "time": [
+  {
+   "era_mod": 1.05,
+   "f_time": 0.758625,
+   "industry": "Cultural_Food",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2019
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.541875,
+   "industry": "AI_Tech",
+   "month": 9,
+   "season_mod": 0.75,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.6375,
+   "industry": "Health_Care",
+   "month": 9,
+   "season_mod": 0.75,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2019
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.65025,
+   "industry": "New_Energy",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.0752499999999998,
+   "industry": "Social_Commerce",
+   "month": 9,
+   "season_mod": 1.15,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.4917500000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 9,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.2325,
+   "industry": "Traditional_RealEstate",
+   "month": 9,
+   "season_mod": 1.0,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.7224999999999999,
+   "industry": "Unknown_Industry",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 0.6615,
+   "industry": "Cultural_Food",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2019
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.8415,
+   "industry": "AI_Tech",
+   "month": 10,
+   "season_mod": 1.1,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.9900000000000001,
+   "industry": "Health_Care",
+   "month": 10,
+   "season_mod": 1.1,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2019
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.5670000000000001,
+   "industry": "New_Energy",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.3365000000000002,
+   "industry": "Social_Commerce",
+   "month": 10,
+   "season_mod": 1.35,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.2285000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 10,
+   "season_mod": 1.05,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.10925,
+   "industry": "Traditional_RealEstate",
+   "month": 10,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.63,
+   "industry": "Unknown_Industry",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 0.8085,
+   "industry": "Cultural_Food",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2019
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 1.0285000000000002,
+   "industry": "AI_Tech",
+   "month": 11,
+   "season_mod": 1.1,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.2100000000000002,
+   "industry": "Health_Care",
+   "month": 11,
+   "season_mod": 1.1,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2019
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.6930000000000001,
+   "industry": "New_Energy",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.6335000000000004,
+   "industry": "Social_Commerce",
+   "month": 11,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.5015000000000003,
+   "industry": "Traditional_Manufacturing",
+   "month": 11,
+   "season_mod": 1.05,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.35575,
+   "industry": "Traditional_RealEstate",
+   "month": 11,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.77,
+   "industry": "Unknown_Industry",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 0.84525,
+   "industry": "Cultural_Food",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2019
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 1.07525,
+   "industry": "AI_Tech",
+   "month": 12,
+   "season_mod": 1.1,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.265,
+   "industry": "Health_Care",
+   "month": 12,
+   "season_mod": 1.1,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2019
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.7244999999999999,
+   "industry": "New_Energy",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.7077500000000003,
+   "industry": "Social_Commerce",
+   "month": 12,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.5697500000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 12,
+   "season_mod": 1.05,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.4173749999999998,
+   "industry": "Traditional_RealEstate",
+   "month": 12,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.8049999999999999,
+   "industry": "Unknown_Industry",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2019
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 1.3282500000000002,
+   "industry": "Cultural_Food",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 1.2155,
+   "industry": "AI_Tech",
+   "month": 1,
+   "season_mod": 1.3,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.4300000000000002,
+   "industry": "Health_Care",
+   "month": 1,
+   "season_mod": 1.3,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 1.1385,
+   "industry": "New_Energy",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.2100000000000002,
+   "industry": "Social_Commerce",
+   "month": 1,
+   "season_mod": 1.0,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.2155,
+   "industry": "Traditional_Manufacturing",
+   "month": 1,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.4355,
+   "industry": "Traditional_RealEstate",
+   "month": 1,
+   "season_mod": 0.9,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.265,
+   "industry": "Unknown_Industry",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 1.026375,
+   "industry": "Cultural_Food",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.9392499999999999,
+   "industry": "AI_Tech",
+   "month": 2,
+   "season_mod": 1.3,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.105,
+   "industry": "Health_Care",
+   "month": 2,
+   "season_mod": 1.3,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.8797499999999999,
+   "industry": "New_Energy",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 0.935,
+   "industry": "Social_Commerce",
+   "month": 2,
+   "season_mod": 1.0,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 0.9392499999999999,
+   "industry": "Traditional_Manufacturing",
+   "month": 2,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.1092499999999998,
+   "industry": "Traditional_RealEstate",
+   "month": 2,
+   "season_mod": 0.9,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.9774999999999999,
+   "industry": "Unknown_Industry",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 1.08675,
+   "industry": "Cultural_Food",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.9945,
+   "industry": "AI_Tech",
+   "month": 3,
+   "season_mod": 1.3,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.1700000000000002,
+   "industry": "Health_Care",
+   "month": 3,
+   "season_mod": 1.3,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.9315,
+   "industry": "New_Energy",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 0.9900000000000001,
+   "industry": "Social_Commerce",
+   "month": 3,
+   "season_mod": 1.0,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 0.9945,
+   "industry": "Traditional_Manufacturing",
+   "month": 3,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.1744999999999999,
+   "industry": "Traditional_RealEstate",
+   "month": 3,
+   "season_mod": 0.9,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.035,
+   "industry": "Unknown_Industry",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 1.5592500000000002,
+   "industry": "Cultural_Food",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.79475,
+   "industry": "AI_Tech",
+   "month": 4,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.935,
+   "industry": "Health_Care",
+   "month": 4,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 1.3365000000000002,
+   "industry": "New_Energy",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 0.9680000000000002,
+   "industry": "Social_Commerce",
+   "month": 4,
+   "season_mod": 0.8,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.1440000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 4,
+   "season_mod": 0.8,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.9140000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 4,
+   "season_mod": 1.2,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.4850000000000003,
+   "industry": "Unknown_Industry",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 1.630125,
+   "industry": "Cultural_Food",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.8308749999999998,
+   "industry": "AI_Tech",
+   "month": 5,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.9774999999999999,
+   "industry": "Health_Care",
+   "month": 5,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 1.3972499999999999,
+   "industry": "New_Energy",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.012,
+   "industry": "Social_Commerce",
+   "month": 5,
+   "season_mod": 0.8,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.196,
+   "industry": "Traditional_Manufacturing",
+   "month": 5,
+   "season_mod": 0.8,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 2.001,
+   "industry": "Traditional_RealEstate",
+   "month": 5,
+   "season_mod": 1.2,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.5525,
+   "industry": "Unknown_Industry",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 1.5592500000000002,
+   "industry": "Cultural_Food",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.79475,
+   "industry": "AI_Tech",
+   "month": 6,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.935,
+   "industry": "Health_Care",
+   "month": 6,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 1.3365000000000002,
+   "industry": "New_Energy",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 0.9680000000000002,
+   "industry": "Social_Commerce",
+   "month": 6,
+   "season_mod": 0.8,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.1440000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 6,
+   "season_mod": 0.8,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.9140000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 6,
+   "season_mod": 1.2,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.4850000000000003,
+   "industry": "Unknown_Industry",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 0.758625,
+   "industry": "Cultural_Food",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.541875,
+   "industry": "AI_Tech",
+   "month": 7,
+   "season_mod": 0.75,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.6375,
+   "industry": "Health_Care",
+   "month": 7,
+   "season_mod": 0.75,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.65025,
+   "industry": "New_Energy",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.0752499999999998,
+   "industry": "Social_Commerce",
+   "month": 7,
+   "season_mod": 1.15,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.4917500000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 7,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.2325,
+   "industry": "Traditional_RealEstate",
+   "month": 7,
+   "season_mod": 1.0,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.7224999999999999,
+   "industry": "Unknown_Industry",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 0.80325,
+   "industry": "Cultural_Food",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.57375,
+   "industry": "AI_Tech",
+   "month": 8,
+   "season_mod": 0.75,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.675,
+   "industry": "Health_Care",
+   "month": 8,
+   "season_mod": 0.75,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.6885,
+   "industry": "New_Energy",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.1384999999999998,
+   "industry": "Social_Commerce",
+   "month": 8,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.5795000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 8,
+   "season_mod": 1.35,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.305,
+   "industry": "Traditional_RealEstate",
+   "month": 8,
+   "season_mod": 1.0,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.765,
+   "industry": "Unknown_Industry",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 0.98175,
+   "industry": "Cultural_Food",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.70125,
+   "industry": "AI_Tech",
+   "month": 9,
+   "season_mod": 0.75,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.8250000000000001,
+   "industry": "Health_Care",
+   "month": 9,
+   "season_mod": 0.75,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.8415000000000001,
+   "industry": "New_Energy",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.3915,
+   "industry": "Social_Commerce",
+   "month": 9,
+   "season_mod": 1.15,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.9305000000000003,
+   "industry": "Traditional_Manufacturing",
+   "month": 9,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.595,
+   "industry": "Traditional_RealEstate",
+   "month": 9,
+   "season_mod": 1.0,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.935,
+   "industry": "Unknown_Industry",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 0.84525,
+   "industry": "Cultural_Food",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 1.07525,
+   "industry": "AI_Tech",
+   "month": 10,
+   "season_mod": 1.1,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.265,
+   "industry": "Health_Care",
+   "month": 10,
+   "season_mod": 1.1,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.7244999999999999,
+   "industry": "New_Energy",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.7077500000000003,
+   "industry": "Social_Commerce",
+   "month": 10,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.5697500000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 10,
+   "season_mod": 1.05,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.4173749999999998,
+   "industry": "Traditional_RealEstate",
+   "month": 10,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.8049999999999999,
+   "industry": "Unknown_Industry",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 0.8085,
+   "industry": "Cultural_Food",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 1.0285000000000002,
+   "industry": "AI_Tech",
+   "month": 11,
+   "season_mod": 1.1,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.2100000000000002,
+   "industry": "Health_Care",
+   "month": 11,
+   "season_mod": 1.1,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.6930000000000001,
+   "industry": "New_Energy",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.6335000000000004,
+   "industry": "Social_Commerce",
+   "month": 11,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.5015000000000003,
+   "industry": "Traditional_Manufacturing",
+   "month": 11,
+   "season_mod": 1.05,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.35575,
+   "industry": "Traditional_RealEstate",
+   "month": 11,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.77,
+   "industry": "Unknown_Industry",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 0.62475,
+   "industry": "Cultural_Food",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.7947500000000001,
+   "industry": "AI_Tech",
+   "month": 12,
+   "season_mod": 1.1,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.935,
+   "industry": "Health_Care",
+   "month": 12,
+   "season_mod": 1.1,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.5355,
+   "industry": "New_Energy",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.2622500000000003,
+   "industry": "Social_Commerce",
+   "month": 12,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.1602500000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 12,
+   "season_mod": 1.05,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.0476249999999998,
+   "industry": "Traditional_RealEstate",
+   "month": 12,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.595,
+   "industry": "Unknown_Industry",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2020
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 1.08675,
+   "industry": "Cultural_Food",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.9945,
+   "industry": "AI_Tech",
+   "month": 1,
+   "season_mod": 1.3,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.1700000000000002,
+   "industry": "Health_Care",
+   "month": 1,
+   "season_mod": 1.3,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.9315,
+   "industry": "New_Energy",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 0.9900000000000001,
+   "industry": "Social_Commerce",
+   "month": 1,
+   "season_mod": 1.0,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 0.9945,
+   "industry": "Traditional_Manufacturing",
+   "month": 1,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.1744999999999999,
+   "industry": "Traditional_RealEstate",
+   "month": 1,
+   "season_mod": 0.9,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.035,
+   "industry": "Unknown_Industry",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 1.3282500000000002,
+   "industry": "Cultural_Food",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 1.2155,
+   "industry": "AI_Tech",
+   "month": 2,
+   "season_mod": 1.3,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.4300000000000002,
+   "industry": "Health_Care",
+   "month": 2,
+   "season_mod": 1.3,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 1.1385,
+   "industry": "New_Energy",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.2100000000000002,
+   "industry": "Social_Commerce",
+   "month": 2,
+   "season_mod": 1.0,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.2155,
+   "industry": "Traditional_Manufacturing",
+   "month": 2,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.4355,
+   "industry": "Traditional_RealEstate",
+   "month": 2,
+   "season_mod": 0.9,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.265,
+   "industry": "Unknown_Industry",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 1.388625,
+   "industry": "Cultural_Food",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 1.2707499999999998,
+   "industry": "AI_Tech",
+   "month": 3,
+   "season_mod": 1.3,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.4949999999999999,
+   "industry": "Health_Care",
+   "month": 3,
+   "season_mod": 1.3,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 1.1902499999999998,
+   "industry": "New_Energy",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.265,
+   "industry": "Social_Commerce",
+   "month": 3,
+   "season_mod": 1.0,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.2707499999999998,
+   "industry": "Traditional_Manufacturing",
+   "month": 3,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.5007499999999998,
+   "industry": "Traditional_RealEstate",
+   "month": 3,
+   "season_mod": 0.9,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.3224999999999998,
+   "industry": "Unknown_Industry",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 1.5592500000000002,
+   "industry": "Cultural_Food",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.79475,
+   "industry": "AI_Tech",
+   "month": 4,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.935,
+   "industry": "Health_Care",
+   "month": 4,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 1.3365000000000002,
+   "industry": "New_Energy",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 0.9680000000000002,
+   "industry": "Social_Commerce",
+   "month": 4,
+   "season_mod": 0.8,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.1440000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 4,
+   "season_mod": 0.8,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.9140000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 4,
+   "season_mod": 1.2,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.4850000000000003,
+   "industry": "Unknown_Industry",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 1.2048750000000001,
+   "industry": "Cultural_Food",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.6141249999999999,
+   "industry": "AI_Tech",
+   "month": 5,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.7224999999999999,
+   "industry": "Health_Care",
+   "month": 5,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 1.03275,
+   "industry": "New_Energy",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 0.7480000000000001,
+   "industry": "Social_Commerce",
+   "month": 5,
+   "season_mod": 0.8,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 0.884,
+   "industry": "Traditional_Manufacturing",
+   "month": 5,
+   "season_mod": 0.8,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.4789999999999999,
+   "industry": "Traditional_RealEstate",
+   "month": 5,
+   "season_mod": 1.2,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.1475,
+   "industry": "Unknown_Industry",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 1.2757500000000002,
+   "industry": "Cultural_Food",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.65025,
+   "industry": "AI_Tech",
+   "month": 6,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.765,
+   "industry": "Health_Care",
+   "month": 6,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 1.0935000000000001,
+   "industry": "New_Energy",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 0.7920000000000001,
+   "industry": "Social_Commerce",
+   "month": 6,
+   "season_mod": 0.8,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 0.936,
+   "industry": "Traditional_Manufacturing",
+   "month": 6,
+   "season_mod": 0.8,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.566,
+   "industry": "Traditional_RealEstate",
+   "month": 6,
+   "season_mod": 1.2,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.215,
+   "industry": "Unknown_Industry",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 0.98175,
+   "industry": "Cultural_Food",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.70125,
+   "industry": "AI_Tech",
+   "month": 7,
+   "season_mod": 0.75,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.8250000000000001,
+   "industry": "Health_Care",
+   "month": 7,
+   "season_mod": 0.75,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.8415000000000001,
+   "industry": "New_Energy",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.3915,
+   "industry": "Social_Commerce",
+   "month": 7,
+   "season_mod": 1.15,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.9305000000000003,
+   "industry": "Traditional_Manufacturing",
+   "month": 7,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.595,
+   "industry": "Traditional_RealEstate",
+   "month": 7,
+   "season_mod": 1.0,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.935,
+   "industry": "Unknown_Industry",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 1.0263749999999998,
+   "industry": "Cultural_Food",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.7331249999999999,
+   "industry": "AI_Tech",
+   "month": 8,
+   "season_mod": 0.75,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.8624999999999999,
+   "industry": "Health_Care",
+   "month": 8,
+   "season_mod": 0.75,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.8797499999999999,
+   "industry": "New_Energy",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.4547499999999998,
+   "industry": "Social_Commerce",
+   "month": 8,
+   "season_mod": 1.15,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 2.01825,
+   "industry": "Traditional_Manufacturing",
+   "month": 8,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.6674999999999998,
+   "industry": "Traditional_RealEstate",
+   "month": 8,
+   "season_mod": 1.0,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.9774999999999999,
+   "industry": "Unknown_Industry",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 0.98175,
+   "industry": "Cultural_Food",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.70125,
+   "industry": "AI_Tech",
+   "month": 9,
+   "season_mod": 0.75,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.8250000000000001,
+   "industry": "Health_Care",
+   "month": 9,
+   "season_mod": 0.75,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.8415000000000001,
+   "industry": "New_Energy",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.3915,
+   "industry": "Social_Commerce",
+   "month": 9,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.9305000000000003,
+   "industry": "Traditional_Manufacturing",
+   "month": 9,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.595,
+   "industry": "Traditional_RealEstate",
+   "month": 9,
+   "season_mod": 1.0,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.935,
+   "industry": "Unknown_Industry",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 0.62475,
+   "industry": "Cultural_Food",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.7947500000000001,
+   "industry": "AI_Tech",
+   "month": 10,
+   "season_mod": 1.1,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.935,
+   "industry": "Health_Care",
+   "month": 10,
+   "season_mod": 1.1,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2021
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.5355,
+   "industry": "New_Energy",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.2622500000000003,
+   "industry": "Social_Commerce",
+   "month": 10,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.1602500000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 10,
+   "season_mod": 1.05,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.0476249999999998,
+   "industry": "Traditional_RealEstate",
+   "month": 10,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.595,
+   "industry": "Unknown_Industry",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2021
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 0.62475,
+   "industry": "Cultural_Food",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2023
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.7947500000000001,
+   "industry": "AI_Tech",
+   "month": 11,
+   "season_mod": 1.1,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2023
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.935,
+   "industry": "Health_Care",
+   "month": 11,
+   "season_mod": 1.1,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2023
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.5355,
+   "industry": "New_Energy",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2023
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.2622500000000003,
+   "industry": "Social_Commerce",
+   "month": 11,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2023
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.1602500000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 11,
+   "season_mod": 1.05,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2023
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.0476249999999998,
+   "industry": "Traditional_RealEstate",
+   "month": 11,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2023
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.595,
+   "industry": "Unknown_Industry",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2023
+  },
+  {
+   "era_mod": 1.05,
+   "f_time": 0.6615,
+   "industry": "Cultural_Food",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2023
+  },
+  {
+   "era_mod": 0.85,
+   "f_time": 0.8415,
+   "industry": "AI_Tech",
+   "month": 12,
+   "season_mod": 1.1,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2023
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.9900000000000001,
+   "industry": "Health_Care",
+   "month": 12,
+   "season_mod": 1.1,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2023
+  },
+  {
+   "era_mod": 0.9,
+   "f_time": 0.5670000000000001,
+   "industry": "New_Energy",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2023
+  },
+  {
+   "era_mod": 1.1,
+   "f_time": 1.3365000000000002,
+   "industry": "Social_Commerce",
+   "month": 12,
+   "season_mod": 1.35,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2023
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.2285000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 12,
+   "season_mod": 1.05,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2023
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.10925,
+   "industry": "Traditional_RealEstate",
+   "month": 12,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2023
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.63,
+   "industry": "Unknown_Industry",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2023
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.83425,
+   "industry": "Cultural_Food",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 2.2165000000000004,
+   "industry": "AI_Tech",
+   "month": 1,
+   "season_mod": 1.3,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 2.002,
+   "industry": "Health_Care",
+   "month": 1,
+   "season_mod": 1.3,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.771,
+   "industry": "New_Energy",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.4300000000000002,
+   "industry": "Social_Commerce",
+   "month": 1,
+   "season_mod": 1.0,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7480000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 1,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.6435000000000002,
+   "industry": "Traditional_RealEstate",
+   "month": 1,
+   "season_mod": 0.9,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.265,
+   "industry": "Unknown_Industry",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.9176249999999995,
+   "industry": "Cultural_Food",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 2.31725,
+   "industry": "AI_Tech",
+   "month": 2,
+   "season_mod": 1.3,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 2.0929999999999995,
+   "industry": "Health_Care",
+   "month": 2,
+   "season_mod": 1.3,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.8514999999999997,
+   "industry": "New_Energy",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.4949999999999999,
+   "industry": "Social_Commerce",
+   "month": 2,
+   "season_mod": 1.0,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.782,
+   "industry": "Traditional_Manufacturing",
+   "month": 2,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.6727500000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 2,
+   "season_mod": 0.9,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.3224999999999998,
+   "industry": "Unknown_Industry",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.83425,
+   "industry": "Cultural_Food",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 2.2165000000000004,
+   "industry": "AI_Tech",
+   "month": 3,
+   "season_mod": 1.3,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 2.002,
+   "industry": "Health_Care",
+   "month": 3,
+   "season_mod": 1.3,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.771,
+   "industry": "New_Energy",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.4300000000000002,
+   "industry": "Social_Commerce",
+   "month": 3,
+   "season_mod": 1.0,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7480000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 3,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.6435000000000002,
+   "industry": "Traditional_RealEstate",
+   "month": 3,
+   "season_mod": 0.9,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.265,
+   "industry": "Unknown_Industry",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.663875,
+   "industry": "Cultural_Food",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.119875,
+   "industry": "AI_Tech",
+   "month": 4,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.0114999999999998,
+   "industry": "Health_Care",
+   "month": 4,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.6064999999999998,
+   "industry": "New_Energy",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 0.884,
+   "industry": "Social_Commerce",
+   "month": 4,
+   "season_mod": 0.8,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.544,
+   "industry": "Traditional_Manufacturing",
+   "month": 4,
+   "season_mod": 0.8,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.663,
+   "industry": "Traditional_RealEstate",
+   "month": 4,
+   "season_mod": 1.2,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.1475,
+   "industry": "Unknown_Industry",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.7617500000000001,
+   "industry": "Cultural_Food",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.1857499999999999,
+   "industry": "AI_Tech",
+   "month": 5,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.071,
+   "industry": "Health_Care",
+   "month": 5,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.7009999999999998,
+   "industry": "New_Energy",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 0.936,
+   "industry": "Social_Commerce",
+   "month": 5,
+   "season_mod": 0.8,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.5760000000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 5,
+   "season_mod": 0.8,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.7020000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 5,
+   "season_mod": 1.2,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.215,
+   "industry": "Unknown_Industry",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 2.1532500000000003,
+   "industry": "Cultural_Food",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.44925,
+   "industry": "AI_Tech",
+   "month": 6,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.309,
+   "industry": "Health_Care",
+   "month": 6,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 2.079,
+   "industry": "New_Energy",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.1440000000000001,
+   "industry": "Social_Commerce",
+   "month": 6,
+   "season_mod": 0.8,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7040000000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 6,
+   "season_mod": 0.8,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.8580000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 6,
+   "season_mod": 1.2,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.4850000000000003,
+   "industry": "Unknown_Industry",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.4173749999999998,
+   "industry": "Cultural_Food",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.336875,
+   "industry": "AI_Tech",
+   "month": 7,
+   "season_mod": 0.75,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.2074999999999998,
+   "industry": "Health_Care",
+   "month": 7,
+   "season_mod": 0.75,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.3684999999999998,
+   "industry": "New_Energy",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.7192499999999997,
+   "industry": "Social_Commerce",
+   "month": 7,
+   "season_mod": 1.15,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 1.242,
+   "industry": "Traditional_Manufacturing",
+   "month": 7,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.7474999999999999,
+   "industry": "Traditional_RealEstate",
+   "month": 7,
+   "season_mod": 1.0,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.9774999999999999,
+   "industry": "Unknown_Industry",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.35575,
+   "industry": "Cultural_Food",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.2787500000000003,
+   "industry": "AI_Tech",
+   "month": 8,
+   "season_mod": 0.75,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.1549999999999998,
+   "industry": "Health_Care",
+   "month": 8,
+   "season_mod": 0.75,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.309,
+   "industry": "New_Energy",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.6445,
+   "industry": "Social_Commerce",
+   "month": 8,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 1.1880000000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 8,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.7150000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 8,
+   "season_mod": 1.0,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.935,
+   "industry": "Unknown_Industry",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.0476249999999998,
+   "industry": "Cultural_Food",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 0.988125,
+   "industry": "AI_Tech",
+   "month": 9,
+   "season_mod": 0.75,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 0.8924999999999998,
+   "industry": "Health_Care",
+   "month": 9,
+   "season_mod": 0.75,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.0114999999999998,
+   "industry": "New_Energy",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.2707499999999998,
+   "industry": "Social_Commerce",
+   "month": 9,
+   "season_mod": 1.15,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.918,
+   "industry": "Traditional_Manufacturing",
+   "month": 9,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.5525,
+   "industry": "Traditional_RealEstate",
+   "month": 9,
+   "season_mod": 1.0,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.7224999999999999,
+   "industry": "Unknown_Industry",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 0.9135,
+   "industry": "Cultural_Food",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.5345000000000002,
+   "industry": "AI_Tech",
+   "month": 10,
+   "season_mod": 1.1,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.3860000000000001,
+   "industry": "Health_Care",
+   "month": 10,
+   "season_mod": 1.1,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 0.8819999999999999,
+   "industry": "New_Energy",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.5795000000000001,
+   "industry": "Social_Commerce",
+   "month": 10,
+   "season_mod": 1.35,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7560000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 10,
+   "season_mod": 1.05,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.49725,
+   "industry": "Traditional_RealEstate",
+   "month": 10,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.63,
+   "industry": "Unknown_Industry",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.1165,
+   "industry": "Cultural_Food",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.8755000000000004,
+   "industry": "AI_Tech",
+   "month": 11,
+   "season_mod": 1.1,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.6940000000000002,
+   "industry": "Health_Care",
+   "month": 11,
+   "season_mod": 1.1,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.0779999999999998,
+   "industry": "New_Energy",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.9305000000000003,
+   "industry": "Social_Commerce",
+   "month": 11,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.9240000000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 11,
+   "season_mod": 1.05,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.60775,
+   "industry": "Traditional_RealEstate",
+   "month": 11,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.77,
+   "industry": "Unknown_Industry",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.16725,
+   "industry": "Cultural_Food",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.9607500000000002,
+   "industry": "AI_Tech",
+   "month": 12,
+   "season_mod": 1.1,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.771,
+   "industry": "Health_Care",
+   "month": 12,
+   "season_mod": 1.1,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.1269999999999998,
+   "industry": "New_Energy",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 2.01825,
+   "industry": "Social_Commerce",
+   "month": 12,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.966,
+   "industry": "Traditional_Manufacturing",
+   "month": 12,
+   "season_mod": 1.05,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.6353749999999999,
+   "industry": "Traditional_RealEstate",
+   "month": 12,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.8049999999999999,
+   "industry": "Unknown_Industry",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.83425,
+   "industry": "Cultural_Food",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 2.2165000000000004,
+   "industry": "AI_Tech",
+   "month": 1,
+   "season_mod": 1.3,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 2.002,
+   "industry": "Health_Care",
+   "month": 1,
+   "season_mod": 1.3,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.771,
+   "industry": "New_Energy",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.4300000000000002,
+   "industry": "Social_Commerce",
+   "month": 1,
+   "season_mod": 1.0,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7480000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 1,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.6435000000000002,
+   "industry": "Traditional_RealEstate",
+   "month": 1,
+   "season_mod": 0.9,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.265,
+   "industry": "Unknown_Industry",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.4173749999999998,
+   "industry": "Cultural_Food",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.71275,
+   "industry": "AI_Tech",
+   "month": 2,
+   "season_mod": 1.3,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.547,
+   "industry": "Health_Care",
+   "month": 2,
+   "season_mod": 1.3,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.3684999999999998,
+   "industry": "New_Energy",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.105,
+   "industry": "Social_Commerce",
+   "month": 2,
+   "season_mod": 1.0,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.5780000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 2,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.49725,
+   "industry": "Traditional_RealEstate",
+   "month": 2,
+   "season_mod": 0.9,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.9774999999999999,
+   "industry": "Unknown_Industry",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.5007499999999998,
+   "industry": "Cultural_Food",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.8135000000000001,
+   "industry": "AI_Tech",
+   "month": 3,
+   "season_mod": 1.3,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.638,
+   "industry": "Health_Care",
+   "month": 3,
+   "season_mod": 1.3,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.4489999999999998,
+   "industry": "New_Energy",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.1700000000000002,
+   "industry": "Social_Commerce",
+   "month": 3,
+   "season_mod": 1.0,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.6120000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 3,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.5265000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 3,
+   "season_mod": 0.9,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.035,
+   "industry": "Unknown_Industry",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 2.1532500000000003,
+   "industry": "Cultural_Food",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.44925,
+   "industry": "AI_Tech",
+   "month": 4,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.309,
+   "industry": "Health_Care",
+   "month": 4,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 2.079,
+   "industry": "New_Energy",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.1440000000000001,
+   "industry": "Social_Commerce",
+   "month": 4,
+   "season_mod": 0.8,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7040000000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 4,
+   "season_mod": 0.8,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.8580000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 4,
+   "season_mod": 1.2,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.4850000000000003,
+   "industry": "Unknown_Industry",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 2.251125,
+   "industry": "Cultural_Food",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.5151249999999998,
+   "industry": "AI_Tech",
+   "month": 5,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.3684999999999998,
+   "industry": "Health_Care",
+   "month": 5,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 2.1734999999999998,
+   "industry": "New_Energy",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.196,
+   "industry": "Social_Commerce",
+   "month": 5,
+   "season_mod": 0.8,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7360000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 5,
+   "season_mod": 0.8,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.8969999999999999,
+   "industry": "Traditional_RealEstate",
+   "month": 5,
+   "season_mod": 1.2,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.5525,
+   "industry": "Unknown_Industry",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 2.1532500000000003,
+   "industry": "Cultural_Food",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.44925,
+   "industry": "AI_Tech",
+   "month": 6,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.309,
+   "industry": "Health_Care",
+   "month": 6,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 2.079,
+   "industry": "New_Energy",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.1440000000000001,
+   "industry": "Social_Commerce",
+   "month": 6,
+   "season_mod": 0.8,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7040000000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 6,
+   "season_mod": 0.8,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.8580000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 6,
+   "season_mod": 1.2,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.4850000000000003,
+   "industry": "Unknown_Industry",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.0476249999999998,
+   "industry": "Cultural_Food",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 0.988125,
+   "industry": "AI_Tech",
+   "month": 7,
+   "season_mod": 0.75,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 0.8924999999999998,
+   "industry": "Health_Care",
+   "month": 7,
+   "season_mod": 0.75,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.0114999999999998,
+   "industry": "New_Energy",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.2707499999999998,
+   "industry": "Social_Commerce",
+   "month": 7,
+   "season_mod": 1.15,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.918,
+   "industry": "Traditional_Manufacturing",
+   "month": 7,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.5525,
+   "industry": "Traditional_RealEstate",
+   "month": 7,
+   "season_mod": 1.0,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.7224999999999999,
+   "industry": "Unknown_Industry",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.10925,
+   "industry": "Cultural_Food",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.0462500000000001,
+   "industry": "AI_Tech",
+   "month": 8,
+   "season_mod": 0.75,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 0.9449999999999998,
+   "industry": "Health_Care",
+   "month": 8,
+   "season_mod": 0.75,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.071,
+   "industry": "New_Energy",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.3455,
+   "industry": "Social_Commerce",
+   "month": 8,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.9720000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 8,
+   "season_mod": 1.35,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.5850000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 8,
+   "season_mod": 1.0,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.765,
+   "industry": "Unknown_Industry",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.35575,
+   "industry": "Cultural_Food",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.2787500000000003,
+   "industry": "AI_Tech",
+   "month": 9,
+   "season_mod": 0.75,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.1549999999999998,
+   "industry": "Health_Care",
+   "month": 9,
+   "season_mod": 0.75,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.309,
+   "industry": "New_Energy",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.6445,
+   "industry": "Social_Commerce",
+   "month": 9,
+   "season_mod": 1.15,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 1.1880000000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 9,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.7150000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 9,
+   "season_mod": 1.0,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.935,
+   "industry": "Unknown_Industry",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.16725,
+   "industry": "Cultural_Food",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.9607500000000002,
+   "industry": "AI_Tech",
+   "month": 10,
+   "season_mod": 1.1,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.771,
+   "industry": "Health_Care",
+   "month": 10,
+   "season_mod": 1.1,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.1269999999999998,
+   "industry": "New_Energy",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 2.01825,
+   "industry": "Social_Commerce",
+   "month": 10,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.966,
+   "industry": "Traditional_Manufacturing",
+   "month": 10,
+   "season_mod": 1.05,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.6353749999999999,
+   "industry": "Traditional_RealEstate",
+   "month": 10,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.8049999999999999,
+   "industry": "Unknown_Industry",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.1165,
+   "industry": "Cultural_Food",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.8755000000000004,
+   "industry": "AI_Tech",
+   "month": 11,
+   "season_mod": 1.1,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.6940000000000002,
+   "industry": "Health_Care",
+   "month": 11,
+   "season_mod": 1.1,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.0779999999999998,
+   "industry": "New_Energy",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.9305000000000003,
+   "industry": "Social_Commerce",
+   "month": 11,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.9240000000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 11,
+   "season_mod": 1.05,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.60775,
+   "industry": "Traditional_RealEstate",
+   "month": 11,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.77,
+   "industry": "Unknown_Industry",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 0.8627499999999999,
+   "industry": "Cultural_Food",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.4492500000000001,
+   "industry": "AI_Tech",
+   "month": 12,
+   "season_mod": 1.1,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.309,
+   "industry": "Health_Care",
+   "month": 12,
+   "season_mod": 1.1,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 0.8329999999999999,
+   "industry": "New_Energy",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.4917500000000001,
+   "industry": "Social_Commerce",
+   "month": 12,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7140000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 12,
+   "season_mod": 1.05,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.46962499999999996,
+   "industry": "Traditional_RealEstate",
+   "month": 12,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.595,
+   "industry": "Unknown_Industry",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.9176249999999995,
+   "industry": "Cultural_Food",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 2.31725,
+   "industry": "AI_Tech",
+   "month": 2,
+   "season_mod": 1.3,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 2.0929999999999995,
+   "industry": "Health_Care",
+   "month": 2,
+   "season_mod": 1.3,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.8514999999999997,
+   "industry": "New_Energy",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.4949999999999999,
+   "industry": "Social_Commerce",
+   "month": 2,
+   "season_mod": 1.0,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.782,
+   "industry": "Traditional_Manufacturing",
+   "month": 2,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.6727500000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 2,
+   "season_mod": 0.9,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.3224999999999998,
+   "industry": "Unknown_Industry",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.83425,
+   "industry": "Cultural_Food",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 2.2165000000000004,
+   "industry": "AI_Tech",
+   "month": 3,
+   "season_mod": 1.3,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 2.002,
+   "industry": "Health_Care",
+   "month": 3,
+   "season_mod": 1.3,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.771,
+   "industry": "New_Energy",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.4300000000000002,
+   "industry": "Social_Commerce",
+   "month": 3,
+   "season_mod": 1.0,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7480000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 3,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.6435000000000002,
+   "industry": "Traditional_RealEstate",
+   "month": 3,
+   "season_mod": 0.9,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.265,
+   "industry": "Unknown_Industry",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.663875,
+   "industry": "Cultural_Food",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.119875,
+   "industry": "AI_Tech",
+   "month": 4,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.0114999999999998,
+   "industry": "Health_Care",
+   "month": 4,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.6064999999999998,
+   "industry": "New_Energy",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 0.884,
+   "industry": "Social_Commerce",
+   "month": 4,
+   "season_mod": 0.8,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.544,
+   "industry": "Traditional_Manufacturing",
+   "month": 4,
+   "season_mod": 0.8,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.663,
+   "industry": "Traditional_RealEstate",
+   "month": 4,
+   "season_mod": 1.2,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.1475,
+   "industry": "Unknown_Industry",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.7617500000000001,
+   "industry": "Cultural_Food",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.1857499999999999,
+   "industry": "AI_Tech",
+   "month": 5,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.071,
+   "industry": "Health_Care",
+   "month": 5,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.7009999999999998,
+   "industry": "New_Energy",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 0.936,
+   "industry": "Social_Commerce",
+   "month": 5,
+   "season_mod": 0.8,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.5760000000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 5,
+   "season_mod": 0.8,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.7020000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 5,
+   "season_mod": 1.2,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.215,
+   "industry": "Unknown_Industry",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 2.1532500000000003,
+   "industry": "Cultural_Food",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.44925,
+   "industry": "AI_Tech",
+   "month": 6,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.309,
+   "industry": "Health_Care",
+   "month": 6,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 2.079,
+   "industry": "New_Energy",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.1440000000000001,
+   "industry": "Social_Commerce",
+   "month": 6,
+   "season_mod": 0.8,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7040000000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 6,
+   "season_mod": 0.8,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.8580000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 6,
+   "season_mod": 1.2,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.4850000000000003,
+   "industry": "Unknown_Industry",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.4173749999999998,
+   "industry": "Cultural_Food",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.336875,
+   "industry": "AI_Tech",
+   "month": 7,
+   "season_mod": 0.75,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.2074999999999998,
+   "industry": "Health_Care",
+   "month": 7,
+   "season_mod": 0.75,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.3684999999999998,
+   "industry": "New_Energy",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.7192499999999997,
+   "industry": "Social_Commerce",
+   "month": 7,
+   "season_mod": 1.15,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 1.242,
+   "industry": "Traditional_Manufacturing",
+   "month": 7,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.7474999999999999,
+   "industry": "Traditional_RealEstate",
+   "month": 7,
+   "season_mod": 1.0,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.9774999999999999,
+   "industry": "Unknown_Industry",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.35575,
+   "industry": "Cultural_Food",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.2787500000000003,
+   "industry": "AI_Tech",
+   "month": 8,
+   "season_mod": 0.75,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.1549999999999998,
+   "industry": "Health_Care",
+   "month": 8,
+   "season_mod": 0.75,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.309,
+   "industry": "New_Energy",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.6445,
+   "industry": "Social_Commerce",
+   "month": 8,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 1.1880000000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 8,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.7150000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 8,
+   "season_mod": 1.0,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.935,
+   "industry": "Unknown_Industry",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.0476249999999998,
+   "industry": "Cultural_Food",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 0.988125,
+   "industry": "AI_Tech",
+   "month": 9,
+   "season_mod": 0.75,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 0.8924999999999998,
+   "industry": "Health_Care",
+   "month": 9,
+   "season_mod": 0.75,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.0114999999999998,
+   "industry": "New_Energy",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.2707499999999998,
+   "industry": "Social_Commerce",
+   "month": 9,
+   "season_mod": 1.15,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.918,
+   "industry": "Traditional_Manufacturing",
+   "month": 9,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.5525,
+   "industry": "Traditional_RealEstate",
+   "month": 9,
+   "season_mod": 1.0,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.7224999999999999,
+   "industry": "Unknown_Industry",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 0.9135,
+   "industry": "Cultural_Food",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.5345000000000002,
+   "industry": "AI_Tech",
+   "month": 10,
+   "season_mod": 1.1,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.3860000000000001,
+   "industry": "Health_Care",
+   "month": 10,
+   "season_mod": 1.1,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 0.8819999999999999,
+   "industry": "New_Energy",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.5795000000000001,
+   "industry": "Social_Commerce",
+   "month": 10,
+   "season_mod": 1.35,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7560000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 10,
+   "season_mod": 1.05,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.49725,
+   "industry": "Traditional_RealEstate",
+   "month": 10,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.63,
+   "industry": "Unknown_Industry",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.1165,
+   "industry": "Cultural_Food",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.8755000000000004,
+   "industry": "AI_Tech",
+   "month": 11,
+   "season_mod": 1.1,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.6940000000000002,
+   "industry": "Health_Care",
+   "month": 11,
+   "season_mod": 1.1,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.0779999999999998,
+   "industry": "New_Energy",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.9305000000000003,
+   "industry": "Social_Commerce",
+   "month": 11,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.9240000000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 11,
+   "season_mod": 1.05,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.60775,
+   "industry": "Traditional_RealEstate",
+   "month": 11,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.77,
+   "industry": "Unknown_Industry",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.16725,
+   "industry": "Cultural_Food",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.9607500000000002,
+   "industry": "AI_Tech",
+   "month": 12,
+   "season_mod": 1.1,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.771,
+   "industry": "Health_Care",
+   "month": 12,
+   "season_mod": 1.1,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.1269999999999998,
+   "industry": "New_Energy",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 2.01825,
+   "industry": "Social_Commerce",
+   "month": 12,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.966,
+   "industry": "Traditional_Manufacturing",
+   "month": 12,
+   "season_mod": 1.05,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.6353749999999999,
+   "industry": "Traditional_RealEstate",
+   "month": 12,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.8049999999999999,
+   "industry": "Unknown_Industry",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2024
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.83425,
+   "industry": "Cultural_Food",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 2.2165000000000004,
+   "industry": "AI_Tech",
+   "month": 1,
+   "season_mod": 1.3,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 2.002,
+   "industry": "Health_Care",
+   "month": 1,
+   "season_mod": 1.3,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.771,
+   "industry": "New_Energy",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.4300000000000002,
+   "industry": "Social_Commerce",
+   "month": 1,
+   "season_mod": 1.0,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7480000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 1,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.6435000000000002,
+   "industry": "Traditional_RealEstate",
+   "month": 1,
+   "season_mod": 0.9,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.265,
+   "industry": "Unknown_Industry",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.4173749999999998,
+   "industry": "Cultural_Food",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.71275,
+   "industry": "AI_Tech",
+   "month": 2,
+   "season_mod": 1.3,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.547,
+   "industry": "Health_Care",
+   "month": 2,
+   "season_mod": 1.3,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.3684999999999998,
+   "industry": "New_Energy",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.105,
+   "industry": "Social_Commerce",
+   "month": 2,
+   "season_mod": 1.0,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.5780000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 2,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.49725,
+   "industry": "Traditional_RealEstate",
+   "month": 2,
+   "season_mod": 0.9,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.9774999999999999,
+   "industry": "Unknown_Industry",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.5007499999999998,
+   "industry": "Cultural_Food",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.8135000000000001,
+   "industry": "AI_Tech",
+   "month": 3,
+   "season_mod": 1.3,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.638,
+   "industry": "Health_Care",
+   "month": 3,
+   "season_mod": 1.3,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.4489999999999998,
+   "industry": "New_Energy",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.1700000000000002,
+   "industry": "Social_Commerce",
+   "month": 3,
+   "season_mod": 1.0,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.6120000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 3,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.5265000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 3,
+   "season_mod": 0.9,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.035,
+   "industry": "Unknown_Industry",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 2.1532500000000003,
+   "industry": "Cultural_Food",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.44925,
+   "industry": "AI_Tech",
+   "month": 4,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.309,
+   "industry": "Health_Care",
+   "month": 4,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 2.079,
+   "industry": "New_Energy",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.1440000000000001,
+   "industry": "Social_Commerce",
+   "month": 4,
+   "season_mod": 0.8,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7040000000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 4,
+   "season_mod": 0.8,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.8580000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 4,
+   "season_mod": 1.2,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.4850000000000003,
+   "industry": "Unknown_Industry",
+   "month": 4,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 2.251125,
+   "industry": "Cultural_Food",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.5151249999999998,
+   "industry": "AI_Tech",
+   "month": 5,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.3684999999999998,
+   "industry": "Health_Care",
+   "month": 5,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 2.1734999999999998,
+   "industry": "New_Energy",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.196,
+   "industry": "Social_Commerce",
+   "month": 5,
+   "season_mod": 0.8,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7360000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 5,
+   "season_mod": 0.8,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.8969999999999999,
+   "industry": "Traditional_RealEstate",
+   "month": 5,
+   "season_mod": 1.2,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.5525,
+   "industry": "Unknown_Industry",
+   "month": 5,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 2.1532500000000003,
+   "industry": "Cultural_Food",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.44925,
+   "industry": "AI_Tech",
+   "month": 6,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.309,
+   "industry": "Health_Care",
+   "month": 6,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 2.079,
+   "industry": "New_Energy",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.1440000000000001,
+   "industry": "Social_Commerce",
+   "month": 6,
+   "season_mod": 0.8,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7040000000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 6,
+   "season_mod": 0.8,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.8580000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 6,
+   "season_mod": 1.2,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.4850000000000003,
+   "industry": "Unknown_Industry",
+   "month": 6,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.0476249999999998,
+   "industry": "Cultural_Food",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 0.988125,
+   "industry": "AI_Tech",
+   "month": 7,
+   "season_mod": 0.75,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 0.8924999999999998,
+   "industry": "Health_Care",
+   "month": 7,
+   "season_mod": 0.75,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.0114999999999998,
+   "industry": "New_Energy",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.2707499999999998,
+   "industry": "Social_Commerce",
+   "month": 7,
+   "season_mod": 1.15,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.918,
+   "industry": "Traditional_Manufacturing",
+   "month": 7,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.5525,
+   "industry": "Traditional_RealEstate",
+   "month": 7,
+   "season_mod": 1.0,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.7224999999999999,
+   "industry": "Unknown_Industry",
+   "month": 7,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.10925,
+   "industry": "Cultural_Food",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.0462500000000001,
+   "industry": "AI_Tech",
+   "month": 8,
+   "season_mod": 0.75,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 0.9449999999999998,
+   "industry": "Health_Care",
+   "month": 8,
+   "season_mod": 0.75,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.071,
+   "industry": "New_Energy",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.3455,
+   "industry": "Social_Commerce",
+   "month": 8,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.9720000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 8,
+   "season_mod": 1.35,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.5850000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 8,
+   "season_mod": 1.0,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.765,
+   "industry": "Unknown_Industry",
+   "month": 8,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.35575,
+   "industry": "Cultural_Food",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.2787500000000003,
+   "industry": "AI_Tech",
+   "month": 9,
+   "season_mod": 0.75,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.1549999999999998,
+   "industry": "Health_Care",
+   "month": 9,
+   "season_mod": 0.75,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.309,
+   "industry": "New_Energy",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.6445,
+   "industry": "Social_Commerce",
+   "month": 9,
+   "season_mod": 1.15,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 1.1880000000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 9,
+   "season_mod": 1.35,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.7150000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 9,
+   "season_mod": 1.0,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.935,
+   "industry": "Unknown_Industry",
+   "month": 9,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.16725,
+   "industry": "Cultural_Food",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.9607500000000002,
+   "industry": "AI_Tech",
+   "month": 10,
+   "season_mod": 1.1,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.771,
+   "industry": "Health_Care",
+   "month": 10,
+   "season_mod": 1.1,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.1269999999999998,
+   "industry": "New_Energy",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 2.01825,
+   "industry": "Social_Commerce",
+   "month": 10,
+   "season_mod": 1.35,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.966,
+   "industry": "Traditional_Manufacturing",
+   "month": 10,
+   "season_mod": 1.05,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.6353749999999999,
+   "industry": "Traditional_RealEstate",
+   "month": 10,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.8049999999999999,
+   "industry": "Unknown_Industry",
+   "month": 10,
+   "season_mod": 0.7,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.1165,
+   "industry": "Cultural_Food",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.8755000000000004,
+   "industry": "AI_Tech",
+   "month": 11,
+   "season_mod": 1.1,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.6940000000000002,
+   "industry": "Health_Care",
+   "month": 11,
+   "season_mod": 1.1,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.0779999999999998,
+   "industry": "New_Energy",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.9305000000000003,
+   "industry": "Social_Commerce",
+   "month": 11,
+   "season_mod": 1.35,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.9240000000000002,
+   "industry": "Traditional_Manufacturing",
+   "month": 11,
+   "season_mod": 1.05,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.60775,
+   "industry": "Traditional_RealEstate",
+   "month": 11,
+   "season_mod": 0.85,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.77,
+   "industry": "Unknown_Industry",
+   "month": 11,
+   "season_mod": 0.7,
+   "sha_name": "丙午日 · 朱雀乘轩",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 0.8627499999999999,
+   "industry": "Cultural_Food",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.4492500000000001,
+   "industry": "AI_Tech",
+   "month": 12,
+   "season_mod": 1.1,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.309,
+   "industry": "Health_Care",
+   "month": 12,
+   "season_mod": 1.1,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 0.8329999999999999,
+   "industry": "New_Energy",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.4917500000000001,
+   "industry": "Social_Commerce",
+   "month": 12,
+   "season_mod": 1.35,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7140000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 12,
+   "season_mod": 1.05,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.46962499999999996,
+   "industry": "Traditional_RealEstate",
+   "month": 12,
+   "season_mod": 0.85,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 0.595,
+   "industry": "Unknown_Industry",
+   "month": 12,
+   "season_mod": 0.7,
+   "sha_name": "庚申日 · 白虎猖狂",
+   "year": 2025
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.5007499999999998,
+   "industry": "Cultural_Food",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2026
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 1.8135000000000001,
+   "industry": "AI_Tech",
+   "month": 1,
+   "season_mod": 1.3,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2026
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.638,
+   "industry": "Health_Care",
+   "month": 1,
+   "season_mod": 1.3,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2026
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.4489999999999998,
+   "industry": "New_Energy",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2026
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.1700000000000002,
+   "industry": "Social_Commerce",
+   "month": 1,
+   "season_mod": 1.0,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2026
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.6120000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 1,
+   "season_mod": 0.85,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2026
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.5265000000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 1,
+   "season_mod": 0.9,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2026
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.035,
+   "industry": "Unknown_Industry",
+   "month": 1,
+   "season_mod": 1.15,
+   "sha_name": "癸亥日 · 螣蛇暗流",
+   "year": 2026
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.83425,
+   "industry": "Cultural_Food",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2026
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 2.2165000000000004,
+   "industry": "AI_Tech",
+   "month": 2,
+   "season_mod": 1.3,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2026
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 2.002,
+   "industry": "Health_Care",
+   "month": 2,
+   "season_mod": 1.3,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2026
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.771,
+   "industry": "New_Energy",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2026
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.4300000000000002,
+   "industry": "Social_Commerce",
+   "month": 2,
+   "season_mod": 1.0,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2026
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.7480000000000001,
+   "industry": "Traditional_Manufacturing",
+   "month": 2,
+   "season_mod": 0.85,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2026
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.6435000000000002,
+   "industry": "Traditional_RealEstate",
+   "month": 2,
+   "season_mod": 0.9,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2026
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.265,
+   "industry": "Unknown_Industry",
+   "month": 2,
+   "season_mod": 1.15,
+   "sha_name": "戊辰日 · 贵人辅弼",
+   "year": 2026
+  },
+  {
+   "era_mod": 1.45,
+   "f_time": 1.9176249999999995,
+   "industry": "Cultural_Food",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2026
+  },
+  {
+   "era_mod": 1.55,
+   "f_time": 2.31725,
+   "industry": "AI_Tech",
+   "month": 3,
+   "season_mod": 1.3,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2026
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 2.0929999999999995,
+   "industry": "Health_Care",
+   "month": 3,
+   "season_mod": 1.3,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2026
+  },
+  {
+   "era_mod": 1.4,
+   "f_time": 1.8514999999999997,
+   "industry": "New_Energy",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2026
+  },
+  {
+   "era_mod": 1.3,
+   "f_time": 1.4949999999999999,
+   "industry": "Social_Commerce",
+   "month": 3,
+   "season_mod": 1.0,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2026
+  },
+  {
+   "era_mod": 0.8,
+   "f_time": 0.782,
+   "industry": "Traditional_Manufacturing",
+   "month": 3,
+   "season_mod": 0.85,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2026
+  },
+  {
+   "era_mod": 0.65,
+   "f_time": 0.6727500000000001,
+   "industry": "Traditional_RealEstate",
+   "month": 3,
+   "season_mod": 0.9,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2026
+  },
+  {
+   "era_mod": 1.0,
+   "f_time": 1.3224999999999998,
+   "industry": "Unknown_Industry",
+   "month": 3,
+   "season_mod": 1.15,
+   "sha_name": "甲寅日 · 三奇得使",
+   "year": 2026
+  }
+ ]
+}

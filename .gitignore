@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# 本地存档与试玩记录
+saves/
+
+# Godot
+godot/.godot/
+godot/export/
+*.import.tmp
+
+# macOS
+.DS_Store
+
+# 美术/音频原始源文件（原件保存在交付的 zip 中，不入库）
+assets_src/

@@ -1,0 +1,308 @@
+{
+  "version": "1.0.0",
+  "_comment": "引擎数值表（Python 与 Godot 共用）。修改后运行 python3 tools/export_golden.py 重新生成对照数据。",
+  "eras": [
+    {
+      "id": "Era_8_GenTu",
+      "name": "艮八运 (2004-2023) · 实体地产与重资产时代",
+      "until_year": 2023
+    },
+    {
+      "id": "Era_9_LiHuo",
+      "name": "离九运 (2024-2043) · 天文火运与科技文化时代",
+      "until_year": 9999
+    }
+  ],
+  "era_weights": {
+    "Era_8_GenTu": {
+      "Cultural_Food": 1.05,
+      "AI_Tech": 0.85,
+      "Health_Care": 1.0,
+      "Traditional_Manufacturing": 1.3,
+      "Traditional_RealEstate": 1.45,
+      "New_Energy": 0.9,
+      "Social_Commerce": 1.1
+    },
+    "Era_9_LiHuo": {
+      "Cultural_Food": 1.45,
+      "AI_Tech": 1.55,
+      "Health_Care": 1.4,
+      "Traditional_Manufacturing": 0.8,
+      "Traditional_RealEstate": 0.65,
+      "New_Energy": 1.4,
+      "Social_Commerce": 1.3
+    }
+  },
+  "season_of_month": {
+    "1": "Spring",
+    "2": "Spring",
+    "3": "Spring",
+    "4": "Summer",
+    "5": "Summer",
+    "6": "Summer",
+    "7": "Autumn",
+    "8": "Autumn",
+    "9": "Autumn",
+    "10": "Winter",
+    "11": "Winter",
+    "12": "Winter"
+  },
+  "season_multipliers": {
+    "Spring": {
+      "Wood": 1.3,
+      "Fire": 1.15,
+      "Earth": 0.9,
+      "Metal": 0.85,
+      "Water": 1.0
+    },
+    "Summer": {
+      "Wood": 0.85,
+      "Fire": 1.35,
+      "Earth": 1.2,
+      "Metal": 0.8,
+      "Water": 0.8
+    },
+    "Autumn": {
+      "Wood": 0.75,
+      "Fire": 0.85,
+      "Earth": 1.0,
+      "Metal": 1.35,
+      "Water": 1.15
+    },
+    "Winter": {
+      "Wood": 1.1,
+      "Fire": 0.7,
+      "Earth": 0.85,
+      "Metal": 1.05,
+      "Water": 1.35
+    }
+  },
+  "month_names": [
+    "正月·寅月 (立春/雨水)",
+    "二月·卯月 (惊蛰/春分)",
+    "三月·辰月 (清明/谷雨)",
+    "四月·巳月 (立夏/小满)",
+    "五月·午月 (芒种/夏至)",
+    "六月·未月 (小暑/大暑)",
+    "七月·申月 (立秋/处暑)",
+    "八月·酉月 (白露/秋分)",
+    "九月·戌月 (寒露/霜降)",
+    "十月·亥月 (立冬/小雪)",
+    "冬月·子月 (大雪/冬至)",
+    "腊月·丑月 (小寒/大寒)"
+  ],
+  "season_names": {
+    "1": "春季 (木旺·萌发开拓)",
+    "2": "春季 (木旺·萌发开拓)",
+    "3": "春季 (木旺·土相交替)",
+    "4": "夏季 (火旺·声量暴涨)",
+    "5": "夏季 (火旺·极盛竞争)",
+    "6": "夏季 (火旺·土相交替)",
+    "7": "秋季 (金旺·肃杀收割)",
+    "8": "秋季 (金旺·严整洗牌)",
+    "9": "秋季 (金旺·土相交替)",
+    "10": "冬季 (水旺·暗流蓄势)",
+    "11": "冬季 (水旺·资本潜伏)",
+    "12": "冬季 (水旺·岁末封冻)"
+  },
+  "daily_shas": [
+    {
+      "name": "甲寅日 · 三奇得使",
+      "mod": 1.15,
+      "desc": "吉神加持，战略洞察力高，开拓推进阻力极小"
+    },
+    {
+      "name": "丙午日 · 朱雀乘轩",
+      "mod": 1.1,
+      "desc": "舆论声量大涨，品牌营销传播效果+30%"
+    },
+    {
+      "name": "庚申日 · 白虎猖狂",
+      "mod": 0.85,
+      "desc": "竞争烈度骤升，谨防对手恶意降价或舆论攻讦"
+    },
+    {
+      "name": "癸亥日 · 螣蛇暗流",
+      "mod": 0.9,
+      "desc": "暗箱暗坑多，商务签约容易出现条款漏洞"
+    },
+    {
+      "name": "戊辰日 · 贵人辅弼",
+      "mod": 1.1,
+      "desc": "资方与大客户态度温和，融资与商务谈判顺畅"
+    }
+  ],
+  "industry_elements": {
+    "Cultural_Food": "Fire",
+    "AI_Tech": "Wood",
+    "Health_Care": "Wood",
+    "Traditional_Manufacturing": "Metal",
+    "Traditional_RealEstate": "Earth",
+    "New_Energy": "Fire",
+    "Social_Commerce": "Water"
+  },
+  "industry_names": {
+    "Cultural_Food": "文化餐饮",
+    "AI_Tech": "AI科技",
+    "Health_Care": "健康消费",
+    "Traditional_Manufacturing": "传统制造",
+    "Traditional_RealEstate": "传统地产",
+    "New_Energy": "新能源",
+    "Social_Commerce": "社交电商"
+  },
+  "default_industry_element": "Fire",
+  "industry_affinities": {
+    "Cultural_Food": {
+      "li_9": 1.45,
+      "zhen_3": 1.25,
+      "xun_4": 1.0,
+      "dui_7": 1.2,
+      "kan_1": 0.65,
+      "gen_8": 0.9,
+      "qian_6": 1.15,
+      "kun_2": 1.05,
+      "zhong_5": 1.1
+    },
+    "AI_Tech": {
+      "zhen_3": 1.5,
+      "li_9": 1.4,
+      "qian_6": 1.35,
+      "dui_7": 1.1,
+      "kan_1": 1.25,
+      "xun_4": 1.05,
+      "gen_8": 0.7,
+      "kun_2": 1.0,
+      "zhong_5": 1.15
+    },
+    "Health_Care": {
+      "kun_2": 1.35,
+      "gen_8": 1.25,
+      "zhen_3": 1.15,
+      "xun_4": 1.1,
+      "qian_6": 1.1,
+      "zhong_5": 1.05,
+      "li_9": 1.05,
+      "kan_1": 1.0,
+      "dui_7": 0.8
+    },
+    "New_Energy": {
+      "li_9": 1.45,
+      "zhen_3": 1.3,
+      "xun_4": 1.15,
+      "gen_8": 1.1,
+      "zhong_5": 1.1,
+      "qian_6": 1.05,
+      "kun_2": 1.0,
+      "dui_7": 0.85,
+      "kan_1": 0.7
+    },
+    "Social_Commerce": {
+      "xun_4": 1.45,
+      "li_9": 1.3,
+      "dui_7": 1.25,
+      "kan_1": 1.1,
+      "zhen_3": 1.1,
+      "zhong_5": 1.05,
+      "qian_6": 1.0,
+      "kun_2": 0.95,
+      "gen_8": 0.7
+    }
+  },
+  "role_gate_synergy": [
+    {
+      "role": "CEO",
+      "gate": "kai_men",
+      "score": 1.35
+    },
+    {
+      "role": "CEO",
+      "gate": "jing_men",
+      "score": 1.25
+    },
+    {
+      "role": "CEO",
+      "gate": "du_men",
+      "score": 0.85
+    },
+    {
+      "role": "CEO",
+      "gate": "shang_men",
+      "score": 0.95
+    },
+    {
+      "role": "CFO",
+      "gate": "sheng_men",
+      "score": 1.4
+    },
+    {
+      "role": "CFO",
+      "gate": "xiu_men",
+      "score": 1.15
+    },
+    {
+      "role": "CFO",
+      "gate": "shang_men",
+      "score": 0.7
+    },
+    {
+      "role": "CFO",
+      "gate": "du_men",
+      "score": 1.05
+    },
+    {
+      "role": "CTO",
+      "gate": "du_men",
+      "score": 1.45
+    },
+    {
+      "role": "CTO",
+      "gate": "kai_men",
+      "score": 0.9
+    },
+    {
+      "role": "CTO",
+      "gate": "jing_men",
+      "score": 0.8
+    },
+    {
+      "role": "CMO",
+      "gate": "jing_men",
+      "score": 1.4
+    },
+    {
+      "role": "CMO",
+      "gate": "jing_alarm_men",
+      "score": 1.25
+    },
+    {
+      "role": "法务总监",
+      "gate": "jing_alarm_men",
+      "score": 1.4
+    },
+    {
+      "role": "危机公关官",
+      "gate": "jing_alarm_men",
+      "score": 1.4
+    },
+    {
+      "role": "CMO",
+      "gate": "du_men",
+      "score": 0.65
+    },
+    {
+      "role": "VP_Expansion",
+      "gate": "shang_men",
+      "score": 1.35
+    },
+    {
+      "role": "VP_Expansion",
+      "gate": "kai_men",
+      "score": 1.3
+    },
+    {
+      "role": "VP_Expansion",
+      "gate": "xiu_men",
+      "score": 0.75
+    }
+  ]
+}

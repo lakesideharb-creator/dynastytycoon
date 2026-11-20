@@ -1,0 +1,117 @@
+{
+  "version": "1.0.0",
+  "gates": [
+    {
+      "id": "kai_men",
+      "name": "开门",
+      "nature": "阳金·开拓突破",
+      "ideal_role": "CEO / 业务总经理 / BD战略总监",
+      "base_skills": [
+        {
+          "name": "辟疆之印",
+          "description": "新设子公司筹建周期缩短 50%，初始拓客转化率提升 40%"
+        }
+      ],
+      "flaw": "不善精细化运营，长期守成会导致内耗值累积，月度满意度下降 10 点",
+      "matching_roles": ["CEO", "Head_of_BD", "Market_Expander"]
+    },
+    {
+      "id": "xiu_men",
+      "name": "休门",
+      "nature": "阳水·节奏稳健",
+      "ideal_role": "COO / HRD / 运营总监 / 客户成功负责人",
+      "base_skills": [
+        {
+          "name": "润物无声",
+          "description": "每月全公司员工压力值自然下降 15 点，离职率压制 60%"
+        }
+      ],
+      "flaw": "面对行业剧变时响应迟缓，战略转型决策周期延长 50%",
+      "matching_roles": ["COO", "HRD", "Customer_Success"]
+    },
+    {
+      "id": "sheng_men",
+      "name": "生门",
+      "nature": "阳土·财富嗅觉",
+      "ideal_role": "CFO / 商业化VP / 投资并购总监",
+      "base_skills": [
+        {
+          "name": "生财有道",
+          "description": "企业商业化变现转化率提升 35%，资金周转天数减少 25 天"
+        }
+      ],
+      "flaw": "过度看重短期利润，极易削减前瞻性研发预算，引发技术团队不满",
+      "matching_roles": ["CFO", "VP_Monetization", "Investment_Director"]
+    },
+    {
+      "id": "shang_men",
+      "name": "伤门",
+      "nature": "阳木·狼性进攻",
+      "ideal_role": "大区销售总监 / 攻坚铁军统帅",
+      "base_skills": [
+        {
+          "name": "决胜红海",
+          "description": "与竞品正面抢夺客户时赢单率提升 60%，业绩目标冲刺加成 30%"
+        }
+      ],
+      "flaw": "做事不留余地，与合规部门摩擦系数极大，易引来监管罚单",
+      "matching_roles": ["Sales_Director", "RedTeam_Lead"]
+    },
+    {
+      "id": "du_men",
+      "name": "杜门",
+      "nature": "阴木·深研壁垒",
+      "ideal_role": "CTO / 首席科学家 / 专利总监",
+      "base_skills": [
+        {
+          "name": "天工孤垒",
+          "description": "产品技术壁垒提升 80%，遭遇竞品反向工程侵权防御率 95%"
+        }
+      ],
+      "flaw": "严重缺乏商业用户同理心，容易陷入闭门造车式功能过剩",
+      "matching_roles": ["CTO", "Chief_Scientist", "Patent_Lead"]
+    },
+    {
+      "id": "jing_men",
+      "name": "景门",
+      "nature": "阳火·视觉美学",
+      "ideal_role": "CMO / 品牌总监 / 创意总监",
+      "base_skills": [
+        {
+          "name": "惊鸿流光",
+          "description": "宣发物料全网爆款破圈几率提升 60%，品牌溢价空间上限增加 25%"
+        }
+      ],
+      "flaw": "执行落地往往脱节，花钱如流水，容易导致‘虚火过旺’",
+      "matching_roles": ["CMO", "Creative_Director", "Head_of_Content"]
+    },
+    {
+      "id": "si_men",
+      "name": "死门",
+      "nature": "阴土·冷酷决断",
+      "ideal_role": "破产重组总监 / 资产处置专家 / 战略退守官",
+      "base_skills": [
+        {
+          "name": "断尾求生",
+          "description": "裁撤亏损业务线时残值变现率提升 40%，赔偿支出减少 30%"
+        }
+      ],
+      "flaw": "过于冷酷绝情，常驻董事会会使全体核心高管忠诚度持续流失",
+      "matching_roles": ["Restructure_Specialist", "Asset_Liquidator"]
+    },
+    {
+      "id": "jing_alarm_men",
+      "name": "惊门",
+      "nature": "阴金·应变善辩",
+      "ideal_role": "法务合规总监 / 首席危机公关官",
+      "base_skills": [
+        {
+          "name": "破浪还击",
+          "description": "恶性舆论危机化解速度提升 75%，知识产权官司胜诉反击率 80%"
+        }
+      ],
+      "flaw": "性格激进多疑，极易在团队内部捕风捉影，制造人人自危气氛",
+      "matching_roles": ["General_Counsel", "Crisis_PR_Lead"]
+    }
+  ]
+}

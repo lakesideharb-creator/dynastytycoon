@@ -1,0 +1,1363 @@
+{
+  "version": "1.0.0",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "案例一【空间算法】：新中式烘焙的跨省选址之争",
+      "methodology": "空间算法 (Space Positioning & Nine Palaces)",
+      "industry": "Cultural_Food",
+      "duration_months": 12,
+      "brief": "一线城市30家成熟门店已跑通，账面流动现金450万。面临首次全国跨省扩张，拓展VP主张进军郑州/合肥以低租金铺网，品牌主理人主张进军成都/西安文化高地激活离九宫品牌共振。",
+      "initial_state": {
+        "cash": 4500000.0,
+        "stores_count": 30,
+        "store_palace": "xun_4",
+        "monthly_base_rev": 80000.0,
+        "monthly_rent": 25000.0,
+        "reputation": 82,
+        "fengshui": 0.08
+      },
+      "choices": {
+        "A": {
+          "name": "进军巽四走廊（郑州、合肥）",
+          "cost": 3000000.0,
+          "store_count": 30,
+          "target_palace": "xun_4",
+          "unit_base_rev": 36000.0,
+          "unit_rent": 12000.0,
+          "verdict": "下沉市场价格极度敏感，文化国潮溢价失效，单店毛利难抵折旧，陷入平庸困局。"
+        },
+        "B": {
+          "name": "进军离九高地（成都、西安）",
+          "cost": 3600000.0,
+          "store_count": 30,
+          "target_palace": "li_9",
+          "unit_base_rev": 88000.0,
+          "unit_rent": 28000.0,
+          "verdict": "离火大运与成都文脉强烈共振，客单价与打卡声量双爆发，单店流水超95万，完美通关！"
+        },
+        "C": {
+          "name": "兵分两路（合肥15家 + 成都15家）",
+          "cost": 3300000.0,
+          "store_count": 30,
+          "unit_base_rev": 62000.0,
+          "unit_rent": 20000.0,
+          "verdict": "风险得到平摊，但合肥门店拖累了成都的高爆发，资金利用效率打了折扣。"
+        }
+      },
+      "win_condition": {
+        "min_cash": 128000000.0
+      },
+      "decision_points": [
+        {
+          "id": "s1_summer",
+          "turn": 4,
+          "title": "【离火当令】夏季客流高峰将至",
+          "desc": "五月入夏，火旺当令，正是国潮烘焙的黄金档期。苏清墨提议推出夏日限定礼盒，赵勇则想趁势全线降价冲量。",
+          "options": [
+            {
+              "key": "A",
+              "label": "苏清墨方案：国潮夏日限定礼盒全线上新",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -1500000
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.18,
+                  "months": 3,
+                  "label": "夏日限定礼盒"
+                },
+                {
+                  "type": "reputation",
+                  "delta": 4
+                }
+              ],
+              "result": "限定礼盒在社交平台持续刷屏，夏季客单价明显抬升。"
+            },
+            {
+              "key": "B",
+              "label": "赵勇方案：全线第二件半价冲销量",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.1,
+                  "months": 3,
+                  "label": "半价冲量"
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.96,
+                  "months": null,
+                  "label": "折扣侵蚀品牌溢价"
+                },
+                {
+                  "type": "reputation",
+                  "delta": -4
+                }
+              ],
+              "result": "销量冲上来了，但老顾客开始只在打折时上门。"
+            },
+            {
+              "key": "C",
+              "label": "按兵不动，留足现金",
+              "effects": [],
+              "result": "错过了火旺档期，但账上现金纹丝未动。"
+            }
+          ]
+        },
+        {
+          "id": "s1_rival",
+          "turn": 7,
+          "title": "【白虎猖狂】外资连锁对门开店",
+          "desc": "立秋后金旺火囚，外资烘焙连锁在你新开门店的对街开出旗舰店，新店客流开始被分流。",
+          "options": [
+            {
+              "key": "A",
+              "label": "正面迎战：新店全线降价两成",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -1000000
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.92,
+                  "months": null,
+                  "label": "价格战压低客单",
+                  "id_prefix": [
+                    "xun_store",
+                    "li_store",
+                    "mix_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": -3
+                }
+              ],
+              "result": "客流守住了，但新店客单价从此被拉低。"
+            },
+            {
+              "key": "B",
+              "label": "景门差异化：联名非遗IP打造文化体验店",
+              "requires_gate": "jing_men",
+              "requires_gate_name": "景门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -2000000
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.08,
+                  "months": null,
+                  "label": "非遗IP文化体验",
+                  "id_prefix": [
+                    "xun_store",
+                    "li_store",
+                    "mix_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": 5
+                }
+              ],
+              "result": "竞品卖面包，你卖文化体验，两边客群自然分开。"
+            },
+            {
+              "key": "C",
+              "label": "不予理会，专注老店",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.85,
+                  "months": null,
+                  "label": "新店被竞品分流",
+                  "id_prefix": [
+                    "xun_store",
+                    "li_store",
+                    "mix_"
+                  ]
+                }
+              ],
+              "result": "没有花钱，但新店流水被持续蚕食。"
+            }
+          ]
+        },
+        {
+          "id": "s1_winter",
+          "turn": 10,
+          "title": "【水旺克火】入冬客流下滑，上海老店开始老化",
+          "desc": "入冬水旺，火性行业受制最重。上海老店装修已显陈旧，沈务本主张翻新，赵勇主张全员冲刺年货节。",
+          "options": [
+            {
+              "key": "A",
+              "label": "沈务本方案：上海30家老店分批翻新",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -3000000
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.12,
+                  "months": null,
+                  "label": "上海老店翻新",
+                  "id_prefix": [
+                    "sh_store"
+                  ]
+                }
+              ],
+              "result": "翻新后的老店重新成为城市打卡点。"
+            },
+            {
+              "key": "B",
+              "label": "赵勇方案：全员加班冲刺年货节",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.1,
+                  "months": 3,
+                  "label": "年货节冲刺"
+                },
+                {
+                  "type": "exec",
+                  "match": {
+                    "all": true
+                  },
+                  "stress": 30,
+                  "loyalty": -10
+                }
+              ],
+              "result": "年货节流水亮眼，但高管团队已经连轴转了三个月。"
+            },
+            {
+              "key": "C",
+              "label": "削减门店人力成本过冬",
+              "effects": [
+                {
+                  "type": "store_cost",
+                  "field": "staff_cost",
+                  "factor": 0.85
+                },
+                {
+                  "type": "exec",
+                  "match": {
+                    "all": true
+                  },
+                  "stress": 15,
+                  "loyalty": -10
+                },
+                {
+                  "type": "reputation",
+                  "delta": -5
+                }
+              ],
+              "result": "成本降下来了，门店服务口碑也跟着下滑。"
+            }
+          ]
+        }
+      ],
+      "win_condition_text": "年末账面现金 ≥ 1.28亿（扩张投入与经营决策的综合回报）",
+      "intended_main_choice": "B",
+      "setup": {
+        "clock": {
+          "year": 2024,
+          "month": 2
+        },
+        "company": {
+          "name": "墨阁酥韵 (国潮新烘焙)",
+          "industry": "Cultural_Food",
+          "cash": 4500000.0,
+          "fengshui_modifier": 0.08,
+          "reputation": 82
+        },
+        "executives": [
+          {
+            "id": "e1",
+            "name": "林凡",
+            "gate_id": "jing_men",
+            "gate_name": "景门",
+            "role": "CEO",
+            "salary": 60000,
+            "loyalty": 90,
+            "stress": 30
+          },
+          {
+            "id": "e2",
+            "name": "沈务本",
+            "gate_id": "sheng_men",
+            "gate_name": "生门",
+            "role": "CFO",
+            "salary": 50000,
+            "loyalty": 85,
+            "stress": 25
+          },
+          {
+            "id": "e3",
+            "name": "苏清墨",
+            "gate_id": "jing_men",
+            "gate_name": "景门",
+            "role": "CMO",
+            "salary": 45000,
+            "loyalty": 88,
+            "stress": 35
+          },
+          {
+            "id": "e4",
+            "name": "赵勇",
+            "gate_id": "shang_men",
+            "gate_name": "伤门",
+            "role": "VP_Expansion",
+            "salary": 45000,
+            "loyalty": 80,
+            "stress": 40
+          }
+        ],
+        "stores": [
+          {
+            "id": "sh_store_{nn}",
+            "name": "上海直营{nn}号店",
+            "palace_id": "xun_4",
+            "city_name": "上海",
+            "base_revenue": 80000.0,
+            "rent": 25000.0,
+            "staff_cost": 18000.0,
+            "count": 30
+          }
+        ]
+      },
+      "main_choices": {
+        "A": {
+          "result": "【已执行】：斥资 300 万在郑州、合肥下沉走廊开设 30 家新网点。单店租金低廉，全面铺开！",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": -3000000.0
+            },
+            {
+              "type": "add_stores",
+              "count": 30,
+              "id": "xun_store_{nn}",
+              "name": "中原下沉{nn}号店",
+              "palace_id": "xun_4",
+              "city_name": "郑州/合肥",
+              "base_revenue": 36000.0,
+              "rent": 12000.0,
+              "staff_cost": 10000.0
+            }
+          ]
+        },
+        "B": {
+          "result": "【已执行】：斥资 360 万在成都、西安文化商圈开设 30 家概念店。激活离九宫品牌与文脉共振！",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": -3600000.0
+            },
+            {
+              "type": "add_stores",
+              "count": 30,
+              "id": "li_store_{nn}",
+              "name": "西南国潮{nn}号概念店",
+              "palace_id": "li_9",
+              "city_name": "成都/西安",
+              "base_revenue": 88000.0,
+              "rent": 28000.0,
+              "staff_cost": 16000.0
+            }
+          ]
+        },
+        "C": {
+          "result": "【已执行】：斥资 330 万分别在合肥与成都各开 15 家门店，兵分两路试水。",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": -3300000.0
+            },
+            {
+              "type": "add_stores",
+              "count": 15,
+              "id": "mix_xun_{nn}",
+              "name": "中原试点{nn}号店",
+              "palace_id": "xun_4",
+              "city_name": "合肥",
+              "base_revenue": 36000.0,
+              "rent": 12000.0,
+              "staff_cost": 10000.0
+            },
+            {
+              "type": "add_stores",
+              "count": 15,
+              "id": "mix_li_{nn}",
+              "name": "蓉城试点{nn}号店",
+              "palace_id": "li_9",
+              "city_name": "成都",
+              "base_revenue": 88000.0,
+              "rent": 28000.0,
+              "staff_cost": 16000.0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "案例二【时间算法】：AI教育初创公司的融资择时生死战",
+      "methodology": "时间算法 (Time Cycles & Cashflow Runway)",
+      "industry": "AI_Tech",
+      "duration_months": 15,
+      "brief": "2019年秋，公司账面现金仅剩380万，月度研发净亏损80万（仅剩4.7个月跑道）。红杉提出给出一笔'略显苛刻'的2000万对赌融资。CTO坚持技术很快能突破，主张等到2020年春节后高估值再融。",
+      "initial_state": {
+        "cash": 3800000.0,
+        "monthly_burn": 800000.0,
+        "monthly_base_rev": 350000.0,
+        "fixed_cost": 1150000.0,
+        "reputation": 75,
+        "fengshui": 0.05
+      },
+      "choices": {
+        "A": {
+          "name": "2019Q3秋分前立决：签下略显苛刻的对赌，迅速锁死2000万现金",
+          "immediate_cash": 20000000.0,
+          "dilution": 0.25,
+          "verdict": "金秋肃杀之期储备厚实粮草。随后2020年初黑天鹅资本封冻降临，同行纷纷暴毙，公司凭借充沛现金逆势低价收编优质工程师，破茧成蝶！"
+        },
+        "B": {
+          "name": "拖延至2020Q1：等待技术迭代，博取更高估值",
+          "immediate_cash": 0.0,
+          "dilution": 0.0,
+          "verdict": "天时骤变！2020Q1疫情爆发全国封控，资方全面冷冻投资协议。第5个月公司现金见底断粮，不得不贱卖遣散，血泪退场。"
+        },
+        "C": {
+          "name": "折中：裁撤半数研发，靠现有现金苦撑至下半年",
+          "immediate_cash": 0.0,
+          "monthly_burn_cut": 0.5,
+          "verdict": "勉强续命但研发停滞，被巨头后来居上抄走先机，沦为三流代工外包团队。"
+        }
+      },
+      "win_condition": {
+        "min_cash": 13000000.0,
+        "tech_patent_ready": true
+      },
+      "decision_points": [
+        {
+          "id": "s2_terms",
+          "turn": 3,
+          "requires_main_choice": [
+            "A"
+          ],
+          "title": "【螣蛇暗流】对赌协议里的隐藏条款",
+          "desc": "法务审阅发现，资方在补充协议中埋了“季度营收不达标即触发回购”的条款。",
+          "options": [
+            {
+              "key": "A",
+              "label": "生门沈务本逐条谈判，删去回购条款",
+              "requires_gate": "sheng_men",
+              "requires_gate_name": "生门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -300000
+                }
+              ],
+              "result": "沈务本据理力争，回购条款被删去，代价是一笔律师费。"
+            },
+            {
+              "key": "B",
+              "label": "接受条款，尽快完成交割",
+              "effects": [],
+              "result": "交割顺利，但回购条款像一颗定时炸弹埋在协议里。"
+            },
+            {
+              "key": "C",
+              "label": "引入第二家资方分散风险",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -800000
+                },
+                {
+                  "type": "reputation",
+                  "delta": 3
+                }
+              ],
+              "result": "两家资方互相制衡，条款变得温和，但中介费不菲。"
+            }
+          ]
+        },
+        {
+          "id": "s2_pandemic",
+          "turn": 6,
+          "title": "【天时骤变】疫情封控，在线教育需求井喷",
+          "desc": "春节后全国封控，线下课堂停摆，在线教育需求一夜暴涨，服务器与带宽成本同步飙升。",
+          "options": [
+            {
+              "key": "A",
+              "label": "杜门张博带队，72小时自研上线直播课",
+              "requires_gate": "du_men",
+              "requires_gate_name": "杜门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -800000
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.8,
+                  "months": 6,
+                  "label": "在线教育井喷·自研"
+                },
+                {
+                  "type": "exec",
+                  "match": {
+                    "role": "CTO"
+                  },
+                  "stress": 20
+                }
+              ],
+              "result": "技术团队三天三夜没合眼，直播课如期上线，用户量翻了几番。"
+            },
+            {
+              "key": "B",
+              "label": "采购外包方案快速上线",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -2000000
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.4,
+                  "months": 6,
+                  "label": "在线教育井喷·外包"
+                }
+              ],
+              "result": "外包方案上线很快，但体验平平，利润被外包费吃掉一截。"
+            },
+            {
+              "key": "C",
+              "label": "观望，等待局势明朗",
+              "effects": [],
+              "result": "你错过了这一波，竞品抢走了涌入的用户。"
+            }
+          ]
+        },
+        {
+          "id": "s2_milestone_hard",
+          "turn": 10,
+          "requires_main_choice": [
+            "A"
+          ],
+          "requires_event_choice": {
+            "s2_terms": [
+              "B"
+            ]
+          },
+          "title": "【对赌到期】回购条款即将触发",
+          "desc": "季度营收未达对赌目标，资方依据补充协议要求启动回购。",
+          "options": [
+            {
+              "key": "A",
+              "label": "砸钱冲刺营收，力争达标",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -4000000
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.25,
+                  "months": null,
+                  "label": "冲刺营收"
+                }
+              ],
+              "result": "营收勉强达标，回购暂缓，但现金消耗巨大。"
+            },
+            {
+              "key": "B",
+              "label": "履行回购条款",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -9000000
+                }
+              ],
+              "result": "按协议回购，公司元气大伤。"
+            },
+            {
+              "key": "C",
+              "label": "开门李道连夜飞赴资方总部斡旋",
+              "requires_gate": "kai_men",
+              "requires_gate_name": "开门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -1500000
+                },
+                {
+                  "type": "reputation",
+                  "delta": -5
+                }
+              ],
+              "result": "李道以新增学校渠道说服资方延期一年，代价是让出一部分条件。"
+            }
+          ]
+        },
+        {
+          "id": "s2_milestone_soft",
+          "turn": 10,
+          "requires_main_choice": [
+            "A"
+          ],
+          "requires_event_choice": {
+            "s2_terms": [
+              "A",
+              "C"
+            ]
+          },
+          "title": "【对赌复盘】资方希望看到增长曲线",
+          "desc": "季度复盘会上，资方希望下半年看到更陡峭的增长曲线。",
+          "options": [
+            {
+              "key": "A",
+              "label": "加大投放冲用户规模",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -3000000
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.25,
+                  "months": null,
+                  "label": "规模投放"
+                }
+              ],
+              "result": "用户规模快速增长，营收曲线上扬。"
+            },
+            {
+              "key": "B",
+              "label": "开门李道开拓B端学校渠道",
+              "requires_gate": "kai_men",
+              "requires_gate_name": "开门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -1000000
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.3,
+                  "months": null,
+                  "label": "学校渠道"
+                }
+              ],
+              "result": "第一批学校合同落地，收入更稳定。"
+            },
+            {
+              "key": "C",
+              "label": "稳住节奏，按原计划推进",
+              "effects": [],
+              "result": "资方略有不满，但你守住了现金。"
+            }
+          ]
+        }
+      ],
+      "win_condition_text": "期末现金 ≥ 1300万（熬过资本寒冬并守住对赌）",
+      "intended_main_choice": "A",
+      "setup": {
+        "clock": {
+          "year": 2019,
+          "month": 9
+        },
+        "company": {
+          "name": "智道天成 (AI教育大模型)",
+          "industry": "AI_Tech",
+          "cash": 3800000.0,
+          "fengshui_modifier": 0.05,
+          "reputation": 75
+        },
+        "executives": [
+          {
+            "id": "e1",
+            "name": "李道",
+            "gate_id": "kai_men",
+            "gate_name": "开门",
+            "role": "CEO",
+            "salary": 50000,
+            "loyalty": 85,
+            "stress": 50
+          },
+          {
+            "id": "e2",
+            "name": "张博",
+            "gate_id": "du_men",
+            "gate_name": "杜门",
+            "role": "CTO",
+            "salary": 60000,
+            "loyalty": 90,
+            "stress": 45
+          },
+          {
+            "id": "e3",
+            "name": "沈务本",
+            "gate_id": "sheng_men",
+            "gate_name": "生门",
+            "role": "CFO",
+            "salary": 45000,
+            "loyalty": 80,
+            "stress": 60
+          }
+        ],
+        "stores": [
+          {
+            "id": "ai_hq",
+            "name": "北京中关村AI研发总部",
+            "palace_id": "zhen_3",
+            "city_name": "北京",
+            "base_revenue": 150000.0,
+            "rent": 150000.0,
+            "staff_cost": 1100000.0
+          }
+        ]
+      },
+      "main_choices": {
+        "A": {
+          "result": "【已执行】：在金秋肃杀之前果断签下2000万对赌融资！账面弹药极度充沛，无惧任何黑天鹅风浪！",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": 20000000.0
+            },
+            {
+              "type": "store_field",
+              "field": "base_revenue",
+              "id_prefix": [
+                "ai_hq"
+              ],
+              "add": 300000.0
+            },
+            {
+              "type": "reputation",
+              "delta": 10
+            }
+          ]
+        },
+        "B": {
+          "result": "【已执行】：拒绝当期融资，选择死守现有资金等待2020年春节后高估值。",
+          "effects": [
+            {
+              "type": "store_field",
+              "field": "base_revenue",
+              "id_prefix": [
+                "ai_hq"
+              ],
+              "add": 30000.0
+            }
+          ]
+        },
+        "C": {
+          "result": "【已执行】：裁撤60%研发与运营人员，月度支出大幅缩减，但产品迭代严重放缓。",
+          "effects": [
+            {
+              "type": "store_field",
+              "field": "staff_cost",
+              "id_prefix": [
+                "ai_hq"
+              ],
+              "factor": 0.4
+            },
+            {
+              "type": "store_field",
+              "field": "base_revenue",
+              "id_prefix": [
+                "ai_hq"
+              ],
+              "factor": 0.6
+            },
+            {
+              "type": "reputation",
+              "delta": -15
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "案例三【人物算法】：豪华创业四人组的权力归位",
+      "methodology": "人物算法 (Personnel & Gate Friction)",
+      "industry": "AI_Tech",
+      "duration_months": 12,
+      "brief": "公司天使轮融了1500万，但四名豪华联创内部势成水火：原CEO林总是狼性销售（伤门），与首席科学家（杜门）天天在办公室拍桌子互骂；品牌官（景门）整天埋怨没有预算；财务官（生门）整天卡报销。组织内耗率高达45%，产品迟迟无法交付！",
+      "initial_state": {
+        "cash": 12000000.0,
+        "friction": 0.45,
+        "monthly_burn": 600000.0,
+        "reputation": 65,
+        "fengshui": -0.1
+      },
+      "choices": {
+        "A": {
+          "name": "权力重构：劝退伤门原CEO转任战略顾问，由景门品牌官掌舵CEO，聘入休门COO调和",
+          "friction_reduction": 0.4,
+          "reorganization_cost": 1500000.0,
+          "verdict": "八门归位！景门CEO确立宏大愿景，休门COO化解杜门科学家心结，团队内耗降至5%，新一代核心系统提前两个月震撼问世！"
+        },
+        "B": {
+          "name": "各打五十大板：保留现有架构，强行推行OKR量化考评与连坐惩罚",
+          "friction_reduction": -0.1,
+          "reorganization_cost": 200000.0,
+          "verdict": "伤门与杜门矛盾激化，首席科学家在产品发布前夕愤然离职并带走核心架构师，项目直接瘫痪。"
+        },
+        "C": {
+          "name": "彻底解散技术部改买外部方案，全面转为纯销售驱动型团队",
+          "friction_reduction": 0.2,
+          "verdict": "短期有销售流水进账，但由于缺乏底层自研技术，半年后被采购方认定为贴牌皮包公司，估值暴跌。"
+        }
+      },
+      "win_condition": {
+        "max_friction": 0.1,
+        "final_month_profit": 4000000.0,
+        "product_launched": true
+      },
+      "decision_points": [
+        {
+          "id": "s3_scientist",
+          "turn": 3,
+          "title": "【杜门闭塞】首席科学家陈默递交辞呈",
+          "desc": "长期与销售线冲突，陈默心灰意冷。他手里握着核心模型架构。",
+          "options": [
+            {
+              "key": "A",
+              "label": "CEO亲自挽留，授予期权",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -1000000
+                },
+                {
+                  "type": "exec",
+                  "match": {
+                    "name": "陈默"
+                  },
+                  "loyalty": 20,
+                  "stress": -20
+                }
+              ],
+              "result": "陈默收下期权，答应再干一年。"
+            },
+            {
+              "key": "B",
+              "label": "休门COO温润生出面调解",
+              "requires_gate": "xiu_men",
+              "requires_gate_name": "休门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -100000
+                },
+                {
+                  "type": "exec",
+                  "match": {
+                    "name": "陈默"
+                  },
+                  "loyalty": 25,
+                  "stress": -30
+                }
+              ],
+              "result": "温润生陪陈默喝了三次茶，心结解开了。"
+            },
+            {
+              "key": "C",
+              "label": "尊重选择，放他离开",
+              "effects": [
+                {
+                  "type": "exec",
+                  "match": {
+                    "name": "陈默"
+                  },
+                  "remove": true
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.75,
+                  "months": null,
+                  "label": "核心架构流失"
+                }
+              ],
+              "result": "陈默带着架构图离开了，研发进度大幅倒退。"
+            }
+          ]
+        },
+        {
+          "id": "s3_poach",
+          "turn": 6,
+          "title": "【伤门躁动】竞对重金挖角赵勇",
+          "desc": "赵勇手握三个大客户，竞对开出双倍薪资。",
+          "options": [
+            {
+              "key": "A",
+              "label": "加薪挽留，许诺独立事业部",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -800000
+                },
+                {
+                  "type": "exec",
+                  "match": {
+                    "name": "赵勇"
+                  },
+                  "loyalty": 15,
+                  "stress": -10
+                }
+              ],
+              "result": "赵勇留下了，干劲十足。"
+            },
+            {
+              "key": "B",
+              "label": "顺势放人，客户由苏清墨接手",
+              "effects": [
+                {
+                  "type": "exec",
+                  "match": {
+                    "name": "赵勇"
+                  },
+                  "remove": true
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.85,
+                  "months": 4,
+                  "label": "大客户交接期"
+                }
+              ],
+              "result": "赵勇离开后办公室安静了许多，但大客户交接需要时间。"
+            },
+            {
+              "key": "C",
+              "label": "签竞业协议并公开警告",
+              "effects": [
+                {
+                  "type": "exec",
+                  "match": {
+                    "name": "赵勇"
+                  },
+                  "stress": 25,
+                  "loyalty": -20
+                },
+                {
+                  "type": "exec",
+                  "match": {
+                    "all": true
+                  },
+                  "stress": 10
+                }
+              ],
+              "result": "赵勇被迫留下，办公室气氛降到冰点。"
+            }
+          ]
+        },
+        {
+          "id": "s3_launch",
+          "turn": 9,
+          "title": "【景门照耀】新一代系统发布会",
+          "desc": "产品即将发布，发布会的规格由你拍板。",
+          "options": [
+            {
+              "key": "A",
+              "label": "景门主理：高规格线下发布会",
+              "requires_gate": "jing_men",
+              "requires_gate_name": "景门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -2000000
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.25,
+                  "months": null,
+                  "label": "发布会声量"
+                },
+                {
+                  "type": "reputation",
+                  "delta": 8
+                }
+              ],
+              "result": "发布会刷屏行业媒体，订单纷至沓来。"
+            },
+            {
+              "key": "B",
+              "label": "杜门陈默线上技术直播演示",
+              "requires_gate": "du_men",
+              "requires_gate_name": "杜门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -300000
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.15,
+                  "months": null,
+                  "label": "技术直播口碑"
+                }
+              ],
+              "result": "硬核演示圈粉一众开发者。"
+            },
+            {
+              "key": "C",
+              "label": "低调上线，靠口碑慢慢发酵",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.05,
+                  "months": null,
+                  "label": "自然口碑"
+                }
+              ],
+              "result": "产品平稳上线，增长温和。"
+            }
+          ]
+        }
+      ],
+      "win_condition_text": "组织内耗 ≤ 10% 且末月净利润 ≥ 400万（团队归位且产品成功上线）",
+      "intended_main_choice": "A",
+      "setup": {
+        "clock": {
+          "year": 2024,
+          "month": 2
+        },
+        "company": {
+          "name": "星穹矩阵 (多模态具身智能)",
+          "industry": "AI_Tech",
+          "cash": 12000000.0,
+          "fengshui_modifier": -0.12,
+          "reputation": 65
+        },
+        "executives": [
+          {
+            "id": "e1",
+            "name": "赵勇",
+            "gate_id": "shang_men",
+            "gate_name": "伤门",
+            "role": "CEO",
+            "salary": 70000,
+            "loyalty": 75,
+            "stress": 65
+          },
+          {
+            "id": "e2",
+            "name": "陈默",
+            "gate_id": "du_men",
+            "gate_name": "杜门",
+            "role": "CTO",
+            "salary": 70000,
+            "loyalty": 60,
+            "stress": 70
+          },
+          {
+            "id": "e3",
+            "name": "苏清墨",
+            "gate_id": "jing_men",
+            "gate_name": "景门",
+            "role": "CMO",
+            "salary": 50000,
+            "loyalty": 65,
+            "stress": 55
+          },
+          {
+            "id": "e4",
+            "name": "沈务本",
+            "gate_id": "sheng_men",
+            "gate_name": "生门",
+            "role": "CFO",
+            "salary": 50000,
+            "loyalty": 70,
+            "stress": 60
+          }
+        ],
+        "stores": [
+          {
+            "id": "sz_hq",
+            "name": "深圳南山科技园总部",
+            "palace_id": "zhen_3",
+            "city_name": "深圳",
+            "base_revenue": 600000.0,
+            "rent": 250000.0,
+            "staff_cost": 350000.0
+          }
+        ]
+      },
+      "main_choices": {
+        "A": {
+          "result": "【已执行】：八门归位！景门CEO掌舵品牌愿景，休门COO理顺组织机制，技术杜门解开心结，团队内耗降至冰点！",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": -1500000.0
+            },
+            {
+              "type": "fengshui_set",
+              "value": 0.15
+            },
+            {
+              "type": "exec",
+              "match": {
+                "name": "苏清墨"
+              },
+              "set": {
+                "role": "CEO",
+                "salary": 70000,
+                "loyalty": 95,
+                "stress": 20
+              }
+            },
+            {
+              "type": "exec",
+              "match": {
+                "name": "赵勇"
+              },
+              "set": {
+                "role": "VP_Expansion",
+                "salary": 60000,
+                "loyalty": 75,
+                "stress": 30
+              }
+            },
+            {
+              "type": "exec",
+              "match": {
+                "name": "陈默"
+              },
+              "set": {
+                "loyalty": 90,
+                "stress": 25
+              }
+            },
+            {
+              "type": "add_exec",
+              "id": "e5",
+              "name": "温润生",
+              "gate_id": "xiu_men",
+              "gate_name": "休门",
+              "role": "COO",
+              "salary": 55000,
+              "loyalty": 90,
+              "stress": 15
+            },
+            {
+              "type": "store_field",
+              "field": "base_revenue",
+              "id_prefix": [
+                "sz_hq"
+              ],
+              "add": 400000.0
+            }
+          ]
+        },
+        "B": {
+          "result": "【已执行】：强推严苛考评与末位淘汰。伤门与杜门矛盾激化，办公室火药味十足！",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": -200000.0
+            },
+            {
+              "type": "exec",
+              "match": {
+                "all": true
+              },
+              "stress": 25,
+              "loyalty": -15
+            },
+            {
+              "type": "fengshui",
+              "delta": -0.05
+            }
+          ]
+        },
+        "C": {
+          "result": "【已执行】：解散技术研发线转做外包代理，虽然短期省下研发薪酬，但失去底层核心壁垒。",
+          "effects": [
+            {
+              "type": "store_field",
+              "field": "staff_cost",
+              "id_prefix": [
+                "sz_hq"
+              ],
+              "factor": 0.4
+            },
+            {
+              "type": "store_field",
+              "field": "base_revenue",
+              "id_prefix": [
+                "sz_hq"
+              ],
+              "factor": 0.7
+            },
+            {
+              "type": "reputation",
+              "delta": -20
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "案例四【竞争策略】：功能饮料面对百亿巨头的降价屠杀",
+      "methodology": "竞争策略 (Asymmetric Business War)",
+      "industry": "Functional_Beverage",
+      "duration_months": 12,
+      "brief": "新锐电解质水年销突破5亿，引来传统百亿饮品巨头红眼。巨头在全渠道发起'买一送一'价格战，并威胁经销商二选一封杀。",
+      "initial_state": {
+        "cash": 30000000.0,
+        "market_share": 0.15
+      },
+      "choices": {
+        "A": {
+          "name": "跟进打五折价格战",
+          "verdict": "现金流三月内烧光，巨头凭雄厚财力胜出，战败破产。"
+        },
+        "B": {
+          "name": "避其锋芒，转战专业马拉松/健身房/医美细分高维场景并强化文化IP",
+          "verdict": "成功跳出红海，开辟专业认知高地，毛利率逆势提升35%！"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "案例五【投资决策】：早期消费机构评估高估值预制菜项目",
+      "methodology": "投资对赌与周期风控 (Investment Due Diligence)",
+      "industry": "Precooked_Food",
+      "duration_months": 12,
+      "brief": "一个爆红的预制菜项目估值叫到20亿，机构内部投资经理抢着上会，争抢份额。",
+      "initial_state": {
+        "cash": 50000000.0
+      },
+      "choices": {
+        "A": {
+          "name": "盲目追高入局，签署无保护协议",
+          "verdict": "热潮退去退货率高达40%，项目爆雷，基金净值大损。"
+        },
+        "B": {
+          "name": "设置严密的回购条款与现金流对赌，分步出资",
+          "verdict": "在市场退潮时凭借严密条款安全撤退，保住LP本金并获得稳健优先清偿回报。"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "案例六【营销时机】：智能门锁爆品发布节点的乾坤大挪移",
+      "methodology": "择时引爆 (Solar Terms & Marketing Waves)",
+      "industry": "AI_Tech",
+      "duration_months": 6,
+      "brief": "新品智能锁研发完成，账面推广预算仅200万。暑期大促流量昂贵，中秋前夕各方注意力分散。",
+      "initial_state": {
+        "cash": 2000000.0
+      },
+      "choices": {
+        "A": {
+          "name": "7月暑期盲目上线大促销",
+          "verdict": "流量费用高涨3倍，新品被电商大促彻底淹没，全网仅卖出3000套。"
+        },
+        "B": {
+          "name": "延至9月中秋景门旺盛期，前置悬念，开门日全线引爆",
+          "verdict": "景门得使！预售斩获3万套，国庆单周破2800万流水，年终破10亿GMV！"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "案例七【战略扩张】：新能源电池BMS产能扩充分步走",
+      "methodology": "空间集聚与杠杆平衡 (Leverage & Scale)",
+      "industry": "New_Energy",
+      "duration_months": 18,
+      "brief": "下游车企订单暴涨，产能严重不足。投委会激进派建议借款10亿一次性扩充3倍产能。",
+      "initial_state": {
+        "cash": 80000000.0
+      },
+      "choices": {
+        "A": {
+          "name": "激进借债10亿一次性扩充3倍",
+          "verdict": "次年遭遇行业周期性去库存，巨额利息与厂房折旧压垮现金流，被迫重整。"
+        },
+        "B": {
+          "name": "分期扩充2倍，留存30%抗周期储备资金",
+          "verdict": "不仅平稳消化订单，还在行业退潮期低价收编濒危对手资产，稳坐龙头。"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "案例八【谈判博弈】：SaaS大客户续约逼降30%的价值交换",
+      "methodology": "商战博弈与势能交换 (Negotiation Leverage)",
+      "industry": "SaaS_Software",
+      "duration_months": 6,
+      "brief": "占营收25%的某跨国大客户要求续约降价30%，否则引入竞品替代。",
+      "initial_state": {
+        "cash": 15000000.0
+      },
+      "choices": {
+        "A": {
+          "name": "直接降价妥协",
+          "verdict": "毛利直接归零，并引发其他客户连锁逼降，陷入恶性循环。"
+        },
+        "B": {
+          "name": "坚守价格底线，以锁定三年长约+联合打造行业标杆案例作为价值置换",
+          "verdict": "不仅锁定长期确定性收入，更凭借标杆案例再签五家行业巨头！"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "案例九【综合并购】：周期低谷期商业综合体资产抄底",
+      "methodology": "周期底部重资产逆周期抄底 (Counter-cyclical M&A)",
+      "industry": "Retail_Property",
+      "duration_months": 24,
+      "brief": "商业地产跌至冰点，核心商圈地标综合体以三折跳楼价挂牌转让。",
+      "initial_state": {
+        "cash": 120000000.0
+      },
+      "choices": {
+        "A": {
+          "name": "恐慌观望，错失良机",
+          "verdict": "两年后消费复苏地价暴涨，资金长期滞留低息理财被通胀吞噬。"
+        },
+        "B": {
+          "name": "在艮土封冻筑底之时联合险资抄底接盘，改建国潮首店集群",
+          "verdict": "踩准周期反转，资产估值暴增4倍，稳收长期高额租金分红！"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "案例十【危机公关】：社交电商平台假药爆雷的黄金24小时",
+      "methodology": "惊门公关与断臂求生 (Crisis Management & 24H PR)",
+      "industry": "Social_ECommerce",
+      "duration_months": 3,
+      "brief": "第三方入驻商家销售违规减肥药致消费者住院，热搜已引爆，监管入驻调查。",
+      "initial_state": {
+        "cash": 40000000.0,
+        "reputation": 40
+      },
+      "choices": {
+        "A": {
+          "name": "推诿是第三方商户行为，发律师函威胁删帖",
+          "verdict": "激起全民公愤与各大官媒痛斥，全平台被责令下架整改6个月，直接死亡。"
+        },
+        "B": {
+          "name": "启动惊门断臂决断：CEO带头道歉，垫付千万赔偿，永久封禁劣质品类",
+          "verdict": "教科书级危机化解！绝处逢生，树立诚实有担当的品牌标杆，商誉逆势飙升！"
+        }
+      }
+    }
+  ]
+}

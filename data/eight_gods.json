@@ -1,0 +1,77 @@
+{
+  "version": "1.0.0",
+  "gods": [
+    {
+      "id": "zhi_fu",
+      "name": "值符",
+      "attribute": "高贵权威",
+      "business_metaphor": "权威背书、顶级国资、行业领袖站台",
+      "buff": "外部信用评级锁定最高级，银行信贷额度提升 100%，签约阻力降低 80%",
+      "debuff": "容易形成依赖心理，失去自主决断权；一旦背书方爆雷，连带全崩",
+      "activation_condition": "引入顶级战略投资者或政府独家特许经营"
+    },
+    {
+      "id": "teng_she",
+      "name": "螣蛇",
+      "attribute": "机变曲折",
+      "business_metaphor": "不确定性、合同暗坑、虚假繁荣",
+      "buff": "在模糊灰色商战中，有奇效偷袭对手薄弱点",
+      "debuff": "数据存在粉饰与假象，尽调穿透有 50% 概率暴雷",
+      "activation_condition": "签署高风险盲盒协议或对赌融资"
+    },
+    {
+      "id": "tai_yin",
+      "name": "太阴",
+      "attribute": "暗中周全",
+      "business_metaphor": "绝密攻坚、潜伏研发、暗度陈仓",
+      "buff": "企业商业机密与核心源代码被泄密风险降为 0%",
+      "debuff": "组织内部透明度极低，员工间容易滋生无端猜忌",
+      "activation_condition": "开启保密实验室专属模式"
+    },
+    {
+      "id": "bai_hu",
+      "name": "白虎",
+      "attribute": "刚猛血战",
+      "business_metaphor": "生死价格战、恶性内卷竞争、高压执行",
+      "buff": "全员执行力与抢单速度提升 50%",
+      "debuff": "团队过劳死与抑郁离职率飙升，身体健康事故概率翻 3 倍",
+      "activation_condition": "遭遇行业巨头正面宣战"
+    },
+    {
+      "id": "liu_he",
+      "name": "六合",
+      "attribute": "撮合共赢",
+      "business_metaphor": "产业生态联盟、排他战略合作、协同网络",
+      "buff": "上下游供应链采购成本降低 25%，联合竞标成功率提升 60%",
+      "debuff": "各方利益博弈导致责任边界模糊，扯皮拖延风险增加",
+      "activation_condition": "联合3家以上同行建立产业公会"
+    },
+    {
+      "id": "jiu_di",
+      "name": "九地",
+      "attribute": "深扎潜伏",
+      "business_metaphor": "底层沉淀、高复购壁垒、不动产基石",
+      "buff": "在宏观经济危机中抗击打能力极强，核心资产不贬值",
+      "debuff": "思想极其保守，难以捕捉爆发性风口机会",
+      "activation_condition": "连续3年不分红，利润全转入技术与土地沉淀"
+    },
+    {
+      "id": "jiu_tian",
+      "name": "九天",
+      "attribute": "高远星辰",
+      "business_metaphor": "全球化野心、品牌升维、改变世界之愿景",
+      "buff": "吸引全球顶级高智商人才投奔概率提升 80%，估值倍数提升 100%",
+      "debuff": "极易脱离基本盘导致空中楼阁，出现现金流断裂暴毙",
+      "activation_condition": "启动全球化出海或火箭级颠覆式创新项目"
+    },
+    {
+      "id": "gou_chen",
+      "name": "勾陈",
+      "attribute": "纠缠死结",
+      "business_metaphor": "债务官司缠身、拖延违约、烂尾牵绊",
+      "buff": "作为原告催讨旧债时，对方资产冻结执行率 100%",
+      "debuff": "行政审批周期无限拉长，日常运营流程严重官僚化",
+      "activation_condition": "发生重大合同违约或应收账款逾期超过180天"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "version": "1.0.0",
+  "palaces": [
+    {
+      "id": "qian_6",
+      "name": "乾六宫",
+      "direction": "NorthWest",
+      "trigram": "乾",
+      "element": "Metal_Yang",
+      "business_nature": "资本、权力、高端战略",
+      "suitable_industries": ["Investment_Banking", "Luxury_Goods", "Global_HQ", "HighEnd_RealEstate"],
+      "banned_industries": ["Cheap_Retail", "Mass_Wholesale"],
+      "base_rent_multiplier": 3.5,
+      "perks": {
+        "valuation_bonus": 0.30,
+        "prestige_gain": 0.25,
+        "operational_cost": 0.20
+      }
+    },
+    {
+      "id": "dui_7",
+      "name": "兑七宫",
+      "direction": "West",
+      "trigram": "兑",
+      "element": "Metal_Yin",
+      "business_nature": "口碑、传播、社交娱乐",
+      "suitable_industries": ["MCN_Agency", "Social_Commerce", "Food_Beverage", "PR_Media"],
+      "banned_industries": ["Confidential_Defense", "Heavy_Machinery"],
+      "base_rent_multiplier": 2.0,
+      "perks": {
+        "cac_reduction": 0.40,
+        "viral_probability": 0.35,
+        "pr_dispute_risk": 0.25
+      }
+    },
+    {
+      "id": "li_9",
+      "name": "离九宫",
+      "direction": "South",
+      "trigram": "离",
+      "element": "Fire_Yang",
+      "business_nature": "品牌、文化、认知美学",
+      "suitable_industries": ["AI_Technology", "Cultural_IP", "National_Brand", "Cosmetics"],
+      "banned_industries": ["Raw_Manufacturing", "Waste_Processing"],
+      "base_rent_multiplier": 2.5,
+      "perks": {
+        "margin_cap_bonus": 0.25,
+        "brand_recognition_speed": 0.50,
+        "burn_rate": 0.15
+      }
+    },
+    {
+      "id": "zhen_3",
+      "name": "震三宫",
+      "direction": "East",
+      "trigram": "震",
+      "element": "Wood_Yang",
+      "business_nature": "创新、速度、突围破局",
+      "suitable_industries": ["Tech_Startups", "Smart_Hardware", "Gaming_Esports", "Express_Logistics"],
+      "banned_industries": ["Slow_Retirement", "Heavy_RealEstate"],
+      "base_rent_multiplier": 1.8,
+      "perks": {
+        "rd_speed_bonus": 0.40,
+        "market_entry_lead": 0.30,
+        "failure_volatility": 0.20
+      }
+    },
+    {
+      "id": "xun_4",
+      "name": "巽四宫",
+      "direction": "SouthEast",
+      "trigram": "巽",
+      "element": "Wood_Yin",
+      "business_nature": "流通、供应链、连锁渗透",
+      "suitable_industries": ["Ecommerce_Hub", "Franchise_Retail", "CrossBorder_Trade", "SupplyChain_SaaS"],
+      "banned_industries": ["Single_Boutique", "Private_Club"],
+      "base_rent_multiplier": 1.5,
+      "perks": {
+        "fulfillment_cost_reduction": 0.35,
+        "channel_expansion_speed": 0.40
+      }
+    },
+    {
+      "id": "kan_1",
+      "name": "坎一宫",
+      "direction": "North",
+      "trigram": "坎",
+      "element": "Water_Yang",
+      "business_nature": "风险管理、流动性定价、深水智慧",
+      "suitable_industries": ["Bankruptcy_Restructuring", "Actuarial_Finance", "Cyber_Security", "Biotech_RND"],
+      "banned_industries": ["Impulse_FastFashion", "Cheap_FMCG"],
+      "base_rent_multiplier": 1.2,
+      "perks": {
+        "patent_defense_rate": 0.95,
+        "crisis_resistance": 0.50,
+        "liquidity_drag": 0.20
+      }
+    },
+    {
+      "id": "gen_8",
+      "name": "艮八宫",
+      "direction": "NorthEast",
+      "trigram": "艮",
+      "element": "Earth_Yang",
+      "business_nature": "实体、稳健、根基不动",
+      "suitable_industries": ["Smart_Manufacturing", "Heavy_Machinery", "Industrial_RealEstate", "Infrastructure"],
+      "banned_industries": ["Pure_Virtual_Social", "Hype_Crypto"],
+      "base_rent_multiplier": 0.8,
+      "perks": {
+        "recession_resilience": 0.50,
+        "asset_collateral_value": 0.40,
+        "pivot_speed_penalty": -0.30
+      }
+    },
+    {
+      "id": "kun_2",
+      "name": "坤二宫",
+      "direction": "SouthWest",
+      "trigram": "坤",
+      "element": "Earth_Yin",
+      "business_nature": "平台生态、大众承载、政务协同",
+      "suitable_industries": ["Gov_Cloud", "Life_Platform", "Agricultural_Supply", "Senior_Care"],
+      "banned_industries": ["Extreme_Geek_Niche", "Volatile_Speculation"],
+      "base_rent_multiplier": 1.0,
+      "perks": {
+        "customer_retention": 0.35,
+        "gov_subsidy_chance": 0.30
+      }
+    },
+    {
+      "id": "zhong_5",
+      "name": "中五宫",
+      "direction": "Center",
+      "trigram": "太极",
+      "element": "Earth_Center",
+      "business_nature": "全局枢纽、跨区结算、战略大脑",
+      "suitable_industries": ["Global_HQ", "Data_SuperCenter", "Cash_Settlement_Pool"],
+      "banned_industries": ["Single_Retail_Store"],
+      "base_rent_multiplier": 3.0,
+      "perks": {
+        "cross_palace_transfer_fee": 0.0,
+        "synergy_multiplier": 0.25
+      }
+    }
+  ]
+}
