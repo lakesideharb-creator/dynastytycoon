@@ -24,6 +24,7 @@ from src.personnel import PersonnelSystem
 from src.office_fengshui import GridItem, OfficeLayoutManager
 from src.save_manager import SaveManager
 from src import tables, CampaignManager
+from src.crisis_war_room import PRCrisisWarRoom
 
 INDUSTRIES = ["Cultural_Food", "AI_Tech", "Health_Care", "New_Energy", "Social_Commerce",
               "Traditional_Manufacturing", "Traditional_RealEstate", "Unknown_Industry"]
@@ -183,6 +184,45 @@ def asdict_item(it) -> dict:
     return {"id": it.id, "name": it.name, "category": it.category, "x": it.x, "y": it.y, "facing": it.facing, "role": it.role}
 
 
+def crisis_paths() -> dict:
+    """危机公关：不同在场高管 × 不同开局怒火/信任 × 全部选项路径，逐步记录状态"""
+    teams = {
+        "default": None,
+        "no_jing": [("x1", "甲", "sheng_men", "生门", "CFO")],
+        "both_gates": [("x1", "甲", "jing_men", "景门", "CEO"), ("x2", "乙", "jing_alarm_men", "惊门", "法务总监")],
+    }
+    starts = [(80, 35), (50, 50), (40, 30), (70, 20), (20, 80), (60, 45)]
+    out = []
+
+    def company_for(team):
+        c = PRCrisisWarRoom.create_company()
+        if teams[team] is not None:
+            c.executives = [Executive(i, n, g, gn, r, 1) for i, n, g, gn, r in teams[team]]
+        return c
+
+    def walk(team, start, prefix):
+        room = PRCrisisWarRoom.from_data()
+        room.public_anger, room.brand_trust = start
+        c = company_for(team)
+        steps = []
+        for oid in prefix:
+            ok, log = room.execute_choice(oid, c)
+            steps.append({"choice": oid, "ok": ok, "log": log, "anger": room.public_anger, "trust": room.brand_trust,
+                          "hour": room.hour, "cash": c.cash, "spent": room.total_cost_spent,
+                          "resolved": room.is_resolved, "verdict_key": room.verdict_key, "verdict": room.verdict,
+                          "reputation": c.reputation})
+        if room.is_resolved:
+            out.append({"team": team, "start": list(start), "path": list(prefix), "steps": steps})
+            return
+        for o in room.get_current_stage().options:
+            walk(team, start, prefix + [o.id])
+
+    for team in teams:
+        for start in starts:
+            walk(team, start, [])
+    return {"teams": {k: v for k, v in teams.items()}, "paths": out}
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", default=os.path.join(ROOT, "godot", "tests", "golden"))
@@ -196,12 +236,14 @@ def main(argv=None):
     dump("factors.json", factor_tables())
     dump("office.json", office_layouts())
     dump("saves.json", save_fixtures())
+    crisis = crisis_paths()
+    dump("crisis.json", crisis)
     total = 0
     for sid in (1, 2, 3):
         paths = [p for p, _ in enumerate_paths(sid)]
         dump(f"campaign_{sid}.json", {"scenario_id": sid, "paths": [replay(sid, p) for p in paths]})
         total += len(paths)
-    print(f"已导出 {total} 条战役路径与因子表 → {args.out}")
+    print(f"已导出 {total} 条战役路径、{len(crisis['paths'])} 条危机公关路径与因子表 → {args.out}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,72 @@
+{
+  "version": "1.0.0",
+  "_comment": "24小时危机公关指挥室：阶段、选项与终局裁决（Python 与 Godot 共用）。怒火 0-100，信任 0-100；special_gate 选项缺少对应门派高管时效果减半（向零取整）。",
+  "anger_ban_line": 85,
+  "trust_death_line": 15,
+  "crises": [
+    {
+      "id": "weight_loss_drug",
+      "scenario_id": 10,
+      "title": "【特大舆情预警】第三方入驻商户违禁减肥药致消费者急性衰竭住院爆雷",
+      "case_title": "案例十【危机公关】：社交电商平台假药爆雷的黄金24小时",
+      "intro": "你执掌的社交电商平台，第三方入驻商户违规销售含违禁成分的减肥药，一名消费者急性衰竭住院。微博热搜第一，阅读量破3亿，危机全面爆发！你有24小时。",
+      "initial_anger": 80,
+      "initial_trust": 35,
+      "company": {
+        "name": "星辰社交电商",
+        "industry": "Social_Commerce",
+        "cash": 40000000.0,
+        "reputation": 40,
+        "executives": [
+          {"id": "c1", "name": "顾景然", "gate_id": "jing_men", "gate_name": "景门", "role": "CEO", "salary": 120000, "portrait": "gu_jingran"},
+          {"id": "c2", "name": "钱守信", "gate_id": "sheng_men", "gate_name": "生门", "role": "CFO", "salary": 90000, "portrait": "qian_shouxin"},
+          {"id": "c3", "name": "温和", "gate_id": "xiu_men", "gate_name": "休门", "role": "COO", "salary": 80000, "portrait": "wen_he"}
+        ]
+      },
+      "stages": [
+        {
+          "stage_id": 1,
+          "end_hour": 4,
+          "name": "第一阶段：0-4小时 【止损黄金期 · 舆情初起】",
+          "hours_range": "00:00 - 04:00 (白虎镇压)",
+          "event_headline": "微博热搜第一(#某平台假减肥药致住院# 阅读破3亿)，受害者家属在直播间举牌维权，大批自媒体开始跟进声讨！",
+          "options": [
+            {"id": "stage1_deny", "title": "【推脱掩饰】发声明称系第三方商户个人行为，并威胁起诉爆料者", "description": "试图法律施压封口。反弹极大，被公众斥为傲慢冷血！", "cost": 50000.0, "anger_delta": 20, "trust_delta": -25},
+            {"id": "stage1_cold", "title": "【花钱压热搜】斥资买水军降热搜，启动内部低调核查", "description": "治标不治本，被网民发现删帖锁广场，引发更大次生舆情！", "cost": 300000.0, "anger_delta": 10, "trust_delta": -15},
+            {"id": "stage1_active", "title": "【秒级响应】全网下架涉事品类，先行垫付医疗费，宣布无上限追责", "description": "第一时间立正挨打，展示企业诚意与底线，迅速遏制怒火蔓延！", "cost": 800000.0, "anger_delta": -25, "trust_delta": 20}
+          ]
+        },
+        {
+          "stage_id": 2,
+          "end_hour": 12,
+          "name": "第二阶段：4-12小时 【化解定盘期 · 舆论激辩】",
+          "hours_range": "04:00 - 12:00 (惊门定性)",
+          "event_headline": "央视与监管机构点名质问平台主体审核责任，主流电商竞品借机上线'品质先行保障'抢夺用户！",
+          "options": [
+            {"id": "stage2_press_sincere", "title": "【景门主理人出战】召开全网直播发布会，CEO出镜90度鞠躬，公布退赔专线", "description": "景门美学与真诚感召，彻底打破冰冷的企业官僚形象，舆情温度大幅下降！", "cost": 500000.0, "anger_delta": -30, "trust_delta": 30, "special_gate": "jing_men"},
+            {"id": "stage2_legal_sue", "title": "【惊门法务出击】直接向公安经侦报案刑拘涉事黑心供货商", "description": "严正亮明底线，将矛盾引向上游不法犯罪分子，法律责任定性明确！", "cost": 200000.0, "anger_delta": -20, "trust_delta": 20, "special_gate": "jing_alarm_men"},
+            {"id": "stage2_bureaucratic", "title": "【发布官样通稿】发出一份冷冰冰的格式化通稿，声称'配合调查'", "description": "毫无诚意的套话公文，再次引爆全网网民嘲讽制作表情包！", "cost": 20000.0, "anger_delta": 15, "trust_delta": -20}
+          ]
+        },
+        {
+          "stage_id": 3,
+          "end_hour": 24,
+          "name": "第三阶段：12-24小时 【长效修复期 · 终局定性】",
+          "hours_range": "12:00 - 24:00 (六合聚人)",
+          "event_headline": "联合监管检查组进驻总部，全网数十万买家开始申请全额退款，进入最终定调时刻！",
+          "options": [
+            {"id": "stage3_fund", "title": "【设立千万质保金】启动1亿元假一赔十基金，联合国家检测机构向全社会透明溯源", "description": "断臂求生！用雷霆手段将灾难化为企业浴火重生的品控里程碑！", "cost": 3000000.0, "anger_delta": -35, "trust_delta": 40},
+            {"id": "stage3_pass_buck", "title": "【拖延等待处罚】按常规程序缴纳罚款，关闭涉事店铺了事", "description": "虽平息事件，但品牌商誉遭受不可逆重创，日活用户流失过半！", "cost": 500000.0, "anger_delta": 5, "trust_delta": -10}
+          ]
+        }
+      ],
+      "verdicts": {
+        "ban": {"grade": "fail", "text": "【惨败·监管封杀】：公众怒火突破极值！各大官媒联合通报批评，监管部门责令全平台停业整顿6个月，主要责任人被依法传唤，公司宣告脑死亡！", "reputation_delta": -50, "reputation_min": 5},
+        "trust_death": {"grade": "fail", "text": "【惨败·品牌社会性死亡】：品牌信任彻底崩塌！用户集体卸载、商户成批撤店，合作方纷纷切割，平台沦为全网避之不及的反面教材！", "reputation_delta": -45, "reputation_min": 5},
+        "excellent": {"grade": "win", "max_anger": 35, "min_trust": 60, "text": "【绝处逢生·卓越通关】：教科书级危机公关逆转！企业不仅承担了全部社会责任，更以千万赔偿基金和透明品控重塑了行业新标杆，商誉逆势飙升！", "reputation_delta": 20, "reputation_max": 100},
+        "mediocre": {"grade": "pass", "max_anger": 60, "text": "【平庸过关·元气大伤】：勉强控制住了失控舆情，但付出巨额诉讼与罚款，品牌核心用户流失30%，需经历漫长的修复期。", "reputation_delta": -15, "reputation_min": 20},
+        "failed": {"grade": "fail", "text": "【危机失控·沦为弃子】：未能有效化解公众怒火，平台被各应用商店全面下架，融资通道彻底封死，陷入慢性死亡。", "reputation_delta": -35, "reputation_min": 10}
+      }
+    }
+  ]
+}

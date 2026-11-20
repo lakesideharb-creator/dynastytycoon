@@ -22,6 +22,8 @@ func _initialize() -> void:
 	test_event_system()
 	test_effects_edge_cases()
 	test_runner_rules()
+	test_crisis()
+	test_crisis_rules()
 	print("")
 	for f in failures.slice(0, 30):
 		print("FAIL " + f)
@@ -324,3 +326,55 @@ func test_runner_rules() -> void:
 		r2.simulate_month(0.0, false)
 		r2.advance()
 	_ok(r2.pending_decisions().is_empty(), "未签对赌时不出现对赌条款议题")
+
+
+# ─── 危机公关指挥室 ──────────────────────────────────────────────────────────
+func test_crisis() -> void:
+	var g := _load_golden("crisis.json")
+	for p in g["paths"]:
+		var room := CrisisWarRoom.create()
+		room.public_anger = int(p["start"][0])
+		room.brand_trust = int(p["start"][1])
+		var c := CrisisWarRoom.create_company()
+		var team = g["teams"][p["team"]]
+		if team != null:
+			c.executives.clear()
+			for row in team:
+				c.executives.append(Executive.from_dict({"id": row[0], "name": row[1], "gate_id": row[2], "gate_name": row[3], "role": row[4], "salary": 1}))
+		var tag := "危机 %s %s %s" % [p["team"], str(p["start"]), "→".join(p["path"])]
+		for st in p["steps"]:
+			var res := room.execute_choice(st["choice"], c)
+			_ok(res["ok"] == st["ok"], tag + " ok")
+			_ok(res["log"] == st["log"], tag + " 日志：%s ≠ %s" % [res["log"], st["log"]])
+			_ok(room.public_anger == int(st["anger"]) and room.brand_trust == int(st["trust"]), tag + " 怒火/信任")
+			_ok(room.hour == int(st["hour"]), tag + " 时刻")
+			_close(c.cash, float(st["cash"]), tag + " 现金")
+			_close(room.total_cost_spent, float(st["spent"]), tag + " 累计投入")
+			_ok(room.is_resolved == st["resolved"] and room.verdict_key == st["verdict_key"], tag + " 终局 %s ≠ %s" % [room.verdict_key, st["verdict_key"]])
+			_ok(room.verdict == st["verdict"], tag + " 裁决文本")
+			_ok(c.reputation == int(st["reputation"]), tag + " 商誉")
+		_ok(room.is_resolved, tag + " 走完路径后应结束")
+
+
+func test_crisis_rules() -> void:
+	var c := CrisisWarRoom.create_company()
+	var odd := {"anger_delta": -25, "trust_delta": 15, "special_gate": "kai_men"}
+	_ok(CrisisWarRoom.effective_deltas(odd, c) == [-12, 7], "缺门派时减半向零取整（-25→-12，15→7）")
+	var room := CrisisWarRoom.create()
+	_ok(not room.execute_choice("nope", c)["ok"], "无效选项不执行")
+	_ok(room.choices.is_empty() and room.hour == 0, "无效选项不改变状态")
+	_ok(CrisisWarRoom.has_required_gate({"special_gate": "jing_men"}, c), "默认团队有景门")
+	_ok(not CrisisWarRoom.has_required_gate({"special_gate": "jing_alarm_men"}, c), "默认团队没有惊门")
+	for id in ["stage1_active", "stage2_press_sincere", "stage3_fund"]:
+		room.execute_choice(id, c)
+	_ok(room.grade() == "win" and room.verdict_key == "excellent", "积极→发布会→质保金 卓越通关")
+	_ok(not room.execute_choice("stage3_fund", c)["ok"], "结束后不能再操作")
+	PlaytestLog.path = "user://test_playtest_log.jsonl"
+	PlaytestLog.clear()
+	PlaytestLog.record_crisis(CrisisWarRoom.create(), c, "quit")
+	_ok(PlaytestLog.count() == 0, "未做任何决断的危机不记录")
+	PlaytestLog.record_crisis(room, c, room.grade())
+	var row: Dictionary = JSON.parse_string(PlaytestLog.read_all().split("\n")[0])
+	_ok(row["mode"] == "crisis" and int(row["scenario"]) == 10 and row["verdict"] == "excellent" and row["decisions"].size() == 3, "危机试玩记录内容")
+	PlaytestLog.clear()
+	PlaytestLog.path = "user://playtest_log.jsonl"

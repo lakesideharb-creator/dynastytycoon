@@ -3,6 +3,7 @@ extends Control
 
 signal campaign_selected(scenario_id: int)
 signal load_requested(slot: String)
+signal crisis_selected(crisis_id: String)
 
 const SaveSlotsDialog := preload("res://ui/dialogs/save_slots_dialog.gd")
 const SettingsDialog := preload("res://ui/dialogs/settings_dialog.gd")
@@ -36,7 +37,7 @@ func _ready() -> void:
 	col.grow_vertical = Control.GROW_DIRECTION_BEGIN
 	col.offset_bottom = -60
 	col.alignment = BoxContainer.ALIGNMENT_END
-	col.add_theme_constant_override("separation", 14)
+	col.add_theme_constant_override("separation", 10)
 	add_child(col)
 
 	var title := ThemeBuilder.label("商道玄机 · 大亨罗盘", 72, Palette.PAPER, ThemeBuilder.serif(900))
@@ -69,11 +70,24 @@ func _ready() -> void:
 			continue
 		var b := Button.new()
 		b.text = "%s" % s["title"].replace("【", " 【").strip_edges()
-		b.custom_minimum_size = Vector2(880, 64)
+		b.custom_minimum_size = Vector2(880, 56)
 		b.tooltip_text = s.get("brief", "")
 		b.pressed.connect(func(): campaign_selected.emit(sid))
 		Audio.wire_button(b)
 		col.add_child(b)
+
+	for cr in CrisisWarRoom.data()["crises"]:              # 危机公关短战：独立玩法，朱砂色按钮区分
+		var cid: String = cr["id"]
+		var cb := Button.new()
+		cb.text = "⚠ " + cr["case_title"].replace("【", " 【")
+		cb.custom_minimum_size = Vector2(880, 56)
+		cb.tooltip_text = cr["intro"]
+		cb.add_theme_stylebox_override("normal", ThemeBuilder.box(Color("#2A1412"), Palette.CINNABAR.darkened(0.2), 2, 6, 12))
+		cb.add_theme_stylebox_override("hover", ThemeBuilder.box(Color("#3A1A16"), Palette.CINNABAR, 2, 6, 12))
+		cb.add_theme_color_override("font_color", Palette.PAPER)
+		cb.pressed.connect(func(): crisis_selected.emit(cid))
+		Audio.wire_button(cb)
+		col.add_child(cb)
 
 	var row := HBoxContainer.new()
 	row.add_theme_constant_override("separation", 12)

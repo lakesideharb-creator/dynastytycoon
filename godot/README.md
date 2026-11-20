@@ -21,6 +21,7 @@ godot/
 │   ├── insight.gd            # 月度盈亏解读与下月预告
 │   ├── event_system.gd       # 随机事件
 │   ├── office_item.gd · office_layout.gd   # 风水工位网格与审计（与 src/office_fengshui.py 对照）
+│   ├── crisis_war_room.gd    # 24小时危机公关指挥室（与 src/crisis_war_room.py 对照，数据在 crisis_scenarios.json）
 │   └── save_game.gd          # 存档（与 Python 存档格式相同，两端可互读）
 ├── ui/            # 界面（全部用代码搭建，入口场景 scenes/main.tscn）
 │   ├── main.gd               # 标题 ↔ 战役画面切换
@@ -31,6 +32,7 @@ godot/
 │   ├── audio.gd              # 自动加载 Audio：四季音乐交叉淡入淡出、音效
 │   ├── compass_3d.gd         # 3D 罗盘（移植自 Ninefold Gate，贴图在 assets/textures/）
 │   ├── office_screen.gd      # 企业总部风水工位：草稿布局上购置/移动/移除，确认后扣款生效
+│   ├── crisis_screen.gd      # 危机公关指挥室：倒计时、三阶段时间轴、舆情播报、应对选项、怒火/信任指标、在场高管
 │   ├── settings.gd           # 自动加载 Settings：音量、全屏、自动存档（user://settings.cfg）
 │   └── theme_builder.gd · palette.gd · money.gd · role_names.gd
 ├── assets/          # 美术与音频（规格见 docs/09_Art_Audio_Prompts.md）
@@ -38,6 +40,8 @@ godot/
 └── tests/
     ├── run_tests.gd          # 对照测试入口
     ├── ui_shots.gd           # 界面自动截图（自动玩一局）
+    ├── capture_shots.gd · capture_crisis.gd   # 商店截图（战役一、危机公关），输出到 store/screenshots/
+    ├── record_trailer.gd     # 宣传片素材录制（Movie Maker）
     └── golden/               # Python 引擎的标准答案（tools/export_golden.py 生成）
 ```
 
@@ -54,6 +58,7 @@ godot --path godot
 - 存档在 `user://saves/`（macOS：`~/Library/Application Support/DynastyTycoon/saves/`；网页版存在浏览器本地存储）：自动存档 + 三个手动槽位。每月议题处理完、等待操作时自动存档；战役结束后自动存档会被删除。
 - **存档格式与 Python 版 `src/save_manager.py` 完全相同**：Godot 能读 Python 存档继续玩（`tests/golden/saves.json`），Python 也能读 Godot 存档（`tests/test_godot_parity.py`），两边续玩结果一致。
 - 快捷键：空格/回车 推进本月，F 风水工位，Esc 系统菜单；对话框里按选项字母（A/B/C）或数字直接选择。
+- 危机公关指挥室（案例十）是一局 24 小时、三次决断的短战，不支持存档；按 1/2/3 下达决断。
 
 ## 界面自动截图
 
@@ -90,6 +95,7 @@ ITCH_GAME=用户名/游戏网址名 tools/publish_web.sh --push   # 导出并用
 ## 试玩记录
 
 - 每局战役结束（通关/失败/破产）或中途离开时，在本机追加一行记录（`user://playtest_log.jsonl`）：开局决断、各议题选择、期末现金、末月利润、内耗、风水修正与办公室评分。字段与终端版 `play.py --playtest` 一致。
+- 危机公关每局也记一行：`"mode": "crisis"`，含每步选择、终局类型（verdict）、终值怒火/信任、应急投入与商誉。
 - 设置里可以关闭；「导出试玩记录」在设置和结局复盘界面：网页版直接下载文件，桌面版保存到用户目录并复制到剪贴板。
 
 ## 数据与一致性

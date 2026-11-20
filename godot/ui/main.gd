@@ -3,6 +3,7 @@ extends Control
 
 const TitleScreen := preload("res://ui/title_screen.gd")
 const CampaignScreen := preload("res://ui/campaign_screen.gd")
+const CrisisScreen := preload("res://ui/crisis_screen.gd")
 
 var _screen: Control
 
@@ -29,6 +30,7 @@ func show_title() -> void:
 	var t := TitleScreen.new()
 	t.campaign_selected.connect(start_campaign)
 	t.load_requested.connect(load_slot)
+	t.crisis_selected.connect(start_crisis)
 	_swap(t)
 	Audio.play_music("theme_main")
 
@@ -40,6 +42,14 @@ func start_campaign(scenario_id: int, restore := {}) -> void:
 	c.exit_requested.connect(show_title)
 	c.restart_requested.connect(func(): start_campaign(scenario_id))
 	c.load_requested.connect(load_slot)
+	_swap(c)
+
+
+func start_crisis(crisis_id: String) -> void:
+	var c := CrisisScreen.new()
+	c.crisis_id = crisis_id
+	c.exit_requested.connect(show_title)
+	c.restart_requested.connect(func(): start_crisis(crisis_id))
 	_swap(c)
 
 

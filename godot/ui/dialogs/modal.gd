@@ -67,6 +67,8 @@ func option_button(key: String, text: String, enabled := true, reason := "") -> 
 	b.add_theme_color_override("font_color", INK_TEXT)
 	b.add_theme_color_override("font_hover_color", Palette.CINNABAR)
 	b.add_theme_color_override("font_pressed_color", Palette.CINNABAR)
+	b.add_theme_color_override("font_focus_color", INK_TEXT)
+	b.add_theme_color_override("font_hover_pressed_color", Palette.CINNABAR)
 	b.add_theme_color_override("font_disabled_color", Color(INK_TEXT, 0.4))
 	b.add_theme_stylebox_override("normal", ThemeBuilder.box(Palette.PAPER.darkened(0.05), Palette.GOLD.darkened(0.2), 1, 6, 12))
 	b.add_theme_stylebox_override("hover", ThemeBuilder.box(Palette.PAPER.lightened(0.3), Palette.CINNABAR, 2, 6, 12))

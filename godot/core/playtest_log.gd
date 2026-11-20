@@ -21,6 +21,24 @@ static func record(runner: CampaignRunner, office: OfficeLayout, outcome: String
 		"office_score": office.audit()["score"] if office else null,
 		"platform": OS.get_name(),
 	}
+	_append(row)
+
+
+## 危机公关指挥室一局：outcome 为 win / pass / fail / quit，另记终局类型与每步选择
+static func record_crisis(room: CrisisWarRoom, company: Company, outcome: String) -> void:
+	if not enabled or room.choices.is_empty():
+		return
+	_append({
+		"time": Time.get_datetime_string_from_system(false, true),
+		"mode": "crisis", "scenario": int(CrisisWarRoom.definition(room.crisis_id)["scenario_id"]),
+		"crisis": room.crisis_id, "outcome": outcome, "verdict": room.verdict_key,
+		"decisions": room.choices.duplicate(), "anger": room.public_anger, "trust": room.brand_trust,
+		"cash": roundi(company.cash), "spent": roundi(room.total_cost_spent), "reputation": company.reputation,
+		"platform": OS.get_name(),
+	})
+
+
+static func _append(row: Dictionary) -> void:
 	var f := FileAccess.open(path, FileAccess.READ_WRITE if FileAccess.file_exists(path) else FileAccess.WRITE)
 	if f == null:
 		return

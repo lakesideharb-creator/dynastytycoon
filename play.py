@@ -372,11 +372,7 @@ def run_crisis_war_room_interactive():
     print(f"  平台账面现金：¥40,000,000 | 初始商誉：40/100（已受损）")
     print(f"{YELLOW}  核心指标：公众怒火(0-100，>=85触发监管封杀) + 品牌信任(0-100，<=15品牌死亡){RESET}\n")
 
-    company = Company("星辰社交电商", "Social_Commerce", 40_000_000.0, reputation=40, executives=[
-        Executive("c1", "顾景然", "jing_men", "景门", "CEO", 120000),
-        Executive("c2", "钱守信", "sheng_men", "生门", "CFO", 90000),
-        Executive("c3", "温和", "xiu_men", "休门", "COO", 80000),
-    ])
+    company = PRCrisisWarRoom.create_company()
     room = PRCrisisWarRoom.create_weight_loss_drug_crisis()
     print("  指挥室成员：" + " | ".join(f"{e.role}({e.gate_name}·{e.name})" for e in company.executives))
     print(f"  {DIM}提示：带门派标签的选项需要对应门派的高管坐镇，否则效果减半。{RESET}")
