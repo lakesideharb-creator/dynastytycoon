@@ -22,6 +22,8 @@ from src.models import Executive
 from src.nine_palaces import NinePalacesSystem
 from src.personnel import PersonnelSystem
 from src.office_fengshui import GridItem, OfficeLayoutManager
+from src.save_manager import SaveManager
+from src import tables, CampaignManager
 
 INDUSTRIES = ["Cultural_Food", "AI_Tech", "Health_Care", "New_Energy", "Social_Commerce",
               "Traditional_Manufacturing", "Traditional_RealEstate", "Unknown_Industry"]
@@ -144,6 +146,39 @@ def office_layouts(n=300, seed=20261120) -> dict:
     return {"layouts": rows}
 
 
+def save_fixtures(save_turn=6) -> dict:
+    """跨引擎存档：每个关卡走设计正解中通关余量最大的路径，第1月满配风水改造，
+    第 save_turn 个月开头（议题未处理）存档；再记录从存档继续到结局的逐月结果，供 Godot 读档后对照"""
+    weight = tables.load("office_items.json")["modifier_weight"]
+    chaotic = OfficeLayoutManager.create_chaotic_preset()
+    harmonious = OfficeLayoutManager.create_harmonious_preset()
+    delta = harmonious.audit_layout().fengshui_modifier - chaotic.audit_layout().fengshui_modifier
+    out = []
+    for sid in (1, 2, 3):
+        intended = CampaignManager.get_scenario_by_id(sid)["intended_main_choice"]
+        paths = [p for p, r in enumerate_paths(sid) if p.startswith(intended) and r.check_win()]
+        path = max(paths, key=lambda p: replay(sid, p)["final_cash"])
+        main, *picks = path.split("|")
+        picks = dict(p.split("=") for p in picks)
+        r = CampaignRunner(sid)
+        r.apply_main_choice(main)
+        r.company.cash -= 190000
+        r.company.fengshui_modifier = round(min(0.35, max(-0.25, r.company.fengshui_modifier + delta * weight)), 3)
+        save = None
+        while not r.is_finished:
+            if r.turn == save_turn and save is None:
+                save = SaveManager.to_dict(r.company, r.clock, sid, r.progress(), list(harmonious.items.values()))
+            for ev in r.pending_decisions():
+                r.apply_decision(ev["id"], picks[ev["id"]])
+            r.simulate_month(random_events=False)
+            if not r.bankrupt:
+                r.advance()
+        resumed = [asdict(f) for f in r.company.financial_history[save_turn - 1:]]
+        out.append({"scenario_id": sid, "path": path, "save": save, "after_months": resumed,
+                    "final_cash": r.company.cash, "win": r.check_win()})
+    return {"fixtures": out}
+
+
 def asdict_item(it) -> dict:
     return {"id": it.id, "name": it.name, "category": it.category, "x": it.x, "y": it.y, "facing": it.facing, "role": it.role}
 
@@ -160,6 +195,7 @@ def main(argv=None):
 
     dump("factors.json", factor_tables())
     dump("office.json", office_layouts())
+    dump("saves.json", save_fixtures())
     total = 0
     for sid in (1, 2, 3):
         paths = [p for p, _ in enumerate_paths(sid)]

@@ -4,11 +4,15 @@ extends Node
 var out_dir := "user://shots"
 var scenario_id := 1
 var main_choice := "B"
+var mode := "play"                   ## play：完整一局；systems：存档/读档/设置流程
 var _main: Control
 var _n := 0
 
 
 func _ready() -> void:
+	SaveGame.dir = "user://shot_saves/"          # 不碰玩家真实存档
+	for slot in SaveGame.SLOTS:
+		SaveGame.delete(slot)
 	DirAccess.make_dir_recursive_absolute(out_dir)
 	get_tree().create_timer(120.0).timeout.connect(func():
 		push_error("截图超时")
@@ -69,7 +73,64 @@ func _office_tour() -> void:
 	await _shot("after_renovation")
 
 
+func _overlay(script_path: String) -> Node:
+	var screen = _main._screen
+	for c in screen.get_children():
+		if c.get_script() and c.get_script().resource_path == script_path and not c.is_queued_for_deletion():
+			return c
+	return null
+
+
+func _run_systems() -> void:
+	_main = load("res://scenes/main.tscn").instantiate()
+	get_tree().root.add_child(_main)
+	await _wait(1.0)
+	_main.start_campaign(scenario_id)
+	await _wait(1.0)
+	var mc := _dialog("res://ui/dialogs/main_choice_dialog.gd")
+	mc.chosen.emit(main_choice)
+	mc.close()
+	await _wait(0.6)
+	var screen = _main._screen
+	while screen.runner.turn < 3:
+		var dd := _dialog("res://ui/dialogs/decision_dialog.gd")
+		if dd:
+			dd.chosen.emit(dd.event["options"][0]["key"])
+			dd.close()
+			await _wait(0.4)
+			continue
+		screen._on_advance()
+		await _wait(0.9)
+	screen.open_system_menu()
+	await _wait(0.6)
+	await _shot("system_menu")
+	_overlay("res://ui/dialogs/system_menu.gd").close()
+	screen._save_to("slot1")
+	await _wait(0.3)
+	var d = load("res://ui/dialogs/save_slots_dialog.gd").new()
+	d.mode = "load"
+	screen.add_child(d)
+	await _wait(0.6)
+	await _shot("load_slots")
+	d.close()
+	screen.add_child(load("res://ui/dialogs/settings_dialog.gd").new())
+	await _wait(0.6)
+	await _shot("settings")
+	_overlay("res://ui/dialogs/settings_dialog.gd").close()
+	await _wait(0.3)
+	_main.show_title()
+	await _wait(1.0)
+	await _shot("title_continue")
+	_main.load_slot("slot1")
+	await _wait(1.2)
+	await _shot("loaded_slot1")
+	get_tree().quit(0)
+
+
 func _run() -> void:
+	if mode == "systems":
+		await _run_systems()
+		return
 	_main = load("res://scenes/main.tscn").instantiate()
 	get_tree().root.add_child(_main)
 	await _wait(1.2)

@@ -17,6 +17,15 @@ var f_person: float
 var maintenance_expense: float = 0.0
 
 
+static func from_dict(d: Dictionary) -> FinancialStatement:
+	var s := FinancialStatement.new()
+	s.month = int(d["month"])
+	for k in ["gross_revenue", "rent_expense", "payroll_expense", "marketing_expense", "miscellaneous_cost",
+			"total_cost", "net_profit", "ending_cash", "f_time", "f_space", "f_person", "maintenance_expense"]:
+		s.set(k, float(d.get(k, 0.0)))
+	return s
+
+
 func to_dict() -> Dictionary:
 	return {"month": month, "gross_revenue": gross_revenue, "rent_expense": rent_expense,
 			"payroll_expense": payroll_expense, "marketing_expense": marketing_expense,

@@ -20,16 +20,18 @@ godot/
 │   ├── campaign_runner.gd    # 战役状态机
 │   ├── insight.gd            # 月度盈亏解读与下月预告
 │   ├── event_system.gd       # 随机事件
-│   └── office_item.gd · office_layout.gd   # 风水工位网格与审计（与 src/office_fengshui.py 对照）
+│   ├── office_item.gd · office_layout.gd   # 风水工位网格与审计（与 src/office_fengshui.py 对照）
+│   └── save_game.gd          # 存档（与 Python 存档格式相同，两端可互读）
 ├── ui/            # 界面（全部用代码搭建，入口场景 scenes/main.tscn）
 │   ├── main.gd               # 标题 ↔ 战役画面切换
 │   ├── title_screen.gd       # 标题画面
 │   ├── campaign_screen.gd    # 战役主界面：终端（结账单/现金走势/盈亏解读）+ 罗盘（三才因子/下月预告/操作）+ 高管卡
-│   ├── dialogs/              # 开局决断、董事会议题、终局复盘（宣纸卡片风格）
+│   ├── dialogs/              # 开局决断、董事会议题、终局复盘、系统菜单、存档列表、设置（宣纸卡片风格）
 │   ├── widgets/              # 高管卡（按状态切换表情）、现金走势图、三才因子条、等轴测办公室视图（含穿堂气流特效）
 │   ├── audio.gd              # 自动加载 Audio：四季音乐交叉淡入淡出、音效
 │   ├── compass_3d.gd         # 3D 罗盘（移植自 Ninefold Gate，贴图在 assets/textures/）
 │   ├── office_screen.gd      # 企业总部风水工位：草稿布局上购置/移动/移除，确认后扣款生效
+│   ├── settings.gd           # 自动加载 Settings：音量、全屏、自动存档（user://settings.cfg）
 │   └── theme_builder.gd · palette.gd · money.gd · role_names.gd
 ├── assets/          # 美术与音频（规格见 docs/09_Art_Audio_Prompts.md）
 ├── data/            # 由 tools/sync_godot_data.py 从仓库根目录 data/ 同步，不要直接改
@@ -47,13 +49,21 @@ godot --path godot
 
 或在 Godot 编辑器中打开 `godot/project.godot` 后按 F5。基准分辨率 1920×1080，窗口默认 1600×900，可自由缩放（canvas_items + expand）。
 
+## 存档、设置与快捷键
+
+- 存档在 `user://saves/`（macOS：`~/Library/Application Support/Godot/app_userdata/大亨罗盘 Dynasty Tycoon/saves/`）：自动存档 + 三个手动槽位。每月议题处理完、等待操作时自动存档；战役结束后自动存档会被删除。
+- **存档格式与 Python 版 `src/save_manager.py` 完全相同**：Godot 能读 Python 存档继续玩（`tests/golden/saves.json`），Python 也能读 Godot 存档（`tests/test_godot_parity.py`），两边续玩结果一致。
+- 快捷键：空格/回车 推进本月，F 风水工位，Esc 系统菜单；对话框里按选项字母（A/B/C）或数字直接选择。
+
 ## 界面自动截图
 
 自动玩完一局并在标题、开局决断、主界面、董事会议题、终局等画面截图（会打开一个窗口，结束后自动关闭）：
 
 ```bash
-godot --path godot -s res://tests/ui_shots.gd -- <输出目录> [关卡编号] [开局选项]
+godot --path godot -s res://tests/ui_shots.gd -- <输出目录> [关卡编号] [开局选项] [play|systems]
 ```
+
+`systems` 模式截取系统菜单、存档列表、设置、标题「继续游戏」与读档后的画面。截图脚本使用独立的 `user://shot_saves/`，不会覆盖玩家存档。
 
 ## 字体（网页导出前必须处理）
 
@@ -77,7 +87,7 @@ godot --headless --path godot --import
 godot --headless --path godot -s res://tests/run_tests.gd
 ```
 
-对照内容：天时/地利/人和因子表、风水审计（两个预设 + 300 个随机布局的评分与全部文字）、三个战役全部 165 条决策路径的逐月结账单、现金、月度解读文字与下月预告（逐字一致）、终局胜负与高管状态。
+对照内容：天时/地利/人和因子表、跨引擎存档（读 Python 存档续玩）、风水审计（两个预设 + 300 个随机布局的评分与全部文字）、三个战役全部 165 条决策路径的逐月结账单、现金、月度解读文字与下月预告（逐字一致）、终局胜负与高管状态。
 
 ## 风水工位与平衡
 

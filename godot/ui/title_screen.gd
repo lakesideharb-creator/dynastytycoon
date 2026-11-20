@@ -2,6 +2,10 @@ extends Control
 ## 标题画面：标题插画 + 可玩战役列表
 
 signal campaign_selected(scenario_id: int)
+signal load_requested(slot: String)
+
+const SaveSlotsDialog := preload("res://ui/dialogs/save_slots_dialog.gd")
+const SettingsDialog := preload("res://ui/dialogs/settings_dialog.gd")
 
 
 func _ready() -> void:
@@ -47,6 +51,18 @@ func _ready() -> void:
 	col.add_child(sub)
 	col.add_child(Control.new())
 
+	var latest := SaveGame.latest_slot()
+	if latest != "":
+		var s := SaveGame.summary(latest)
+		var cont := Button.new()
+		cont.text = "继续游戏　·　%s　%s　第 %d/%d 月" % [s["name"], s["date"], s["turn"], s["duration"]]
+		cont.custom_minimum_size = Vector2(880, 64)
+		cont.add_theme_stylebox_override("normal", ThemeBuilder.box(Color("#3A2A12"), Palette.AMBER, 2, 6, 12))
+		cont.add_theme_color_override("font_color", Palette.AMBER.lightened(0.3))
+		cont.pressed.connect(func(): load_requested.emit(latest))
+		Audio.wire_button(cont)
+		col.add_child(cont)
+
 	for s in DataTables.scenarios():
 		var sid := int(s["id"])
 		if not CampaignManager.is_playable(sid):
@@ -59,9 +75,22 @@ func _ready() -> void:
 		Audio.wire_button(b)
 		col.add_child(b)
 
-	var quit := Button.new()
-	quit.text = "退出"
-	quit.custom_minimum_size = Vector2(880, 52)
-	quit.pressed.connect(func(): get_tree().quit())
-	Audio.wire_button(quit)
-	col.add_child(quit)
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 12)
+	row.custom_minimum_size = Vector2(880, 0)
+	col.add_child(row)
+	for item in [["读取存档", _open_load], ["设置", func(): add_child(SettingsDialog.new())], ["退出", func(): get_tree().quit()]]:
+		var b := Button.new()
+		b.text = item[0]
+		b.custom_minimum_size = Vector2(0, 52)
+		b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		b.pressed.connect(item[1])
+		Audio.wire_button(b)
+		row.add_child(b)
+
+
+func _open_load() -> void:
+	var d := SaveSlotsDialog.new()
+	d.mode = "load"
+	d.slot_chosen.connect(func(slot): load_requested.emit(slot))
+	add_child(d)

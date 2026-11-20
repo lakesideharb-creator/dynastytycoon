@@ -28,13 +28,24 @@ func _swap(next: Control) -> void:
 func show_title() -> void:
 	var t := TitleScreen.new()
 	t.campaign_selected.connect(start_campaign)
+	t.load_requested.connect(load_slot)
 	_swap(t)
 	Audio.play_music("theme_main")
 
 
-func start_campaign(scenario_id: int) -> void:
+func start_campaign(scenario_id: int, restore := {}) -> void:
 	var c := CampaignScreen.new()
 	c.scenario_id = scenario_id
+	c.restore = restore
 	c.exit_requested.connect(show_title)
 	c.restart_requested.connect(func(): start_campaign(scenario_id))
+	c.load_requested.connect(load_slot)
 	_swap(c)
+
+
+func load_slot(slot: String) -> void:
+	var data := SaveGame.load_slot(slot)
+	if data.is_empty():
+		push_warning("存档无法读取：" + slot)
+		return
+	start_campaign(data["runner"].scenario_id, data)

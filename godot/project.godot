@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 [autoload]
 
 Audio="*res://ui/audio.gd"
+Settings="*res://ui/settings.gd"
 
 [display]
 

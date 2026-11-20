@@ -61,6 +61,35 @@ class TestGodotParity(unittest.TestCase):
         tail = "\n".join(res.stdout.strip().splitlines()[-15:])
         self.assertEqual(res.returncode, 0, f"Godot 对照测试失败：\n{tail}\n{res.stderr[-1500:]}")
         self.assertIn("失败 0 项", res.stdout)
+        self._python_reads_godot_save()
+
+    def _python_reads_godot_save(self):
+        """Godot 写出的存档用 Python 读档后续玩，结果与 Python 不中断地玩同一条路径一致"""
+        import json
+        from src.save_manager import SaveManager
+        from src.campaign_runner import CampaignRunner
+        with open(os.path.join(GODOT_DIR, "tests", "out", "godot_save.json"), encoding="utf-8") as f:
+            data = json.load(f)
+        path = "B|s1_summer=A|s1_rival=B|s1_winter=A"
+        picks = dict(p.split("=") for p in path.split("|")[1:])
+
+        def finish(r):
+            while not r.is_finished:
+                for ev in r.pending_decisions():
+                    r.apply_decision(ev["id"], picks[ev["id"]])
+                r.simulate_month(random_events=False)
+                if not r.bankrupt:
+                    r.advance()
+            return r
+
+        loaded = SaveManager.from_dict(data)
+        self.assertEqual([it.id for it in loaded.office_items][-1], "screen_1")
+        resumed = finish(CampaignRunner(loaded.scenario_id, loaded.company, loaded.clock, loaded.progress))
+        fresh = CampaignRunner(1)
+        fresh.apply_main_choice("B")
+        finish(fresh)
+        self.assertAlmostEqual(resumed.company.cash, fresh.company.cash, delta=1e-6 * abs(fresh.company.cash))
+        self.assertEqual(resumed.check_win(), fresh.check_win())
 
 
 if __name__ == "__main__":

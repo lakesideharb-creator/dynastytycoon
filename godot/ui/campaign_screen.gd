@@ -4,11 +4,15 @@ extends Control
 
 signal exit_requested
 signal restart_requested
+signal load_requested(slot: String)
 
 const DecisionDialog := preload("res://ui/dialogs/decision_dialog.gd")
 const MainChoiceDialog := preload("res://ui/dialogs/main_choice_dialog.gd")
 const EndingDialog := preload("res://ui/dialogs/ending_dialog.gd")
 const OfficeScreen := preload("res://ui/office_screen.gd")
+const SystemMenu := preload("res://ui/dialogs/system_menu.gd")
+const SaveSlotsDialog := preload("res://ui/dialogs/save_slots_dialog.gd")
+const SettingsDialog := preload("res://ui/dialogs/settings_dialog.gd")
 const ExecCard := preload("res://ui/widgets/exec_card.gd")
 const CashChart := preload("res://ui/widgets/cash_chart.gd")
 const FactorGauge := preload("res://ui/widgets/factor_gauge.gd")
@@ -16,6 +20,7 @@ const SEASON_ICON := {"Spring": "spring", "Summer": "summer", "Autumn": "autumn"
 const MAX_MARKETING := 300000.0
 
 var scenario_id := 1
+var restore := {}                  ## 读档时由 main 传入：{"runner", "office"}
 var runner: CampaignRunner
 var rng := RandomNumberGenerator.new()
 var start_cash := 0.0
@@ -52,15 +57,26 @@ var _fs_btn: Button
 
 func _ready() -> void:
 	rng.randomize()
-	runner = CampaignRunner.new(scenario_id)
-	start_cash = runner.company.cash
-	office = OfficeLayout.from_preset("chaotic")
+	if restore.is_empty():
+		runner = CampaignRunner.new(scenario_id)
+		office = OfficeLayout.from_preset("chaotic")
+	else:
+		runner = restore["runner"]
+		office = restore["office"]
+		scenario_id = runner.scenario_id
+	start_cash = float(runner.meta["setup"]["company"]["cash"])
 	_build()
 	_refresh()
 	_show_turn_preview()
 	Audio.play_season(runner.clock.get_season_key(runner.clock.month))
 	if runner.main_choice == "":
 		_open_main_choice.call_deferred()
+	else:
+		var hist := runner.company.financial_history
+		if not hist.is_empty():
+			_show_statement(hist[-1], "上月")
+		_toast("已读取存档：%d年%02d月，第 %d/%d 月" % [runner.clock.year, runner.clock.month, runner.turn, runner.duration()], Palette.GOLD)
+		_check_decisions.call_deferred()
 
 
 # ─── 布局 ──────────────────────────────────────────────────────────────────
@@ -125,8 +141,8 @@ func _build_top_bar() -> Control:
 	_rep_lbl = _stat(bar, "商誉")
 	_turn_lbl = _stat(bar, "进度")
 	var back := Button.new()
-	back.text = "返回标题"
-	back.pressed.connect(func(): exit_requested.emit())
+	back.text = "菜单 (Esc)"
+	back.pressed.connect(open_system_menu)
 	Audio.wire_button(back)
 	bar.add_child(back)
 	return bar
@@ -249,6 +265,7 @@ func _build_compass_side() -> Control:
 
 	_advance_btn = Button.new()
 	_advance_btn.text = "推进本月  ▶"
+	_advance_btn.tooltip_text = "快捷键：空格"
 	_advance_btn.custom_minimum_size = Vector2(0, 62)
 	_advance_btn.add_theme_font_size_override("font_size", 30)
 	_advance_btn.add_theme_stylebox_override("normal", ThemeBuilder.box(Color("#3A2A12"), Palette.AMBER, 2, 8, 14))
@@ -410,6 +427,7 @@ func _check_decisions() -> void:
 	if pending.is_empty():
 		Audio.play_season(runner.clock.get_season_key(runner.clock.month))
 		_advance_btn.disabled = false
+		_autosave()
 		return
 	_advance_btn.disabled = true
 	Audio.play_music("decision_tension", 1.0)
@@ -517,8 +535,63 @@ func _show_event(evt: Dictionary) -> void:
 	_toast("%s\n%s\n资金 %s　商誉 %+d" % [evt["name"], evt["desc"], PyFmt.signed_thousands(float(evt["effect_cash"])), int(evt["effect_reputation"])], color, 6.0)
 
 
+## 本月议题处理完、等待玩家操作时自动存档（状态稳定的时刻）
+func _autosave() -> void:
+	if Settings.autosave and runner.main_choice != "" and not runner.is_finished():
+		SaveGame.save("autosave", runner, office)
+
+
+func _save_to(slot: String) -> void:
+	if SaveGame.save(slot, runner, office):
+		_toast("已保存到「%s」" % SaveGame.SLOT_NAMES[slot], Palette.JADE)
+
+
+# ─── 系统菜单与快捷键 ──────────────────────────────────────────────────────
+func _has_overlay() -> bool:
+	for c in get_children():
+		if c.is_in_group("overlay") and not c.is_queued_for_deletion():
+			return true
+	return false
+
+
+func open_system_menu() -> void:
+	var m := SystemMenu.new()
+	m.save_requested.connect(func():
+		var d := SaveSlotsDialog.new()
+		d.mode = "save"
+		d.slot_chosen.connect(_save_to)
+		add_child(d))
+	m.load_requested.connect(func():
+		var d := SaveSlotsDialog.new()
+		d.mode = "load"
+		d.slot_chosen.connect(func(slot): load_requested.emit(slot))
+		add_child(d))
+	m.settings_requested.connect(func(): add_child(SettingsDialog.new()))
+	m.title_requested.connect(func(): exit_requested.emit())
+	add_child(m)
+
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if not (event is InputEventKey and event.pressed and not event.echo) or _has_overlay():
+		return
+	match event.keycode:
+		KEY_ESCAPE:
+			open_system_menu()
+		KEY_SPACE, KEY_ENTER, KEY_KP_ENTER:
+			if not _advance_btn.disabled:
+				_advance_btn.pressed.emit()
+		KEY_F:
+			_open_office()
+		_:
+			return
+	get_viewport().set_input_as_handled()
+
+
 func _finish() -> void:
 	_advance_btn.disabled = true
+	var auto := SaveGame.read("autosave")
+	if not auto.is_empty() and int(auto.get("scenario_id", 0)) == scenario_id:
+		SaveGame.delete("autosave")          # 已结束的战役不再从自动存档"继续"
 	Audio.stop_music(0.8)
 	if runner.bankrupt:
 		Audio.sfx("bankrupt")

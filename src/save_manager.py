@@ -37,18 +37,11 @@ class SaveManager:
     def save_path(cls, slot_name: str) -> str:
         return os.path.join(cls.get_save_dir(), f"{slot_name}.json")
 
-    @classmethod
-    def save_game(
-        cls,
-        company: Company,
-        clock: CosmicClock,
-        scenario_id: int,
-        slot_name: str = "quicksave",
-        progress: Optional[Dict] = None,
-        office_items: Optional[List[GridItem]] = None,
-    ) -> str:
-        save_path = cls.save_path(slot_name)
-        data = {
+    # ─── 存档结构（与 Godot 端 core/save_game.gd 完全相同，两端存档可互读） ────────────
+    @staticmethod
+    def to_dict(company: Company, clock: CosmicClock, scenario_id: int,
+                progress: Optional[Dict] = None, office_items: Optional[List[GridItem]] = None) -> Dict:
+        return {
             "version": SAVE_VERSION,
             "scenario_id": scenario_id,
             "year": clock.year,
@@ -68,19 +61,10 @@ class SaveManager:
                 "financial_history": [asdict(f) for f in company.financial_history],
             }
         }
-        with open(save_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        return save_path
 
-    @classmethod
-    def load_game(cls, slot_name: str = "quicksave") -> Optional[LoadedGame]:
-        """读取存档；文件不存在时返回 None。兼容 v1 旧存档（缺少的字段取默认值）"""
-        save_path = cls.save_path(slot_name)
-        if not os.path.exists(save_path):
-            return None
-        with open(save_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-
+    @staticmethod
+    def from_dict(data: Dict) -> LoadedGame:
+        """兼容 v1 旧存档（缺少的字段取默认值）"""
         c = data["company"]
         company = Company(
             name=c["name"],
@@ -102,6 +86,30 @@ class SaveManager:
             progress=data.get("progress", {}),
             office_items=[GridItem(**it) for it in data.get("office_items", [])],
         )
+
+    @classmethod
+    def save_game(
+        cls,
+        company: Company,
+        clock: CosmicClock,
+        scenario_id: int,
+        slot_name: str = "quicksave",
+        progress: Optional[Dict] = None,
+        office_items: Optional[List[GridItem]] = None,
+    ) -> str:
+        save_path = cls.save_path(slot_name)
+        with open(save_path, "w", encoding="utf-8") as f:
+            json.dump(cls.to_dict(company, clock, scenario_id, progress, office_items), f, ensure_ascii=False, indent=2)
+        return save_path
+
+    @classmethod
+    def load_game(cls, slot_name: str = "quicksave") -> Optional[LoadedGame]:
+        """读取存档；文件不存在时返回 None"""
+        save_path = cls.save_path(slot_name)
+        if not os.path.exists(save_path):
+            return None
+        with open(save_path, "r", encoding="utf-8") as f:
+            return cls.from_dict(json.load(f))
 
     @classmethod
     def has_save(cls, slot_name: str = "quicksave") -> bool:

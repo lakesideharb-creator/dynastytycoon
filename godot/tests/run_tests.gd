@@ -17,6 +17,7 @@ func _initialize() -> void:
 	for sid in [1, 2, 3]:
 		test_campaign(sid)
 	test_office()
+	test_saves()
 	test_event_system()
 	test_effects_edge_cases()
 	test_runner_rules()
@@ -163,6 +164,74 @@ func test_office() -> void:
 	var full := OfficeLayout.from_preset("harmonious")
 	_close(OfficeLayout.apply_to_company(0.08, chaotic, full), 0.194, "满配改造后公司修正")
 	_close(OfficeLayout.apply_to_company(0.30, chaotic, full), 0.35, "公司修正封顶 +35%")
+
+
+# ─── 存档：读 Python 存档继续玩、Godot 自身往返 ───────────────────────────────
+func _finish_path(r: CampaignRunner, picks: Dictionary) -> void:
+	while not r.is_finished():
+		for ev in r.pending_decisions():
+			r.apply_decision(ev["id"], picks[ev["id"]])
+		r.simulate_month(0.0, false)
+		if not r.bankrupt:
+			r.advance()
+
+
+func _picks(path: String) -> Dictionary:
+	var picks := {}
+	for p in path.split("|").slice(1):
+		var kv := p.split("=")
+		picks[kv[0]] = kv[1]
+	return picks
+
+
+func test_saves() -> void:
+	var g := _load_golden("saves.json")
+	for fx in g["fixtures"]:
+		var tag := "读 Python 存档 关卡%d" % fx["scenario_id"]
+		var loaded := SaveGame.from_dict(fx["save"])
+		var r: CampaignRunner = loaded["runner"]
+		_ok(r.turn == int(fx["save"]["progress"]["turn"]) and r.main_choice == fx["save"]["progress"]["main_choice"], tag + " 进度恢复")
+		_ok(loaded["office"].audit()["score"] == 100, tag + " 办公室布局恢复")
+		var before := r.company.financial_history.size()
+		_finish_path(r, _picks(fx["path"]))
+		var after := r.company.financial_history.slice(before)
+		_ok(after.size() == fx["after_months"].size(), tag + " 续玩月数")
+		for i in mini(after.size(), fx["after_months"].size()):
+			var sd: Dictionary = after[i].to_dict()
+			for k in fx["after_months"][i]:
+				_close(float(sd[k]), float(fx["after_months"][i][k]), "%s 续玩第%d月 %s" % [tag, i + 1, k])
+		_close(r.company.cash, fx["final_cash"], tag + " 期末现金")
+		_ok(r.check_win() == fx["win"], tag + " 胜负")
+
+	# Godot 自身往返：存档 → JSON 文本 → 读档，与不中断的那一局结果完全相同
+	var path := "B|s1_summer=A|s1_rival=B|s1_winter=A"
+	var a := CampaignRunner.new(1)
+	a.apply_main_choice("B")
+	var office := OfficeLayout.from_preset("chaotic")
+	office.add_item(OfficeItem.from_dict({"id": "screen_1", "name": "屏风", "category": "screen", "x": 4, "y": 5}))
+	while a.turn < 5:
+		for ev in a.pending_decisions():
+			a.apply_decision(ev["id"], _picks(path)[ev["id"]])
+		a.simulate_month(0.0, false)
+		a.advance()
+	var text := JSON.stringify(SaveGame.to_dict(a, office))
+	DirAccess.make_dir_recursive_absolute("res://tests/out")            # 供 Python 端读取验证（tests/test_godot_parity.py）
+	var out := FileAccess.open("res://tests/out/godot_save.json", FileAccess.WRITE)
+	if out:
+		out.store_string(text)
+		out.close()
+	var data: Dictionary = JSON.parse_string(text)
+	for k in ["version", "scenario_id", "year", "month", "progress", "office_items", "company"]:
+		_ok(data.has(k), "存档包含 Python 读档所需字段 " + k)
+	var b_loaded := SaveGame.from_dict(data)
+	var b: CampaignRunner = b_loaded["runner"]
+	_ok(b_loaded["office"].items.has("screen_1"), "往返后办公室物件保留")
+	_ok(Array(b.company.revenue_modifiers.map(func(m): return m["label"])) == Array(a.company.revenue_modifiers.map(func(m): return m["label"])), "往返后决策余波保留")
+	_finish_path(a, _picks(path))
+	_finish_path(b, _picks(path))
+	_close(b.company.cash, a.company.cash, "往返后续玩期末现金")
+	_ok(b.company.financial_history.size() == a.company.financial_history.size(), "往返后历史月数")
+	_ok(b.check_win() == a.check_win(), "往返后胜负")
 
 
 # ─── Godot 端独有逻辑 ────────────────────────────────────────────────────────

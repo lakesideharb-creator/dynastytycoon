@@ -24,6 +24,21 @@ func _init(id: int) -> void:
 	engine = CosmicSimulationEngine.new(clock)
 
 
+## 从存档恢复（progress 结构与 Python CampaignRunner.progress() 相同）
+static func restore(id: int, c: Company, clk: CosmicClock, progress: Dictionary) -> CampaignRunner:
+	var r := CampaignRunner.new(id)
+	r.company = c
+	r.clock = clk
+	r.engine = CosmicSimulationEngine.new(clk)
+	r.turn = int(progress.get("turn", 1))
+	var mc = progress.get("main_choice")
+	r.main_choice = "" if mc == null else str(mc)
+	if r.main_choice == "" and progress.get("decision_made", false):
+		r.main_choice = "?"                                     # 兼容 v1 旧存档
+	r.event_choices = Dictionary(progress.get("event_choices", {})).duplicate()
+	return r
+
+
 func duration() -> int:
 	return int(meta.get("duration_months", 12))
 
@@ -124,8 +139,8 @@ func check_win() -> bool:
 
 
 func progress() -> Dictionary:
-	return {"turn": turn, "main_choice": main_choice, "decision_made": main_choice != "",
-			"event_choices": event_choices.duplicate()}
+	return {"turn": turn, "main_choice": null if main_choice == "" else main_choice,
+			"decision_made": main_choice != "", "event_choices": event_choices.duplicate()}
 
 
 static func check_win_condition(c: Company, eng: CosmicSimulationEngine, m: Dictionary) -> bool:

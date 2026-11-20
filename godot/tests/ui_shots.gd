@@ -11,4 +11,5 @@ func _initialize() -> void:
 	d.out_dir = args[0] if args.size() > 0 else "user://shots"
 	d.scenario_id = int(args[1]) if args.size() > 1 else 1
 	d.main_choice = args[2] if args.size() > 2 else "B"
+	d.mode = args[3] if args.size() > 3 else "play"
 	root.add_child(d)

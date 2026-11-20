@@ -25,6 +25,7 @@ var _discard: Button
 
 
 func _ready() -> void:
+	add_to_group("overlay")
 	draft = base.copy()
 	var bg := ColorRect.new()
 	bg.color = Palette.TERMINAL

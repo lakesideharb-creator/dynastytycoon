@@ -8,6 +8,7 @@ saves/
 # Godot
 godot/.godot/
 godot/export/
+godot/tests/out/
 *.import.tmp
 
 # macOS

@@ -7,7 +7,11 @@ var card: PanelContainer
 var body: VBoxContainer
 
 
+var esc_closes := false          ## 为 true 时按 Esc 关闭（系统菜单、设置、存档列表）
+
+
 func _init() -> void:
+	add_to_group("overlay")
 	set_anchors_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	var dim := ColorRect.new()
@@ -52,6 +56,8 @@ func sans_label(text: String, size := 22, color := INK_TEXT, weight := 400) -> L
 func option_button(key: String, text: String, enabled := true, reason := "") -> Button:
 	var b := Button.new()
 	b.text = ("  %s   " % key if key else "  ") + text + (("    （%s）" % reason) if reason else "")
+	if key.length() == 1:
+		b.set_meta("hotkey", key.to_upper())
 	b.alignment = HORIZONTAL_ALIGNMENT_LEFT
 	b.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	b.disabled = not enabled
@@ -69,6 +75,24 @@ func option_button(key: String, text: String, enabled := true, reason := "") -> 
 	b.add_theme_stylebox_override("focus", ThemeBuilder.box(Color.TRANSPARENT, Palette.CINNABAR, 2, 6, 12))
 	Audio.wire_button(b)
 	return b
+
+
+## 键盘：按选项字母（A/B/C…）直接选择；Esc 关闭可关闭的对话框
+func _unhandled_key_input(event: InputEvent) -> void:
+	if not (event is InputEventKey and event.pressed and not event.echo) or is_queued_for_deletion():
+		return
+	if event.keycode == KEY_ESCAPE and esc_closes:
+		close()
+		get_viewport().set_input_as_handled()
+		return
+	var ch := String.chr(event.unicode).to_upper() if event.unicode > 0 else ""
+	if ch == "":
+		return
+	for b in find_children("*", "Button", true, false):
+		if b.get_meta("hotkey", "") == ch and not b.disabled and b.is_visible_in_tree():
+			b.pressed.emit()
+			get_viewport().set_input_as_handled()
+			return
 
 
 func close() -> void:
