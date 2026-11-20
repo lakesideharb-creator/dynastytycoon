@@ -1,0 +1,17 @@
+// SteamPipe 构建脚本：上传 godot/export/steam/ 下三个平台的桌面版
+// 使用前把 1000000 换成你的 AppID，1000001～1000003 换成 Steamworks 里建好的三个 Depot ID（depot_*.vdf 里也要改）
+// 路径相对于本文件所在目录（tools/steam/）
+"AppBuild"
+{
+	"AppID" "1000000"
+	"Desc" "v0.5.0"
+	"ContentRoot" "../../godot/export/steam/"
+	"BuildOutput" "../../godot/export/steam_output/"
+	"SetLive" ""
+	"Depots"
+	{
+		"1000001" "depot_windows.vdf"
+		"1000002" "depot_macos.vdf"
+		"1000003" "depot_linux.vdf"
+	}
+}
