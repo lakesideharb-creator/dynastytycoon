@@ -3361,22 +3361,458 @@
       "id": 8,
       "title": "案例八【谈判博弈】：SaaS大客户续约逼降30%的价值交换",
       "methodology": "商战博弈与势能交换 (Negotiation Leverage)",
-      "industry": "SaaS_Software",
-      "duration_months": 6,
-      "brief": "占营收25%的某跨国大客户要求续约降价30%，否则引入竞品替代。",
+      "industry": "AI_Tech",
+      "duration_months": 9,
+      "brief": "「云表科技」做制造业供应链SaaS，一家跨国车企贡献了四分之一营收。续约前夕，对方采购总监发来最后通牒：续约价降30%，否则引入竞品替换。拓展VP赵勇主张先降价保住客户；CEO李道主张坚守价格，用三年长约和联合标杆案例做价值交换；也有人主张宁可丢单也不让步。",
       "initial_state": {
         "cash": 15000000.0
       },
       "choices": {
         "A": {
-          "name": "直接降价妥协",
-          "verdict": "毛利直接归零，并引发其他客户连锁逼降，陷入恶性循环。"
+          "name": "降价30%保住大客户",
+          "verdict": "毛利一夜归零，消息传开后其他客户排队要求同等待遇，陷入逼降的恶性循环。"
         },
         "B": {
-          "name": "坚守价格底线，以锁定三年长约+联合打造行业标杆案例作为价值置换",
-          "verdict": "不仅锁定长期确定性收入，更凭借标杆案例再签五家行业巨头！"
+          "name": "坚守价格：以三年长约 + 联合打造行业标杆案例做价值交换",
+          "verdict": "锁定了三年确定性收入，标杆案例又带来了五家同行业巨头。"
+        },
+        "C": {
+          "name": "寸步不让：不降价、不置换，大不了丢单",
+          "verdict": "大客户真的换了竞品，四分之一营收一去不返，团队士气也跟着垮了。"
         }
-      }
+      },
+      "win_condition": {
+        "min_cash": 50000000.0,
+        "final_month_profit": 8000000.0
+      },
+      "win_condition_text": "年末账面现金 ≥ 5000万 且末月净利润 ≥ 800万（守住价格体系，并让收入继续增长）",
+      "intended_main_choice": "B",
+      "setup": {
+        "clock": {
+          "year": 2024,
+          "month": 4
+        },
+        "company": {
+          "name": "云表科技 (制造业SaaS)",
+          "industry": "AI_Tech",
+          "cash": 15000000.0,
+          "fengshui_modifier": 0.0,
+          "reputation": 66
+        },
+        "executives": [
+          {
+            "id": "e1",
+            "name": "李道",
+            "gate_id": "kai_men",
+            "gate_name": "开门",
+            "role": "CEO",
+            "salary": 70000,
+            "loyalty": 86,
+            "stress": 45,
+            "portrait": "li_dao"
+          },
+          {
+            "id": "e2",
+            "name": "沈务本",
+            "gate_id": "sheng_men",
+            "gate_name": "生门",
+            "role": "CFO",
+            "salary": 55000,
+            "loyalty": 85,
+            "stress": 40,
+            "portrait": "shen_wuben"
+          },
+          {
+            "id": "e3",
+            "name": "张博",
+            "gate_id": "du_men",
+            "gate_name": "杜门",
+            "role": "CTO",
+            "salary": 65000,
+            "loyalty": 80,
+            "stress": 50,
+            "portrait": "zhang_bo"
+          },
+          {
+            "id": "e4",
+            "name": "苏清墨",
+            "gate_id": "jing_men",
+            "gate_name": "景门",
+            "role": "CMO",
+            "salary": 50000,
+            "loyalty": 84,
+            "stress": 40,
+            "portrait": "su_qingmo"
+          },
+          {
+            "id": "e5",
+            "name": "赵勇",
+            "gate_id": "shang_men",
+            "gate_name": "伤门",
+            "role": "VP_Expansion",
+            "salary": 50000,
+            "loyalty": 74,
+            "stress": 55,
+            "portrait": "zhao_yong"
+          }
+        ],
+        "stores": [
+          {
+            "id": "big_main",
+            "name": "跨国车企大客户",
+            "palace_id": "qian_6",
+            "city_name": "上海",
+            "base_revenue": 850000.0,
+            "rent": 80000.0,
+            "staff_cost": 500000.0
+          },
+          {
+            "id": "cust_{nn}",
+            "name": "制造业客户{nn}",
+            "palace_id": "zhen_3",
+            "city_name": "长三角/珠三角",
+            "base_revenue": 200000.0,
+            "rent": 30000.0,
+            "staff_cost": 220000.0,
+            "count": 12
+          }
+        ]
+      },
+      "main_choices": {
+        "A": {
+          "result": "【已执行】：同意续约价下调30%，合同按年续签。大客户保住了。",
+          "effects": [
+            {
+              "type": "revenue_mod",
+              "factor": 0.7,
+              "months": null,
+              "label": "大客户降价30%",
+              "id_prefix": [
+                "big_"
+              ]
+            },
+            {
+              "type": "reputation",
+              "delta": -4
+            }
+          ]
+        },
+        "B": {
+          "result": "【已执行】：价格一分不降；作为交换，提供三年锁价长约、免费二期功能，并与对方联合打造行业标杆案例。",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": -1000000.0
+            },
+            {
+              "type": "revenue_mod",
+              "factor": 1.08,
+              "months": null,
+              "label": "三年长约增购模块",
+              "id_prefix": [
+                "big_"
+              ]
+            },
+            {
+              "type": "reputation",
+              "delta": 4
+            }
+          ]
+        },
+        "C": {
+          "result": "【已执行】：拒绝降价也不做任何置换。一个月后，对方宣布切换到竞品。",
+          "effects": [
+            {
+              "type": "store_field",
+              "field": "base_revenue",
+              "factor": 0.0,
+              "id_prefix": [
+                "big_"
+              ]
+            },
+            {
+              "type": "store_field",
+              "field": "staff_cost",
+              "factor": 0.4,
+              "id_prefix": [
+                "big_"
+              ]
+            },
+            {
+              "type": "exec",
+              "match": {
+                "all": true
+              },
+              "stress": 10,
+              "loyalty": -6
+            },
+            {
+              "type": "reputation",
+              "delta": -3
+            }
+          ]
+        }
+      },
+      "decision_points": [
+        {
+          "id": "s8_contagion",
+          "turn": 3,
+          "title": "【伤门躁动】其他客户排队要求同等降价",
+          "desc": "降价的消息在行业群里传开，十几家老客户的采购同时发来邮件：既然它能降30%，我们也要。",
+          "requires_main_choice": [
+            "A"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "label": "赵勇方案：所有老客户一律降价20%",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.8,
+                  "months": null,
+                  "label": "全线降价20%",
+                  "id_prefix": [
+                    "cust_",
+                    "logo_"
+                  ]
+                }
+              ],
+              "result": "客户都留下了，毛利表上一片红。"
+            },
+            {
+              "key": "B",
+              "label": "只给续约在即的头部客户让价",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.88,
+                  "months": null,
+                  "label": "头部客户让价",
+                  "id_prefix": [
+                    "cust_",
+                    "logo_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": -3
+                }
+              ],
+              "result": "没拿到折扣的客户觉得被区别对待。"
+            },
+            {
+              "key": "C",
+              "label": "一律拒绝，宁可流失",
+              "effects": [
+                {
+                  "type": "store_field",
+                  "field": "base_revenue",
+                  "factor": 0.8,
+                  "id_prefix": [
+                    "cust_",
+                    "logo_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": -5
+                }
+              ],
+              "result": "两成客户转身走了，价格守住了一半。"
+            }
+          ]
+        },
+        {
+          "id": "s8_showcase",
+          "turn": 3,
+          "title": "【景门当令】联合标杆案例怎么做？",
+          "desc": "大客户同意在年中供应链大会上联合发布案例。苏清墨想做成行业白皮书加发布会，赵勇觉得低调交付就好。",
+          "requires_main_choice": [
+            "B"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "label": "景门苏清墨：联合发布行业白皮书，大会主论坛同台发布",
+              "requires_gate": "jing_men",
+              "requires_gate_name": "景门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -1500000.0
+                },
+                {
+                  "type": "add_stores",
+                  "count": 5,
+                  "id": "logo_{nn}",
+                  "name": "标杆案例带来的新客户{nn}",
+                  "palace_id": "qian_6",
+                  "city_name": "全国",
+                  "base_revenue": 320000.0,
+                  "rent": 30000.0,
+                  "staff_cost": 200000.0
+                },
+                {
+                  "type": "reputation",
+                  "delta": 6
+                }
+              ],
+              "result": "发布会后一周，五家同行业巨头主动约了演示。"
+            },
+            {
+              "key": "B",
+              "label": "低调交付，只在客户内部做成功案例",
+              "effects": [
+                {
+                  "type": "add_stores",
+                  "count": 1,
+                  "id": "logo_{nn}",
+                  "name": "转介绍新客户{nn}",
+                  "palace_id": "qian_6",
+                  "city_name": "全国",
+                  "base_revenue": 320000.0,
+                  "rent": 30000.0,
+                  "staff_cost": 200000.0
+                }
+              ],
+              "result": "客户内部口碑不错，带来了一家转介绍。"
+            },
+            {
+              "key": "C",
+              "label": "案例先放一放，集中精力交付二期功能",
+              "effects": [],
+              "result": "二期按时上线，案例的窗口期也过去了。"
+            }
+          ]
+        },
+        {
+          "id": "s8_rival",
+          "turn": 5,
+          "title": "【白虎猖狂】低价竞品杀入制造业",
+          "desc": "一家拿了大额融资的竞品以半价进入制造业，专挑你的老客户去谈。",
+          "options": [
+            {
+              "key": "A",
+              "label": "杜门张博：上线AI排产模块，把产品差距拉开",
+              "requires_gate": "du_men",
+              "requires_gate_name": "杜门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -1500000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.1,
+                  "months": null,
+                  "label": "AI排产模块",
+                  "id_prefix": [
+                    "big_",
+                    "cust_",
+                    "logo_"
+                  ]
+                }
+              ],
+              "result": "客户试用了竞品一周，又回来续了费。"
+            },
+            {
+              "key": "B",
+              "label": "跟进降价，老客户续费打八折",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.85,
+                  "months": null,
+                  "label": "续费打折",
+                  "id_prefix": [
+                    "big_",
+                    "cust_",
+                    "logo_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": -2
+                }
+              ],
+              "result": "客户没走，价格体系又松了一扣。"
+            },
+            {
+              "key": "C",
+              "label": "不予理会",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.9,
+                  "months": null,
+                  "label": "竞品分流",
+                  "id_prefix": [
+                    "cust_",
+                    "logo_"
+                  ]
+                }
+              ],
+              "result": "几家小客户被竞品撬走了。"
+            }
+          ]
+        },
+        {
+          "id": "s8_renewal",
+          "turn": 7,
+          "title": "【生门开源】年底续约季：预付还是增购？",
+          "desc": "年底续约季到了。赵勇想推「三年预付打八五折」先把现金收回来；沈务本主张按年付费，但用新模块拉动增购。",
+          "options": [
+            {
+              "key": "A",
+              "label": "赵勇方案：三年预付打八五折",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": 5000000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.85,
+                  "months": null,
+                  "label": "预付折扣",
+                  "id_prefix": [
+                    "cust_",
+                    "logo_"
+                  ]
+                }
+              ],
+              "result": "现金一下子回来一大笔，后面三年的单价也定死了。"
+            },
+            {
+              "key": "B",
+              "label": "生门沈务本：按年付费，用新模块拉动增购",
+              "requires_gate": "sheng_men",
+              "requires_gate_name": "生门",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.06,
+                  "months": null,
+                  "label": "模块增购",
+                  "id_prefix": [
+                    "big_",
+                    "cust_",
+                    "logo_"
+                  ]
+                }
+              ],
+              "result": "客单价稳步抬升，每个客户都多买了一个模块。"
+            },
+            {
+              "key": "C",
+              "label": "照常续约",
+              "effects": [],
+              "result": "续约平稳完成。"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 9,

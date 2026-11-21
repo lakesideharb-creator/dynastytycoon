@@ -188,6 +188,11 @@ MAIN_CHOICE_PROMPTS = {
   {BOLD}[A]{RESET} 采纳拓展VP·赵勇路线：借款1.5亿，一次性新建8条产线，扩到三倍产能
   {BOLD}[B]{RESET} 采纳CFO·沈务本路线：自有资金新建4条产线扩到两倍，留存三成抗周期储备
   {BOLD}[C]{RESET} 不扩产：只接利润最高的订单""",
+    8: f"""
+{RED}{BOLD}【谈判路口】占营收四分之一的跨国大客户要求续约降价30%，否则换竞品：{RESET}
+  {BOLD}[A]{RESET} 采纳拓展VP·赵勇路线：降价30%保住大客户
+  {BOLD}[B]{RESET} 采纳CEO·李道路线：坚守价格，以三年长约 + 联合标杆案例做价值交换（投入100万）
+  {BOLD}[C]{RESET} 寸步不让：不降价、不置换，大不了丢单""",
 }
 
 
@@ -656,7 +661,7 @@ def run_sandbox_interactive():
 
 def run_all_headless_tests():
     print(f"\n{YELLOW}{BOLD}>>> 正在执行十大战役数理模型自动化批处理回测... <<<{RESET}")
-    names = {1: "新中式烘焙·离九共振", 2: "AI教育初创·择时对赌", 3: "四人组权力归位·八门调和", 4: "功能饮料·非对称突围", 5: "预制菜投资·条款风控", 6: "智能门锁·择时引爆", 7: "电池BMS·分步扩产"}
+    names = {1: "新中式烘焙·离九共振", 2: "AI教育初创·择时对赌", 3: "四人组权力归位·八门调和", 4: "功能饮料·非对称突围", 5: "预制菜投资·条款风控", 6: "智能门锁·择时引爆", 7: "电池BMS·分步扩产", 8: "SaaS续约·价值交换"}
     all_ok = True
     for sid, name in names.items():
         paths = enumerate_paths(sid)
@@ -718,7 +723,7 @@ def main():
         print(f"  {BOLD}[2]{RESET} 启动【战役二：AI教育初创的融资择时生死战】(时间算法实机)")
         print(f"  {BOLD}[3]{RESET} 启动【战役三：豪华创业四人组的权力归位】(人物算法实机)")
         print(f"  {BOLD}[4]{RESET} 启动【战役四：功能饮料面对百亿巨头的降价屠杀】(竞争策略实机)")
-        print(f"  {BOLD}[K]{RESET} 选择其他可玩战役（案例五、六、七等，按编号进入）")
+        print(f"  {BOLD}[K]{RESET} 选择其他可玩战役（案例五至八，按编号进入）")
         print(f"  {BOLD}[5]{RESET} {RED}启动【战役十：假减肥药危机公关黄金24小时】(舆情指挥室){RESET}")
         print(f"  {BOLD}[6]{RESET} {MAGENTA}启动【二十年自由经商沙盒模式】(自由开局·人才市场·九宫置业·2024-2043史诗){RESET}")
         print(f"  {BOLD}[7]{RESET} 启动【企业总部风水工位DIY与测算沙盘】(Office FengShui Studio)")

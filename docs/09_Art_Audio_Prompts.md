@@ -271,11 +271,15 @@ isometric 2.5D modern Chinese minimalist office floor, 9x9 tile grid, main entra
 | `s6_hack` | 螣蛇暗流·门锁被曝可破解（关卡六） | `a hand holding a small black gadget against a smart door lock in a dim apartment corridor, phone screens with a viral video around it, an ink serpent slipping through the keyhole` |
 | `s6_late_launch` | 时过境迁·双十一仓促上线（关卡六） | `a late-autumn e-commerce warehouse at midnight, a lone new product box on an almost empty secondary shelf while competitors' boxes tower around it, fallen leaves, cold light` |
 | `s6_double11` | 伤门躁动·双十一全网比价（关卡六） | `a wall of glowing price tags and countdown timers for a November shopping festival, two executives arguing in front of it, one pointing at a falling price chart, the other holding an elegant gift box` |
-| `s7_customer` | 勾陈缠身·车企要求独家供货（关卡七，待交付） | `a car-maker procurement chief sliding an exclusive supply contract across a long table toward a battery company founder, a battery pack prototype between them, an ink chain motif around the contract, cool factory light` |
-| `s7_phase2` | 伤门躁动·二期扩产上不上（关卡七，待交付） | `an empty factory hall with fresh concrete and steel frames for a second production phase, a sales VP pointing at stacks of purchase orders, a CFO holding a cautious ledger, rising inventory charts on a screen` |
-| `s7_destock_x` | 白虎猖狂·独家大客户砍单（关卡七，待交付） | `a battery production line slowing to a halt, a single giant customer's logo-less shadow cutting a stack of orders in half, a white tiger ink silhouette over idle machines, autumn grey` |
-| `s7_destock` | 白虎猖狂·行业去库存（关卡七，待交付） | `warehouses overflowing with unsold battery modules, car-maker trucks turning away, a white tiger ink silhouette prowling between pallets, cold autumn light` |
-| `s7_acquire` | 艮土封冻·收编对手产线（关卡七，待交付） | `a snow-covered rival factory with a for-sale banner, nearly new production lines under dust covers, an executive in a long coat inspecting them with an engineer, a mountain-shaped ink seal in the snow` |
+| `s7_customer` | 勾陈缠身·车企要求独家供货（关卡七） | `a car-maker procurement chief sliding an exclusive supply contract across a long table toward a battery company founder, a battery pack prototype between them, an ink chain motif around the contract, cool factory light` |
+| `s7_phase2` | 伤门躁动·二期扩产上不上（关卡七） | `an empty factory hall with fresh concrete and steel frames for a second production phase, a sales VP pointing at stacks of purchase orders, a CFO holding a cautious ledger, rising inventory charts on a screen` |
+| `s7_destock_x` | 白虎猖狂·独家大客户砍单（关卡七） | `a battery production line slowing to a halt, a single giant customer's logo-less shadow cutting a stack of orders in half, a white tiger ink silhouette over idle machines, autumn grey` |
+| `s7_destock` | 白虎猖狂·行业去库存（关卡七） | `warehouses overflowing with unsold battery modules, car-maker trucks turning away, a white tiger ink silhouette prowling between pallets, cold autumn light` |
+| `s7_acquire` | 艮土封冻·收编对手产线（关卡七） | `a snow-covered rival factory with a for-sale banner, nearly new production lines under dust covers, an executive in a long coat inspecting them with an engineer, a mountain-shaped ink seal in the snow` |
+| `s8_contagion` | 伤门躁动·客户排队要求降价（关卡八） | `an open-plan sales office at dusk, a wall of incoming email notifications and ringing phones, a stack of contracts each stamped with a red discount mark, a stressed account manager in the middle` |
+| `s8_showcase` | 景门当令·联合标杆案例（关卡八） | `a supply-chain industry conference main stage, a SaaS executive and a car-maker executive shaking hands under a spotlight, a large screen showing an abstract factory dashboard, cinnabar and gold light` |
+| `s8_rival` | 白虎猖狂·低价竞品杀入（关卡八） | `a factory meeting room where a slick rival salesperson slides a half-price quote across the table to a plant manager, a white tiger ink silhouette behind the rival, cold steel tones` |
+| `s8_renewal` | 生门开源·年底续约季（关卡八） | `a calm year-end finance office, a CFO reviewing a stack of renewal contracts beside an abacus and a laptop, a gentle green ink sprout growing from the ledger, winter window light` |
 
 决策卡后缀：`cinematic illustration for a strategy game event card, 16:9, [风格后缀]`
 
@@ -405,7 +409,11 @@ isometric 2.5D modern Chinese minimalist office floor, 9x9 tile grid, main entra
 - [x] 关卡四的 3 张决策卡（`s4_dealers`、`s4_marathon`、`s4_copycat`）（batch3 已交付，通过）。以后新增关卡的决策卡在交付前先记进 `tests/test_assets.py` 的 `ART_PENDING`，缺图时游戏内决策卡不显示插画、其余正常。
 - [x] 关卡五的 4 张决策卡（`s5_postinvest`、`s5_crash_a`、`s5_crash_b`、`s5_bottom`）（batch4 已交付，通过）。
 - [x] 关卡六的 5 张决策卡（`s6_chips`、`s6_launch`、`s6_hack`、`s6_late_launch`、`s6_double11`）（batch4 已交付，通过）。
-- [ ] 关卡七的 5 张决策卡（`s7_customer`、`s7_phase2`、`s7_destock_x`、`s7_destock`、`s7_acquire`）。画面主体放在中间一条（游戏内只显示中间约 1024×300 比例的横条）。
+- [x] 关卡七的 5 张决策卡（`s7_customer`、`s7_phase2`、`s7_destock_x`、`s7_destock`、`s7_acquire`）（batch5 已交付，通过）。
+- [x] 关卡八的 4 张决策卡（`s8_contagion`、`s8_showcase`、`s8_rival`、`s8_renewal`）（batch5 已交付，通过）。
+- 新关卡决策卡的画面主体放在中间一条（游戏内只显示中间约 1024×300 比例的横条）。
+
+**batch5 审核（2026-11-21）**：关卡七、八共 9 张 1920×1080 PNG，放入 `godot/assets/events/`，原图另存 `assets_src/batch5-original/`。通过：无可读文字与标志；勾陈（桌上锁链）、白虎（砍单 / 仓库 / 竞品身后）、艮土（雪中山形印）、生门（账本里的新芽）意象准确。备注：`s8_renewal` 的 CFO 画成了女性，与关卡八的 CFO 沈务本不一致；提示词只写了 a CFO，画面不指认具体人物，暂不返修。
 
 **batch4 审核（2026-11-21）**：关卡五、六共 9 张 1920×1080 PNG，放入 `godot/assets/events/`，原图另存 `assets_src/batch4-original/`。通过：无可读文字与标志；白虎（撕破无条款合同 / 被朱印镇住）、艮土（雪中山形印）、景门（中秋满月首发）、螣蛇（钥匙孔里的墨蛇）意象准确，主体都在画面中部横条内。
 
