@@ -4,7 +4,7 @@
 "AppBuild"
 {
 	"AppID" "1000000"
-	"Desc" "v0.6.0"
+	"Desc" "v0.7.0"
 	"ContentRoot" "../../godot/export/steam/"
 	"BuildOutput" "../../godot/export/steam_output/"
 	"SetLive" ""

@@ -76,6 +76,19 @@ class TestAssetNaming(unittest.TestCase):
         self.assertEqual(delivered, [], f"这些决策卡已交付，请从 ART_PENDING 删掉：{delivered}")
         self._expect("events", [f"{i}.png" for i in ids if i not in ART_PENDING])
 
+    def test_decision_cards_use_lossy_import(self):
+        """决策卡是 1920×1080 插画、游戏里只显示中间横条：按有损 WebP 导入（compress/mode=1），否则网页版体积翻倍"""
+        d = os.path.join(ASSETS, "events")
+        if not os.path.isdir(d):
+            self.skipTest("assets/events 尚未交付")
+        lossless = []
+        for f in sorted(os.listdir(d)):
+            if f.endswith(".png.import"):
+                with open(os.path.join(d, f), encoding="utf-8") as fh:
+                    if "compress/mode=1" not in fh.read():
+                        lossless.append(f[:-7])
+        self.assertEqual(lossless, [], f"这些决策卡没有按有损压缩导入（.import 里改成 compress/mode=1、lossy_quality=0.85）：{lossless}")
+
     def test_portraits(self):
         self._expect("portraits", [f"{c}_{e}.png" for c in MAIN_CAST for e in EXPRESSIONS])
         self._expect("portraits", [f"talent_{g}_{x}.png" for g in data_ids("eight_gates.json", "gates") for x in "mf"])
