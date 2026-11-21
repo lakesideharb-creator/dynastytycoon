@@ -20,7 +20,6 @@ from src import (
     CosmicSimulationEngine, CampaignManager, EventSystem, SaveManager,
     OfficeLayoutManager, GridItem, FengShuiAudit,
     PRCrisisWarRoom, CrisisStage, CrisisOption,
-    PriceWarEngine, PriceWarScenario,
     SandboxGame, TalentPool, INDUSTRIES, PALACE_OPTIONS, NinePalacesSystem
 )
 from src.sandbox import STORE_SALVAGE_RATE
@@ -169,6 +168,11 @@ MAIN_CHOICE_PROMPTS = {
   {BOLD}[A]{RESET} 八门归位：劝退伤门原CEO转任战略VP，由景门苏清墨掌舵CEO，增聘休门COO调和矛盾 (耗资150万)
   {BOLD}[B]{RESET} 强压施暴：各打五十大板，强推严苛OKR量化考评与连坐扣薪
   {BOLD}[C]{RESET} 弃车保帅：解散自研技术团队转买外部方案，全面做纯销售驱动""",
+    4: f"""
+{RED}{BOLD}【价格屠杀路口】百亿巨头全国商超买一送一，并逼经销商二选一：{RESET}
+  {BOLD}[A]{RESET} 采纳拓展VP·赵勇路线：全国商超跟进五折，拿出800万给经销商补差价
+  {BOLD}[B]{RESET} 采纳品牌官·苏清墨路线：撤出大卖场红海，转战马拉松、健身房、运动医学等专业场景（耗资600万）
+  {BOLD}[C]{RESET} 绕道私域：砍掉经销层级，自建会员小程序直连消费者（耗资300万）""",
 }
 
 
@@ -427,72 +431,6 @@ def run_crisis_war_room_interactive():
     input(f"\n{DIM}按 Enter 返回主菜单...{RESET}")
 
 
-def run_price_war_interactive():
-    """战役四：功能饮品初创 vs 百亿巨头价格战"""
-    print(f"\n{RED}{BOLD}{'='*28} ⚔️  恶性价格战指挥中枢 {'='*28}{RESET}")
-    print(f"{CYAN}战役四：功能饮品赛道 — 百亿巨头价格屠杀反击战【非对称博弈推演】{RESET}\n")
-    print("  背景：你的功能性电解质饮料品牌在细分赛道站稳脚跟，市占率15%。")
-    print("  巨头突然宣布全线降价35%-50%，意图以资本力量碾压清场！")
-    print("  你拥有3000万现金储备，必须在三条截然不同的战略路径中选择命运！\n")
-
-    company = Company("闪电电解质饮料", "Health_Care", 30_000_000.0, reputation=55)
-    scenario = PriceWarScenario(
-        attacker_name="百亿巨头·畅饮集团",
-        attacker_capital=10_000_000_000,
-        discount_rate=0.40,
-        initial_market_share=0.15
-    )
-
-    print(f"{YELLOW}  对手：{scenario.attacker_name} | 资本储备：¥{scenario.attacker_capital/1e8:.0f}亿 | 降价幅度：{scenario.discount_rate*100:.0f}%{RESET}")
-    print(f"  你方：{company.name} | 账面现金：¥{company.cash/1e6:.0f}M | 当前市占率：{scenario.initial_market_share*100:.0f}%\n")
-
-    strategies = [
-        ("A", "【策略A·以血换血】跟进降价35%-50%，正面肉搏价格战",
-         "毛利骤降至5%，每月净失血250万，以微薄现金池硬撼500亿巨头……"),
-        ("B", "【策略B·升维破局】坚守原价，重兵押注专业运动圈层差异化",
-         "赞助马拉松/铁三/骑行KOL，占领「专业运动员指定补给」心智高地"),
-        ("C", "【策略C·私域绕道】放弃大卖场，深耕私域会员D2C直营生态",
-         "砍掉高返点渠道，建立订阅制会员补给模型，以细水长流对抗大水漫灌"),
-    ]
-
-    for key, title, desc in strategies:
-        print(f"  {BOLD}[{key}]{RESET} {title}")
-        print(f"      {DIM}→ {desc}{RESET}\n")
-
-    while True:
-        choice = input(f"{YELLOW}请下达战略指令 [A/B/C]: {RESET}").strip().upper()
-        if choice in ["A", "B", "C"]:
-            break
-        print(f"  {RED}无效输入，请输入 A、B 或 C。{RESET}")
-
-    result = PriceWarEngine.simulate_battle(company, choice, scenario)
-
-    print(f"\n{BOLD}{'='*76}{RESET}")
-    print(f"{BOLD}{'='*20} 📊  博弈推演结果 {'='*20}{RESET}\n")
-    result_color = GREEN if result.get("survived") and result.get("financial_impact", 0) > 0 else (YELLOW if result.get("survived") else RED)
-    print(f"{result_color}{BOLD}{result['verdict']}{RESET}\n")
-    print(f"  执行策略：{result['strategy']}")
-    print(f"  毛利率变动：→ {result['gross_margin']*100:.1f}%")
-    mkt_arrow = "↑" if result['market_share'] > scenario.initial_market_share else "↓"
-    print(f"  市场占有率：{scenario.initial_market_share*100:.1f}% {mkt_arrow} {result['market_share']*100:.1f}%")
-    impact_color = GREEN if result['financial_impact'] > 0 else RED
-    print(f"  净财务影响：{impact_color}{BOLD}¥{result['financial_impact']:+,.0f}{RESET}")
-    print(f"  剩余账面现金：{BOLD}¥{result['ending_cash']:,.0f}{RESET}")
-    print(f"  公司商誉变动：→ {company.reputation}/100")
-
-    print(f"\n{CYAN}  ─ 参谋部复盘：三条路径横向对比 ─{RESET}")
-    for key, title, _ in strategies:
-        c_tmp = Company("复盘副本", "Health_Care", 30_000_000.0, reputation=55)
-        r_tmp = PriceWarEngine.simulate_battle(c_tmp, key, scenario)
-        mark = f" {GREEN}<< 你的选择{RESET}" if key == choice else ""
-        impact_c = GREEN if r_tmp['financial_impact'] > 0 else RED
-        print(f"  策略{key}：市占率{r_tmp['market_share']*100:.1f}% | "
-              f"净影响 {impact_c}¥{r_tmp['financial_impact']:+,.0f}{RESET} | "
-              f"{'✅ 存活' if r_tmp['survived'] else '❌ 危殆'}{mark}")
-
-    input(f"\n{DIM}按 Enter 返回主菜单...{RESET}")
-
-
 def run_sandbox_interactive():
     """二十年自由经营沙盒模式 (2024-2043)"""
     print(f"\n{MAGENTA}{BOLD}{'='*25} 🌐 二十年商业沙盒史诗 (2024-2043) {'='*25}{RESET}")
@@ -703,7 +641,7 @@ def run_sandbox_interactive():
 
 def run_all_headless_tests():
     print(f"\n{YELLOW}{BOLD}>>> 正在执行十大战役数理模型自动化批处理回测... <<<{RESET}")
-    names = {1: "新中式烘焙·离九共振", 2: "AI教育初创·择时对赌", 3: "四人组权力归位·八门调和"}
+    names = {1: "新中式烘焙·离九共振", 2: "AI教育初创·择时对赌", 3: "四人组权力归位·八门调和", 4: "功能饮料·非对称突围"}
     all_ok = True
     for sid, name in names.items():
         paths = enumerate_paths(sid)
@@ -732,7 +670,7 @@ def run_all_headless_tests():
 
 def main():
     parser = argparse.ArgumentParser(description="《商道玄机：大亨罗盘》控制台模拟引擎")
-    parser.add_argument("--scenario", type=int, choices=[1, 2, 3], help="直接进入指定战役关卡 (1, 2, 3)")
+    parser.add_argument("--scenario", type=int, choices=[1, 2, 3, 4], help="直接进入指定战役关卡 (1–4)")
     parser.add_argument("--headless", action="store_true", help="无头快速回测模式")
     parser.add_argument("--load", action="store_true", help="读取 quicksave 存档继续战役")
     parser.add_argument("--playtest", action="store_true", help="试玩模式：把每局战役的决策与结果记录到 saves/playtest_log.jsonl")
@@ -764,7 +702,7 @@ def main():
         print(f"  {BOLD}[1]{RESET} 启动【战役一：新中式烘焙的空间大破局】(空间算法实机)")
         print(f"  {BOLD}[2]{RESET} 启动【战役二：AI教育初创的融资择时生死战】(时间算法实机)")
         print(f"  {BOLD}[3]{RESET} 启动【战役三：豪华创业四人组的权力归位】(人物算法实机)")
-        print(f"  {BOLD}[4]{RESET} {RED}启动【战役四：百亿巨头价格屠杀反击战】(价格战博弈推演){RESET}")
+        print(f"  {BOLD}[4]{RESET} 启动【战役四：功能饮料面对百亿巨头的降价屠杀】(竞争策略实机)")
         print(f"  {BOLD}[5]{RESET} {RED}启动【战役十：假减肥药危机公关黄金24小时】(舆情指挥室){RESET}")
         print(f"  {BOLD}[6]{RESET} {MAGENTA}启动【二十年自由经商沙盒模式】(自由开局·人才市场·九宫置业·2024-2043史诗){RESET}")
         print(f"  {BOLD}[7]{RESET} 启动【企业总部风水工位DIY与测算沙盘】(Office FengShui Studio)")
@@ -774,10 +712,8 @@ def main():
         print(f"  {BOLD}[0]{RESET} 退出系统")
 
         sel = input(f"\n{YELLOW}请选择操作功能 [1-9/L/0]: {RESET}").strip().upper()
-        if sel in ["1", "2", "3"]:
+        if sel in ["1", "2", "3", "4"]:
             run_campaign_interactive(int(sel))
-        elif sel == "4":
-            run_price_war_interactive()
         elif sel == "5":
             run_crisis_war_room_interactive()
         elif sel == "6":

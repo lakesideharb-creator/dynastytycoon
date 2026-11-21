@@ -18,7 +18,7 @@ from src.personnel import PersonnelSystem
 from src.office_fengshui import OfficeLayoutManager
 from src import tables
 
-SCENARIOS = (1, 2, 3)
+SCENARIOS = tuple(s["id"] for s in CampaignManager.get_all_scenarios_meta() if CampaignManager.is_playable(s["id"]))
 EVENT_SEEDS = range(30)
 
 
@@ -42,7 +42,9 @@ def replay(scenario_id: int, path: str, seed=None, renovate=False) -> CampaignRu
         full_renovation(r)
     while not r.is_finished:
         for ev in r.pending_decisions():
-            r.apply_decision(ev["id"], picks[ev["id"]])
+            # 改造或随机事件会改变现金：路径里的选项付不起、或路径在无事件时已破产而没有这个议题，就按 C→B→A 取第一个可选项
+            keys = [picks.get(ev["id"]), "C", "B", "A"]
+            next(k for k in keys if k and r.apply_decision(ev["id"], k)[0])
         r.simulate_month(random_events=seed is not None)
         if not r.bankrupt:
             r.advance()

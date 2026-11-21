@@ -14,8 +14,9 @@ var failures: Array[String] = []
 func _initialize() -> void:
 	var t0 := Time.get_ticks_msec()
 	test_factors()
-	for sid in [1, 2, 3]:
-		test_campaign(sid)
+	for s in DataTables.scenarios():
+		if CampaignManager.is_playable(int(s["id"])):
+			test_campaign(int(s["id"]))
 	test_office()
 	test_saves()
 	test_playtest_log()

@@ -36,6 +36,10 @@ except ImportError:
     HAVE_PIL = False
 
 
+# 已写进 docs/09_Art_Audio_Prompts.md、等待美术交付的决策卡（游戏内缺图时决策卡不显示插画）
+ART_PENDING: set = set()
+
+
 def data_ids(name, key):
     with open(os.path.join(ROOT, "data", name), encoding="utf-8") as f:
         return [x["id"] for x in json.load(f)[key]]
@@ -66,7 +70,11 @@ class TestAssetNaming(unittest.TestCase):
 
     def test_decision_cards_cover_all_decision_points(self):
         ids = [dp["id"] for s in CampaignManager.get_all_scenarios_meta() for dp in s.get("decision_points", [])]
-        self._expect("events", [f"{i}.png" for i in ids])
+        self.assertTrue(ART_PENDING <= set(ids), f"ART_PENDING 里有已不存在的决策点：{ART_PENDING - set(ids)}")
+        files = present("events") or set()
+        delivered = sorted(i for i in ART_PENDING if f"{i}.png" in files)
+        self.assertEqual(delivered, [], f"这些决策卡已交付，请从 ART_PENDING 删掉：{delivered}")
+        self._expect("events", [f"{i}.png" for i in ids if i not in ART_PENDING])
 
     def test_portraits(self):
         self._expect("portraits", [f"{c}_{e}.png" for c in MAIN_CAST for e in EXPRESSIONS])

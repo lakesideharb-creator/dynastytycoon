@@ -1226,23 +1226,450 @@
       "id": 4,
       "title": "案例四【竞争策略】：功能饮料面对百亿巨头的降价屠杀",
       "methodology": "竞争策略 (Asymmetric Business War)",
-      "industry": "Functional_Beverage",
+      "industry": "Health_Care",
       "duration_months": 12,
-      "brief": "新锐电解质水年销突破5亿，引来传统百亿饮品巨头红眼。巨头在全渠道发起'买一送一'价格战，并威胁经销商二选一封杀。",
+      "brief": "新锐电解质水「澜泉」年销突破5亿，引来百亿饮品巨头红眼。巨头在全国商超发起「买一送一」，并逼经销商二选一。拓展VP赵勇主张降价硬刚，品牌官苏清墨主张撤出大卖场红海，转战马拉松、健身房与运动医学等专业场景。",
       "initial_state": {
         "cash": 30000000.0,
         "market_share": 0.15
       },
       "choices": {
         "A": {
-          "name": "跟进打五折价格战",
-          "verdict": "现金流三月内烧光，巨头凭雄厚财力胜出，战败破产。"
+          "name": "跟进五折：全国商超同价硬刚巨头",
+          "verdict": "巨头的现金池深不见底，五折对它是九牛一毛，对你却是毛利归零，现金流被一点点放干。"
         },
         "B": {
-          "name": "避其锋芒，转战专业马拉松/健身房/医美细分高维场景并强化文化IP",
-          "verdict": "成功跳出红海，开辟专业认知高地，毛利率逆势提升35%！"
+          "name": "避其锋芒：撤出大卖场红海，转战马拉松、健身房、运动医学等专业场景",
+          "verdict": "不在泥坑里和巨头比价格，专业场景的高客单撑起了逆势增长的毛利。"
+        },
+        "C": {
+          "name": "绕道私域：砍掉经销层级，自建会员小程序直连消费者",
+          "verdict": "避开了二选一，但私域拉新慢、复购薄，规模被锁死在一隅。"
         }
-      }
+      },
+      "win_condition": {
+        "min_cash": 180000000.0,
+        "final_month_profit": 14000000.0
+      },
+      "win_condition_text": "年末账面现金 ≥ 1.8亿 且末月净利润 ≥ 1400万（守住现金流，并找到能持续赚钱的阵地）",
+      "intended_main_choice": "B",
+      "setup": {
+        "clock": {
+          "year": 2024,
+          "month": 4
+        },
+        "company": {
+          "name": "澜泉 (运动电解质水)",
+          "industry": "Health_Care",
+          "cash": 30000000.0,
+          "fengshui_modifier": 0.02,
+          "reputation": 70
+        },
+        "executives": [
+          {
+            "id": "e1",
+            "name": "李道",
+            "gate_id": "kai_men",
+            "gate_name": "开门",
+            "role": "CEO",
+            "salary": 70000,
+            "loyalty": 85,
+            "stress": 45,
+            "portrait": "li_dao"
+          },
+          {
+            "id": "e2",
+            "name": "沈务本",
+            "gate_id": "sheng_men",
+            "gate_name": "生门",
+            "role": "CFO",
+            "salary": 55000,
+            "loyalty": 82,
+            "stress": 40,
+            "portrait": "shen_wuben"
+          },
+          {
+            "id": "e3",
+            "name": "苏清墨",
+            "gate_id": "jing_men",
+            "gate_name": "景门",
+            "role": "CMO",
+            "salary": 50000,
+            "loyalty": 80,
+            "stress": 45,
+            "portrait": "su_qingmo"
+          },
+          {
+            "id": "e4",
+            "name": "赵勇",
+            "gate_id": "shang_men",
+            "gate_name": "伤门",
+            "role": "VP_Expansion",
+            "salary": 50000,
+            "loyalty": 72,
+            "stress": 55,
+            "portrait": "zhao_yong"
+          }
+        ],
+        "stores": [
+          {
+            "id": "ka_{nn}",
+            "name": "商超经销大区{nn}",
+            "palace_id": "kun_2",
+            "city_name": "全国商超",
+            "base_revenue": 880000.0,
+            "rent": 300000.0,
+            "staff_cost": 1000000.0,
+            "count": 20
+          }
+        ]
+      },
+      "main_choices": {
+        "A": {
+          "result": "【已执行】：全国商超跟进五折，拿出 800 万给经销商补差价。货架守住了，每瓶却几乎不赚钱。",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": -8000000.0
+            },
+            {
+              "type": "revenue_mod",
+              "factor": 0.65,
+              "months": null,
+              "label": "五折价格战",
+              "id_prefix": [
+                "ka_"
+              ]
+            },
+            {
+              "type": "reputation",
+              "delta": -8
+            }
+          ]
+        },
+        "B": {
+          "result": "【已执行】：商超只保留核心货架，斥资 600 万签下 12 个专业场景渠道（马拉松补给、连锁健身房、运动医学诊所）。激活震三宫「动」的气场！",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": -6000000.0
+            },
+            {
+              "type": "revenue_mod",
+              "factor": 0.5,
+              "months": null,
+              "label": "大卖场份额被巨头抢走",
+              "id_prefix": [
+                "ka_"
+              ]
+            },
+            {
+              "type": "store_field",
+              "field": "staff_cost",
+              "factor": 0.5,
+              "id_prefix": [
+                "ka_"
+              ]
+            },
+            {
+              "type": "store_field",
+              "field": "rent",
+              "factor": 0.6,
+              "id_prefix": [
+                "ka_"
+              ]
+            },
+            {
+              "type": "add_stores",
+              "count": 12,
+              "id": "pro_{nn}",
+              "name": "专业场景渠道{nn}",
+              "palace_id": "zhen_3",
+              "city_name": "马拉松/健身房/运动医学",
+              "base_revenue": 620000.0,
+              "rent": 250000.0,
+              "staff_cost": 450000.0
+            },
+            {
+              "type": "reputation",
+              "delta": 6
+            }
+          ]
+        },
+        "C": {
+          "result": "【已执行】：砍掉经销层级，投入 300 万自建会员小程序与社群，开出 12 个私域运营站。",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": -3000000.0
+            },
+            {
+              "type": "revenue_mod",
+              "factor": 0.3,
+              "months": null,
+              "label": "经销商倒向巨头",
+              "id_prefix": [
+                "ka_"
+              ]
+            },
+            {
+              "type": "store_field",
+              "field": "staff_cost",
+              "factor": 0.3,
+              "id_prefix": [
+                "ka_"
+              ]
+            },
+            {
+              "type": "store_field",
+              "field": "rent",
+              "factor": 0.4,
+              "id_prefix": [
+                "ka_"
+              ]
+            },
+            {
+              "type": "add_stores",
+              "count": 12,
+              "id": "d2c_{nn}",
+              "name": "私域运营站{nn}",
+              "palace_id": "dui_7",
+              "city_name": "线上社群",
+              "base_revenue": 400000.0,
+              "rent": 80000.0,
+              "staff_cost": 350000.0
+            }
+          ]
+        }
+      },
+      "decision_points": [
+        {
+          "id": "s4_dealers",
+          "turn": 3,
+          "title": "【勾陈缠身】巨头逼经销商「二选一」",
+          "desc": "巨头放话：继续进澜泉的货，明年返利全部取消。华东、华南几家大经销商开始犹豫，赵勇主张砸钱加返利死保，沈务本想用账期换忠诚。",
+          "options": [
+            {
+              "key": "A",
+              "label": "赵勇方案：给经销商加三个点返利，死保货架",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -4000000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.08,
+                  "months": null,
+                  "label": "返利保住货架",
+                  "id_prefix": [
+                    "ka_"
+                  ]
+                },
+                {
+                  "type": "exec",
+                  "match": {
+                    "name": "沈务本"
+                  },
+                  "stress": 15
+                }
+              ],
+              "result": "经销商暂时留下了，但他们学会了用巨头来跟你谈价。"
+            },
+            {
+              "key": "B",
+              "label": "生门沈务本：与核心经销商签三年保供协议，以账期换忠诚",
+              "requires_gate": "sheng_men",
+              "requires_gate_name": "生门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -1000000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.1,
+                  "months": null,
+                  "label": "核心经销商锁定",
+                  "id_prefix": [
+                    "ka_"
+                  ]
+                }
+              ],
+              "result": "核心经销商签了字，大卖场的基本盘稳住了。"
+            },
+            {
+              "key": "C",
+              "label": "放手：退出被胁迫的经销商，大卖场再收缩一半",
+              "effects": [
+                {
+                  "type": "store_field",
+                  "field": "base_revenue",
+                  "factor": 0.55,
+                  "id_prefix": [
+                    "ka_"
+                  ]
+                },
+                {
+                  "type": "store_field",
+                  "field": "rent",
+                  "factor": 0.5,
+                  "id_prefix": [
+                    "ka_"
+                  ]
+                },
+                {
+                  "type": "store_field",
+                  "field": "staff_cost",
+                  "factor": 0.5,
+                  "id_prefix": [
+                    "ka_"
+                  ]
+                },
+                {
+                  "type": "exec",
+                  "match": {
+                    "name": "赵勇"
+                  },
+                  "stress": 15,
+                  "loyalty": -12
+                }
+              ],
+              "result": "渠道费省下一大笔，赵勇却觉得自己打下的江山被拱手让人。"
+            }
+          ]
+        },
+        {
+          "id": "s4_marathon",
+          "turn": 6,
+          "title": "【景门得使】全国马拉松赛季开跑",
+          "desc": "秋季是马拉松大年，全国 30 场城市马拉松在招官方补给。苏清墨想全部拿下，赵勇则想请顶流明星代言，在全渠道打一波声量。",
+          "options": [
+            {
+              "key": "A",
+              "label": "景门苏清墨：拿下 30 场城市马拉松官方补给",
+              "requires_gate": "jing_men",
+              "requires_gate_name": "景门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -4000000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.25,
+                  "months": null,
+                  "label": "马拉松官方补给",
+                  "id_prefix": [
+                    "pro_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": 6
+                }
+              ],
+              "result": "终点线上的补给站成了最好的广告：「跑者都喝澜泉」。"
+            },
+            {
+              "key": "B",
+              "label": "赵勇方案：签下顶流明星全渠道代言",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -7000000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.12,
+                  "months": 3,
+                  "label": "明星代言声量"
+                },
+                {
+                  "type": "reputation",
+                  "delta": 2
+                }
+              ],
+              "result": "热搜上了三天，声量过后，消费者还是在货架前比价。"
+            },
+            {
+              "key": "C",
+              "label": "不赞助，留足现金过冬",
+              "effects": [],
+              "result": "账上现金没动，赛道上的补给站被别家拿走了。"
+            }
+          ]
+        },
+        {
+          "id": "s4_copycat",
+          "turn": 9,
+          "title": "【螣蛇暗流】巨头推出「专业版」仿品",
+          "desc": "巨头突然推出一款「专业运动电解质水」，包装配色与澜泉几乎一模一样，直接铺进健身房冰柜。",
+          "options": [
+            {
+              "key": "A",
+              "label": "开门李道：公开配方与运动医学临床数据，联合协会发布行业标准",
+              "requires_gate": "kai_men",
+              "requires_gate_name": "开门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -1500000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.12,
+                  "months": null,
+                  "label": "行业标准话语权",
+                  "id_prefix": [
+                    "pro_",
+                    "d2c_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": 5
+                }
+              ],
+              "result": "「专业」二字有了标准，仿品在专业圈子里反而成了笑话。"
+            },
+            {
+              "key": "B",
+              "label": "跟进降价，专业渠道全线八折",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.88,
+                  "months": null,
+                  "label": "专业渠道降价"
+                },
+                {
+                  "type": "reputation",
+                  "delta": -5
+                }
+              ],
+              "result": "冰柜里守住了位置，专业场景的溢价却被自己打掉了一截。"
+            },
+            {
+              "key": "C",
+              "label": "不予理会，相信老用户的判断",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.85,
+                  "months": null,
+                  "label": "仿品分流",
+                  "id_prefix": [
+                    "pro_",
+                    "d2c_"
+                  ]
+                }
+              ],
+              "result": "没花一分钱，健身房冰柜里的份额却被慢慢蚕食。"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 5,

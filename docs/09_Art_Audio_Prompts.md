@@ -259,6 +259,9 @@ isometric 2.5D modern Chinese minimalist office floor, 9x9 tile grid, main entra
 | `s3_scientist` | 杜门闭塞·首席科学家辞呈 | `a resignation letter on a lab bench beside a robot arm, a lone scientist silhouetted against a window at dusk, closed door motif` |
 | `s3_poach` | 伤门躁动·竞对挖角 | `a headhunter sliding a thick envelope across a cafe table to an ambitious salesman, rival company tower in the background` |
 | `s3_launch` | 景门照耀·新品发布会 | `grand product launch stage with a humanoid robot under spotlights, audience silhouettes, cinnabar and gold light beams` |
+| `s4_dealers` | 勾陈缠身·巨头逼经销商二选一（关卡四） | `a crowded wholesale warehouse, a giant beverage conglomerate's shadow pressing down on hesitant distributors, stacks of discounted drink crates with 'buy one get one' ink banners, an ink serpent-like chain binding the doors` |
+| `s4_marathon` | 景门得使·马拉松赛季（关卡四） | `city marathon at dawn, runners streaming past a refreshment station handing out bottles of clear electrolyte water, cinnabar finish arch, sunrise light, energetic` |
+| `s4_copycat` | 螣蛇暗流·巨头推出仿品（关卡四） | `gym refrigerator lit in cold blue, two nearly identical sports drink bottles side by side, a faint ink serpent coiling around the copycat bottle, uneasy mood` |
 
 决策卡后缀：`cinematic illustration for a strategy game event card, 16:9, [风格后缀]`
 
@@ -383,6 +386,11 @@ isometric 2.5D modern Chinese minimalist office floor, 9x9 tile grid, main entra
 - [x] 办公室地块与道具全套、风水特效概念图（batch2，4 块地砖待返修）
 - [x] 其余角色立绘与人才市场通用头像（batch2）
 - [x] 其余决策卡、场景背景、图标（batch2）
+
+**第三批（Beta 关卡四起）**
+- [x] 关卡四的 3 张决策卡（`s4_dealers`、`s4_marathon`、`s4_copycat`）（batch3 已交付，通过）。以后新增关卡的决策卡在交付前先记进 `tests/test_assets.py` 的 `ART_PENDING`，缺图时游戏内决策卡不显示插画、其余正常。
+
+**batch3 审核（2026-11-21）**：3 张 1920×1080 WebP，转成 PNG 放入 `godot/assets/events/`（与前两批格式一致），原图保存在 `assets_src/batch3-original/`。通过：无文字、无标志，勾陈（铁链锁门）、景门（朱红终点牌楼）、螣蛇（缠绕仿品）意象准确。
 
 **batch2 审核（2026-11-19）**：117 张图，已处理后放入 `godot/assets/`，原图保存在 `assets_src/batch2-original/`。
 - 通过：主角团 12 张重绘（表情差异明显、形象统一）、决策卡 7 张、场景 11 张、办公室道具 9 张、八门/八神/五行/季节图标。

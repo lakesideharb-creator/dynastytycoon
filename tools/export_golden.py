@@ -149,6 +149,9 @@ def office_layouts(n=300, seed=20261120) -> dict:
     return {"layouts": rows}
 
 
+PLAYABLE = [s["id"] for s in CampaignManager.get_all_scenarios_meta() if CampaignManager.is_playable(s["id"])]
+
+
 def save_fixtures(save_turn=6) -> dict:
     """跨引擎存档：每个关卡走设计正解中通关余量最大的路径，第1月满配风水改造，
     第 save_turn 个月开头（议题未处理）存档；再记录从存档继续到结局的逐月结果，供 Godot 读档后对照"""
@@ -157,7 +160,7 @@ def save_fixtures(save_turn=6) -> dict:
     harmonious = OfficeLayoutManager.create_harmonious_preset()
     delta = harmonious.audit_layout().fengshui_modifier - chaotic.audit_layout().fengshui_modifier
     out = []
-    for sid in (1, 2, 3):
+    for sid in PLAYABLE:
         intended = CampaignManager.get_scenario_by_id(sid)["intended_main_choice"]
         paths = [p for p, r in enumerate_paths(sid) if p.startswith(intended) and r.check_win()]
         path = max(paths, key=lambda p: replay(sid, p)["final_cash"])
@@ -329,7 +332,7 @@ def main(argv=None):
     sandbox = sandbox_games()
     dump("sandbox.json", sandbox)
     total = 0
-    for sid in (1, 2, 3):
+    for sid in PLAYABLE:
         paths = [p for p, _ in enumerate_paths(sid)]
         dump(f"campaign_{sid}.json", {"scenario_id": sid, "paths": [replay(sid, p) for p in paths]})
         total += len(paths)

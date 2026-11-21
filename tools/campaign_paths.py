@@ -7,6 +7,7 @@
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from src.campaign import CampaignManager
 from src.campaign_runner import enumerate_paths
 
 
@@ -19,7 +20,7 @@ def metrics(runner):
 
 
 if __name__ == "__main__":
-    ids = [int(a) for a in sys.argv[1:]] or [1, 2, 3]
+    ids = [int(a) for a in sys.argv[1:]] or [s["id"] for s in CampaignManager.get_all_scenarios_meta() if CampaignManager.is_playable(s["id"])]
     for sid in ids:
         rows = enumerate_paths(sid)
         print(f"=== 关卡{sid}：{len(rows)} 条路径，通关 {sum(metrics(r)['win'] for _, r in rows)} 条")

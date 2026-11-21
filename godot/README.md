@@ -43,6 +43,7 @@ godot/
     ├── run_tests.gd          # 对照测试入口
     ├── ui_shots.gd           # 界面自动截图（自动玩一局）
     ├── capture_shots.gd · capture_crisis.gd · capture_sandbox.gd   # 截图与冒烟测试（战役一、危机公关、沙盒），输出到 store/screenshots/
+    ├── capture_case.gd             # 任意关卡按指定路线实机走查并截图：-- <输出目录> <关卡> <路线>
     ├── record_trailer.gd     # 宣传片素材录制（Movie Maker）
     └── golden/               # Python 引擎的标准答案（tools/export_golden.py 生成）
 ```
@@ -116,7 +117,7 @@ godot --headless --path godot --import
 godot --headless --path godot -s res://tests/run_tests.gd
 ```
 
-对照内容：天时/地利/人和因子表、跨引擎存档（读 Python 存档续玩）、风水审计（两个预设 + 300 个随机布局的评分与全部文字）、三个战役全部 165 条决策路径的逐月结账单、现金、月度解读文字与下月预告（逐字一致）、终局胜负与高管状态。
+对照内容：天时/地利/人和因子表、跨引擎存档（读 Python 存档续玩）、风水审计（两个预设 + 300 个随机布局的评分与全部文字）、四个战役全部 228 条决策路径的逐月结账单、现金、月度解读文字与下月预告（逐字一致）、终局胜负与高管状态。
 
 ## 风水工位与平衡
 
