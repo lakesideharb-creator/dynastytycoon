@@ -2675,20 +2675,687 @@
       "methodology": "空间集聚与杠杆平衡 (Leverage & Scale)",
       "industry": "New_Energy",
       "duration_months": 18,
-      "brief": "下游车企订单暴涨，产能严重不足。投委会激进派建议借款10亿一次性扩充3倍产能。",
+      "brief": "「储芯动力」的电池管理系统（BMS）供不应求，下游车企订单暴涨，四条产线满负荷也交不完货。拓展VP赵勇主张借1.5亿、一口气扩到三倍产能；CFO沈务本主张分步扩产、留足三成抗周期储备；也有人主张干脆不扩、只接利润最高的订单。",
       "initial_state": {
         "cash": 80000000.0
       },
       "choices": {
         "A": {
-          "name": "激进借债10亿一次性扩充3倍",
-          "verdict": "次年遭遇行业周期性去库存，巨额利息与厂房折旧压垮现金流，被迫重整。"
+          "name": "激进扩张：借款1.5亿，一次性扩到三倍产能",
+          "verdict": "次年行业去库存，巨额利息与折旧压垮现金流，被迫重整。"
         },
         "B": {
-          "name": "分期扩充2倍，留存30%抗周期储备资金",
-          "verdict": "不仅平稳消化订单，还在行业退潮期低价收编濒危对手资产，稳坐龙头。"
+          "name": "分步走：首期扩到两倍产能，留存三成抗周期储备",
+          "verdict": "平稳消化订单，还在行业退潮期低价收编了濒危对手的产线。"
+        },
+        "C": {
+          "name": "不扩产：只接利润最高的订单",
+          "verdict": "躲过了周期，却把车企的定点份额拱手让给了对手，复苏时已经没有位置。"
         }
-      }
+      },
+      "win_condition": {
+        "min_cash": 100000000.0,
+        "final_month_profit": 27000000.0
+      },
+      "win_condition_text": "第18个月末账面现金 ≥ 1.0亿 且末月净利润 ≥ 2700万（穿越去库存周期，并在复苏时站稳龙头）",
+      "intended_main_choice": "B",
+      "setup": {
+        "clock": {
+          "year": 2024,
+          "month": 1
+        },
+        "company": {
+          "name": "储芯动力 (新能源电池BMS)",
+          "industry": "New_Energy",
+          "cash": 80000000.0,
+          "fengshui_modifier": 0.0,
+          "reputation": 70
+        },
+        "executives": [
+          {
+            "id": "e1",
+            "name": "李道",
+            "gate_id": "kai_men",
+            "gate_name": "开门",
+            "role": "CEO",
+            "salary": 90000,
+            "loyalty": 85,
+            "stress": 45,
+            "portrait": "li_dao"
+          },
+          {
+            "id": "e2",
+            "name": "沈务本",
+            "gate_id": "sheng_men",
+            "gate_name": "生门",
+            "role": "CFO",
+            "salary": 70000,
+            "loyalty": 88,
+            "stress": 40,
+            "portrait": "shen_wuben"
+          },
+          {
+            "id": "e3",
+            "name": "张博",
+            "gate_id": "du_men",
+            "gate_name": "杜门",
+            "role": "CTO",
+            "salary": 80000,
+            "loyalty": 80,
+            "stress": 50,
+            "portrait": "zhang_bo"
+          },
+          {
+            "id": "e4",
+            "name": "赵勇",
+            "gate_id": "shang_men",
+            "gate_name": "伤门",
+            "role": "VP_Expansion",
+            "salary": 60000,
+            "loyalty": 75,
+            "stress": 55,
+            "portrait": "zhao_yong"
+          },
+          {
+            "id": "e5",
+            "name": "温润生",
+            "gate_id": "xiu_men",
+            "gate_name": "休门",
+            "role": "COO",
+            "salary": 60000,
+            "loyalty": 85,
+            "stress": 35,
+            "portrait": "wen_runsheng"
+          }
+        ],
+        "stores": [
+          {
+            "id": "line_{nn}",
+            "name": "BMS产线{nn}",
+            "palace_id": "li_9",
+            "city_name": "合肥",
+            "base_revenue": 1500000.0,
+            "rent": 800000.0,
+            "staff_cost": 2000000.0,
+            "count": 4
+          }
+        ]
+      },
+      "main_choices": {
+        "A": {
+          "result": "【已执行】：向银行借款1.5亿，连同自有资金一口气新建8条产线，产能扩到三倍。",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": 6000000.0
+            },
+            {
+              "type": "add_stores",
+              "id": "loan_main",
+              "name": "银行贷款（月供）",
+              "palace_id": "zhong_5",
+              "city_name": "总部",
+              "base_revenue": 0.0,
+              "rent": 4000000.0,
+              "staff_cost": 0.0
+            },
+            {
+              "type": "add_stores",
+              "count": 8,
+              "id": "new_{nn}",
+              "name": "扩建产线{nn}",
+              "palace_id": "li_9",
+              "city_name": "合肥/宜宾",
+              "base_revenue": 1500000.0,
+              "rent": 800000.0,
+              "staff_cost": 2000000.0
+            },
+            {
+              "type": "revenue_mod",
+              "factor": 0.5,
+              "months": 4,
+              "label": "新产线爬坡",
+              "id_prefix": [
+                "new_"
+              ]
+            },
+            {
+              "type": "revenue_mod",
+              "factor": 0.6,
+              "months": null,
+              "label": "订单填不满三倍产能",
+              "id_prefix": [
+                "new_"
+              ]
+            }
+          ]
+        },
+        "B": {
+          "result": "【已执行】：自有资金新建4条产线，产能扩到两倍；账上留存三成现金作为抗周期储备。",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": -56000000.0
+            },
+            {
+              "type": "add_stores",
+              "count": 4,
+              "id": "new_{nn}",
+              "name": "扩建产线{nn}",
+              "palace_id": "li_9",
+              "city_name": "合肥",
+              "base_revenue": 1500000.0,
+              "rent": 800000.0,
+              "staff_cost": 2000000.0
+            },
+            {
+              "type": "revenue_mod",
+              "factor": 0.5,
+              "months": 4,
+              "label": "新产线爬坡",
+              "id_prefix": [
+                "new_"
+              ]
+            }
+          ]
+        },
+        "C": {
+          "result": "【已执行】：不扩产，四条产线只接毛利最高的订单，其余订单婉拒。",
+          "effects": [
+            {
+              "type": "revenue_mod",
+              "factor": 0.75,
+              "months": null,
+              "label": "定点份额流失",
+              "id_prefix": [
+                "line_",
+                "new_",
+                "phase2_",
+                "buy_"
+              ]
+            }
+          ]
+        }
+      },
+      "decision_points": [
+        {
+          "id": "s7_customer",
+          "turn": 3,
+          "title": "【勾陈缠身】头部车企要求独家供货",
+          "desc": "最大的客户开出条件：签三年独家供货，订单量翻番，但每年降价8%，并且不许给它的竞争对手供货。",
+          "options": [
+            {
+              "key": "A",
+              "label": "赵勇方案：签下独家，订单翻番",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.12,
+                  "months": null,
+                  "label": "独家大客户订单",
+                  "id_prefix": [
+                    "line_",
+                    "new_",
+                    "phase2_",
+                    "buy_"
+                  ]
+                }
+              ],
+              "result": "订单排到了年底，鸡蛋也都放进了一个篮子。"
+            },
+            {
+              "key": "B",
+              "label": "杜门张博：做定制化BMS方案，用技术绑定客户而不签独家",
+              "requires_gate": "du_men",
+              "requires_gate_name": "杜门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -3000000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.08,
+                  "months": null,
+                  "label": "定制化技术绑定",
+                  "id_prefix": [
+                    "line_",
+                    "new_",
+                    "phase2_",
+                    "buy_"
+                  ]
+                }
+              ],
+              "result": "客户离不开你的方案，你也没把自己卖给客户。"
+            },
+            {
+              "key": "C",
+              "label": "婉拒独家，维持多客户分散",
+              "effects": [],
+              "result": "客户有些不满，但你的客户名单依然很长。"
+            }
+          ]
+        },
+        {
+          "id": "s7_phase2",
+          "turn": 6,
+          "title": "【伤门躁动】二期扩产上不上？",
+          "desc": "首期产线已经满产，赵勇拿着新订单要求立刻上马二期；沈务本提醒行业库存数据开始走高，储备金不能动。",
+          "requires_main_choice": [
+            "B"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "label": "赵勇方案：动用储备金，立刻上马二期4条产线",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -56000000.0
+                },
+                {
+                  "type": "add_stores",
+                  "count": 4,
+                  "id": "phase2_{nn}",
+                  "name": "二期产线{nn}",
+                  "palace_id": "li_9",
+                  "city_name": "合肥",
+                  "base_revenue": 1500000.0,
+                  "rent": 800000.0,
+                  "staff_cost": 2000000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.5,
+                  "months": 4,
+                  "label": "二期爬坡",
+                  "id_prefix": [
+                    "phase2_"
+                  ]
+                }
+              ],
+              "result": "二期开工了，储备金只剩下一个零头。"
+            },
+            {
+              "key": "B",
+              "label": "生门沈务本：二期缓建，储备金按兵不动",
+              "requires_gate": "sheng_men",
+              "requires_gate_name": "生门",
+              "effects": [],
+              "result": "错过了一些订单，但子弹还在枪膛里。"
+            },
+            {
+              "key": "C",
+              "label": "折中：先上2条",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -28000000.0
+                },
+                {
+                  "type": "add_stores",
+                  "count": 2,
+                  "id": "phase2_{nn}",
+                  "name": "二期产线{nn}",
+                  "palace_id": "li_9",
+                  "city_name": "合肥",
+                  "base_revenue": 1500000.0,
+                  "rent": 800000.0,
+                  "staff_cost": 2000000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.5,
+                  "months": 4,
+                  "label": "二期爬坡",
+                  "id_prefix": [
+                    "phase2_"
+                  ]
+                }
+              ],
+              "result": "多了两条产线，也少了一半储备。"
+            }
+          ]
+        },
+        {
+          "id": "s7_destock_x",
+          "turn": 9,
+          "title": "【白虎猖狂】行业去库存，独家大客户砍单一半",
+          "desc": "九月起整个新能源车行业开始去库存，签了独家的大客户一口气砍掉一半订单，你又不能给别家供货。",
+          "requires_event_choice": {
+            "s7_customer": [
+              "A"
+            ]
+          },
+          "options": [
+            {
+              "key": "A",
+              "label": "开门李道：转战储能市场，开拓电网与工商业储能新客户",
+              "requires_gate": "kai_men",
+              "requires_gate_name": "开门",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.4,
+                  "months": 6,
+                  "label": "行业去库存",
+                  "id_prefix": [
+                    "line_",
+                    "new_",
+                    "phase2_",
+                    "buy_"
+                  ]
+                },
+                {
+                  "type": "cash",
+                  "amount": -5000000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.06,
+                  "months": null,
+                  "label": "储能新客户",
+                  "id_prefix": [
+                    "line_",
+                    "new_",
+                    "phase2_",
+                    "buy_"
+                  ]
+                }
+              ],
+              "result": "车企在砍单，储能订单接上了一部分产能。"
+            },
+            {
+              "key": "B",
+              "label": "降价保量，跟着同行打价格战",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.4,
+                  "months": 6,
+                  "label": "行业去库存",
+                  "id_prefix": [
+                    "line_",
+                    "new_",
+                    "phase2_",
+                    "buy_"
+                  ]
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.95,
+                  "months": null,
+                  "label": "降价保量",
+                  "id_prefix": [
+                    "line_",
+                    "new_",
+                    "phase2_",
+                    "buy_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": -3
+                }
+              ],
+              "result": "产线没停，利润却被一刀一刀削薄。"
+            },
+            {
+              "key": "C",
+              "label": "减产裁员，压缩人工与物料",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.4,
+                  "months": 6,
+                  "label": "行业去库存",
+                  "id_prefix": [
+                    "line_",
+                    "new_",
+                    "phase2_",
+                    "buy_"
+                  ]
+                },
+                {
+                  "type": "store_field",
+                  "field": "staff_cost",
+                  "factor": 0.75,
+                  "id_prefix": [
+                    "line_",
+                    "new_",
+                    "phase2_",
+                    "buy_"
+                  ]
+                },
+                {
+                  "type": "store_field",
+                  "field": "base_revenue",
+                  "factor": 0.8,
+                  "id_prefix": [
+                    "line_",
+                    "new_",
+                    "phase2_",
+                    "buy_"
+                  ]
+                },
+                {
+                  "type": "exec",
+                  "match": {
+                    "all": true
+                  },
+                  "stress": 15,
+                  "loyalty": -8
+                },
+                {
+                  "type": "reputation",
+                  "delta": -4
+                }
+              ],
+              "result": "成本降下来了，复苏时产能也跟不上了。"
+            }
+          ]
+        },
+        {
+          "id": "s7_destock",
+          "turn": 9,
+          "title": "【白虎猖狂】行业去库存，车企集体砍单",
+          "desc": "九月起整个新能源车行业开始去库存，车企集体砍单、压价、拉长账期。",
+          "requires_event_choice": {
+            "s7_customer": [
+              "B",
+              "C"
+            ]
+          },
+          "options": [
+            {
+              "key": "A",
+              "label": "开门李道：转战储能市场，开拓电网与工商业储能新客户",
+              "requires_gate": "kai_men",
+              "requires_gate_name": "开门",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.55,
+                  "months": 6,
+                  "label": "行业去库存",
+                  "id_prefix": [
+                    "line_",
+                    "new_",
+                    "phase2_",
+                    "buy_"
+                  ]
+                },
+                {
+                  "type": "cash",
+                  "amount": -5000000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.06,
+                  "months": null,
+                  "label": "储能新客户",
+                  "id_prefix": [
+                    "line_",
+                    "new_",
+                    "phase2_",
+                    "buy_"
+                  ]
+                }
+              ],
+              "result": "车企在砍单，储能订单接上了一部分产能。"
+            },
+            {
+              "key": "B",
+              "label": "降价保量，跟着同行打价格战",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.55,
+                  "months": 6,
+                  "label": "行业去库存",
+                  "id_prefix": [
+                    "line_",
+                    "new_",
+                    "phase2_",
+                    "buy_"
+                  ]
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.95,
+                  "months": null,
+                  "label": "降价保量",
+                  "id_prefix": [
+                    "line_",
+                    "new_",
+                    "phase2_",
+                    "buy_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": -3
+                }
+              ],
+              "result": "产线没停，利润却被一刀一刀削薄。"
+            },
+            {
+              "key": "C",
+              "label": "减产裁员，压缩人工与物料",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.55,
+                  "months": 6,
+                  "label": "行业去库存",
+                  "id_prefix": [
+                    "line_",
+                    "new_",
+                    "phase2_",
+                    "buy_"
+                  ]
+                },
+                {
+                  "type": "store_field",
+                  "field": "staff_cost",
+                  "factor": 0.75,
+                  "id_prefix": [
+                    "line_",
+                    "new_",
+                    "phase2_",
+                    "buy_"
+                  ]
+                },
+                {
+                  "type": "store_field",
+                  "field": "base_revenue",
+                  "factor": 0.8,
+                  "id_prefix": [
+                    "line_",
+                    "new_",
+                    "phase2_",
+                    "buy_"
+                  ]
+                },
+                {
+                  "type": "exec",
+                  "match": {
+                    "all": true
+                  },
+                  "stress": 15,
+                  "loyalty": -8
+                },
+                {
+                  "type": "reputation",
+                  "delta": -4
+                }
+              ],
+              "result": "成本降下来了，复苏时产能也跟不上了。"
+            }
+          ]
+        },
+        {
+          "id": "s7_acquire",
+          "turn": 13,
+          "title": "【艮土封冻】对手濒临破产，产线三折转让",
+          "desc": "寒冬里，一家激进扩产的同行资金链断裂，三条几乎全新的产线以三折价格挂牌转让，工程师团队也在找下家。",
+          "options": [
+            {
+              "key": "A",
+              "label": "开门李道：三折收编对手的三条产线",
+              "requires_gate": "kai_men",
+              "requires_gate_name": "开门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -15000000.0
+                },
+                {
+                  "type": "add_stores",
+                  "count": 3,
+                  "id": "buy_{nn}",
+                  "name": "收编产线{nn}",
+                  "palace_id": "li_9",
+                  "city_name": "常州",
+                  "base_revenue": 1500000.0,
+                  "rent": 300000.0,
+                  "staff_cost": 2000000.0
+                }
+              ],
+              "result": "三条产线价格只有新建的三成，复苏时正好接住订单。"
+            },
+            {
+              "key": "B",
+              "label": "只挖对手的工程师团队",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -3000000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.05,
+                  "months": null,
+                  "label": "工程师团队加入",
+                  "id_prefix": [
+                    "line_",
+                    "new_",
+                    "phase2_",
+                    "buy_"
+                  ]
+                }
+              ],
+              "result": "良率上去了一截，产能还是原来那么多。"
+            },
+            {
+              "key": "C",
+              "label": "不出手，现金为王",
+              "effects": [],
+              "result": "账上现金很安全，复苏的订单被别人接走了。"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 8,

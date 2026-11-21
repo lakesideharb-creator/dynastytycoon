@@ -37,8 +37,7 @@ except ImportError:
 
 
 # 已写进 docs/09_Art_Audio_Prompts.md、等待美术交付的决策卡（游戏内缺图时决策卡不显示插画）
-ART_PENDING = {"s5_postinvest", "s5_crash_a", "s5_crash_b", "s5_bottom",
-               "s6_chips", "s6_launch", "s6_hack", "s6_late_launch", "s6_double11"}
+ART_PENDING = {"s7_customer", "s7_phase2", "s7_destock_x", "s7_destock", "s7_acquire"}
 
 
 def data_ids(name, key):

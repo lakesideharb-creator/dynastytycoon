@@ -67,12 +67,27 @@ func _run() -> void:
 	mc.close()
 	await _wait(1.0)
 	await _shot("02_month1")
+	var guard := 0
 	while not cs.runner.is_finished() and not cs.runner.bankrupt:
+		guard += 1
+		if guard > 300:                       # 卡住时留下画面与状态，便于排查
+			print("stuck turn=", cs.runner.turn, " busy=", cs._busy, " advance_disabled=", cs._advance_btn.disabled)
+			await _shot("99_stuck")
+			break
 		var d := _dialog(cs, "res://ui/dialogs/decision_dialog.gd")
 		if d:
 			await _wait(0.8)
 			await _shot("03_decision_%s" % d.event["id"])
-			d.chosen.emit(picks.get(d.event["id"], "C"))
+			var key: String = picks.get(d.event["id"], "C")
+			for k in [key, "C", "B", "A"]:          # 路线里的选项付不起时，退到第一个可选项（与 tests/test_balance.py 回放一致）
+				var opt: Dictionary = {}
+				for o in d.event["options"]:
+					if o["key"] == k:
+						opt = o
+				if not opt.is_empty() and cs.runner.option_available(opt)["ok"]:
+					key = k
+					break
+			d.chosen.emit(key)
 			d.close()
 			await _wait(0.8)
 			continue
@@ -81,7 +96,7 @@ func _run() -> void:
 		if not cs._advance_btn.disabled and not cs._busy:
 			cs._on_advance()
 		await _wait(0.6)
-		while cs._busy:
+		while cs._busy and not cs.runner.bankrupt and not cs.runner.is_finished():
 			await _wait(0.1)
 	await _wait(2.5)
 	print("win=", cs.runner.check_win(), " cash=", cs.runner.company.cash, " bankrupt=", cs.runner.bankrupt)
