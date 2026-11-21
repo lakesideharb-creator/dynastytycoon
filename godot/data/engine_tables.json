@@ -22,7 +22,8 @@
       "Traditional_RealEstate": 1.45,
       "New_Energy": 0.9,
       "Social_Commerce": 1.1,
-      "Consumer_VC": 1.05
+      "Consumer_VC": 1.05,
+      "Commercial_Property": 1.35
     },
     "Era_9_LiHuo": {
       "Cultural_Food": 1.45,
@@ -32,7 +33,8 @@
       "Traditional_RealEstate": 0.65,
       "New_Energy": 1.4,
       "Social_Commerce": 1.3,
-      "Consumer_VC": 1.45
+      "Consumer_VC": 1.45,
+      "Commercial_Property": 0.9
     }
   },
   "season_of_month": {
@@ -142,7 +144,8 @@
     "Traditional_RealEstate": "Earth",
     "New_Energy": "Fire",
     "Social_Commerce": "Water",
-    "Consumer_VC": "Fire"
+    "Consumer_VC": "Fire",
+    "Commercial_Property": "Earth"
   },
   "industry_names": {
     "Cultural_Food": "文化餐饮",
@@ -152,7 +155,8 @@
     "Traditional_RealEstate": "传统地产",
     "New_Energy": "新能源",
     "Social_Commerce": "社交电商",
-    "Consumer_VC": "消费投资"
+    "Consumer_VC": "消费投资",
+    "Commercial_Property": "商业地产"
   },
   "default_industry_element": "Fire",
   "industry_affinities": {
@@ -221,6 +225,17 @@
       "qian_6": 1.15,
       "kun_2": 1.05,
       "zhong_5": 1.1
+    },
+    "Commercial_Property": {
+      "zhong_5": 1.35,
+      "li_9": 1.25,
+      "gen_8": 1.2,
+      "kun_2": 1.15,
+      "qian_6": 1.1,
+      "xun_4": 1.05,
+      "dui_7": 1.0,
+      "zhen_3": 0.9,
+      "kan_1": 0.75
     }
   },
   "role_gate_synergy": [

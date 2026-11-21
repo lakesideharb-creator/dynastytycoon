@@ -280,6 +280,10 @@ isometric 2.5D modern Chinese minimalist office floor, 9x9 tile grid, main entra
 | `s8_showcase` | 景门当令·联合标杆案例（关卡八） | `a supply-chain industry conference main stage, a SaaS executive and a car-maker executive shaking hands under a spotlight, a large screen showing an abstract factory dashboard, cinnabar and gold light` |
 | `s8_rival` | 白虎猖狂·低价竞品杀入（关卡八） | `a factory meeting room where a slick rival salesperson slides a half-price quote across the table to a plant manager, a white tiger ink silhouette behind the rival, cold steel tones` |
 | `s8_renewal` | 生门开源·年底续约季（关卡八） | `a calm year-end finance office, a CFO reviewing a stack of renewal contracts beside an abacus and a laptop, a gentle green ink sprout growing from the ledger, winter window light` |
+| `s9_position` | 景门当令·综合体改建定位（关卡九） | `a half-renovated landmark shopping complex atrium, designers unrolling plans for guochao flagship stores and an intangible-heritage street, scaffolding with cinnabar silk banners, warm hopeful light` |
+| `s9_late_buy` | 时过境迁·资产价格反弹（关卡九） | `spring 2021 city street, a bustling renovated landmark mall across the road seen through a café window, an investor alone at the table looking at a rising price chart on a tablet, regretful mood` |
+| `s9_lockdown` | 白虎猖狂·疫情反复闭店（关卡九） | `an empty shopping mall at night with shutters down and a closure notice board, tenants gathered at the management office holding a petition, a white tiger ink silhouette pacing the empty atrium` |
+| `s9_reit` | 开门迎新·消费基础设施REITs（关卡九） | `a bright exchange listing ceremony hall, executives around a ceremonial gong, a large screen showing an abstract mall icon and rising line, an open doorway motif in gold ink` |
 
 决策卡后缀：`cinematic illustration for a strategy game event card, 16:9, [风格后缀]`
 
@@ -411,9 +415,12 @@ isometric 2.5D modern Chinese minimalist office floor, 9x9 tile grid, main entra
 - [x] 关卡六的 5 张决策卡（`s6_chips`、`s6_launch`、`s6_hack`、`s6_late_launch`、`s6_double11`）（batch4 已交付，通过）。
 - [x] 关卡七的 5 张决策卡（`s7_customer`、`s7_phase2`、`s7_destock_x`、`s7_destock`、`s7_acquire`）（batch5 已交付，通过）。
 - [x] 关卡八的 4 张决策卡（`s8_contagion`、`s8_showcase`、`s8_rival`、`s8_renewal`）（batch5 已交付，通过）。
+- [x] 关卡九的 4 张决策卡（`s9_position`、`s9_late_buy`、`s9_lockdown`、`s9_reit`）（batch6 已交付，通过）。
 - 新关卡决策卡的画面主体放在中间一条（游戏内只显示中间约 1024×300 比例的横条）。
 
 **batch5 审核（2026-11-21）**：关卡七、八共 9 张 1920×1080 PNG，放入 `godot/assets/events/`，原图另存 `assets_src/batch5-original/`。通过：无可读文字与标志；勾陈（桌上锁链）、白虎（砍单 / 仓库 / 竞品身后）、艮土（雪中山形印）、生门（账本里的新芽）意象准确。备注：`s8_renewal` 的 CFO 画成了女性，与关卡八的 CFO 沈务本不一致；提示词只写了 a CFO，画面不指认具体人物，暂不返修。
+
+**batch6 审核（2026-11-21）**：关卡九 4 张 1920×1080 PNG，放入 `godot/assets/events/`，原图另存 `assets_src/batch6-original/`。通过：无可读文字与标志；景门（国潮改造图纸）、白虎（闭店中庭）、开门（上市鸣锣）意象准确。至此案例一到九的决策卡全部交付。
 
 **batch4 审核（2026-11-21）**：关卡五、六共 9 张 1920×1080 PNG，放入 `godot/assets/events/`，原图另存 `assets_src/batch4-original/`。通过：无可读文字与标志；白虎（撕破无条款合同 / 被朱印镇住）、艮土（雪中山形印）、景门（中秋满月首发）、螣蛇（钥匙孔里的墨蛇）意象准确，主体都在画面中部横条内。
 

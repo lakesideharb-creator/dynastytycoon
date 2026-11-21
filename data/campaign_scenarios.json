@@ -3818,22 +3818,546 @@
       "id": 9,
       "title": "案例九【综合并购】：周期低谷期商业综合体资产抄底",
       "methodology": "周期底部重资产逆周期抄底 (Counter-cyclical M&A)",
-      "industry": "Retail_Property",
+      "industry": "Commercial_Property",
       "duration_months": 24,
-      "brief": "商业地产跌至冰点，核心商圈地标综合体以三折跳楼价挂牌转让。",
+      "brief": "2020年夏，商业地产跌至冰点，核心商圈地标综合体「中枢汇」以三折挂牌转让。「鼎盛商管」账上有1.2亿。拓展VP赵勇主张加杠杆全款独吞；CEO李道主张联合险资接盘、改建国潮首店集群；也有人主张先观望，等形势明朗。",
       "initial_state": {
         "cash": 120000000.0
       },
       "choices": {
         "A": {
-          "name": "恐慌观望，错失良机",
-          "verdict": "两年后消费复苏地价暴涨，资金长期滞留低息理财被通胀吞噬。"
+          "name": "恐慌观望：资金先放进低息理财，等形势明朗",
+          "verdict": "一年后消费复苏，资产价格涨回七成，资金在理财里被通胀一点点吞掉。"
         },
         "B": {
-          "name": "在艮土封冻筑底之时联合险资抄底接盘，改建国潮首店集群",
-          "verdict": "踩准周期反转，资产估值暴增4倍，稳收长期高额租金分红！"
+          "name": "联合险资抄底：出资8000万占股，改建国潮首店集群",
+          "verdict": "踩准了周期反转，首店集群开业即成城市地标，资产估值与租金双双上涨。"
+        },
+        "C": {
+          "name": "加杠杆全款独吞：自有资金加贷款1.5亿，一口吃下",
+          "verdict": "资产是好资产，但疫情反复闭店时，月供把现金流压断了。"
         }
-      }
+      },
+      "win_condition": {
+        "min_cash": 130000000.0,
+        "final_month_profit": 5000000.0
+      },
+      "win_condition_text": "第24个月末账面现金 ≥ 1.3亿 且末月净利润 ≥ 500万（穿越疫情反复，在复苏中稳收租金）",
+      "intended_main_choice": "B",
+      "setup": {
+        "clock": {
+          "year": 2020,
+          "month": 7
+        },
+        "company": {
+          "name": "鼎盛商管 (商业地产运营)",
+          "industry": "Commercial_Property",
+          "cash": 120000000.0,
+          "fengshui_modifier": 0.0,
+          "reputation": 64
+        },
+        "executives": [
+          {
+            "id": "e1",
+            "name": "李道",
+            "gate_id": "kai_men",
+            "gate_name": "开门",
+            "role": "CEO",
+            "salary": 80000,
+            "loyalty": 86,
+            "stress": 45,
+            "portrait": "li_dao"
+          },
+          {
+            "id": "e2",
+            "name": "沈务本",
+            "gate_id": "sheng_men",
+            "gate_name": "生门",
+            "role": "CFO",
+            "salary": 60000,
+            "loyalty": 88,
+            "stress": 40,
+            "portrait": "shen_wuben"
+          },
+          {
+            "id": "e3",
+            "name": "苏清墨",
+            "gate_id": "jing_men",
+            "gate_name": "景门",
+            "role": "CMO",
+            "salary": 55000,
+            "loyalty": 84,
+            "stress": 40,
+            "portrait": "su_qingmo"
+          },
+          {
+            "id": "e4",
+            "name": "赵勇",
+            "gate_id": "shang_men",
+            "gate_name": "伤门",
+            "role": "VP_Expansion",
+            "salary": 55000,
+            "loyalty": 74,
+            "stress": 55,
+            "portrait": "zhao_yong"
+          },
+          {
+            "id": "e5",
+            "name": "温润生",
+            "gate_id": "xiu_men",
+            "gate_name": "休门",
+            "role": "COO",
+            "salary": 55000,
+            "loyalty": 86,
+            "stress": 35,
+            "portrait": "wen_runsheng"
+          }
+        ],
+        "stores": [
+          {
+            "id": "comm_{nn}",
+            "name": "社区商业中心{nn}",
+            "palace_id": "kun_2",
+            "city_name": "城郊社区",
+            "base_revenue": 300000.0,
+            "rent": 200000.0,
+            "staff_cost": 300000.0,
+            "count": 3
+          }
+        ]
+      },
+      "main_choices": {
+        "A": {
+          "result": "【已执行】：暂不出手，1亿闲置资金买入低息理财，等形势明朗。",
+          "effects": [
+            {
+              "type": "add_stores",
+              "id": "fund_main",
+              "name": "低息理财",
+              "palace_id": "kan_1",
+              "city_name": "银行",
+              "base_revenue": 150000.0,
+              "rent": 0.0,
+              "staff_cost": 0.0
+            }
+          ]
+        },
+        "B": {
+          "result": "【已执行】：联合险资以三折接盘「中枢汇」，鼎盛出资8000万占股并负责运营，启动国潮首店集群改造。",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": -80000000.0
+            },
+            {
+              "type": "add_stores",
+              "count": 4,
+              "id": "hub_{nn}",
+              "name": "中枢汇·{nn}区",
+              "palace_id": "zhong_5",
+              "city_name": "核心商圈",
+              "base_revenue": 1000000.0,
+              "rent": 500000.0,
+              "staff_cost": 1200000.0
+            },
+            {
+              "type": "revenue_mod",
+              "factor": 0.45,
+              "months": 5,
+              "label": "改造期招商",
+              "id_prefix": [
+                "hub_"
+              ]
+            }
+          ]
+        },
+        "C": {
+          "result": "【已执行】：5000万自有资金加1.5亿贷款全款拿下「中枢汇」，100%持有，月供每月到期。",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": -50000000.0
+            },
+            {
+              "type": "add_stores",
+              "id": "loan_main",
+              "name": "并购贷款（月供）",
+              "palace_id": "zhong_5",
+              "city_name": "总部",
+              "base_revenue": 0.0,
+              "rent": 5500000.0,
+              "staff_cost": 0.0
+            },
+            {
+              "type": "add_stores",
+              "count": 4,
+              "id": "hub_{nn}",
+              "name": "中枢汇·{nn}区",
+              "palace_id": "zhong_5",
+              "city_name": "核心商圈",
+              "base_revenue": 1600000.0,
+              "rent": 800000.0,
+              "staff_cost": 1920000.0
+            },
+            {
+              "type": "revenue_mod",
+              "factor": 0.45,
+              "months": 5,
+              "label": "改造期招商",
+              "id_prefix": [
+                "hub_"
+              ]
+            },
+            {
+              "type": "revenue_mod",
+              "factor": 0.8,
+              "months": null,
+              "label": "独家持有缺少险资的品牌资源",
+              "id_prefix": [
+                "hub_"
+              ]
+            }
+          ]
+        }
+      },
+      "decision_points": [
+        {
+          "id": "s9_position",
+          "turn": 3,
+          "title": "【景门当令】综合体改建成什么？",
+          "desc": "「中枢汇」的改造方案要定了。苏清墨想做国潮首店集群，赵勇想快速招满传统百货和超市，温润生建议一半改成长租办公求稳。",
+          "requires_main_choice": [
+            "B",
+            "C"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "label": "景门苏清墨：国潮首店集群 + 非遗街区，做成城市打卡地标",
+              "requires_gate": "jing_men",
+              "requires_gate_name": "景门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -8000000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.3,
+                  "months": null,
+                  "label": "国潮首店集群",
+                  "id_prefix": [
+                    "hub_",
+                    "late_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": 6
+                }
+              ],
+              "result": "十几个品牌把全国首店开在这里，周末客流排到了地铁口。"
+            },
+            {
+              "key": "B",
+              "label": "赵勇方案：快速招满传统百货与超市",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.0,
+                  "months": null,
+                  "label": "传统百货业态",
+                  "id_prefix": [
+                    "hub_",
+                    "late_"
+                  ]
+                }
+              ],
+              "result": "铺位很快招满，只是和周边商场长得一模一样。"
+            },
+            {
+              "key": "C",
+              "label": "一半改成长租办公，求稳",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.85,
+                  "months": null,
+                  "label": "长租办公",
+                  "id_prefix": [
+                    "hub_",
+                    "late_"
+                  ]
+                },
+                {
+                  "type": "store_field",
+                  "field": "staff_cost",
+                  "factor": 0.8,
+                  "id_prefix": [
+                    "hub_",
+                    "late_"
+                  ]
+                }
+              ],
+              "result": "租金稳定，晚上八点以后楼里就没人了。"
+            }
+          ]
+        },
+        {
+          "id": "s9_late_buy",
+          "turn": 10,
+          "title": "【时过境迁】资产价格反弹，还买不买？",
+          "desc": "2021年春，消费复苏，「中枢汇」被别人接走改造得风生水起，周边同类资产的报价已经涨回七成。",
+          "requires_main_choice": [
+            "A"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "label": "赵勇方案：高位追入一座次级商圈综合体",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -60000000.0
+                },
+                {
+                  "type": "add_stores",
+                  "count": 3,
+                  "id": "late_{nn}",
+                  "name": "次级商圈综合体·{nn}区",
+                  "palace_id": "zhong_5",
+                  "city_name": "核心商圈",
+                  "base_revenue": 800000.0,
+                  "rent": 500000.0,
+                  "staff_cost": 1200000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.45,
+                  "months": 4,
+                  "label": "改造期招商",
+                  "id_prefix": [
+                    "late_"
+                  ]
+                }
+              ],
+              "result": "买到了，价格是一年前的两倍多。"
+            },
+            {
+              "key": "B",
+              "label": "买两处小型社区商业",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -20000000.0
+                },
+                {
+                  "type": "add_stores",
+                  "count": 2,
+                  "id": "small_{nn}",
+                  "name": "社区商业（新购）{nn}",
+                  "palace_id": "kun_2",
+                  "city_name": "城郊社区",
+                  "base_revenue": 300000.0,
+                  "rent": 200000.0,
+                  "staff_cost": 300000.0
+                }
+              ],
+              "result": "小而稳，离城市地标差得很远。"
+            },
+            {
+              "key": "C",
+              "label": "继续观望",
+              "effects": [],
+              "result": "资金继续躺在理财里。"
+            }
+          ]
+        },
+        {
+          "id": "s9_lockdown",
+          "turn": 14,
+          "title": "【白虎猖狂】疫情反复，商场闭店两个月",
+          "desc": "2021年夏，疫情反复，商场按要求闭店。租户联名请求减免租金，否则集体退租。",
+          "options": [
+            {
+              "key": "A",
+              "label": "生门沈务本：减租三个月，换租户续约三年",
+              "requires_gate": "sheng_men",
+              "requires_gate_name": "生门",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.4,
+                  "months": 3,
+                  "label": "闭店与减租",
+                  "id_prefix": [
+                    "comm_",
+                    "hub_",
+                    "late_",
+                    "small_"
+                  ]
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.05,
+                  "months": null,
+                  "label": "租户续约三年",
+                  "id_prefix": [
+                    "comm_",
+                    "hub_",
+                    "late_",
+                    "small_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": 5
+                }
+              ],
+              "result": "短期少收了租金，换来了一整栋楼的长约。"
+            },
+            {
+              "key": "B",
+              "label": "坚持收全租",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.2,
+                  "months": 2,
+                  "label": "闭店",
+                  "id_prefix": [
+                    "comm_",
+                    "hub_",
+                    "late_",
+                    "small_"
+                  ]
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.75,
+                  "months": null,
+                  "label": "租户集体退租",
+                  "id_prefix": [
+                    "comm_",
+                    "hub_",
+                    "late_",
+                    "small_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": -6
+                }
+              ],
+              "result": "合同上你占理，复业后三成铺位空了出来。"
+            },
+            {
+              "key": "C",
+              "label": "闭店期间组织商户直播带货自救",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -1000000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.35,
+                  "months": 2,
+                  "label": "闭店直播自救",
+                  "id_prefix": [
+                    "comm_",
+                    "hub_",
+                    "late_",
+                    "small_"
+                  ]
+                }
+              ],
+              "result": "直播间热闹了两个月，商户们记住了你。"
+            }
+          ]
+        },
+        {
+          "id": "s9_reit",
+          "turn": 20,
+          "title": "【开门迎新】消费基础设施REITs窗口打开",
+          "desc": "2022年初，消费基础设施公募REITs试点放开，成熟商业资产可以打包上市、回笼资金。",
+          "requires_main_choice": [
+            "B",
+            "C"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "label": "开门李道：把成熟资产打包发行REITs，回笼资金、保留运营权",
+              "requires_gate": "kai_men",
+              "requires_gate_name": "开门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": 50000000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.8,
+                  "months": null,
+                  "label": "REITs后保留的运营收益",
+                  "id_prefix": [
+                    "comm_",
+                    "hub_",
+                    "late_",
+                    "small_"
+                  ]
+                }
+              ],
+              "result": "资产上市了，钱回来了，商场还在你手里运营。"
+            },
+            {
+              "key": "B",
+              "label": "整体出售综合体股权，落袋为安",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": 90000000.0
+                },
+                {
+                  "type": "store_field",
+                  "field": "base_revenue",
+                  "factor": 0.0,
+                  "id_prefix": [
+                    "hub_",
+                    "late_"
+                  ]
+                },
+                {
+                  "type": "store_field",
+                  "field": "staff_cost",
+                  "factor": 0.0,
+                  "id_prefix": [
+                    "hub_",
+                    "late_"
+                  ]
+                },
+                {
+                  "type": "store_field",
+                  "field": "rent",
+                  "factor": 0.0,
+                  "id_prefix": [
+                    "hub_",
+                    "late_"
+                  ]
+                }
+              ],
+              "result": "一次性卖掉，后面的租金也一起卖掉了。"
+            },
+            {
+              "key": "C",
+              "label": "继续持有，稳收租金",
+              "effects": [],
+              "result": "租金按月到账。"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 10,
