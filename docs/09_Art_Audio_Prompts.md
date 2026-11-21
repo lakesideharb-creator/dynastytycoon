@@ -262,6 +262,15 @@ isometric 2.5D modern Chinese minimalist office floor, 9x9 tile grid, main entra
 | `s4_dealers` | 勾陈缠身·巨头逼经销商二选一（关卡四） | `a crowded wholesale warehouse, a giant beverage conglomerate's shadow pressing down on hesitant distributors, stacks of discounted drink crates with 'buy one get one' ink banners, an ink serpent-like chain binding the doors` |
 | `s4_marathon` | 景门得使·马拉松赛季（关卡四） | `city marathon at dawn, runners streaming past a refreshment station handing out bottles of clear electrolyte water, cinnabar finish arch, sunrise light, energetic` |
 | `s4_copycat` | 螣蛇暗流·巨头推出仿品（关卡四） | `gym refrigerator lit in cold blue, two nearly identical sports drink bottles side by side, a faint ink serpent coiling around the copycat bottle, uneasy mood` |
+| `s5_postinvest` | 景门得使·LP年中问询（关卡五，待交付） | `a venture fund quarterly meeting in a glass-walled room, limited partners frowning at a slide of portfolio logos drawn as blank cards, a young partner presenting brand mood boards, warm afternoon light` |
+| `s5_crash_a` | 白虎猖狂·预制菜爆雷（无保护，关卡五，待交付） | `a stack of returned ready-meal boxes piling up in a warehouse, a white tiger ink silhouette tearing through a contract with no clauses, phone screens showing trending complaints, autumn chill` |
+| `s5_crash_b` | 白虎猖狂·对赌失守，回购条款在手（关卡五，待交付） | `a tense negotiation table, an investor's hand resting on a thick contract with a highlighted buyback clause, returned ready-meal boxes in the background, a white tiger ink silhouette held back by a red seal` |
+| `s5_bottom` | 艮土封冻·消费寒冬抄底（关卡五，待交付） | `a frozen winter city street with shuttered consumer shops, an investor in a long coat walking alone toward a lit doorway, a mountain-shaped ink seal on the snow, calm and decisive` |
+| `s6_chips` | 天辅受阻·主控芯片缺货（关卡六，待交付） | `a hardware lab at night, an engineer staring at an empty chip tray and a long supply-chain delay notice, circuit board traces drawn like dry riverbeds, late summer heat` |
+| `s6_launch` | 景门当令·中秋前夕全线首发（关卡六，待交付） | `mid-autumn night product launch, a sleek smart door lock glowing at the center of a stage, a huge full moon behind, families and lanterns in the audience, cinnabar and gold` |
+| `s6_hack` | 螣蛇暗流·门锁被曝可破解（关卡六，待交付） | `a hand holding a small black gadget against a smart door lock in a dim apartment corridor, phone screens with a viral video around it, an ink serpent slipping through the keyhole` |
+| `s6_late_launch` | 时过境迁·双十一仓促上线（关卡六，待交付） | `a late-autumn e-commerce warehouse at midnight, a lone new product box on an almost empty secondary shelf while competitors' boxes tower around it, fallen leaves, cold light` |
+| `s6_double11` | 伤门躁动·双十一全网比价（关卡六，待交付） | `a wall of glowing price tags and countdown timers for a November shopping festival, two executives arguing in front of it, one pointing at a falling price chart, the other holding an elegant gift box` |
 
 决策卡后缀：`cinematic illustration for a strategy game event card, 16:9, [风格后缀]`
 
@@ -389,6 +398,8 @@ isometric 2.5D modern Chinese minimalist office floor, 9x9 tile grid, main entra
 
 **第三批（Beta 关卡四起）**
 - [x] 关卡四的 3 张决策卡（`s4_dealers`、`s4_marathon`、`s4_copycat`）（batch3 已交付，通过）。以后新增关卡的决策卡在交付前先记进 `tests/test_assets.py` 的 `ART_PENDING`，缺图时游戏内决策卡不显示插画、其余正常。
+- [ ] 关卡五的 4 张决策卡（`s5_postinvest`、`s5_crash_a`、`s5_crash_b`、`s5_bottom`）。
+- [ ] 关卡六的 5 张决策卡（`s6_chips`、`s6_launch`、`s6_hack`、`s6_late_launch`、`s6_double11`）。画面主体放在中间一条（游戏内只显示中间约 1024×300 比例的横条）。
 
 **batch3 审核（2026-11-21）**：3 张 1920×1080 WebP，转成 PNG 放入 `godot/assets/events/`（与前两批格式一致），原图保存在 `assets_src/batch3-original/`。通过：无文字、无标志，勾陈（铁链锁门）、景门（朱红终点牌楼）、螣蛇（缠绕仿品）意象准确。
 

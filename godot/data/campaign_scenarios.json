@@ -1675,43 +1675,999 @@
       "id": 5,
       "title": "案例五【投资决策】：早期消费机构评估高估值预制菜项目",
       "methodology": "投资对赌与周期风控 (Investment Due Diligence)",
-      "industry": "Precooked_Food",
+      "industry": "Consumer_VC",
       "duration_months": 12,
-      "brief": "一个爆红的预制菜项目估值叫到20亿，机构内部投资经理抢着上会，争抢份额。",
+      "brief": "你是消费早期基金「青禾资本」的主管合伙人，账上可投资金5000万。爆红的预制菜品牌「鲜厨匠」估值叫到20亿，各家机构抢份额。投资经理赵勇主张立刻全额上车；风控合伙人沈务本主张分步出资、写死回购与对赌条款；也有人觉得估值太离谱，不如转投冷链物流。",
       "initial_state": {
         "cash": 50000000.0
       },
       "choices": {
         "A": {
-          "name": "盲目追高入局，签署无保护协议",
-          "verdict": "热潮退去退货率高达40%，项目爆雷，基金净值大损。"
+          "name": "追高入局：3000万全额打款，接受无保护条款",
+          "verdict": "热潮退去，退货率飙到四成，没有任何条款保护，估值与分红一起归零。"
         },
         "B": {
-          "name": "设置严密的回购条款与现金流对赌，分步出资",
-          "verdict": "在市场退潮时凭借严密条款安全撤退，保住LP本金并获得稳健优先清偿回报。"
+          "name": "分步出资：首期1200万，写死回购条款与业绩对赌",
+          "verdict": "退潮时凭回购条款全身而退，保住LP本金，留下的子弹在低谷里捡到了好资产。"
+        },
+        "C": {
+          "name": "估值太高不碰：转投冷链物流",
+          "verdict": "躲过了暴雷，但冷链项目回报平平，全年业绩达不到LP的要求。"
         }
-      }
+      },
+      "win_condition": {
+        "min_cash": 45000000.0,
+        "final_month_profit": 1800000.0
+      },
+      "win_condition_text": "年末基金账面现金 ≥ 4500万 且末月投资收益 ≥ 180万（守住LP本金，并保持持续回报）",
+      "intended_main_choice": "B",
+      "setup": {
+        "clock": {
+          "year": 2024,
+          "month": 3
+        },
+        "company": {
+          "name": "青禾资本 (消费早期基金)",
+          "industry": "Consumer_VC",
+          "cash": 50000000.0,
+          "fengshui_modifier": 0.03,
+          "reputation": 68
+        },
+        "executives": [
+          {
+            "id": "e1",
+            "name": "李道",
+            "gate_id": "kai_men",
+            "gate_name": "开门",
+            "role": "CEO",
+            "salary": 80000,
+            "loyalty": 85,
+            "stress": 40,
+            "portrait": "li_dao"
+          },
+          {
+            "id": "e2",
+            "name": "沈务本",
+            "gate_id": "sheng_men",
+            "gate_name": "生门",
+            "role": "CFO",
+            "salary": 60000,
+            "loyalty": 88,
+            "stress": 35,
+            "portrait": "shen_wuben"
+          },
+          {
+            "id": "e3",
+            "name": "苏清墨",
+            "gate_id": "jing_men",
+            "gate_name": "景门",
+            "role": "CMO",
+            "salary": 50000,
+            "loyalty": 82,
+            "stress": 40,
+            "portrait": "su_qingmo"
+          },
+          {
+            "id": "e4",
+            "name": "赵勇",
+            "gate_id": "shang_men",
+            "gate_name": "伤门",
+            "role": "VP_Expansion",
+            "salary": 50000,
+            "loyalty": 75,
+            "stress": 55,
+            "portrait": "zhao_yong"
+          }
+        ],
+        "stores": [
+          {
+            "id": "port_{nn}",
+            "name": "在投消费项目{nn}",
+            "palace_id": "li_9",
+            "city_name": "投资组合",
+            "base_revenue": 100000.0,
+            "rent": 0.0,
+            "staff_cost": 250000.0,
+            "count": 8
+          }
+        ]
+      },
+      "main_choices": {
+        "A": {
+          "result": "【已执行】：3000万全额打款，按对方律师给的版本签约，没有回购、没有对赌。",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": -30000000.0
+            },
+            {
+              "type": "add_stores",
+              "id": "yzc_main",
+              "name": "鲜厨匠·全额持股",
+              "palace_id": "li_9",
+              "city_name": "预制菜",
+              "base_revenue": 400000.0,
+              "rent": 0.0,
+              "staff_cost": 400000.0
+            },
+            {
+              "type": "reputation",
+              "delta": 3
+            }
+          ]
+        },
+        "B": {
+          "result": "【已执行】：首期1200万打款，协议写入回购条款（本金+8%）与季度对赌，剩余资金留作后手。",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": -12000000.0
+            },
+            {
+              "type": "add_stores",
+              "id": "yzc_main",
+              "name": "鲜厨匠·首期持股",
+              "palace_id": "li_9",
+              "city_name": "预制菜",
+              "base_revenue": 160000.0,
+              "rent": 0.0,
+              "staff_cost": 160000.0
+            }
+          ]
+        },
+        "C": {
+          "result": "【已执行】：放弃鲜厨匠，1000万转投冷链物流项目「冻途」。",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": -10000000.0
+            },
+            {
+              "type": "add_stores",
+              "id": "cold_main",
+              "name": "冻途冷链·持股",
+              "palace_id": "kun_2",
+              "city_name": "冷链物流",
+              "base_revenue": 250000.0,
+              "rent": 0.0,
+              "staff_cost": 200000.0
+            }
+          ]
+        }
+      },
+      "decision_points": [
+        {
+          "id": "s5_postinvest",
+          "turn": 3,
+          "title": "【景门得使】LP年中问询：投后怎么做？",
+          "desc": "LP季度会上有人质疑：只会抢项目、不会做投后。苏清墨想组建投后品牌团队帮在投项目做升级，赵勇想趁热再抢两个热门项目。",
+          "options": [
+            {
+              "key": "A",
+              "label": "景门苏清墨：组建投后品牌团队，帮在投项目做升级",
+              "requires_gate": "jing_men",
+              "requires_gate_name": "景门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -2000000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.15,
+                  "months": null,
+                  "label": "投后品牌赋能",
+                  "id_prefix": [
+                    "port_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": 4
+                }
+              ],
+              "result": "两个在投品牌的复购率明显抬升，LP的问题有了答案。"
+            },
+            {
+              "key": "B",
+              "label": "赵勇方案：趁热再抢两个网红餐饮项目",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -8000000.0
+                },
+                {
+                  "type": "add_stores",
+                  "count": 2,
+                  "id": "hot_{nn}",
+                  "name": "网红餐饮项目{nn}",
+                  "palace_id": "dui_7",
+                  "city_name": "网红餐饮",
+                  "base_revenue": 250000.0,
+                  "rent": 0.0,
+                  "staff_cost": 150000.0,
+                  "decay_rate": 0.08
+                }
+              ],
+              "result": "份额抢到了，估值也是在最热的时候定的。"
+            },
+            {
+              "key": "C",
+              "label": "按兵不动，把精力放在现有项目上",
+              "effects": [],
+              "result": "季度会开得平淡，LP没有追问。"
+            }
+          ]
+        },
+        {
+          "id": "s5_crash_a",
+          "turn": 7,
+          "title": "【白虎猖狂】预制菜进校园舆情爆发，退货率飙到四成",
+          "desc": "九月开学季，「预制菜进校园」上了热搜，鲜厨匠的退货率一个月飙到40%，创始人开始找投资人借钱发工资。你手里没有任何保护条款。",
+          "requires_main_choice": [
+            "A"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "label": "赵勇方案：追加800万救火，陪企业渡过难关",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -8000000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.4,
+                  "months": null,
+                  "label": "爆雷后元气大伤",
+                  "id_prefix": [
+                    "yzc_"
+                  ]
+                }
+              ],
+              "result": "钱打进去了，退货单还在涨。"
+            },
+            {
+              "key": "B",
+              "label": "两折把老股卖给接盘方",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": 6000000.0
+                },
+                {
+                  "type": "store_field",
+                  "field": "base_revenue",
+                  "factor": 0.0,
+                  "id_prefix": [
+                    "yzc_"
+                  ]
+                },
+                {
+                  "type": "store_field",
+                  "field": "staff_cost",
+                  "factor": 0.0,
+                  "id_prefix": [
+                    "yzc_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": -6
+                }
+              ],
+              "result": "割肉离场，3000万只收回了零头。"
+            },
+            {
+              "key": "C",
+              "label": "不追加也不卖，硬扛",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.2,
+                  "months": null,
+                  "label": "项目爆雷",
+                  "id_prefix": [
+                    "yzc_"
+                  ]
+                }
+              ],
+              "result": "账面估值一路下修，投后成本却一分没少。"
+            }
+          ]
+        },
+        {
+          "id": "s5_crash_b",
+          "turn": 7,
+          "title": "【白虎猖狂】预制菜进校园舆情爆发，对赌全线失守",
+          "desc": "九月开学季，「预制菜进校园」上了热搜，鲜厨匠的退货率一个月飙到40%，季度对赌全部未达标。协议里写着回购条款。",
+          "requires_main_choice": [
+            "B"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "label": "生门沈务本：触发回购条款，创始人连带回购本金+8%",
+              "requires_gate": "sheng_men",
+              "requires_gate_name": "生门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": 12960000.0
+                },
+                {
+                  "type": "store_field",
+                  "field": "base_revenue",
+                  "factor": 0.0,
+                  "id_prefix": [
+                    "yzc_"
+                  ]
+                },
+                {
+                  "type": "store_field",
+                  "field": "staff_cost",
+                  "factor": 0.0,
+                  "id_prefix": [
+                    "yzc_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": 2
+                }
+              ],
+              "result": "条款写得死，本息如数收回，LP的本金一分没少。"
+            },
+            {
+              "key": "B",
+              "label": "不触发回购，协助企业转型做团餐供应链",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -2000000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.55,
+                  "months": null,
+                  "label": "转型团餐",
+                  "id_prefix": [
+                    "yzc_"
+                  ]
+                }
+              ],
+              "result": "企业活下来了，但回报要等好几年。"
+            },
+            {
+              "key": "C",
+              "label": "按兵不动，等行业回暖",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.2,
+                  "months": null,
+                  "label": "项目爆雷",
+                  "id_prefix": [
+                    "yzc_"
+                  ]
+                }
+              ],
+              "result": "回购期限一天天过去，创始人的个人资产也在缩水。"
+            }
+          ]
+        },
+        {
+          "id": "s5_bottom",
+          "turn": 10,
+          "title": "【艮土封冻】消费寒冬，同行抛售老股",
+          "desc": "年底消费退潮，几家同行基金急着回笼资金，把优质消费项目的老股打七折抛售。",
+          "options": [
+            {
+              "key": "A",
+              "label": "开门李道：逆周期出手，七折收下两家优质老股",
+              "requires_gate": "kai_men",
+              "requires_gate_name": "开门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -8000000.0
+                },
+                {
+                  "type": "add_stores",
+                  "count": 2,
+                  "id": "port_bottom_{nn}",
+                  "name": "低谷收购老股{nn}",
+                  "palace_id": "li_9",
+                  "city_name": "投资组合",
+                  "base_revenue": 500000.0,
+                  "rent": 0.0,
+                  "staff_cost": 250000.0
+                }
+              ],
+              "result": "别人恐惧时出手，两家公司的分红在年底就开始到账。"
+            },
+            {
+              "key": "B",
+              "label": "跟着抛售，回笼现金过冬",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": 6000000.0
+                },
+                {
+                  "type": "store_field",
+                  "field": "base_revenue",
+                  "factor": 0.7,
+                  "id_prefix": [
+                    "port_"
+                  ]
+                }
+              ],
+              "result": "现金回来了，组合里最好的几块资产也卖掉了。"
+            },
+            {
+              "key": "C",
+              "label": "不动，守住现有组合",
+              "effects": [],
+              "result": "组合没有变化，安静过冬。"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 6,
       "title": "案例六【营销时机】：智能门锁爆品发布节点的乾坤大挪移",
       "methodology": "择时引爆 (Solar Terms & Marketing Waves)",
       "industry": "AI_Tech",
-      "duration_months": 6,
-      "brief": "新品智能锁研发完成，账面推广预算仅200万。暑期大促流量昂贵，中秋前夕各方注意力分散。",
+      "duration_months": 7,
+      "brief": "「锁境」新一代人脸识别智能锁研发完成，定价999元，账面推广预算仅200万。拓展VP赵勇主张赶上7月暑期大促立即上线；品牌官苏清墨主张蓄势到9月中秋前夕，景门当令时悬念引爆；也有人主张干脆等双十一。",
       "initial_state": {
-        "cash": 2000000.0
+        "cash": 8000000.0
       },
       "choices": {
         "A": {
-          "name": "7月暑期盲目上线大促销",
-          "verdict": "流量费用高涨3倍，新品被电商大促彻底淹没，全网仅卖出3000套。"
+          "name": "7月暑期大促立即上线",
+          "verdict": "大促期间流量费用飙涨三倍，新品被满屏的满减淹没，首发声量一去不返。"
         },
         "B": {
-          "name": "延至9月中秋景门旺盛期，前置悬念，开门日全线引爆",
-          "verdict": "景门得使！预售斩获3万套，国庆单周破2800万流水，年终破10亿GMV！"
+          "name": "蓄势到9月中秋前夕：前置悬念，开门日全线首发",
+          "verdict": "景门得使！悬念预热接上中秋国庆的送礼季，预售与首周流水双双引爆。"
+        },
+        "C": {
+          "name": "再等等：押注双十一，11月再上线",
+          "verdict": "错过了中秋国庆的送礼窗口，等到双十一时只剩一个多月可卖，年终目标遥不可及。"
         }
-      }
+      },
+      "win_condition": {
+        "min_cash": 85000000.0,
+        "final_month_profit": 22000000.0
+      },
+      "win_condition_text": "年末账面现金 ≥ 8500万 且末月净利润 ≥ 2200万（新品打响，并在年底形成持续流水）",
+      "intended_main_choice": "B",
+      "setup": {
+        "clock": {
+          "year": 2024,
+          "month": 6
+        },
+        "company": {
+          "name": "锁境科技 (智能门锁)",
+          "industry": "AI_Tech",
+          "cash": 8000000.0,
+          "fengshui_modifier": 0.0,
+          "reputation": 62
+        },
+        "executives": [
+          {
+            "id": "e1",
+            "name": "林凡",
+            "gate_id": "jing_men",
+            "gate_name": "景门",
+            "role": "CEO",
+            "salary": 60000,
+            "loyalty": 88,
+            "stress": 40,
+            "portrait": "lin_fan"
+          },
+          {
+            "id": "e2",
+            "name": "沈务本",
+            "gate_id": "sheng_men",
+            "gate_name": "生门",
+            "role": "CFO",
+            "salary": 50000,
+            "loyalty": 85,
+            "stress": 35,
+            "portrait": "shen_wuben"
+          },
+          {
+            "id": "e3",
+            "name": "张博",
+            "gate_id": "du_men",
+            "gate_name": "杜门",
+            "role": "CTO",
+            "salary": 60000,
+            "loyalty": 80,
+            "stress": 50,
+            "portrait": "zhang_bo"
+          },
+          {
+            "id": "e4",
+            "name": "苏清墨",
+            "gate_id": "jing_men",
+            "gate_name": "景门",
+            "role": "CMO",
+            "salary": 45000,
+            "loyalty": 85,
+            "stress": 40,
+            "portrait": "su_qingmo"
+          },
+          {
+            "id": "e5",
+            "name": "赵勇",
+            "gate_id": "shang_men",
+            "gate_name": "伤门",
+            "role": "VP_Expansion",
+            "salary": 45000,
+            "loyalty": 75,
+            "stress": 50,
+            "portrait": "zhao_yong"
+          }
+        ],
+        "stores": [
+          {
+            "id": "old_{nn}",
+            "name": "老款门锁经销{nn}",
+            "palace_id": "xun_4",
+            "city_name": "建材渠道",
+            "base_revenue": 150000.0,
+            "rent": 40000.0,
+            "staff_cost": 80000.0,
+            "count": 10
+          }
+        ]
+      },
+      "main_choices": {
+        "A": {
+          "result": "【已执行】：立即备货，赶在7月暑期大促全网上线，200万推广费全部砸进大促会场。",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": -2000000.0
+            },
+            {
+              "type": "add_stores",
+              "count": 15,
+              "id": "lock_{nn}",
+              "name": "新品首发渠道{nn}",
+              "palace_id": "zhen_3",
+              "city_name": "全国首发渠道",
+              "base_revenue": 600000.0,
+              "rent": 150000.0,
+              "staff_cost": 250000.0
+            },
+            {
+              "type": "revenue_mod",
+              "factor": 0.5,
+              "months": null,
+              "label": "首发被大促淹没",
+              "id_prefix": [
+                "lock_"
+              ]
+            }
+          ]
+        },
+        "B": {
+          "result": "【已执行】：新品按兵不动，先投 50 万做「锁住团圆」系列悬念海报，9月中秋前夕开门日全线首发。",
+          "effects": [
+            {
+              "type": "cash",
+              "amount": -500000.0
+            },
+            {
+              "type": "reputation",
+              "delta": 3
+            }
+          ]
+        },
+        "C": {
+          "result": "【已执行】：新品延期，全部资源押注11月双十一上线。",
+          "effects": []
+        }
+      },
+      "decision_points": [
+        {
+          "id": "s6_chips",
+          "turn": 3,
+          "title": "【天辅受阻】主控芯片全行业缺货",
+          "desc": "八月，海外主控芯片交期从8周拉长到26周。张博想提前锁定半年产能，赵勇主张换用便宜的替代芯片，沈务本则建议先不备货、走一步看一步。",
+          "options": [
+            {
+              "key": "A",
+              "label": "杜门张博：预付订金，锁定半年芯片产能",
+              "requires_gate": "du_men",
+              "requires_gate_name": "杜门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -1500000.0
+                }
+              ],
+              "result": "产能锁住了，旺季来时货架上不会缺货。"
+            },
+            {
+              "key": "B",
+              "label": "赵勇方案：换用低价替代芯片",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.88,
+                  "months": null,
+                  "label": "替代芯片返修率高",
+                  "id_prefix": [
+                    "lock_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": -3
+                }
+              ],
+              "result": "成本省下了，售后返修单却越来越多。"
+            },
+            {
+              "key": "C",
+              "label": "先不备货，走一步看一步",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.75,
+                  "months": null,
+                  "label": "旺季断货",
+                  "id_prefix": [
+                    "lock_"
+                  ]
+                }
+              ],
+              "result": "现金没动，但等需要货的时候，芯片已经排到了明年。"
+            }
+          ]
+        },
+        {
+          "id": "s6_launch",
+          "turn": 4,
+          "title": "【景门当令】中秋前夕，开门日全线首发",
+          "desc": "悬念海报已经铺了两个月，「锁住团圆」话题持续发酵。首发当天怎么打？",
+          "requires_main_choice": [
+            "B"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "label": "景门苏清墨：中秋家宴主题发布会 + 预售锁价，首发当天全渠道同步",
+              "requires_gate": "jing_men",
+              "requires_gate_name": "景门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -1000000.0
+                },
+                {
+                  "type": "add_stores",
+                  "count": 15,
+                  "id": "lock_{nn}",
+                  "name": "新品首发渠道{nn}",
+                  "palace_id": "zhen_3",
+                  "city_name": "全国首发渠道",
+                  "base_revenue": 600000.0,
+                  "rent": 150000.0,
+                  "staff_cost": 250000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.3,
+                  "months": null,
+                  "label": "中秋首发引爆",
+                  "id_prefix": [
+                    "lock_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": 6
+                }
+              ],
+              "result": "预售三万单，送礼季的口碑一路传进国庆。"
+            },
+            {
+              "key": "B",
+              "label": "常规上线：电商详情页 + 信息流投放",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -1000000.0
+                },
+                {
+                  "type": "add_stores",
+                  "count": 15,
+                  "id": "lock_{nn}",
+                  "name": "新品首发渠道{nn}",
+                  "palace_id": "zhen_3",
+                  "city_name": "全国首发渠道",
+                  "base_revenue": 600000.0,
+                  "rent": 150000.0,
+                  "staff_cost": 250000.0
+                }
+              ],
+              "result": "如期上线，悬念攒下的关注度只兑现了一部分。"
+            },
+            {
+              "key": "C",
+              "label": "砍掉发布会，把预算留给国庆",
+              "effects": [
+                {
+                  "type": "add_stores",
+                  "count": 15,
+                  "id": "lock_{nn}",
+                  "name": "新品首发渠道{nn}",
+                  "palace_id": "zhen_3",
+                  "city_name": "全国首发渠道",
+                  "base_revenue": 600000.0,
+                  "rent": 150000.0,
+                  "staff_cost": 250000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.85,
+                  "months": null,
+                  "label": "悬念草草收尾",
+                  "id_prefix": [
+                    "lock_"
+                  ]
+                }
+              ],
+              "result": "两个月的悬念没有落点，不少人以为又是一次跳票。"
+            }
+          ]
+        },
+        {
+          "id": "s6_hack",
+          "turn": 5,
+          "title": "【螣蛇暗流】安全博主曝光门锁可被破解",
+          "desc": "国庆假期，一位安全博主发视频演示用「小黑盒」三秒打开智能门锁，评论区开始点名锁境。",
+          "requires_main_choice": [
+            "A",
+            "B"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "label": "杜门张博：48小时推送固件修复，公开致谢白帽",
+              "requires_gate": "du_men",
+              "requires_gate_name": "杜门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -800000.0
+                },
+                {
+                  "type": "reputation",
+                  "delta": 5
+                }
+              ],
+              "result": "修复比舆情跑得快，「敢于认错的锁」反而成了卖点。"
+            },
+            {
+              "key": "B",
+              "label": "公关冷处理，联系平台删帖",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.82,
+                  "months": null,
+                  "label": "安全口碑受损",
+                  "id_prefix": [
+                    "lock_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": -8
+                }
+              ],
+              "result": "帖子删了又被搬运，「删帖」本身上了热搜。"
+            },
+            {
+              "key": "C",
+              "label": "全量召回更换安全模组",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -8000000.0
+                },
+                {
+                  "type": "reputation",
+                  "delta": 3
+                }
+              ],
+              "result": "召回很体面，代价是国庆备货的现金。"
+            }
+          ]
+        },
+        {
+          "id": "s6_late_launch",
+          "turn": 6,
+          "title": "【时过境迁】双十一仓促上线",
+          "desc": "终于等到双十一，可各大品牌的新品早已在中秋国庆抢完了心智，平台只给新品留了一个二级会场。",
+          "requires_main_choice": [
+            "C"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "label": "赵勇方案：全网最低价冲榜",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -2000000.0
+                },
+                {
+                  "type": "add_stores",
+                  "count": 15,
+                  "id": "lock_{nn}",
+                  "name": "新品首发渠道{nn}",
+                  "palace_id": "zhen_3",
+                  "city_name": "全国首发渠道",
+                  "base_revenue": 600000.0,
+                  "rent": 150000.0,
+                  "staff_cost": 250000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.65,
+                  "months": null,
+                  "label": "低价冲榜",
+                  "id_prefix": [
+                    "lock_"
+                  ]
+                }
+              ],
+              "result": "销量榜冲上去了，每单利润薄得像纸。"
+            },
+            {
+              "key": "B",
+              "label": "景门苏清墨：补拍一支品牌短片再上线",
+              "requires_gate": "jing_men",
+              "requires_gate_name": "景门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -1500000.0
+                },
+                {
+                  "type": "add_stores",
+                  "count": 15,
+                  "id": "lock_{nn}",
+                  "name": "新品首发渠道{nn}",
+                  "palace_id": "zhen_3",
+                  "city_name": "全国首发渠道",
+                  "base_revenue": 600000.0,
+                  "rent": 150000.0,
+                  "staff_cost": 250000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.75,
+                  "months": null,
+                  "label": "迟到的品牌声量",
+                  "id_prefix": [
+                    "lock_"
+                  ]
+                }
+              ],
+              "result": "短片拍得很好，只是已经没有多少人在看新品。"
+            },
+            {
+              "key": "C",
+              "label": "直接上架，不做推广",
+              "effects": [
+                {
+                  "type": "add_stores",
+                  "count": 15,
+                  "id": "lock_{nn}",
+                  "name": "新品首发渠道{nn}",
+                  "palace_id": "zhen_3",
+                  "city_name": "全国首发渠道",
+                  "base_revenue": 600000.0,
+                  "rent": 150000.0,
+                  "staff_cost": 250000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.55,
+                  "months": null,
+                  "label": "无声上架",
+                  "id_prefix": [
+                    "lock_"
+                  ]
+                }
+              ],
+              "result": "新品静悄悄地上了架。"
+            }
+          ]
+        },
+        {
+          "id": "s6_double11",
+          "turn": 6,
+          "title": "【伤门躁动】双十一全网比价",
+          "desc": "双十一预售开启，同行纷纷打出「到手价 699」。赵勇想跟进全网最低价，苏清墨想用联名礼盒守住价格。",
+          "requires_main_choice": [
+            "A",
+            "B"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "label": "赵勇方案：跟进全网最低价",
+              "effects": [
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.15,
+                  "months": 2,
+                  "label": "双十一冲量"
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 0.8,
+                  "months": null,
+                  "label": "价格锚点下移",
+                  "id_prefix": [
+                    "lock_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": -3
+                }
+              ],
+              "result": "双十一当天冲进类目前三，老客开始等着下一次降价。"
+            },
+            {
+              "key": "B",
+              "label": "景门苏清墨：推出「团圆」联名礼盒，守住价格",
+              "requires_gate": "jing_men",
+              "requires_gate_name": "景门",
+              "effects": [
+                {
+                  "type": "cash",
+                  "amount": -1500000.0
+                },
+                {
+                  "type": "revenue_mod",
+                  "factor": 1.12,
+                  "months": null,
+                  "label": "联名礼盒溢价",
+                  "id_prefix": [
+                    "lock_"
+                  ]
+                },
+                {
+                  "type": "reputation",
+                  "delta": 3
+                }
+              ],
+              "result": "礼盒在年货节前卖断了两次，价格一分没降。"
+            },
+            {
+              "key": "C",
+              "label": "不参与，按原价正常销售",
+              "effects": [],
+              "result": "安安静静地卖货，流量被比价的同行分走了一些。"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 7,

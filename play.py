@@ -173,6 +173,16 @@ MAIN_CHOICE_PROMPTS = {
   {BOLD}[A]{RESET} 采纳拓展VP·赵勇路线：全国商超跟进五折，拿出800万给经销商补差价
   {BOLD}[B]{RESET} 采纳品牌官·苏清墨路线：撤出大卖场红海，转战马拉松、健身房、运动医学等专业场景（耗资600万）
   {BOLD}[C]{RESET} 绕道私域：砍掉经销层级，自建会员小程序直连消费者（耗资300万）""",
+    5: f"""
+{RED}{BOLD}【投决会路口】爆红预制菜「鲜厨匠」估值20亿，各家机构抢份额：{RESET}
+  {BOLD}[A]{RESET} 采纳投资经理·赵勇路线：3000万全额打款，接受无保护条款
+  {BOLD}[B]{RESET} 采纳风控合伙人·沈务本路线：首期1200万，写死回购条款（本金+8%）与业绩对赌
+  {BOLD}[C]{RESET} 估值太高不碰：1000万转投冷链物流""",
+    6: f"""
+{RED}{BOLD}【择时路口】新品智能锁研发完成，推广预算仅200万，何时发布？{RESET}
+  {BOLD}[A]{RESET} 采纳拓展VP·赵勇路线：赶上7月暑期大促立即上线（200万全部投进大促会场）
+  {BOLD}[B]{RESET} 采纳品牌官·苏清墨路线：蓄势到9月中秋前夕，前置悬念，开门日全线首发（先投50万预热）
+  {BOLD}[C]{RESET} 再等等：押注双十一，11月再上线""",
 }
 
 
@@ -641,7 +651,7 @@ def run_sandbox_interactive():
 
 def run_all_headless_tests():
     print(f"\n{YELLOW}{BOLD}>>> 正在执行十大战役数理模型自动化批处理回测... <<<{RESET}")
-    names = {1: "新中式烘焙·离九共振", 2: "AI教育初创·择时对赌", 3: "四人组权力归位·八门调和", 4: "功能饮料·非对称突围"}
+    names = {1: "新中式烘焙·离九共振", 2: "AI教育初创·择时对赌", 3: "四人组权力归位·八门调和", 4: "功能饮料·非对称突围", 5: "预制菜投资·条款风控", 6: "智能门锁·择时引爆"}
     all_ok = True
     for sid, name in names.items():
         paths = enumerate_paths(sid)
@@ -670,7 +680,7 @@ def run_all_headless_tests():
 
 def main():
     parser = argparse.ArgumentParser(description="《商道玄机：大亨罗盘》控制台模拟引擎")
-    parser.add_argument("--scenario", type=int, choices=[1, 2, 3, 4], help="直接进入指定战役关卡 (1–4)")
+    parser.add_argument("--scenario", type=int, choices=sorted(MAIN_CHOICE_PROMPTS), help="直接进入指定战役关卡")
     parser.add_argument("--headless", action="store_true", help="无头快速回测模式")
     parser.add_argument("--load", action="store_true", help="读取 quicksave 存档继续战役")
     parser.add_argument("--playtest", action="store_true", help="试玩模式：把每局战役的决策与结果记录到 saves/playtest_log.jsonl")
@@ -703,6 +713,7 @@ def main():
         print(f"  {BOLD}[2]{RESET} 启动【战役二：AI教育初创的融资择时生死战】(时间算法实机)")
         print(f"  {BOLD}[3]{RESET} 启动【战役三：豪华创业四人组的权力归位】(人物算法实机)")
         print(f"  {BOLD}[4]{RESET} 启动【战役四：功能饮料面对百亿巨头的降价屠杀】(竞争策略实机)")
+        print(f"  {BOLD}[K]{RESET} 选择其他可玩战役（案例五、六等，按编号进入）")
         print(f"  {BOLD}[5]{RESET} {RED}启动【战役十：假减肥药危机公关黄金24小时】(舆情指挥室){RESET}")
         print(f"  {BOLD}[6]{RESET} {MAGENTA}启动【二十年自由经商沙盒模式】(自由开局·人才市场·九宫置业·2024-2043史诗){RESET}")
         print(f"  {BOLD}[7]{RESET} 启动【企业总部风水工位DIY与测算沙盘】(Office FengShui Studio)")
@@ -711,9 +722,15 @@ def main():
         print(f"  {BOLD}[L]{RESET} 读取战役存档继续 (quicksave)")
         print(f"  {BOLD}[0]{RESET} 退出系统")
 
-        sel = input(f"\n{YELLOW}请选择操作功能 [1-9/L/0]: {RESET}").strip().upper()
+        sel = input(f"\n{YELLOW}请选择操作功能 [1-9/K/L/0]: {RESET}").strip().upper()
         if sel in ["1", "2", "3", "4"]:
             run_campaign_interactive(int(sel))
+        elif sel == "K":
+            for sid in sorted(MAIN_CHOICE_PROMPTS):
+                print(f"  [{sid}] {CampaignManager.get_scenario_by_id(sid)['title']}")
+            pick = input(f"{YELLOW}输入关卡编号: {RESET}").strip()
+            if pick.isdigit() and int(pick) in MAIN_CHOICE_PROMPTS:
+                run_campaign_interactive(int(pick))
         elif sel == "5":
             run_crisis_war_room_interactive()
         elif sel == "6":

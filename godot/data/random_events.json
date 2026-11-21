@@ -21,7 +21,16 @@
       "desc": "竞争对手在对角街区开启'买一送一'大促销，客流量受到冲击！",
       "effect_cash": -100000.0,
       "effect_reputation": -5,
-      "effect_fengshui": -0.03
+      "effect_fengshui": -0.03,
+      "industries": [
+        "Cultural_Food",
+        "AI_Tech",
+        "Health_Care",
+        "Traditional_Manufacturing",
+        "Traditional_RealEstate",
+        "New_Energy",
+        "Social_Commerce"
+      ]
     },
     {
       "id": "tengshe_audit",
@@ -79,6 +88,30 @@
       "effect_cash": -80000.0,
       "effect_reputation": -3,
       "effect_fengshui": 0.0
+    },
+    {
+      "id": "lp_top_up",
+      "industries": [
+        "Consumer_VC"
+      ],
+      "name": "【值符照命】大型母基金追加认缴",
+      "type": "opportunity",
+      "desc": "一家国资母基金看好团队的投资纪律，提前追加一笔认缴，管理费随之到账。",
+      "effect_cash": 400000.0,
+      "effect_reputation": 6,
+      "effect_fengshui": 0.02
+    },
+    {
+      "id": "portfolio_rumor",
+      "industries": [
+        "Consumer_VC"
+      ],
+      "name": "【螣蛇暗流】被投企业被传财务数据注水",
+      "type": "crisis",
+      "desc": "自媒体爆料一家被投企业虚增门店流水，基金不得不连夜组织专项审计回应LP。",
+      "effect_cash": -150000.0,
+      "effect_reputation": -5,
+      "effect_fengshui": -0.02
     }
   ]
 }

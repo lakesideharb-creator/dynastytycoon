@@ -1,5 +1,5 @@
 extends Control
-## 标题画面：标题插画 + 可玩战役列表
+## 标题画面：标题插画 + 商战案例（选关对话框）、危机公关、自由沙盒
 
 signal campaign_selected(scenario_id: int)
 signal load_requested(slot: String)
@@ -8,6 +8,7 @@ signal sandbox_selected
 
 const SaveSlotsDialog := preload("res://ui/dialogs/save_slots_dialog.gd")
 const SettingsDialog := preload("res://ui/dialogs/settings_dialog.gd")
+const CasePickerDialog := preload("res://ui/dialogs/case_picker_dialog.gd")
 
 
 func _ready() -> void:
@@ -65,17 +66,14 @@ func _ready() -> void:
 		Audio.wire_button(cont)
 		col.add_child(cont)
 
-	for s in DataTables.scenarios():
-		var sid := int(s["id"])
-		if not CampaignManager.is_playable(sid):
-			continue
-		var b := Button.new()
-		b.text = "%s" % s["title"].replace("【", " 【").strip_edges()
-		b.custom_minimum_size = Vector2(880, 56)
-		b.tooltip_text = s.get("brief", "")
-		b.pressed.connect(func(): campaign_selected.emit(sid))
-		Audio.wire_button(b)
-		col.add_child(b)
+	var playable := DataTables.scenarios().filter(func(sc): return CampaignManager.is_playable(int(sc["id"]))).size()
+	var cases := Button.new()
+	cases.text = "◆ 商战案例　·　%d 个案例可玩" % playable
+	cases.custom_minimum_size = Vector2(880, 64)
+	cases.add_theme_font_size_override("font_size", 26)
+	cases.pressed.connect(_open_cases)
+	Audio.wire_button(cases)
+	col.add_child(cases)
 
 	# 危机公关（朱砂）与自由沙盒（鎏金）并排一行，省出纵向空间
 	var modes := HBoxContainer.new()
@@ -122,4 +120,10 @@ func _open_load() -> void:
 	var d := SaveSlotsDialog.new()
 	d.mode = "load"
 	d.slot_chosen.connect(func(slot): load_requested.emit(slot))
+	add_child(d)
+
+
+func _open_cases() -> void:
+	var d := CasePickerDialog.new()
+	d.chosen.connect(func(sid): campaign_selected.emit(sid))
 	add_child(d)

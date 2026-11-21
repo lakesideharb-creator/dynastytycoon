@@ -1,5 +1,5 @@
 extends Node
-## 关卡实机走查：从标题画面进入指定关卡，按给定路线走完，在标题、开局决断、每张决策卡、月度画面和结局截图
+## 关卡实机走查：从标题画面进入指定关卡，按给定路线走完，在标题、选关、开局决断、每张决策卡、月度画面和结局截图
 ## 用法：godot --path godot --resolution 1920x1080 res://tests/capture_case.tscn -- <输出目录> <关卡> <路线>
 ## 路线与 tools/campaign_paths.py 输出相同，例如 B|s4_dealers=B|s4_marathon=A|s4_copycat=A
 
@@ -54,6 +54,9 @@ func _dialog(cs: Node, script_path: String) -> Node:
 func _run() -> void:
 	await _wait(2.5)
 	await _shot("00_title")
+	main._screen._open_cases()
+	await _wait(1.0)
+	await _shot("00_cases")
 	main.start_campaign(sid)
 	await _wait(1.5)
 	var cs: Node = main._screen
