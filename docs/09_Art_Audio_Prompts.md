@@ -488,3 +488,114 @@ python3 tools/audio_master.py check godot/assets/music godot/assets/sfx
 - 同一角色的 4 个表情要用同一个种子，或者用角色参考图功能（如 Midjourney `--cref`）生成，保证脸一致。
 - 图标、道具成套生成，保持笔触粗细一致。
 - 不要在画面里出现真实品牌、真实机构名称或标志（关卡文案中的真实机构名也会在发售前替换为虚构名称）。
+
+---
+
+## 6. 衍生品：实体卡牌
+
+用于《奇门商道》案例卡组（桌游版：每个案例一副小卡组，开局三选一 + 月度议题 + 结局）和八门人物卡。
+
+**复用现有素材，不用重画：**
+- 议题卡：版式做成「上方 16:9 横幅插画 + 下方文字」，直接用 `godot/assets/events/` 的 36 张决策卡插画（原图在 `assets_src/batch*-original/`）。
+- 人物卡：用现有主角团立绘与人才立绘 `talent_{门派}_{m|f}`（透明底），垫在下面的门派底图上。
+- 门派、八神、五行图标：用 `godot/assets/icons/`。
+
+### 6.1 规格
+
+| 项目 | 规格 |
+|---|---|
+| 成品尺寸 | 标准扑克 63×88 mm |
+| 生成比例 | 竖版 5:7，至少 1500×2100 px（印刷按 300 dpi） |
+| 出血 | 四边各 3 mm；重要内容放在中间 85% 区域 |
+| 文字 | 画面里一律不放文字；卡名、数值、规则文字用排版工具叠加 |
+
+风格后缀与本文开头的通用风格后缀相同。负面提示词在通用负面提示词基础上加 `numbers, card border text`：
+
+```
+text, letters, numbers, watermark, signature, logo, brand names, card border text, extra fingers, deformed hands, cluttered background, neon cyberpunk, anime chibi, photorealistic, low resolution
+```
+
+### 6.2 卡背（`card_back`、`card_back_red`）
+
+上下对称，倒拿也一样。案例卡组用墨黑底，人物卡组用朱砂底。
+
+| id | 提示词 |
+|---|---|
+| `card_back` | `symmetrical card back design, a bronze qimen dunjia compass at the center surrounded by a nine-palace grid, eight trigram symbols arranged in a ring, fine gold line ornament with cloud patterns at the four corners, deep ink-black background with subtle rice paper texture, perfectly mirrored top and bottom, vertical 5:7, [风格后缀]` |
+| `card_back_red` | `symmetrical card back design, eight gates of qimen dunjia drawn as eight small arched doorways in a ring around a central yin-yang seal, cinnabar red background with gold line ornament, perfectly mirrored top and bottom, vertical 5:7, [风格后缀]` |
+
+### 6.3 案例封面卡（`case_{N}`，9 张）
+
+模板：
+
+```
+vertical 5:7 card illustration, [场景], strong central composition with the main subject in the middle, empty calm area at the top 20% and bottom 25% for title overlay, [风格后缀]
+```
+
+| id | 案例 | 场景 |
+|---|---|---|
+| `case_1` | 新中式烘焙 | `a guochao bakery storefront glowing at dusk, red lanterns, a map of China drawn in ink behind it with two routes splitting toward southwest and central plains` |
+| `case_2` | AI教育融资 | `a young founder at a crossroads under an autumn sky, an hourglass in one hand and a contract in the other, a lit laptop showing an online class at his feet` |
+| `case_3` | 创业四人组 | `four executives standing back to back on a cracked floor, each casting a differently colored shadow, a nine-palace grid faintly drawn beneath them` |
+| `case_4` | 功能饮料 | `a small bottle of clear electrolyte water standing firm while a giant ink shadow of a beverage conglomerate looms over it, a marathon finish arch in the distance` |
+| `case_5` | 预制菜投资 | `an investor's hand holding a contract with a red seal over a stack of ready-meal boxes, a white tiger ink silhouette lurking in the background` |
+| `case_6` | 智能门锁 | `a sleek smart door lock glowing under a huge full moon, lanterns and plum blossoms, a calendar page turning from July to September` |
+| `case_7` | 电池BMS | `a battery production line stretching into the distance, half lit and half in winter shadow, a balance scale with gold coins and a factory on either side` |
+| `case_8` | SaaS续约 | `two executives at a negotiation table, one pushing a price tag with a downward arrow, the other offering a long scroll contract, a chessboard between them` |
+| `case_9` | 商业综合体 | `a landmark shopping complex in snow at dawn, scaffolding with cinnabar banners, a mountain-shaped red seal on the snow in front` |
+
+### 6.4 开局卡与结局卡
+
+开局卡不做 27 张，只出三张通用的「三条路」符号图（A 左、B 中、C 右），选项文字排版叠加：
+
+| id | 提示词 |
+|---|---|
+| `opening_a` / `opening_b` / `opening_c` | `vertical 5:7 card illustration, a single ink-drawn path splitting into three roads at a misty crossroads, a small gold compass needle at the fork pointing to [left / center / right], the chosen road subtly lit in muted gold, minimal and symbolic, large empty area in the lower half for text, [风格后缀]` |
+| `ending_win` | `vertical 5:7 card illustration, a large square cinnabar red seal stamped on rice paper, abstract mountain and sunrise motif inside the seal, gold ink splashes radiating outward, triumphant mood, empty area at the bottom for text, [风格后缀]` |
+| `ending_lose` | `vertical 5:7 card illustration, a cracked ink-black seal on grey rice paper, faded and smudged, a fallen withered leaf beside it, somber mood, empty area at the bottom for text, [风格后缀]` |
+
+### 6.5 门派底图（`gate_card_{门派id}`，8 张）
+
+垫在人才立绘后面，八张统一构图、只换意象和主色。模板：
+
+```
+vertical 5:7 card background, a large arched traditional doorway in the center representing the [门名] gate of qimen dunjia, [意象], dominant color [主色], no people, soft vignette, space in the center for a character portrait, [风格后缀]
+```
+
+| id | 门 | 意象 | 主色 |
+|---|---|---|---|
+| `gate_card_kai_men` | 开门 | `doors swinging wide open to a sunrise, wind-blown silk banners` | `muted gold #C9A04F` |
+| `gate_card_xiu_men` | 休门 | `a quiet tea pavilion by still water, mist` | `deep indigo #2B3A4A` |
+| `gate_card_sheng_men` | 生门 | `young sprouts growing from an open ledger, coins like seeds` | `jade green #5C9A7A` |
+| `gate_card_shang_men` | 伤门 | `a spear thrust through a broken gate, sparks` | `forest green #3E6B4A` |
+| `gate_card_du_men` | 杜门 | `a closed study door with circuit lines glowing through the cracks` | `ink green #2F4A3E` |
+| `gate_card_jing_men` | 景门 | `a theater stage curtain with spotlight and lanterns` | `cinnabar red #C44030` |
+| `gate_card_jing_alarm_men` | 惊门 | `a gavel and a startled flock of birds bursting from a gate` | `steel grey #6E7681` |
+| `gate_card_si_men` | 死门 | `a sealed stone door overgrown with dry vines, still air` | `ash brown #6B5E50` |
+
+### 6.6 标记与筹码（`token_{id}`，可选）
+
+模板：
+
+```
+flat round game token icon, [物件], gold rim, ink-black center, centered on a plain off-white background, isolated, top-down view, [风格后缀]
+```
+
+| id | 用途 | 物件 |
+|---|---|---|
+| `token_cash` | 现金 | `a stack of ancient Chinese coins` |
+| `token_reputation` | 商誉 | `a red seal` |
+| `token_friction` | 内耗 | `two clashing ink brushstrokes` |
+| `token_month` | 月份 | `a small sundial` |
+
+### 6.7 交付清单
+
+约 28 张，交付到 `assets_src/cards/`（不入游戏包）：
+
+- [ ] 卡背 2 张（`card_back`、`card_back_red`）
+- [ ] 案例封面 9 张（`case_1` … `case_9`）
+- [ ] 开局卡 3 张、结局卡 2 张
+- [ ] 门派底图 8 张
+- [ ] 标记 4 张（可选）
+
+印刷与售卖前：确认所用生成工具的商用条款；众筹平台如要求，标注「插画由 AI 辅助生成」。
