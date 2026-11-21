@@ -90,6 +90,8 @@ func show_exec(e: Executive, score: float, mood: String) -> void:
 	var path := PORTRAIT % [e.portrait, mood]
 	if not ResourceLoader.exists(path):
 		path = PORTRAIT % [e.portrait, "neutral"]
+	if not ResourceLoader.exists(path):                 # 人才市场通用头像只有一张（talent_{门派}_{m|f}.png）
+		path = "res://assets/portraits/%s.png" % e.portrait
 	if ResourceLoader.exists(path):
 		_portrait.texture = load(path)
 		_portrait.modulate = Color(1, 1, 1, 0.3)

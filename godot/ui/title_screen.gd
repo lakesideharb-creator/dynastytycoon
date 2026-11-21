@@ -4,6 +4,7 @@ extends Control
 signal campaign_selected(scenario_id: int)
 signal load_requested(slot: String)
 signal crisis_selected(crisis_id: String)
+signal sandbox_selected
 
 const SaveSlotsDialog := preload("res://ui/dialogs/save_slots_dialog.gd")
 const SettingsDialog := preload("res://ui/dialogs/settings_dialog.gd")
@@ -76,18 +77,19 @@ func _ready() -> void:
 		Audio.wire_button(b)
 		col.add_child(b)
 
-	for cr in CrisisWarRoom.data()["crises"]:              # 危机公关短战：独立玩法，朱砂色按钮区分
+	# 危机公关（朱砂）与自由沙盒（鎏金）并排一行，省出纵向空间
+	var modes := HBoxContainer.new()
+	modes.add_theme_constant_override("separation", 12)
+	modes.custom_minimum_size = Vector2(880, 0)
+	col.add_child(modes)
+	for cr in CrisisWarRoom.data()["crises"]:
 		var cid: String = cr["id"]
-		var cb := Button.new()
-		cb.text = "⚠ " + cr["case_title"].replace("【", " 【")
-		cb.custom_minimum_size = Vector2(880, 56)
-		cb.tooltip_text = cr["intro"]
-		cb.add_theme_stylebox_override("normal", ThemeBuilder.box(Color("#2A1412"), Palette.CINNABAR.darkened(0.2), 2, 6, 12))
-		cb.add_theme_stylebox_override("hover", ThemeBuilder.box(Color("#3A1A16"), Palette.CINNABAR, 2, 6, 12))
-		cb.add_theme_color_override("font_color", Palette.PAPER)
+		var cb := _mode_button("⚠ 案例十 · 危机公关 24 小时", cr["case_title"] + "\n" + cr["intro"], Color("#2A1412"), Color("#3A1A16"), Palette.CINNABAR)
 		cb.pressed.connect(func(): crisis_selected.emit(cid))
-		Audio.wire_button(cb)
-		col.add_child(cb)
+		modes.add_child(cb)
+	var sb := _mode_button("◎ 二十年自由沙盒", "自选行业与地盘，招贤纳士、九宫拓店，2024—2043 问鼎商道宗师", Color("#2A2214"), Color("#3A2E18"), Palette.GOLD)
+	sb.pressed.connect(func(): sandbox_selected.emit())
+	modes.add_child(sb)
 
 	var row := HBoxContainer.new()
 	row.add_theme_constant_override("separation", 12)
@@ -101,6 +103,19 @@ func _ready() -> void:
 		b.pressed.connect(item[1])
 		Audio.wire_button(b)
 		row.add_child(b)
+
+
+func _mode_button(text: String, tip: String, bg: Color, bg_hover: Color, border: Color) -> Button:
+	var b := Button.new()
+	b.text = text
+	b.tooltip_text = tip
+	b.custom_minimum_size = Vector2(0, 56)
+	b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	b.add_theme_stylebox_override("normal", ThemeBuilder.box(bg, border.darkened(0.15), 2, 6, 12))
+	b.add_theme_stylebox_override("hover", ThemeBuilder.box(bg_hover, border.lightened(0.1), 2, 6, 12))
+	b.add_theme_color_override("font_color", Palette.PAPER)
+	Audio.wire_button(b)
+	return b
 
 
 func _open_load() -> void:

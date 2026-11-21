@@ -5,6 +5,9 @@ var values: Array[float] = []
 var target := 0.0
 var months_total := 12
 var start_cash := 0.0
+var left_label := "开局"
+var right_label := ""          ## 为空时显示「第N月」
+var goal_label := "通关线 "
 var _font := ThemeBuilder.mono()
 
 
@@ -45,7 +48,7 @@ func _draw() -> void:
 	if target > 0:
 		var yt: float = y_of.call(target)
 		draw_dashed_line(Vector2(r.position.x, yt), Vector2(r.end.x, yt), Palette.GOLD, 2.0, 10.0)
-		draw_string(_font, Vector2(r.end.x - 170, yt - 8), "通关线 " + _fmt(target), HORIZONTAL_ALIGNMENT_RIGHT, 170, 15, Palette.GOLD)
+		draw_string(_font, Vector2(r.end.x - 170, yt - 8), goal_label + _fmt(target), HORIZONTAL_ALIGNMENT_RIGHT, 170, 15, Palette.GOLD)
 
 	var line := PackedVector2Array()
 	for i in pts.size():
@@ -58,5 +61,5 @@ func _draw() -> void:
 		draw_polyline(line, Palette.AMBER, 3.0, true)
 	for p in line:
 		draw_circle(p, 4.0, Palette.AMBER)
-	draw_string(_font, Vector2(r.position.x, size.y - 4), "开局", HORIZONTAL_ALIGNMENT_LEFT, -1, 14, Palette.TEXT_DIM)
-	draw_string(_font, Vector2(r.end.x - 60, size.y - 4), "第%d月" % months_total, HORIZONTAL_ALIGNMENT_RIGHT, 60, 14, Palette.TEXT_DIM)
+	draw_string(_font, Vector2(r.position.x, size.y - 4), left_label, HORIZONTAL_ALIGNMENT_LEFT, -1, 14, Palette.TEXT_DIM)
+	draw_string(_font, Vector2(r.end.x - 90, size.y - 4), right_label if right_label != "" else "第%d月" % months_total, HORIZONTAL_ALIGNMENT_RIGHT, 90, 14, Palette.TEXT_DIM)

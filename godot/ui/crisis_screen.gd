@@ -262,7 +262,7 @@ func _refresh_timeline() -> void:
 		var bg := Color("#3A1A16") if active or broke else (Color("#1A2A22") if done else Palette.TERMINAL_PANEL)
 		var border := Palette.CINNABAR if active or broke else (Palette.JADE.darkened(0.3) if done else Palette.TERMINAL_LINE)
 		p.add_theme_stylebox_override("panel", ThemeBuilder.box(bg, border, 2 if active or broke else 1, 6, 8))
-		var mark := "✗ " if broke else ("✓ " if done else ("▶ " if active else ""))
+		var mark := "× " if broke else ("✓ " if done else ("▶ " if active else ""))
 		var col := Palette.CINNABAR.lightened(0.2) if broke else (Palette.PAPER if active else (Palette.JADE if done else Palette.TEXT_DIM))
 		var l := ThemeBuilder.label(mark + st["hours_range"], 18, col, ThemeBuilder.serif(700))
 		l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER

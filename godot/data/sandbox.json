@@ -1,0 +1,860 @@
+{
+  "version": "1.0.0",
+  "_comment": "二十年自由沙盒：行业、经济参数、九宫地盘、结局门槛与人才市场候选人模板（Python 与 Godot 共用）。经济参数由 tests/test_sandbox_balance.py 锁定，改动后运行 tools/sandbox_balance.py 复核结局分布。",
+  "industries": [
+    {
+      "key": "Cultural_Food",
+      "name": "新中式文化餐饮",
+      "desc": "茶饮/烘焙/餐厅，高客单文化溢价，离九共振爆发力强",
+      "base_revenue": 360000,
+      "rent": 280000,
+      "staff_cost": 200000
+    },
+    {
+      "key": "AI_Tech",
+      "name": "AI科技创业",
+      "desc": "算法/SaaS/大模型，烧钱快但估值弹性大，时间窗口极敏感",
+      "base_revenue": 520000,
+      "rent": 180000,
+      "staff_cost": 600000
+    },
+    {
+      "key": "Health_Care",
+      "name": "功能健康消费品",
+      "desc": "营养品/运动补剂/医美，高毛利细分赛道，专业壁垒强",
+      "base_revenue": 430000,
+      "rent": 220000,
+      "staff_cost": 300000
+    },
+    {
+      "key": "New_Energy",
+      "name": "新能源产业链",
+      "desc": "光储充换/锂电/氢能，政策红利窗口，重资本长周期",
+      "base_revenue": 640000,
+      "rent": 350000,
+      "staff_cost": 500000
+    },
+    {
+      "key": "Social_Commerce",
+      "name": "社交电商/直播带货",
+      "desc": "私域流量/内容电商，GMV增长快，舆论风险高，合规压力大",
+      "base_revenue": 460000,
+      "rent": 150000,
+      "staff_cost": 450000
+    }
+  ],
+  "economy": {
+    "min_store_invest": 1000000,
+    "max_store_invest": 10000000,
+    "ref_store_invest": 2000000,
+    "invest_revenue_exp": 0.8,
+    "invest_cost_exp": 1.0,
+    "store_decay_rate": 0.015,
+    "maintenance_rate": 0.01,
+    "hq_invest_equiv": 2000000,
+    "sandbox_revenue_scale": 1.0,
+    "sandbox_misc_cost": 50000,
+    "palace_saturation": 0.85,
+    "store_salvage_rate": 0.3,
+    "hire_salary_cash_cap": 0.1,
+    "rent_mult_range": [
+      0.85,
+      1.2
+    ],
+    "staff_mult_range": [
+      0.9,
+      1.1
+    ],
+    "store_value_months": 24,
+    "start_year": 2024,
+    "end_year": 2043,
+    "starting_reputation": 50,
+    "talent_pool_size": 8,
+    "talent_salary_scale": 0.35,
+    "talent_ask_floor": 1.05,
+    "talent_min_ratio": 0.9,
+    "starting_cash_range": [
+      2000000,
+      20000000
+    ],
+    "default_starting_cash": 6000000,
+    "marketing_max": 500000,
+    "default_marketing": 50000
+  },
+  "palaces": [
+    {
+      "palace_id": "kan_1",
+      "label": "坎一宫·北京/深圳·水型创新都市"
+    },
+    {
+      "palace_id": "kun_2",
+      "label": "坤二宫·长沙/郑州·厚土稳健市场"
+    },
+    {
+      "palace_id": "zhen_3",
+      "label": "震三宫·杭州/成都·雷动创业氛围"
+    },
+    {
+      "palace_id": "xun_4",
+      "label": "巽四宫·上海/广州·风型信息枢纽"
+    },
+    {
+      "palace_id": "zhong_5",
+      "label": "中五宫·武汉/西安·中枢战略要地"
+    },
+    {
+      "palace_id": "qian_6",
+      "label": "乾六宫·京津·权力中枢资源聚集"
+    },
+    {
+      "palace_id": "dui_7",
+      "label": "兑七宫·厦门/三亚·悦商旅游消费"
+    },
+    {
+      "palace_id": "gen_8",
+      "label": "艮八宫·重庆/贵阳·山型资源重工"
+    },
+    {
+      "palace_id": "li_9",
+      "label": "离九宫·成都/西安·文化火型爆发力"
+    }
+  ],
+  "ending_thresholds": {
+    "s_assets": 250000000,
+    "a_assets": 150000000,
+    "b_assets": 50000000,
+    "s_reputation": 90,
+    "a_reputation": 75,
+    "s_profitable_years": 5,
+    "s_min_stores": 4
+  },
+  "endings": [
+    {
+      "grade": "S",
+      "title": "商道宗师·九宫归一",
+      "description": "二十年风云，你以奇门之术纵横商界，净资产破2.5亿，名入中华百年商业传奇！",
+      "unlock_condition": "净资产≥2.5亿，商誉≥90，连续5个年度盈利，拥有≥4家门店/中心",
+      "icon": "🏆"
+    },
+    {
+      "grade": "A",
+      "title": "大亨崛起·时运弄潮儿",
+      "description": "精准踩准时代节拍，乘势扶摇直上。净资产过1.5亿，行业领军地位确立。",
+      "unlock_condition": "净资产≥1.5亿，商誉≥75",
+      "icon": "🌟"
+    },
+    {
+      "grade": "B",
+      "title": "稳健商人·守成有余",
+      "description": "二十年风雨中守住了自己的基业，未能称霸却衣食无忧，自有一番格局。",
+      "unlock_condition": "公司存活且最近一年盈利，净资产≥0.5亿",
+      "icon": "💼"
+    },
+    {
+      "grade": "C",
+      "title": "创业者·折戟半途",
+      "description": "曾经辉煌也曾跌落，最终未能守住基业。这是大多数创业者的宿命。",
+      "unlock_condition": "公司存活但净资产<0.5亿或最近一年亏损",
+      "icon": "⚠️"
+    },
+    {
+      "grade": "D",
+      "title": "资本寒冬·弹尽粮绝",
+      "description": "现金流断裂，银行抽贷，资本寒冬将你吞噬。败局之中亦有教训，重来一局吧。",
+      "unlock_condition": "公司现金<0（破产）",
+      "icon": "💀"
+    }
+  ],
+  "gate_names": {
+    "xiu_men": "休门",
+    "sheng_men": "生门",
+    "jing_men": "景门",
+    "kai_men": "开门",
+    "du_men": "杜门",
+    "jing_alarm_men": "惊门",
+    "shang_men": "伤门",
+    "si_men": "死门"
+  },
+  "talent_templates": [
+    {
+      "name": "陈破军",
+      "gate": "xiu_men",
+      "roles": [
+        "CEO",
+        "COO"
+      ],
+      "salary_range": [
+        180000,
+        280000
+      ],
+      "traits": [
+        "稳健",
+        "守成",
+        "抗压"
+      ]
+    },
+    {
+      "name": "李逢源",
+      "gate": "sheng_men",
+      "roles": [
+        "CFO",
+        "CEO"
+      ],
+      "salary_range": [
+        200000,
+        320000
+      ],
+      "traits": [
+        "拓展",
+        "野心",
+        "社交"
+      ]
+    },
+    {
+      "name": "王惊雷",
+      "gate": "jing_alarm_men",
+      "roles": [
+        "法务总监",
+        "CMO"
+      ],
+      "salary_range": [
+        160000,
+        250000
+      ],
+      "traits": [
+        "善辩",
+        "法务",
+        "危机公关"
+      ]
+    },
+    {
+      "name": "张开泰",
+      "gate": "kai_men",
+      "roles": [
+        "CEO",
+        "COO"
+      ],
+      "salary_range": [
+        210000,
+        350000
+      ],
+      "traits": [
+        "领导力",
+        "决断",
+        "扩张"
+      ]
+    },
+    {
+      "name": "刘度势",
+      "gate": "du_men",
+      "roles": [
+        "CTO",
+        "COO"
+      ],
+      "salary_range": [
+        140000,
+        220000
+      ],
+      "traits": [
+        "隐忍",
+        "分析",
+        "数据"
+      ]
+    },
+    {
+      "name": "孙景明",
+      "gate": "jing_men",
+      "roles": [
+        "CMO",
+        "CDO"
+      ],
+      "salary_range": [
+        150000,
+        240000
+      ],
+      "traits": [
+        "品牌",
+        "传播",
+        "声望"
+      ]
+    },
+    {
+      "name": "赵伤锋",
+      "gate": "shang_men",
+      "roles": [
+        "CSO",
+        "COO"
+      ],
+      "salary_range": [
+        170000,
+        260000
+      ],
+      "traits": [
+        "竞争",
+        "销售",
+        "激进"
+      ]
+    },
+    {
+      "name": "周死局",
+      "gate": "si_men",
+      "roles": [
+        "CFO",
+        "风控总监"
+      ],
+      "salary_range": [
+        130000,
+        200000
+      ],
+      "traits": [
+        "保守",
+        "风控",
+        "执行"
+      ]
+    },
+    {
+      "name": "吴惊风",
+      "gate": "jing_alarm_men",
+      "roles": [
+        "CMO",
+        "危机公关官"
+      ],
+      "salary_range": [
+        180000,
+        290000
+      ],
+      "traits": [
+        "应变",
+        "舆情",
+        "颠覆"
+      ]
+    },
+    {
+      "name": "郑休远",
+      "gate": "xiu_men",
+      "roles": [
+        "COO",
+        "人力总监"
+      ],
+      "salary_range": [
+        120000,
+        190000
+      ],
+      "traits": [
+        "养生",
+        "平衡",
+        "后勤"
+      ]
+    },
+    {
+      "name": "沈开拓",
+      "gate": "kai_men",
+      "roles": [
+        "CEO",
+        "战略总监"
+      ],
+      "salary_range": [
+        220000,
+        380000
+      ],
+      "traits": [
+        "开疆",
+        "战略",
+        "激进"
+      ]
+    },
+    {
+      "name": "韩生财",
+      "gate": "sheng_men",
+      "roles": [
+        "CFO",
+        "投资总监"
+      ],
+      "salary_range": [
+        190000,
+        310000
+      ],
+      "traits": [
+        "财务",
+        "融资",
+        "增长"
+      ]
+    },
+    {
+      "name": "秦景辉",
+      "gate": "jing_men",
+      "roles": [
+        "CDO",
+        "内容总监"
+      ],
+      "salary_range": [
+        140000,
+        220000
+      ],
+      "traits": [
+        "内容",
+        "IP",
+        "创意"
+      ]
+    },
+    {
+      "name": "林伤破",
+      "gate": "shang_men",
+      "roles": [
+        "CSO",
+        "区域总监"
+      ],
+      "salary_range": [
+        160000,
+        250000
+      ],
+      "traits": [
+        "开拓",
+        "销售",
+        "压迫"
+      ]
+    },
+    {
+      "name": "徐度衡",
+      "gate": "du_men",
+      "roles": [
+        "CTO",
+        "算法总监"
+      ],
+      "salary_range": [
+        200000,
+        340000
+      ],
+      "traits": [
+        "技术",
+        "算法",
+        "深度"
+      ]
+    },
+    {
+      "name": "曹休养",
+      "gate": "xiu_men",
+      "roles": [
+        "人力总监",
+        "COO"
+      ],
+      "salary_range": [
+        110000,
+        170000
+      ],
+      "traits": [
+        "培育",
+        "团建",
+        "文化"
+      ]
+    },
+    {
+      "name": "许开源",
+      "gate": "kai_men",
+      "roles": [
+        "CTO",
+        "COO"
+      ],
+      "salary_range": [
+        180000,
+        280000
+      ],
+      "traits": [
+        "开发",
+        "架构",
+        "效率"
+      ]
+    },
+    {
+      "name": "谢死守",
+      "gate": "si_men",
+      "roles": [
+        "CFO",
+        "审计总监"
+      ],
+      "salary_range": [
+        120000,
+        185000
+      ],
+      "traits": [
+        "合规",
+        "审计",
+        "守成"
+      ]
+    },
+    {
+      "name": "冯景策",
+      "gate": "jing_men",
+      "roles": [
+        "CMO",
+        "战略总监"
+      ],
+      "salary_range": [
+        160000,
+        260000
+      ],
+      "traits": [
+        "战略",
+        "公关",
+        "形象"
+      ]
+    },
+    {
+      "name": "蒋生旺",
+      "gate": "sheng_men",
+      "roles": [
+        "CEO",
+        "COO"
+      ],
+      "salary_range": [
+        230000,
+        400000
+      ],
+      "traits": [
+        "成长",
+        "扩张",
+        "活力"
+      ]
+    },
+    {
+      "name": "叶惊变",
+      "gate": "jing_alarm_men",
+      "roles": [
+        "危机公关官",
+        "法务总监"
+      ],
+      "salary_range": [
+        170000,
+        270000
+      ],
+      "traits": [
+        "变革",
+        "应变",
+        "合规"
+      ]
+    },
+    {
+      "name": "彭度算",
+      "gate": "du_men",
+      "roles": [
+        "CFO",
+        "数据总监"
+      ],
+      "salary_range": [
+        155000,
+        240000
+      ],
+      "traits": [
+        "财务",
+        "数据",
+        "精算"
+      ]
+    },
+    {
+      "name": "魏开城",
+      "gate": "kai_men",
+      "roles": [
+        "CSO",
+        "市场总监"
+      ],
+      "salary_range": [
+        170000,
+        260000
+      ],
+      "traits": [
+        "城市扩张",
+        "BD",
+        "渠道"
+      ]
+    },
+    {
+      "name": "陆休止",
+      "gate": "xiu_men",
+      "roles": [
+        "COO",
+        "供应链总监"
+      ],
+      "salary_range": [
+        135000,
+        210000
+      ],
+      "traits": [
+        "供应链",
+        "运营",
+        "节奏"
+      ]
+    },
+    {
+      "name": "丁伤锐",
+      "gate": "shang_men",
+      "roles": [
+        "CSO",
+        "销售总监"
+      ],
+      "salary_range": [
+        160000,
+        255000
+      ],
+      "traits": [
+        "竞争",
+        "谈判",
+        "激进"
+      ]
+    },
+    {
+      "name": "薛死谋",
+      "gate": "si_men",
+      "roles": [
+        "CFO",
+        "风控总监"
+      ],
+      "salary_range": [
+        140000,
+        215000
+      ],
+      "traits": [
+        "谋划",
+        "防守",
+        "稳定"
+      ]
+    },
+    {
+      "name": "严景德",
+      "gate": "jing_men",
+      "roles": [
+        "CMO",
+        "品牌总监"
+      ],
+      "salary_range": [
+        150000,
+        230000
+      ],
+      "traits": [
+        "口碑",
+        "品味",
+        "公关"
+      ]
+    },
+    {
+      "name": "何生聚",
+      "gate": "sheng_men",
+      "roles": [
+        "CEO",
+        "投资总监"
+      ],
+      "salary_range": [
+        200000,
+        360000
+      ],
+      "traits": [
+        "募资",
+        "生态",
+        "网络"
+      ]
+    },
+    {
+      "name": "龚开纪",
+      "gate": "kai_men",
+      "roles": [
+        "CTO",
+        "工程总监"
+      ],
+      "salary_range": [
+        175000,
+        275000
+      ],
+      "traits": [
+        "基础设施",
+        "工程",
+        "架构"
+      ]
+    },
+    {
+      "name": "袁度微",
+      "gate": "du_men",
+      "roles": [
+        "COO",
+        "精益总监"
+      ],
+      "salary_range": [
+        130000,
+        200000
+      ],
+      "traits": [
+        "精益",
+        "数据",
+        "优化"
+      ]
+    },
+    {
+      "name": "崔休稳",
+      "gate": "xiu_men",
+      "roles": [
+        "人力总监",
+        "行政总监"
+      ],
+      "salary_range": [
+        105000,
+        165000
+      ],
+      "traits": [
+        "稳健",
+        "团队",
+        "文化"
+      ]
+    },
+    {
+      "name": "钱伤破",
+      "gate": "shang_men",
+      "roles": [
+        "CEO",
+        "CSO"
+      ],
+      "salary_range": [
+        215000,
+        370000
+      ],
+      "traits": [
+        "进攻",
+        "销售",
+        "扩张"
+      ]
+    },
+    {
+      "name": "朱生发",
+      "gate": "sheng_men",
+      "roles": [
+        "CFO",
+        "CEO"
+      ],
+      "salary_range": [
+        195000,
+        325000
+      ],
+      "traits": [
+        "财务",
+        "融资",
+        "生长"
+      ]
+    },
+    {
+      "name": "高景耀",
+      "gate": "jing_men",
+      "roles": [
+        "CMO",
+        "CDO"
+      ],
+      "salary_range": [
+        145000,
+        225000
+      ],
+      "traits": [
+        "内容",
+        "品牌",
+        "传播"
+      ]
+    },
+    {
+      "name": "梁死坚",
+      "gate": "si_men",
+      "roles": [
+        "CTO",
+        "安全总监"
+      ],
+      "salary_range": [
+        160000,
+        250000
+      ],
+      "traits": [
+        "安全",
+        "合规",
+        "坚守"
+      ]
+    },
+    {
+      "name": "侯开略",
+      "gate": "kai_men",
+      "roles": [
+        "CEO",
+        "战略总监"
+      ],
+      "salary_range": [
+        225000,
+        395000
+      ],
+      "traits": [
+        "战略",
+        "开创",
+        "格局"
+      ]
+    },
+    {
+      "name": "唐度析",
+      "gate": "du_men",
+      "roles": [
+        "数据总监",
+        "CTO"
+      ],
+      "salary_range": [
+        155000,
+        245000
+      ],
+      "traits": [
+        "分析",
+        "洞察",
+        "数据"
+      ]
+    },
+    {
+      "name": "孟休水",
+      "gate": "xiu_men",
+      "roles": [
+        "COO",
+        "后勤总监"
+      ],
+      "salary_range": [
+        115000,
+        175000
+      ],
+      "traits": [
+        "稳定",
+        "后台",
+        "运营"
+      ]
+    },
+    {
+      "name": "史惊天",
+      "gate": "jing_alarm_men",
+      "roles": [
+        "CMO",
+        "CEO"
+      ],
+      "salary_range": [
+        220000,
+        385000
+      ],
+      "traits": [
+        "颠覆",
+        "善辩",
+        "震撼"
+      ]
+    },
+    {
+      "name": "傅伤先",
+      "gate": "shang_men",
+      "roles": [
+        "CSO",
+        "区域总监"
+      ],
+      "salary_range": [
+        165000,
+        258000
+      ],
+      "traits": [
+        "先发",
+        "销售",
+        "推进"
+      ]
+    }
+  ]
+}

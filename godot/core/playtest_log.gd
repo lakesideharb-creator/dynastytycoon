@@ -38,6 +38,24 @@ static func record_crisis(room: CrisisWarRoom, company: Company, outcome: String
 	})
 
 
+## 自由沙盒一局：outcome 为结局评级 S–D、sealed（提前封盘）或 quit（中途离开）
+static func record_sandbox(game: SandboxGame, office: OfficeLayout, outcome: String) -> void:
+	if not enabled or game.turn == 0:
+		return
+	var c := game.company
+	var p := game.engine.personnel_sys.calculate_personnel_factor(c.executives)
+	_append({
+		"time": Time.get_datetime_string_from_system(false, true),
+		"mode": "sandbox", "industry": c.industry, "outcome": outcome, "grade": game.check_ending()["grade"],
+		"months_played": game.turn, "year": game.clock.year, "cash": roundi(c.cash), "net_assets": roundi(game.net_assets()),
+		"reputation": c.reputation, "stores": c.active_stores().size(), "stores_opened": c.stores.size() - 1,
+		"executives": c.executives.map(func(e): return "%s:%s" % [e.role, e.gate_id]),
+		"friction": p["friction_ratio"], "fengshui": PyFmt.round_to(c.fengshui_modifier, 3),
+		"office_score": office.audit()["score"] if office else null, "last_year_profit": roundi(game.last_year_profit()),
+		"platform": OS.get_name(),
+	})
+
+
 static func _append(row: Dictionary) -> void:
 	var f := FileAccess.open(path, FileAccess.READ_WRITE if FileAccess.file_exists(path) else FileAccess.WRITE)
 	if f == null:

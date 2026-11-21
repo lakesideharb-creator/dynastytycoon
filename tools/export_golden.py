@@ -25,6 +25,8 @@ from src.office_fengshui import GridItem, OfficeLayoutManager
 from src.save_manager import SaveManager
 from src import tables, CampaignManager
 from src.crisis_war_room import PRCrisisWarRoom
+from src import sandbox as sb
+from src.talent_pool import TalentCandidate, _CANDIDATE_TEMPLATES, _GATE_NAMES, SALARY_SCALE, ASK_FLOOR, MIN_RATIO
 
 INDUSTRIES = ["Cultural_Food", "AI_Tech", "Health_Care", "New_Energy", "Social_Commerce",
               "Traditional_Manufacturing", "Traditional_RealEstate", "Unknown_Industry"]
@@ -223,6 +225,92 @@ def crisis_paths() -> dict:
     return {"teams": {k: v for k, v in teams.items()}, "paths": out}
 
 
+def sandbox_games(n=20, seed=20261121) -> dict:
+    """沙盒：随机生成但逐步记录的经营脚本（雇佣/开店/关店/营销），不含随机事件；两端按同一脚本回放对照"""
+    import random as _r
+    rng = _r.Random(seed)
+    roles_all = ["CEO", "CFO", "CMO", "CTO", "COO"]
+    palaces = [pid for pid, _ in sb.PALACE_OPTIONS.values()]
+    games = []
+    for g in range(n):
+        ind = rng.choice([v["key"] for v in sb.INDUSTRIES.values()])
+        cash = rng.choice([2e6, 4e6, 6e6, 10e6, 20e6])
+        home = rng.choice(palaces)
+        game = sb.SandboxGame.create_new_game(f"测试{g}", ind, cash, home)
+        rep = rng.choice([80, 95]) if g % 4 == 0 else None         # 随机事件关闭时商誉不变；部分脚本设高商誉以覆盖 S/A 结局
+        if rep is not None:
+            game.state.company.reputation = rep
+        script, months = [], []
+        marketing = rng.choice([0, 50_000, 100_000, 200_000])
+        skilled = g % 2 == 0                                      # 一半脚本按高手策略经营，覆盖二十年与各档结局
+        reserve = rng.uniform(3, 10)
+        size = rng.choice([1e6, 2e6, 3e6, 5e6])
+        hire_cap = rng.randint(2, 4)
+        synergy = PersonnelSystem().role_gate_synergy
+        best = next(v for v in sb.INDUSTRIES.values() if v["key"] == ind)["best_palaces"]
+        while not game.is_game_over():
+            acts = []
+            c = game.state.company
+            want_hire = (skilled and game.state.turn % 3 == 0 and len(c.executives) < hire_cap) or (not skilled and rng.random() < 0.10)
+            if want_hire:                                         # 雇佣：指定模板与要价
+                if skilled:
+                    filled = {e.role for e in c.executives}
+                    opts = [(synergy.get((r, t[1]), 1.0), i, r) for i, t in enumerate(_CANDIDATE_TEMPLATES)
+                            for r in ["CEO", "CFO", "CMO", "CTO"] if r not in filled]
+                    _, ti, role = max(opts, key=lambda o: (o[0], -o[1]))
+                    tpl = _CANDIDATE_TEMPLATES[ti]
+                else:
+                    tpl = rng.choice(_CANDIDATE_TEMPLATES)
+                    role = None
+                name, gate, roles, (lo, hi), traits = tpl
+                smin, smax = int(lo * SALARY_SCALE), int(hi * SALARY_SCALE)
+                asking = rng.randint(int(smin * ASK_FLOOR), smax)
+                cand = TalentCandidate(name, gate, _GATE_NAMES[gate], list(roles), asking, int(smin * MIN_RATIO), list(traits))
+                game.state.talent_pool.available = [cand]
+                if role is None:
+                    role = rng.choice(list(roles) + roles_all)
+                salary = asking if skilled else rng.choice([asking, cand.min_salary, cand.min_salary - 1, int(asking * 3)])
+                ok, _ = game.hire_talent(0, role, salary)
+                acts.append({"type": "hire", "name": name, "asking": asking, "role": role, "salary": salary, "ok": ok})
+            cost = (sum(x.rent + x.staff_cost + x.maintenance_cost for x in c.stores if x.is_active)
+                    + c.total_monthly_payroll() + sb.SANDBOX_MISC_COST)
+            want_open = (skilled and c.cash - size > reserve * cost) or (not skilled and rng.random() < 0.08)
+            if want_open:                                         # 开店
+                pal = rng.choice(best) if skilled else rng.choice(palaces)
+                inv = size if skilled else rng.choice([5e5, 1e6, 2e6, 3e6, 5e6, 8e6, 12e6])
+                rm, sm = rng.uniform(*sb.RENT_MULT_RANGE), rng.uniform(*sb.STAFF_MULT_RANGE)
+                ok, _ = game.open_new_store(f"店{len(c.stores)}", pal, inv, rm, sm)
+                acts.append({"type": "open", "palace": pal, "invest": inv, "rent_mult": rm, "staff_mult": sm, "ok": ok})
+            if skilled and game.state.turn % 12 == 6:             # 年中关闭仍亏损的老店
+                for x in [x for x in c.stores if x.is_active and x.age_months > 12]:
+                    if game.estimate_store_profit(x) < 0:
+                        ok, _ = game.close_store(x.id)
+                        acts.append({"type": "close", "store_id": x.id, "ok": ok})
+            elif not skilled and rng.random() < 0.03:             # 关店（偶尔给无效编号）
+                active = [x.id for x in c.stores if x.is_active]
+                sid = rng.choice(active + ["store_999"])
+                ok, _ = game.close_store(sid)
+                acts.append({"type": "close", "store_id": sid, "ok": ok})
+            if rng.random() < 0.05:
+                marketing = rng.choice([0, 50_000, 100_000, 200_000]) if skilled else rng.choice([0, 50_000, 100_000, 200_000, 500_000])
+            est = {st.id: game.estimate_store_profit(st) for st in game.state.company.stores if st.is_active}
+            na_before = game.net_assets()
+            res = game.advance_month(marketing, random_events=False)
+            st = game.state.company.financial_history[-1]
+            c = game.state.company
+            months.append({"acts": acts, "marketing": marketing, "estimates": est, "net_assets_before": na_before,
+                           "revenue": st.gross_revenue, "total_cost": st.total_cost, "net_profit": st.net_profit,
+                           "cash": c.cash, "reputation": c.reputation, "bankrupt": game.state.is_bankrupt,
+                           "year": res["year"], "month": res["month"], "turn": game.state.turn,
+                           "grade": game.check_ending().grade if game.state.turn % 12 == 0 else None})
+        games.append({"industry": ind, "cash": cash, "home": home, "name": f"测试{g}", "reputation": rep, "months": months,
+                      "final": {"grade": game.check_ending().grade, "net_assets": game.net_assets(),
+                                "stores": len([x for x in game.state.company.stores if x.is_active]),
+                                "executives": len(game.state.company.executives), "turn": game.state.turn},
+                      "best_palaces": next(v for v in sb.INDUSTRIES.values() if v["key"] == ind)["best_palaces"]})
+    return {"games": games}
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", default=os.path.join(ROOT, "godot", "tests", "golden"))
@@ -238,12 +326,14 @@ def main(argv=None):
     dump("saves.json", save_fixtures())
     crisis = crisis_paths()
     dump("crisis.json", crisis)
+    sandbox = sandbox_games()
+    dump("sandbox.json", sandbox)
     total = 0
     for sid in (1, 2, 3):
         paths = [p for p, _ in enumerate_paths(sid)]
         dump(f"campaign_{sid}.json", {"scenario_id": sid, "paths": [replay(sid, p) for p in paths]})
         total += len(paths)
-    print(f"已导出 {total} 条战役路径、{len(crisis['paths'])} 条危机公关路径与因子表 → {args.out}")
+    print(f"已导出 {total} 条战役路径、{len(crisis['paths'])} 条危机公关路径、{len(sandbox['games'])} 局沙盒与因子表 → {args.out}")
 
 
 if __name__ == "__main__":

@@ -18,51 +18,14 @@ from .event_system import EventSystem
 from .talent_pool import TalentPool, TalentCandidate
 from .save_manager import SaveManager
 
-# ─────────────────────────────────────────────────────────────────────────────
-# 行业配置
-# ─────────────────────────────────────────────────────────────────────────────
-INDUSTRIES = {
-    "1": {
-        "key": "Cultural_Food",
-        "name": "新中式文化餐饮",
-        "desc": "茶饮/烘焙/餐厅，高客单文化溢价，离九共振爆发力强",
-        "base_revenue": 360_000,
-        "rent": 280_000,
-        "staff_cost": 200_000,
-    },
-    "2": {
-        "key": "AI_Tech",
-        "name": "AI科技创业",
-        "desc": "算法/SaaS/大模型，烧钱快但估值弹性大，时间窗口极敏感",
-        "base_revenue": 520_000,
-        "rent": 180_000,
-        "staff_cost": 600_000,
-    },
-    "3": {
-        "key": "Health_Care",
-        "name": "功能健康消费品",
-        "desc": "营养品/运动补剂/医美，高毛利细分赛道，专业壁垒强",
-        "base_revenue": 430_000,
-        "rent": 220_000,
-        "staff_cost": 300_000,
-    },
-    "4": {
-        "key": "New_Energy",
-        "name": "新能源产业链",
-        "desc": "光储充换/锂电/氢能，政策红利窗口，重资本长周期",
-        "base_revenue": 640_000,
-        "rent": 350_000,
-        "staff_cost": 500_000,
-    },
-    "5": {
-        "key": "Social_Commerce",
-        "name": "社交电商/直播带货",
-        "desc": "私域流量/内容电商，GMV增长快，舆论风险高，合规压力大",
-        "base_revenue": 460_000,
-        "rent": 150_000,
-        "staff_cost": 450_000,
-    },
-}
+from . import tables
+
+# 行业、经济参数、九宫地盘、结局门槛都在 data/sandbox.json（Godot 端 godot/core/sandbox_game.gd 读同一份）
+_DATA = tables.load("sandbox.json")
+_ECON = _DATA["economy"]
+
+# 行业配置（键 "1"～"5" 为终端菜单编号）
+INDUSTRIES = {str(i): dict(v) for i, v in enumerate(_DATA["industries"], 1)}
 
 # 推荐宫位：取九宫亲和度最高的两宫，保证与结算数据一致
 _AFFINITIES = NinePalacesSystem().industry_affinities
@@ -73,39 +36,31 @@ for _cfg in INDUSTRIES.values():
 # ─────────────────────────────────────────────────────────────────────────────
 # 沙盒经济参数（平衡性调参入口，数值由 tests/test_sandbox_balance.py 锁定）
 # ─────────────────────────────────────────────────────────────────────────────
-MIN_STORE_INVEST = 1_000_000      # 开设新网点最低投资
-MAX_STORE_INVEST = 10_000_000     # 单店投资上限
-REF_STORE_INVEST = 2_000_000      # 基准投资：此投资额下门店规模 = 行业基准
-INVEST_REVENUE_EXP = 0.80         # 营收随投资的弹性（<1：大店边际递减）
-INVEST_COST_EXP = 1.00            # 租金/人工随投资的弹性
-STORE_DECAY_RATE = 0.015          # 每月营收衰减（老化与竞品侵蚀），下限见 models.STORE_DECAY_FLOOR
-MAINTENANCE_RATE = 0.010          # 每月折旧维护 = 投资额 × 该比例
-HQ_INVEST_EQUIV = 2_000_000       # 总部折旧按此投资额计算
-SANDBOX_REVENUE_SCALE = 1.00      # 沙盒营收整体缩放
-SANDBOX_MISC_COST = 50_000        # 每月杂项行政支出
-PALACE_SATURATION = 0.85          # 同一宫位每多一家已有网点，新店营收 × 该系数（市场饱和）
-STORE_SALVAGE_RATE = 0.30         # 关店回收残值 = 投资额 × 该比例
+MIN_STORE_INVEST = _ECON["min_store_invest"]            # 开设新网点最低投资
+MAX_STORE_INVEST = _ECON["max_store_invest"]            # 单店投资上限
+REF_STORE_INVEST = _ECON["ref_store_invest"]            # 基准投资：此投资额下门店规模 = 行业基准
+INVEST_REVENUE_EXP = _ECON["invest_revenue_exp"]        # 营收随投资的弹性（<1：大店边际递减）
+INVEST_COST_EXP = _ECON["invest_cost_exp"]              # 租金/人工随投资的弹性
+STORE_DECAY_RATE = _ECON["store_decay_rate"]            # 每月营收衰减（老化与竞品侵蚀），下限见 models.STORE_DECAY_FLOOR
+MAINTENANCE_RATE = _ECON["maintenance_rate"]            # 每月折旧维护 = 投资额 × 该比例
+HQ_INVEST_EQUIV = _ECON["hq_invest_equiv"]              # 总部折旧按此投资额计算
+SANDBOX_REVENUE_SCALE = _ECON["sandbox_revenue_scale"]  # 沙盒营收整体缩放
+SANDBOX_MISC_COST = _ECON["sandbox_misc_cost"]          # 每月杂项行政支出
+PALACE_SATURATION = _ECON["palace_saturation"]          # 同一宫位每多一家已有网点，新店营收 × 该系数（市场饱和）
+STORE_SALVAGE_RATE = _ECON["store_salvage_rate"]        # 关店回收残值 = 投资额 × 该比例
+HIRE_SALARY_CASH_CAP = _ECON["hire_salary_cash_cap"]    # 开出的月薪不得超过现金的该比例
+RENT_MULT_RANGE = tuple(_ECON["rent_mult_range"])       # 新店租金随机浮动
+STAFF_MULT_RANGE = tuple(_ECON["staff_mult_range"])     # 新店人工随机浮动
+STORE_VALUE_MONTHS = _ECON["store_value_months"]        # 净资产估值：门店按月营收 × 该月数计
 
-# 九宫地盘选项
-PALACE_OPTIONS = {
-    "1": ("kan_1", "坎一宫·北京/深圳·水型创新都市"),
-    "2": ("kun_2", "坤二宫·长沙/郑州·厚土稳健市场"),
-    "3": ("zhen_3", "震三宫·杭州/成都·雷动创业氛围"),
-    "4": ("xun_4", "巽四宫·上海/广州·风型信息枢纽"),
-    "5": ("zhong_5", "中五宫·武汉/西安·中枢战略要地"),
-    "6": ("qian_6", "乾六宫·京津·权力中枢资源聚集"),
-    "7": ("dui_7", "兑七宫·厦门/三亚·悦商旅游消费"),
-    "8": ("gen_8", "艮八宫·重庆/贵阳·山型资源重工"),
-    "9": ("li_9",  "离九宫·成都/西安·文化火型爆发力"),
-}
+# 九宫地盘选项（键 "1"～"9" 为终端菜单编号）
+PALACE_OPTIONS = {str(i): (p["palace_id"], p["label"]) for i, p in enumerate(_DATA["palaces"], 1)}
 
 # 结局门槛（由 tools/sandbox_balance.py 按机器人玩家分布标定：S≈5%，A≈30%，D≈半数（含外行玩家））
-ENDING_S_ASSETS = 250_000_000
-ENDING_A_ASSETS = 150_000_000
-ENDING_B_ASSETS = 50_000_000
-
-def _yi(v: float) -> str:
-    return f"{v / 1e8:g}亿"
+_TH = _DATA["ending_thresholds"]
+ENDING_S_ASSETS = _TH["s_assets"]
+ENDING_A_ASSETS = _TH["a_assets"]
+ENDING_B_ASSETS = _TH["b_assets"]
 
 # 结局定义（20年终局评定）
 @dataclass
@@ -116,23 +71,8 @@ class SandboxEnding:
     grade: str              # S/A/B/C/D
 
 
-ENDINGS = [
-    SandboxEnding("🏆 商道宗师·九宫归一",
-        f"二十年风云，你以奇门之术纵横商界，净资产破{_yi(ENDING_S_ASSETS)}，名入中华百年商业传奇！",
-        f"净资产≥{_yi(ENDING_S_ASSETS)}，商誉≥90，连续5个年度盈利，拥有≥4家门店/中心", "S"),
-    SandboxEnding("🌟 大亨崛起·时运弄潮儿",
-        f"精准踩准时代节拍，乘势扶摇直上。净资产过{_yi(ENDING_A_ASSETS)}，行业领军地位确立。",
-        f"净资产≥{_yi(ENDING_A_ASSETS)}，商誉≥75", "A"),
-    SandboxEnding("💼 稳健商人·守成有余",
-        "二十年风雨中守住了自己的基业，未能称霸却衣食无忧，自有一番格局。",
-        f"公司存活且最近一年盈利，净资产≥{_yi(ENDING_B_ASSETS)}", "B"),
-    SandboxEnding("⚠️ 创业者·折戟半途",
-        "曾经辉煌也曾跌落，最终未能守住基业。这是大多数创业者的宿命。",
-        f"公司存活但净资产<{_yi(ENDING_B_ASSETS)}或最近一年亏损", "C"),
-    SandboxEnding("💀 资本寒冬·弹尽粮绝",
-        "现金流断裂，银行抽贷，资本寒冬将你吞噬。败局之中亦有教训，重来一局吧。",
-        "公司现金<0（破产）", "D"),
-]
+ENDINGS = [SandboxEnding(f"{e['icon']} {e['title']}", e["description"], e["unlock_condition"], e["grade"])
+           for e in _DATA["endings"]]
 
 
 @dataclass
@@ -160,8 +100,8 @@ class SandboxGame:
     - check_ending()     → 计算终局结局
     """
 
-    START_YEAR = 2024
-    END_YEAR   = 2043   # 20年
+    START_YEAR = _ECON["start_year"]
+    END_YEAR   = _ECON["end_year"]   # 20年
 
     @classmethod
     def create_new_game(
@@ -179,7 +119,7 @@ class SandboxGame:
             name=company_name,
             industry=industry_key,
             cash=starting_cash,
-            reputation=50,
+            reputation=_ECON["starting_reputation"],
         )
         # 初始门店（总部）
         # 解析宫位对应城市名
@@ -228,7 +168,7 @@ class SandboxGame:
         self.state: Optional[SandboxState] = None
 
     # ─── 核心月度推进 ─────────────────────────────────────────────────────────
-    def advance_month(self, marketing_budget: float = 0) -> Dict:
+    def advance_month(self, marketing_budget: float = 0, random_events: bool = True) -> Dict:
         s = self.state
         if s.is_bankrupt:
             return {"error": "公司已破产，请重新开始新局。"}
@@ -236,7 +176,7 @@ class SandboxGame:
         # 月度结算
         result = s.engine.simulate_month(s.company, marketing_budget, misc_budget=SANDBOX_MISC_COST)
         # 随机事件
-        event = s.event_sys.trigger_monthly_event(s.company, s.clock)
+        event = s.event_sys.trigger_monthly_event(s.company, s.clock) if random_events else None
 
         s.turn += 1
         year, month = s.clock.year, s.clock.month
@@ -274,7 +214,7 @@ class SandboxGame:
         if candidate_idx < 0 or candidate_idx >= len(pool):
             return False, "候选人编号无效。"
         candidate = pool[candidate_idx]
-        if salary > s.company.cash * 0.1:
+        if salary > s.company.cash * HIRE_SALARY_CASH_CAP:
             return False, f"开出的薪资超过公司现金的10%，风险过高。"
         exec_obj = s.talent_pool.hire(candidate, role, salary)
         if exec_obj is None:
@@ -285,7 +225,9 @@ class SandboxGame:
         return True, msg
 
     # ─── 开拓新门店 ───────────────────────────────────────────────────────────
-    def open_new_store(self, store_name: str, palace_key: str, invest: float) -> Tuple[bool, str]:
+    def open_new_store(self, store_name: str, palace_key: str, invest: float,
+                       rent_mult: Optional[float] = None, staff_mult: Optional[float] = None) -> Tuple[bool, str]:
+        """rent_mult / staff_mult 为新店租金、人工的随机浮动；不传时随机抽取（对照测试时传入固定值）"""
         s = self.state
         if invest < MIN_STORE_INVEST:
             return False, f"投资额过低：开设新网点至少需要 ¥{MIN_STORE_INVEST:,.0f}。"
@@ -309,14 +251,18 @@ class SandboxGame:
         )
         city_name = palace_label.split("·")[1] if "·" in palace_label else palace_label
         store_id = f"store_{len(s.company.stores)+1:03d}"
+        if rent_mult is None:
+            rent_mult = random.uniform(*RENT_MULT_RANGE)
+        if staff_mult is None:
+            staff_mult = random.uniform(*STAFF_MULT_RANGE)
         new_store = Store(
             id=store_id,
             name=store_name,
             palace_id=palace_key,
             city_name=city_name,
             base_revenue=base_rev,
-            rent=cfg["rent"] * scale ** INVEST_COST_EXP * random.uniform(0.85, 1.20),
-            staff_cost=cfg["staff_cost"] * scale ** INVEST_COST_EXP * random.uniform(0.90, 1.10),
+            rent=cfg["rent"] * scale ** INVEST_COST_EXP * rent_mult,
+            staff_cost=cfg["staff_cost"] * scale ** INVEST_COST_EXP * staff_mult,
             is_active=True,
             decay_rate=STORE_DECAY_RATE,
             maintenance_cost=invest * MAINTENANCE_RATE,
@@ -369,11 +315,7 @@ class SandboxGame:
         if s.is_bankrupt or c.cash < 0:
             return ENDINGS[4]  # 破产
 
-        # 粗估净资产：现金 + 门店估值（月营收×24）
-        store_value = sum(
-            st.effective_base_revenue() * 24 for st in c.stores if st.is_active
-        )
-        net_assets = c.cash + store_value
+        net_assets = self.net_assets()
 
         # 连续5个年度盈利（按最近60个月切成5个自然年度汇总，允许季节性单月亏损）
         hist = c.financial_history
@@ -383,22 +325,26 @@ class SandboxGame:
         last_year_profit = sum(f.net_profit for f in hist[-12:]) if hist else 0.0
         active_stores = len([st for st in c.stores if st.is_active])
 
-        if (net_assets >= ENDING_S_ASSETS and c.reputation >= 90
-                and five_profitable_years and active_stores >= 4):
+        if (net_assets >= ENDING_S_ASSETS and c.reputation >= _TH["s_reputation"]
+                and five_profitable_years and active_stores >= _TH["s_min_stores"]):
             return ENDINGS[0]  # 商道宗师
-        elif net_assets >= ENDING_A_ASSETS and c.reputation >= 75:
+        elif net_assets >= ENDING_A_ASSETS and c.reputation >= _TH["a_reputation"]:
             return ENDINGS[1]  # 大亨崛起
         elif net_assets >= ENDING_B_ASSETS and last_year_profit > 0:
             return ENDINGS[2]  # 稳健商人
         else:
             return ENDINGS[3]  # 创业者折戟
 
+    # ─── 净资产估算：现金 + 门店估值（月营收 × STORE_VALUE_MONTHS） ──────────────
+    def net_assets(self) -> float:
+        c = self.state.company
+        return c.cash + sum(st.effective_base_revenue() * STORE_VALUE_MONTHS for st in c.stores if st.is_active)
+
     # ─── 获取当前快照摘要 ─────────────────────────────────────────────────────
     def status_summary(self) -> Dict:
         s = self.state
         c = s.company
-        store_value = sum(st.effective_base_revenue() * 24 for st in c.stores if st.is_active)
-        net_assets = c.cash + store_value
+        net_assets = self.net_assets()
         years_elapsed = s.turn // 12
         years_left = self.END_YEAR - s.clock.year + 1
         return {

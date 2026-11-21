@@ -4,6 +4,8 @@ extends Control
 const TitleScreen := preload("res://ui/title_screen.gd")
 const CampaignScreen := preload("res://ui/campaign_screen.gd")
 const CrisisScreen := preload("res://ui/crisis_screen.gd")
+const SandboxSetup := preload("res://ui/sandbox_setup.gd")
+const SandboxScreen := preload("res://ui/sandbox_screen.gd")
 
 var _screen: Control
 
@@ -31,6 +33,7 @@ func show_title() -> void:
 	t.campaign_selected.connect(start_campaign)
 	t.load_requested.connect(load_slot)
 	t.crisis_selected.connect(start_crisis)
+	t.sandbox_selected.connect(show_sandbox_setup)
 	_swap(t)
 	Audio.play_music("theme_main")
 
@@ -53,9 +56,29 @@ func start_crisis(crisis_id: String) -> void:
 	_swap(c)
 
 
+func show_sandbox_setup() -> void:
+	var s := SandboxSetup.new()
+	s.back_requested.connect(show_title)
+	s.start_requested.connect(func(n, ind, cash, home): start_sandbox({"name": n, "industry": ind, "cash": cash, "home": home}))
+	_swap(s)
+
+
+func start_sandbox(params: Dictionary, restore := {}) -> void:
+	var s := SandboxScreen.new()
+	s.new_game = params
+	s.restore = restore
+	s.exit_requested.connect(show_title)
+	s.new_game_requested.connect(show_sandbox_setup)
+	s.load_requested.connect(load_slot)
+	_swap(s)
+
+
 func load_slot(slot: String) -> void:
 	var data := SaveGame.load_slot(slot)
 	if data.is_empty():
 		push_warning("存档无法读取：" + slot)
+		return
+	if data.has("sandbox"):
+		start_sandbox({}, data)
 		return
 	start_campaign(data["runner"].scenario_id, data)

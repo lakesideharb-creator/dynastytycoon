@@ -24,6 +24,8 @@ func _initialize() -> void:
 	test_runner_rules()
 	test_crisis()
 	test_crisis_rules()
+	test_sandbox()
+	test_sandbox_rules()
 	print("")
 	for f in failures.slice(0, 30):
 		print("FAIL " + f)
@@ -378,3 +380,130 @@ func test_crisis_rules() -> void:
 	_ok(row["mode"] == "crisis" and int(row["scenario"]) == 10 and row["verdict"] == "excellent" and row["decisions"].size() == 3, "危机试玩记录内容")
 	PlaytestLog.clear()
 	PlaytestLog.path = "user://playtest_log.jsonl"
+
+
+# ─── 二十年沙盒 ─────────────────────────────────────────────────────────────
+func _rng(seed: int) -> RandomNumberGenerator:
+	var r := RandomNumberGenerator.new()
+	r.seed = seed
+	return r
+
+
+func test_sandbox() -> void:
+	var g := _load_golden("sandbox.json")
+	var gi := 0
+	for spec in g["games"]:
+		gi += 1
+		var game := SandboxGame.create_new_game(spec["name"], spec["industry"], float(spec["cash"]), spec["home"], _rng(gi))
+		if spec["reputation"] != null:
+			game.company.reputation = int(spec["reputation"])
+		_ok(SandboxGame.best_palaces(spec["industry"]) == Array(spec["best_palaces"]), "沙盒 推荐宫位 %s" % spec["industry"])
+		for m in spec["months"]:
+			var tag := "沙盒#%d 第%d月" % [gi, int(m["turn"])]
+			for a in m["acts"]:
+				var res: Dictionary
+				match a["type"]:
+					"hire":
+						game.talent_pool.available.clear()
+						game.talent_pool.available.append(TalentPool.candidate_from(TalentPool.template(a["name"]), int(a["asking"])))
+						res = game.hire_talent(0, a["role"], int(a["salary"]))
+					"open":
+						res = game.open_new_store("店%d" % game.company.stores.size(), a["palace"], float(a["invest"]),
+								float(a["rent_mult"]), float(a["staff_mult"]))
+					"close":
+						res = game.close_store(a["store_id"])
+				_ok(res["ok"] == a["ok"], tag + " %s 结果" % a["type"])
+			for sid in m["estimates"]:
+				var store: Store = null
+				for s2 in game.company.stores:
+					if s2.id == sid:
+						store = s2
+				_ok(store != null, tag + " 门店 " + sid)
+				if store:
+					_close(game.estimate_store_profit(store), float(m["estimates"][sid]), tag + " 预估利润 " + sid)
+			_close(game.net_assets(), float(m["net_assets_before"]), tag + " 净资产")
+			var r := game.advance_month(float(m["marketing"]), false)
+			var st: FinancialStatement = r["statement"]
+			_close(st.gross_revenue, float(m["revenue"]), tag + " 营收")
+			_close(st.total_cost, float(m["total_cost"]), tag + " 总成本")
+			_close(st.net_profit, float(m["net_profit"]), tag + " 净利润")
+			_close(game.company.cash, float(m["cash"]), tag + " 现金")
+			_ok(game.company.reputation == int(m["reputation"]) and game.is_bankrupt == m["bankrupt"], tag + " 商誉/破产")
+			_ok(r["year"] == int(m["year"]) and r["month"] == int(m["month"]) and game.turn == int(m["turn"]), tag + " 日期")
+			if m["grade"] != null:
+				_ok(game.check_ending()["grade"] == m["grade"], tag + " 结局 %s ≠ %s" % [game.check_ending()["grade"], m["grade"]])
+		var f: Dictionary = spec["final"]
+		_ok(game.is_game_over(), "沙盒#%d 应已结束" % gi)
+		_ok(game.check_ending()["grade"] == f["grade"], "沙盒#%d 终局 %s ≠ %s" % [gi, game.check_ending()["grade"], f["grade"]])
+		_close(game.net_assets(), float(f["net_assets"]), "沙盒#%d 终局净资产" % gi)
+		_ok(game.company.active_stores().size() == int(f["stores"]) and game.company.executives.size() == int(f["executives"]), "沙盒#%d 门店/高管数" % gi)
+
+
+func _sandbox_with_history(profits: Array, cash: float) -> SandboxGame:
+	var game := SandboxGame.create_new_game("t", "Cultural_Food", cash, "li_9", _rng(1))
+	game.company.reputation = 95
+	for i in 3:
+		game.open_new_store("店", "zhen_3", 1000000.0, 1.0, 1.0)
+	game.company.cash = cash
+	game.company.financial_history.clear()
+	for p in profits:
+		var f := FinancialStatement.new()
+		f.net_profit = p
+		game.company.financial_history.append(f)
+	return game
+
+
+func test_sandbox_rules() -> void:
+	var th: Dictionary = SandboxGame.data()["ending_thresholds"]
+	var year: Array = []
+	for i in 9:
+		year.append(100000.0)
+	for i in 3:
+		year.append(-50000.0)
+	var five := year + year + year + year + year
+	_ok(_sandbox_with_history(five, float(th["s_assets"])).check_ending()["grade"] == "S", "季节性亏损月份不影响「连续5年盈利」")
+	var good: Array = []
+	var bad: Array = []
+	for i in 12:
+		good.append(100000.0)
+		bad.append(-100000.0)
+	_ok(_sandbox_with_history(good + good + good + good + bad, float(th["s_assets"])).check_ending()["grade"] != "S", "第5年亏损不能评 S")
+
+	# 人才市场：抽样不重复、要价与底线在模板区间内
+	var tp := TalentPool.new(_rng(7))
+	var econ := SandboxGame.econ()
+	for round in 20:
+		tp.refresh_market()
+		var names := {}
+		for c in tp.available:
+			names[c["name"]] = true
+			var tpl := TalentPool.template(c["name"])
+			var smin := int(float(tpl["salary_range"][0]) * float(econ["talent_salary_scale"]))
+			var smax := int(float(tpl["salary_range"][1]) * float(econ["talent_salary_scale"]))
+			_ok(int(c["asking_salary"]) >= int(smin * float(econ["talent_ask_floor"])) and int(c["asking_salary"]) <= smax, "要价在区间内 " + c["name"])
+			_ok(int(c["min_salary"]) < int(c["asking_salary"]), "底线低于要价 " + c["name"])
+			_ok(ResourceLoader.exists("res://assets/portraits/%s.png" % c["portrait"]), "候选人立绘存在 " + c["portrait"])
+		_ok(tp.available.size() == int(econ["talent_pool_size"]) and names.size() == tp.available.size(), "每次 8 人且不重复")
+	var cand: Dictionary = tp.available[0]
+	_ok(tp.hire(cand, "CEO", int(cand["min_salary"]) - 1) == null and tp.available.size() == 8, "低于底线被拒，候选人仍在市场")
+	var e := tp.hire(cand, "CEO", int(cand["min_salary"]))
+	_ok(e != null and e.gate_id == cand["gate"] and tp.available.size() == 7, "达到底线即可雇佣并移出市场")
+
+	# 随机开店：租金/人工浮动在区间内
+	var game := SandboxGame.create_new_game("t", "AI_Tech", 2.0e7, "kan_1", _rng(3))
+	for i in 5:
+		var res := game.open_new_store("店", "kan_1", 2000000.0)
+		var s: Store = res["store"]
+		var rm := s.rent / float(game.industry_cfg["rent"])
+		_ok(rm >= float(econ["rent_mult_range"][0]) - 1e-9 and rm <= float(econ["rent_mult_range"][1]) + 1e-9, "租金浮动在区间内")
+	_ok(game.saturation("kan_1") < 0.5, "同宫多店饱和")
+
+	# 存档往返
+	game.advance_month(50000.0, false)
+	var back := SandboxGame.from_dict(JSON.parse_string(JSON.stringify(game.to_dict())))
+	_close(back.company.cash, game.company.cash, "沙盒存档 现金")
+	_ok(back.turn == game.turn and back.clock.month == game.clock.month and back.company.stores.size() == game.company.stores.size(), "沙盒存档 回合/日期/门店")
+	_ok(back.talent_pool.available.size() == game.talent_pool.available.size(), "沙盒存档 人才市场")
+	var a1 := game.advance_month(0.0, false)
+	var a2 := back.advance_month(0.0, false)
+	_close(a2["statement"].net_profit, a1["statement"].net_profit, "读档后续玩结果一致")
